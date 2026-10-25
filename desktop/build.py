@@ -74,7 +74,7 @@ def build(python: str, port: int) -> dict:
         binaries = staged / 'Contents/MacOS'
         resources.mkdir(parents=True); binaries.mkdir()
         shutil.copyfile(DESKTOP / 'Info.plist', staged / 'Contents/Info.plist')
-        config = {'projectRoot': str(PROJECT_ROOT), 'pythonExecutable': str(executable), 'port': port, 'backendVersion': '0.5'}
+        config = {'projectRoot': str(PROJECT_ROOT), 'pythonExecutable': str(executable), 'port': port, 'backendVersion': '0.6', 'onlineURL': 'https://pangbadi-film-workbench.zainabadenike433.chatgpt.site'}
         (resources / 'DesktopConfig.json').write_text(json.dumps(config, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
         (resources / 'LOCAL-CLIENT.txt').write_text(
             '本机客户端：页面、执行服务和项目数据仍保存在原项目目录。\n'

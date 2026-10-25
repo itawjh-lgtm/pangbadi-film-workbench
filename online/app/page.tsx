@@ -1,0 +1,4 @@
+import {getChatGPTUser,chatGPTSignInPath} from './chatgpt-auth';
+import {redirect} from 'next/navigation';
+export const dynamic='force-dynamic';
+export default async function Page(){const user=await getChatGPTUser();if(user)redirect('/workbench.html');return <main className="welcome"><div className="wordmark">PANGBADI <span>FILM STUDIO</span></div><section><p className="eyebrow">庞巴迪影视工作台 · 在线试用</p><h1>让你的故事，<br/>成为看得见的作品。</h1><p className="lead">与影视团队一起写剧本、建立人物资产，在创作画布中生成图片与视频。</p><a className="enter" href={chatGPTSignInPath('/workbench.html')} target="_top">登录并进入工作台 <span>↗</span></a><p className="note">登录后填写你自己的文字模型与 RunningHub API Key。<br/>项目按账号保存，生成费用由对应模型平台收取。</p></section><div className="scene" aria-hidden="true"><img src="/assets/scenes/studio-hero.webp" alt=""/><div className="scene-fallback"><b>从一个想法开始</b><span>文稿 · 人物 · 分镜 · 画布 · 成果</span></div></div><footer>真实模型接口 · 独立项目空间 · 可编辑创作流程</footer></main>;}

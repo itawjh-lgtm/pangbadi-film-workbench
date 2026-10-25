@@ -25,13 +25,13 @@ MANIFEST_DIR = Path('docs/交接/清单')
 
 def excluded(path):
     parts = path.parts
-    if any(p in {'.git', '__pycache__', '.DS_Store', 'node_modules'} for p in parts):
+    if any(p in {'.git', '__pycache__', '.DS_Store', 'node_modules', '.wrangler', '.sites-runtime', '.vinext', '.next', 'outputs'} for p in parts):
         return '版本库、缓存或本机依赖'
     if parts[:2] in {('data','runtime'), ('data','portable-runtime'), ('docs','qa')}:
         return '本地私有运行数据或历史实测证据'
-    if parts and parts[0] == 'dist':
+    if 'dist' in parts:
         return '本机生成的安装产物'
-    if path.name == 'connections.json' or path.name.startswith('.env') or path.suffix in {'.pyc','.pyo','.log','.sqlite3','.pem','.key'} or path.name.endswith(('-wal','-shm')):
+    if path.name == 'connections.json' or (path.name.startswith('.env') and path.name != '.env.example') or path.name.startswith('.dev.vars') or path.suffix in {'.pyc','.pyo','.log','.sqlite3','.sqlite','.db','.pem','.key'} or path.name.endswith(('-wal','-shm')):
         return '密钥、数据库或派生文件'
     return ''
 
@@ -94,7 +94,7 @@ def inventory(root):
              'files':rows}
     write_json(dest/'全部文件清单.json',summary)
     with (dest/'全部文件清单.csv').open('w',encoding='utf-8-sig',newline='') as stream:
-        writer=csv.DictWriter(stream,fieldnames=['path','category','bytes','sha256'])
+        writer=csv.DictWriter(stream,fieldnames=['path','category','bytes','sha256'],lineterminator='\n')
         writer.writeheader();writer.writerows(rows)
     (dest/'README.md').write_text('# 逐文件清单\n\n清单列出源码发布包内全部普通文件的相对路径、分类、字节数和 SHA-256；仅排除本清单目录与 `.git` 元数据，以避免自引用。私有运行备份有独立校验文件，不在此范围。\n\n校验：在源码根目录运行 `python3 scripts/package-handover.py --verify .`。\n',encoding='utf-8')
     return summary
@@ -170,7 +170,7 @@ def package(destination, include_private):
         private_rows=[{'path':str(p.relative_to(private_root)),'bytes':p.stat().st_size,'sha256':digest(p)} for p in sorted(private_root.rglob('*')) if p.is_file() and p.name!='私有文件校验.json']
         write_json(private_root/'私有文件校验.json',private_rows)
         private_files=len(private_rows)
-    page='''<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>庞巴迪影视工作台 · 交付入口</title><style>body{margin:0;background:#f3f1ec;color:#292e35;font:16px/1.8 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}main{max-width:960px;margin:60px auto;padding:30px}img{width:100%;max-height:360px;object-fit:cover;border-radius:24px}h1{font-size:30px;font-weight:600}a{color:#2d5c68}section{padding:24px;background:#ffffffbf;border:1px solid white;border-radius:20px;margin-top:20px}.button{display:inline-block;padding:12px 24px;background:#203f48;color:white;text-decoration:none;border-radius:12px}small{color:#707780}</style><main><img src="01_源码与资源/assets/projects/lighthouse-cover.webp" alt="灯塔案例"><small>2026-10-25 · 项目交接快照</small><h1>庞巴迪影视工作台</h1><p>从团队角色、影视制作流程，到代码、素材和本机运行备份。</p><a class="button" href="01_源码与资源/docs/交接/00_交付导航.html">打开完整 SOP 与操作手册</a><section><b>01 · 源码与资源</b><p>可推送至 GitHub 的项目源码、21 岗位提示词、视觉素材、设计历史与测试。便携启动：双击 <a href="01_源码与资源/scripts/start-portable.command">start-portable.command</a>，然后访问 http://127.0.0.1:8768/。</p><a href="https://github.com/itawjh-lgtm/pangbadi-film-workbench">GitHub 私有仓库</a></section><section><b>02 · 本地私有数据备份</b><p>包含项目数据库、运行记录、连接密钥和历史实测证据，仅在本地保存。不要上传这一目录。恢复步骤见完整手册第 06 节。</p></section><p>原工作台仍使用 8767；本交付包是快照，不会自动同步后续修改。远程媒体链接不等于离线媒体备份。</p></main></html>'''
+    page='''<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>庞巴迪影视工作台 · 交付入口</title><style>body{margin:0;background:#f3f1ec;color:#292e35;font:16px/1.8 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}main{max-width:960px;margin:60px auto;padding:30px}img{width:100%;max-height:360px;object-fit:cover;border-radius:24px}h1{font-size:30px;font-weight:600}a{color:#2d5c68}section{padding:24px;background:#ffffffbf;border:1px solid white;border-radius:20px;margin-top:20px}.button{display:inline-block;padding:12px 24px;background:#203f48;color:white;text-decoration:none;border-radius:12px}small{color:#707780}</style><main><img src="01_源码与资源/assets/projects/lighthouse-cover.webp" alt="灯塔案例"><small>2026-10-25 · 项目交接快照</small><h1>庞巴迪影视工作台</h1><p>从团队角色、影视制作流程，到代码、素材和本机运行备份。</p><a class="button" href="01_源码与资源/docs/交接/00_交付导航.html">打开完整 SOP 与操作手册</a><section><b>01 · 源码与资源</b><p>可推送至 GitHub 的项目源码、21 岗位提示词、视觉素材、设计历史与测试。便携启动：双击 <a href="01_源码与资源/scripts/start-portable.command">start-portable.command</a>，然后访问 http://127.0.0.1:8768/。</p><a href="https://github.com/itawjh-lgtm/pangbadi-film-workbench">GitHub 公开源码仓库</a></section><section><b>02 · 本地私有数据备份</b><p>包含项目数据库、运行记录、连接密钥和历史实测证据，仅在本地保存。不要上传这一目录。恢复步骤见完整手册第 06 节。</p></section><p>原工作台仍使用 8767；本交付包是快照，不会自动同步后续修改。远程媒体链接不等于离线媒体备份。</p></main></html>'''
     (destination/'00_从这里开始.html').write_text(page,encoding='utf-8')
     print(json.dumps({'destination':str(destination),'publicFiles':stats['fileCount'],'publicBytes':stats['totalBytes'],
                       'privateFiles':private_files,'validation':verify(public)},ensure_ascii=False))

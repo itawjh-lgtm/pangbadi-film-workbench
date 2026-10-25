@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0"><dict>
-  <key>CFBundleName</key><string>造梦工作室</string>
-  <key>CFBundleDisplayName</key><string>造梦工作室</string>
+  <key>CFBundleName</key><string>庞巴迪影视工作台</string>
+  <key>CFBundleDisplayName</key><string>庞巴迪影视工作台</string>
   <key>CFBundleIdentifier</key><string>cn.dreamstudio.workbench</string>
   <key>CFBundleExecutable</key><string>DreamStudio</string>
   <key>CFBundlePackageType</key><string>APPL</string>
-  <key>CFBundleShortVersionString</key><string>0.5.0</string>
-  <key>CFBundleVersion</key><string>5</string>
+  <key>CFBundleShortVersionString</key><string>0.6.0</string>
+  <key>CFBundleVersion</key><string>6</string>
   <key>CFBundleIconFile</key><string>AppIcon</string>
   <key>LSMinimumSystemVersion</key><string>12.0</string>
   <key>NSHighResolutionCapable</key><true/>
-  <key>NSHumanReadableCopyright</key><string>造梦工作室 · 本机创作工作台</string>
+  <key>NSHumanReadableCopyright</key><string>庞巴迪影视工作台 · 本机创作工作台</string>
   <key>NSAppTransportSecurity</key><dict>
     <key>NSAllowsLocalNetworking</key><true/>
     <key>NSExceptionDomains</key><dict>

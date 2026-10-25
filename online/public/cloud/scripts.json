@@ -1,0 +1,16 @@
+[
+  "lib/trash.js?v=20261025-reference-home",
+  "data/employees.js",
+  "data/project-templates.js",
+  "lib/store.js?v=20261025-review-mode",
+  "lib/production-views.js?v=20261025-review-mode",
+  "lib/views.js?v=20261025-review-mode",
+  "lib/layout.js?v=20261025-results-framing",
+  "lib/runtime.js?v=20261025-reference-home",
+  "lib/production.js?v=20261025-auto",
+  "lib/workspace-sync.js?v=20261024-desktop",
+  "lib/canvas-controls.js?v=20261025-results-framing",
+  "lib/character-profile.js?v=20261025-reference-home",
+  "lib/canvas.js?v=20261025-reference-home",
+  "app.js?v=20261025-review-mode"
+]
