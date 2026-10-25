@@ -1,0 +1,367 @@
+--- a/server/media.py
++++ b/server/media.py
+@@ -20,6 +20,7 @@
+ from datetime import datetime, timezone
+ from decimal import Decimal, InvalidOperation
+ import hashlib
++import ipaddress
+ import json
+ import math
+ import os
+@@ -27,6 +28,7 @@
+ import re
+ import tempfile
+ import threading
++import uuid
+ from typing import Any, Callable
+ from urllib.error import HTTPError, URLError
+ from urllib.parse import parse_qs, urlsplit
+@@ -88,17 +90,73 @@
+ 
+ 
+ def _safe_url(value: Any) -> str | None:
+-    if not isinstance(value, str) or len(value) > 12000:
++    if not isinstance(value, str) or len(value) > 12000 or re.search(r"[\x00-\x20\x7f\\]", value):
+         return None
+     try:
+         parsed = urlsplit(value)
+         if parsed.scheme != "https" or not parsed.hostname or parsed.username or parsed.password:
+             return None
+-        if parsed.hostname.lower() in {"localhost", "127.0.0.1", "::1", "0.0.0.0"}:
++        host = parsed.hostname.lower().rstrip(".")
++        if parsed.port not in {None, 443}:
+             return None
++        if host == "localhost" or host.endswith((".localhost", ".local", ".internal")):
++            return None
++        try:
++            address = ipaddress.ip_address(host)
++            if not address.is_global or address.is_multicast:
++                return None
++        except ValueError:
++            # Reject browser-compatible shortened, decimal and hexadecimal IP
++            # spellings rather than resolving an arbitrary user-supplied host.
++            if "." not in host or re.fullmatch(r"(?:0x[0-9a-f]+|[0-9]+)(?:\.(?:0x[0-9a-f]+|[0-9]+))*", host, re.IGNORECASE):
++                return None
+     except ValueError:
+         return None
+     return value
++
++
++def media_metadata(request: dict) -> dict:
++    """Local display fields do not alter the provider payload or spending token."""
++    title = request.get("title", "")
++    media_type = request.get("mediaType", "image")
++    if not isinstance(title, str) or len(title) > 120:
++        raise MediaValidationError("制作任务名称不能超过120字")
++    if not isinstance(media_type, str) or media_type not in {"image", "video"}:
++        raise MediaValidationError("媒体类型只支持image或video")
++    return {"title": title.strip(), "mediaType": media_type}
++
++
++def media_event(job: dict, kind: str, text: str, at: int) -> None:
++    """Record observed lifecycle events; never manufacture intermediate stages."""
++    history = job.setdefault("history", [])
++    history.append({"id": uuid.uuid4().hex, "type": kind,
++                    "status": job["status"], "text": text[:500], "at": at})
++    if len(history) > 100:
++        job["history"] = history[:1] + history[-99:]
++
++
++def external_media_fields(request: dict) -> dict:
++    """Validate a user-registered link without fetching, probing or downloading."""
++    allowed = {"requestId", "projectId", "title", "mediaType", "url", "sourceUrl", "taskId"}
++    if set(request) - allowed:
++        raise MediaValidationError("外部结果登记包含不支持的字段")
++    metadata = media_metadata(request)
++    if not metadata["title"] or "mediaType" not in request:
++        raise MediaValidationError("请填写结果名称并选择图片或视频")
++    url = _safe_url(request.get("url"))
++    source_url = request.get("sourceUrl") or None
++    if not url or (source_url is not None and not _safe_url(source_url)):
++        raise MediaValidationError("请填写公开HTTPS链接，不能使用本机、内网或含账号密码的地址")
++    task_id = request.get("taskId") or None
++    if task_id is not None:
++        _identifier(task_id, "平台任务编号")
++    return {**metadata, "source": "external", "provider": "external", "sourceUrl": source_url,
++            "externalTaskId": task_id, "status": "succeeded",
++            "outputs": [{"url": url, "outputType": metadata["mediaType"],
++                         "storage": "provider", "downloaded": False}],
++            "evidence": {"source": "external", "registeredOnly": True,
++                         "providerVerified": False, "qualityChecked": False,
++                         "downloaded": False, "availabilityChecked": False}}
+ 
+ 
+ def _number(value: Any, label: str, minimum: Decimal = Decimal("0"), positive: bool = False) -> Decimal:
+@@ -521,6 +579,7 @@
+         self._provider(provider)
+         if not isinstance(request, dict):
+             raise MediaValidationError("估价请求须为对象")
++        media_metadata(request)
+         config = self._config(provider)
+         quantity = _number(request.get("quantity", 1), "数量", positive=True)
+         price_value = request.get("unitPrice", config.get("unitPrice"))
+--- a/server/httpd.py
++++ b/server/httpd.py
+@@ -20,6 +20,7 @@
+ from .runtime import InputError, Runtime, identifier, now
+ from .workspace import Workspace, MAX_BYTES
+ from .production import ProductionManager
++from .media import MediaRequestError, MediaValidationError, external_media_fields, media_event, media_metadata
+ 
+ ROOT = Path(__file__).resolve().parents[1]
+ 
+@@ -200,14 +201,10 @@
+             self.send(200, {"estimate": media.estimate(data.get("provider"), data)})
+         elif path == "/api/media/jobs" and media:
+             self.submit_media(data)
++        elif path == "/api/media/import":
++            self.import_media(data)
+         elif len(parts) == 5 and parts[:3] == ["api", "media", "jobs"] and parts[4] == "refresh" and media:
+-            job = runtime.get("media", parts[3])
+-            if not job.get("task_id"):
+-                raise InputError("暂无平台任务编号；请到平台核对，避免重复扣费。", 409)
+-            result = media.poll(job["provider"], job["task_id"])
+-            job.update(result, updatedAt=now())
+-            runtime.save("media", job)
+-            self.send(200, {"job": job})
++            self.refresh_media(parts[3])
+         else:
+             raise InputError("接口不存在。", 404)
+ 
+@@ -217,6 +214,7 @@
+             raise InputError("缺少有效请求编号。")
+         if data.get("projectId") is not None and not identifier(data["projectId"]):
+             raise InputError("关联项目编号无效。")
++        metadata = media_metadata(data)
+         digest = hashlib.sha256(json.dumps(data, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
+         # Persist before the external call: uncertain outcomes never auto-retry.
+         with runtime.lock:
+@@ -227,19 +225,88 @@
+                 self.send(200, {"job": prior})
+                 return
+             estimate = media.estimate(data.get("provider"), data)
+-            job = {"id": uuid.uuid4().hex, "requestId": data["requestId"], "requestHash": digest, "provider": data.get("provider"), "projectId": data.get("projectId"), "status": "submitting", "estimate": estimate, "createdAt": now(), "updatedAt": now(), "outputs": []}
++            timestamp = now()
++            job = {"id": uuid.uuid4().hex, "requestId": data["requestId"], "requestHash": digest, "provider": data.get("provider"), "projectId": data.get("projectId"), "status": "submitting", "estimate": estimate, "createdAt": timestamp, "updatedAt": timestamp, "outputs": [], "source": "api", **metadata}
+             job["workflowId"] = data.get("workflowId") or ""
+             job["parameters"] = {key: data[key] for key in ("nodeInfoList", "quantity", "unitPrice", "unit", "currency", "budget") if key in data}
++            media_event(job, "created", "本次提交已保存，正在请求生成平台。", timestamp)
+             runtime.save("media", job)
+         try:
+             result = media.submit(data.get("provider"), data)
+             job.update(result, updatedAt=now())
++            media_event(job, "submitted", "平台已返回任务编号。", job["updatedAt"])
+         except Exception as error:
+-            job.update(status="unknown" if getattr(error, "outcome_unknown", False) else "failed", error=str(error)[:500], updatedAt=now())
++            message = str(error)[:500] if isinstance(error, (MediaRequestError, MediaValidationError)) else "提交处理异常，请到平台核对任务，勿重复提交。"
++            job.update(status="unknown" if getattr(error, "outcome_unknown", False) else "failed", error=message, updatedAt=now())
++            media_event(job, "submit_error", message, job["updatedAt"])
+             runtime.save("media", job)
+             raise
+         runtime.save("media", job)
+         self.send(202, {"job": job})
++
++    def refresh_media(self, job_id):
++        runtime, media = self.server.runtime, self.server.media
++        if not identifier(job_id):
++            raise InputError("媒体任务编号无效。")
++        # Serialize provider reads for one job, without blocking unrelated jobs
++        # or keeping SQLite's shared lock across a network request.
++        with runtime.lock:
++            lock = self.server.media_locks.setdefault(job_id, threading.Lock())
++        with lock:
++            job = runtime.get("media", job_id)
++            if job.get("source") == "external":
++                raise InputError("这是手动登记的外部结果；请在来源平台查看生成过程。", 409)
++            if not job.get("task_id"):
++                raise InputError("暂无平台任务编号；请到平台核对，避免重复扣费。", 409)
++            # A create response can already say SUCCESS but contain no outputs.
++            # Query it once; completed query results then remain stable.
++            if job.get("lastSuccessfulCheckAt") and job.get("status") in {"succeeded", "failed", "cancelled"}:
++                self.send(200, {"job": job})
++                return
++            prior_status, prior_outputs = job.get("status"), job.get("outputs", [])
++            timestamp = now()
++            try:
++                result = media.poll(job["provider"], job["task_id"])
++            except (MediaRequestError, MediaValidationError) as error:
++                message = str(error)[:500]
++                if job.get("lastRefreshError") != message:
++                    media_event(job, "refresh_error", message, timestamp)
++                job.update(checkedAt=timestamp, lastRefreshError=message)
++                runtime.save("media", job)
++                self.send(200, {"job": job})
++                return
++            recovered = bool(job.get("lastRefreshError"))
++            job.update(result, checkedAt=timestamp, lastSuccessfulCheckAt=timestamp, updatedAt=timestamp)
++            job.pop("lastRefreshError", None)
++            if prior_status != job["status"]:
++                labels = {"queued": "平台排队中。", "running": "平台正在生成。", "succeeded": "平台报告生成完成。", "failed": "平台报告生成失败。", "cancelled": "平台任务已取消。", "unknown": "平台返回了暂无法识别的状态。"}
++                media_event(job, "status", labels.get(job["status"], "平台状态已更新。"), timestamp)
++            if prior_outputs != job.get("outputs") and job.get("outputs"):
++                media_event(job, "outputs", f"收到 {len(job['outputs'])} 个平台结果链接，可在预览窗查看。", timestamp)
++            if recovered:
++                media_event(job, "refresh_recovered", "已重新获取平台状态。", timestamp)
++            runtime.save("media", job)
++            self.send(200, {"job": job})
++
++    def import_media(self, data):
++        runtime = self.server.runtime
++        if not identifier(data.get("requestId")) or not identifier(data.get("projectId")):
++            raise InputError("请提供有效的请求编号和关联项目编号。")
++        fields = external_media_fields(data)
++        digest = hashlib.sha256(json.dumps({"operation": "import", "data": data}, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
++        with runtime.lock:
++            prior = runtime.by_request("media", data["requestId"])
++            if prior:
++                if prior.get("requestHash") != digest:
++                    raise InputError("同一个请求编号不可修改参数后重用。", 409)
++                self.send(200, {"job": prior})
++                return
++            timestamp = now()
++            job = {"id": uuid.uuid4().hex, "requestId": data["requestId"], "requestHash": digest,
++                   "projectId": data["projectId"], "createdAt": timestamp, "updatedAt": timestamp, **fields}
++            media_event(job, "imported", "已手动登记外部结果链接；未验证生成过程、链接有效性或画面质量，链接可能过期。", timestamp)
++            runtime.save("media", job)
++        self.send(201, {"job": job})
+ 
+     def static(self, path):
+         relative = path.lstrip("/") or "index.html"
+--- a/server/runtime.py
++++ b/server/runtime.py
+@@ -56,7 +56,9 @@
+                 self.save("run", run)
+         for job in self.all("media"):
+             if job.get("status") == "submitting":
+-                job.update(status="unknown", error="服务在提交期间中断，请到平台核对订单，勿重复提交。")
++                from .media import media_event
++                job.update(status="unknown", error="服务在提交期间中断，请到平台核对订单，勿重复提交。", updatedAt=now())
++                media_event(job, "interrupted", job["error"], job["updatedAt"])
+                 self.save("media", job)
+ 
+     def save(self, kind, record):
+--- a/tests/test_media_http.py
++++ b/tests/test_media_http.py
+@@ -35,6 +35,7 @@
+         self.handler.server = type("Server", (), {})()
+         self.handler.server.runtime = self.runtime
+         self.handler.server.media = Media()
++        self.handler.server.media_locks = {}
+         self.responses = []
+         self.handler.send = lambda status, body: self.responses.append((status, body))
+         self.payload = dict(requestId="media-test", provider="runninghub", workflowId="1234", confirmCost=True, nodeInfoList=[], budget=2)
+@@ -64,8 +65,84 @@
+         self.assertEqual(len(self.runtime.all("media")), 1)
+ 
+     def test_submission_preserves_project_association(self):
+-        self.handler.submit_media({**self.payload, "projectId": "film-project"})
+-        self.assertEqual(self.responses[-1][1]["job"]["projectId"], "film-project")
++        self.handler.submit_media({**self.payload, "projectId": "film-project", "title": "镜头01", "mediaType": "video"})
++        job = self.responses[-1][1]["job"]
++        self.assertEqual(job["projectId"], "film-project")
++        self.assertEqual((job["title"], job["mediaType"], job["source"]), ("镜头01", "video", "api"))
++        self.assertEqual([event["type"] for event in job["history"]], ["created", "submitted"])
++        self.assertTrue(all(isinstance(event["at"], int) for event in job["history"]))
++
++    def test_refresh_records_observed_states_and_stops_after_terminal(self):
++        self.handler.submit_media(self.payload)
++        job_id = self.responses[-1][1]["job"]["id"]
++        results = iter([{"status": "running", "outputs": []},
++                        {"status": "running", "outputs": []},
++                        {"status": "succeeded", "outputs": [{"url": "https://media.example.com/1.png"}]}])
++        self.handler.server.media.poll = lambda *args: next(results)
++        for _ in range(4):
++            self.handler.refresh_media(job_id)
++        job = self.runtime.get("media", job_id)
++        self.assertEqual(job["status"], "succeeded")
++        self.assertEqual([event["type"] for event in job["history"]], ["created", "submitted", "status", "status", "outputs"])
++        self.assertTrue(job["checkedAt"] >= job["createdAt"])
++        self.assertEqual(job["lastSuccessfulCheckAt"], job["checkedAt"])
++
++    def test_success_from_create_is_queried_once_to_obtain_outputs(self):
++        self.handler.server.media.submit = lambda *args: {"task_id": "123", "status": "succeeded", "outputs": []}
++        self.handler.submit_media(self.payload)
++        job_id = self.responses[-1][1]["job"]["id"]
++        results = iter([{"status": "succeeded", "outputs": [{"url": "https://media.example.com/1.png"}]}])
++        self.handler.server.media.poll = lambda *args: next(results)
++        self.handler.refresh_media(job_id)
++        self.handler.refresh_media(job_id)
++        self.assertEqual(len(self.runtime.get("media", job_id)["outputs"]), 1)
++
++    def test_restart_marks_pending_submission_unknown_with_event(self):
++        self.runtime.save("media", {"id": "recovery-job", "requestId": "recovery-request", "status": "submitting", "outputs": [], "history": []})
++        self.runtime.close()
++        self.runtime = Runtime(self.temp.name, Catalog(), Provider())
++        self.handler.server.runtime = self.runtime
++        job = self.runtime.get("media", "recovery-job")
++        self.assertEqual(job["status"], "unknown")
++        self.assertEqual(job["history"][-1]["type"], "interrupted")
++        self.assertEqual(job["history"][-1]["at"], job["updatedAt"])
++        self.assertEqual(self.handler.server.media.calls, 0)
++
++    def test_query_failure_preserves_status_and_outputs_then_recovers(self):
++        self.handler.submit_media(self.payload)
++        job_id = self.responses[-1][1]["job"]["id"]
++        def fail(*args):
++            raise MediaRequestError("查询暂时不可用", "QUERY_FAILED")
++        self.handler.server.media.poll = fail
++        self.handler.refresh_media(job_id)
++        self.handler.refresh_media(job_id)
++        job = self.runtime.get("media", job_id)
++        self.assertEqual(job["status"], "queued")
++        self.assertEqual(job["outputs"], [])
++        self.assertEqual(job["lastRefreshError"], "查询暂时不可用")
++        self.assertEqual([e["type"] for e in job["history"]].count("refresh_error"), 1)
++        self.handler.server.media.poll = lambda *args: {"status": "running", "outputs": []}
++        self.handler.refresh_media(job_id)
++        job = self.runtime.get("media", job_id)
++        self.assertNotIn("lastRefreshError", job)
++        self.assertEqual(job["history"][-1]["type"], "refresh_recovered")
++
++    def test_external_import_deduplicates_without_any_provider_calls(self):
++        data = {"requestId": "import-1", "projectId": "film-project", "title": "外部小样", "mediaType": "image", "url": "https://media.example.com/result.png", "sourceUrl": "https://www.runninghub.cn/project/canvas/123", "taskId": "123"}
++        self.handler.import_media(data)
++        self.handler.import_media(data)
++        job = self.responses[-1][1]["job"]
++        self.assertEqual(job["source"], "external")
++        self.assertEqual(job["externalTaskId"], "123")
++        self.assertNotIn("task_id", job)
++        self.assertTrue(job["evidence"]["registeredOnly"])
++        self.assertFalse(job["evidence"]["availabilityChecked"])
++        self.assertEqual(self.handler.server.media.calls, 0)
++        self.assertEqual(len(self.runtime.all("media")), 1)
++        with self.assertRaises(InputError):
++            self.handler.refresh_media(job["id"])
++        with self.assertRaises(InputError):
++            self.handler.import_media({**data, "url": "https://media.example.com/other.png"})
+ 
+     def test_invalid_project_rejected_before_submit(self):
+         with self.assertRaises(InputError):
+@@ -139,6 +216,27 @@
+         self.assertEqual(self.request("/api/connections/runninghub/workflow", {"workflowId": "123", "confirmCost": True})[0], 400)
+         self.assertEqual(self.calls, [])
+ 
++    def test_import_route_registers_links_and_enforces_csrf(self):
++        data = {"requestId": "external-http", "projectId": "film", "title": "视频小样", "mediaType": "video", "url": "https://cdn.example.com/result.mp4"}
++        self.assertEqual(self.request("/api/media/import", data, token=False)[0], 403)
++        self.assertEqual(self.request("/api/media/import", data, origin="https://untrusted.example")[0], 403)
++        status, result = self.request("/api/media/import", data)
++        self.assertEqual(status, 201)
++        self.assertEqual(result["job"]["source"], "external")
++        self.assertEqual(result["job"]["outputs"][0]["outputType"], "video")
++        self.assertEqual(self.calls, [])
++        status, result = self.request("/api/media/jobs/" + result["job"]["id"] + "/refresh", {})
++        self.assertEqual(status, 409)
++        self.assertEqual(self.calls, [])
++
++    def test_import_route_rejects_private_and_credential_urls(self):
++        data = {"requestId": "external-unsafe", "projectId": "film", "title": "小样", "mediaType": "image"}
++        for url in ("http://example.com/1.png", "https://localhost/1.png", "https://localhost./1.png", "https://127.1/1.png", "https://2130706433/1.png", "https://0x7f000001/1.png", "https://192.168.1.4/1.png", "https://169.254.169.254/a", "https://[::1]/a", "https://host.local/a", "https://u:p@example.com/a", "https://example.com:8767/a", "https://example.com\\@127.0.0.1/a"):
++            with self.subTest(url=url):
++                self.assertEqual(self.request("/api/media/import", {**data, "url": url})[0], 400)
++        self.assertEqual(self.runtime.all("media"), [])
++        self.assertEqual(self.calls, [])
++
+ 
+ if __name__ == "__main__":
+     unittest.main()

@@ -1,0 +1,18 @@
+{
+  "server/media.py": {
+    "restored_sha256": "0cebad3a2b07aaa9a4dce782947bbf377ed72db613da2c5c05cc2a161bdff6b7",
+    "draft_sha256": "414714208febcd155ab827740b0d92b3081c68c193601c3475f714ec81ff7335"
+  },
+  "server/httpd.py": {
+    "restored_sha256": "342aaebd912c7855336bfad43ab639b3f1d02d71e620320f9aec011eb35a040a",
+    "draft_sha256": "d1a61f9ade2ab9d4f43af6943b4edfc0c2d4af192f525037f357dd6f334bdab9"
+  },
+  "server/runtime.py": {
+    "restored_sha256": "35cccbb9a0d3a29274af4ebb1085bbe0889ee1d4619b27996f9645eef685317d",
+    "draft_sha256": "7ed3f596a6f753d65d9898bfa082219d8352b89fbcbcdd9668f8a0ce55f75724"
+  },
+  "tests/test_media_http.py": {
+    "restored_sha256": "10a1b8c82b6579ce50d9f70501f7cd80514fc0d72f3f9d5aa254c6ce972db260",
+    "draft_sha256": "1515e8e4c7628eb3a9d258af04de654aadf71a616c31df5fca65b846880f227d"
+  }
+}

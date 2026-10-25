@@ -1,0 +1,1601 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>庞巴迪影视工作台 · SOP 与操作手册</title><style>*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f0f1ed;color:#263137;font:15px/1.85 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}a{color:#28626d;text-underline-offset:4px}aside{position:fixed;left:0;top:0;bottom:0;width:250px;padding:34px 24px;background:#f8f9f5df;border-right:1px solid #dde2dc;overflow:auto;backdrop-filter:blur(18px)}aside b{font-size:17px;display:block;margin-bottom:28px}aside a{display:block;text-decoration:none;color:#56666c;padding:10px 0;font-size:13px}main{max-width:1260px;margin:0 auto 0 250px;padding:40px 5vw 90px}.hero{position:relative;background:#162d31;border-radius:24px;overflow:hidden;color:white;min-height:330px;display:flex;align-items:end}.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.7}.hero div{position:relative;padding:36px;background:linear-gradient(transparent,#142b3ce0);width:100%}.hero h1{font-size:30px;margin:0;font-weight:600;letter-spacing:.03em}.hero p{color:#eef5f3}.tags{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0}.tags span{background:#ffffffb8;border:1px solid white;border-radius:12px;padding:10px 16px;color:#56666c}.intro,.chapter,.gallery{background:#ffffffbf;border:1px solid #fff;border-radius:22px;padding:30px;margin:24px 0;box-shadow:0 12px 40px #26313704}.chapter{scroll-margin-top:24px}.chapter h1{font-size:25px;font-weight:600;margin-top:0}.chapter h2{font-size:20px;margin-top:32px}.chapter h3{font-size:17px}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#eef2f1;border-radius:10px;padding:18px;font-size:13px;line-height:1.7}code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.9em;background:#e9eeeb;padding:1px 4px;border-radius:3px}pre code{background:none;padding:0}table{width:100%;border-collapse:collapse;font-size:13px;display:block;overflow-x:auto}th,td{text-align:left;border-bottom:1px solid #dce3de;padding:10px;vertical-align:top;min-width:100px}th{background:#edf2ee}blockquote{margin:20px 0;border-left:3px solid #7b9c94;padding:4px 20px;color:#536761}li{margin:6px 0}.source{font-size:12px;border-top:1px solid #e4e9e4;padding-top:20px}.portraits{display:grid;grid-template-columns:repeat(7,1fr);gap:12px}figure{margin:0}figure img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:14px}figcaption{text-align:center;font-size:12px;padding:6px}small{display:block;color:#7e908d}.gallery h2{font-size:20px;margin-top:0}.foot{font-size:13px;color:#788782}@media(max-width:1000px){aside{position:static;width:auto;height:auto;border:0;padding:20px}aside b{margin:0}aside nav{display:flex;flex-wrap:wrap;gap:10px}aside a{padding:4px}main{margin:0;padding:18px}.portraits{grid-template-columns:repeat(4,1fr)}.chapter{padding:20px}.hero h1{font-size:26px}}@media print{aside,.hero,.gallery{display:none}main{margin:0;padding:0}.chapter{box-shadow:none;border-radius:0;page-break-before:always}body{background:white}a{color:inherit}}</style></head><body><aside><b>庞巴迪影视工作台<br><small>交接阅读入口 · 2026.10.25</small></b><nav><a href="#chapter-1">庞巴迪影视工作台：项目现状与完成边界</a><a href="#chapter-2">影视制作 SOP</a><a href="#chapter-3">庞巴迪影视工作台：用户操作手册</a><a href="#chapter-4">技术架构与开发维护</a><a href="#chapter-5">全部元素与素材清单</a><a href="#chapter-6">06｜部署、备份与恢复</a><a href="#chapter-7">07｜验证记录与待办</a></nav><a href="清单/全部文件清单.csv">逐文件素材 / 代码清单 ↗</a><a href="https://github.com/itawjh-lgtm/pangbadi-film-workbench">GitHub 私有仓库 ↗</a></aside><main><header class="hero"><img src="../../assets/projects/lighthouse-cover.webp" alt="灯塔案例"><div><p>项目交接 · 截至 2026 年 10 月 25 日</p><h1>从一个想法，到一支创作团队。</h1><p>当前能力、制作 SOP、操作手册、全部资源与代码，一次交接。</p></div></header><div class="tags"><span>21 位伙伴</span><span>16 影视 + 5 游戏岗位</span><span>25 份岗位原文</span><span>本机网页 + Mac 外壳</span></div><div class="intro"><b>先了解当前版本，再开始操作。</b><p>日常原工作台在 8767；交付包便携模式在 8768。GitHub 保存代码与资源，私人项目和密钥保存在桌面的独立备份里。这个快照保留未完成项，不把计划写成已经实现。</p><a href="#chapter-3">我想直接看操作手册 →</a></div><section class="gallery"><h2>团队伙伴与人物资源</h2><div class="portraits"><figure><img loading="lazy" src="../../assets/thumbs/R01.webp" alt="顾闻溪"><figcaption>顾闻溪<small>R01</small></figcaption></figure><figure><img loading="lazy" src="../../assets/thumbs/R02.webp" alt="许澄"><figcaption>许澄<small>R02</small></figcaption></figure><figure><img loading="lazy" src="../../assets/thumbs/R03.webp" alt="林砚舟"><figcaption>林砚舟<small>R03</small></figcaption></figure><figure><img loading="lazy" src="../../assets/thumbs/R04.webp" alt="沈知遥"><figcaption>沈知遥<small>R04</small></figcaption></figure><figure><img loading="lazy" src="../../assets/thumbs/R05.webp" alt="周予白"><figcaption>周予白<small>R05</small></figcaption></figure><figure><img loading="lazy" src="../../assets/thumbs/R06.webp" alt="姜云岫"><figcaption>姜云岫<small>R06</small></figcaption></figure><figure><img loading="lazy" src="../../assets/thumbs/R07.webp" alt="程既明"><figcaption>程既明<small>R07</small></figcaption></figure><figure><img loading="lazy" src="../../assets/thumbs/R08.webp" alt="叶初禾"><figcaption>叶初禾<small>R08</small></figcaption></figure><figure><img loading="lazy" src="../../assets/thumbs/R09.webp" alt="梁时远"><figcaption>梁时远<small>R09</small></figcaption></figure><figure><img loading="lazy" src="../../assets/thumbs/R10.webp" alt="苏听澜"><figcaption>苏听澜<small>R10</small></figcaption></figure><figure><img loading="lazy" src="../../assets/thumbs/R11.webp" alt="陆观行"><figcaption>陆观行<small>R11</small></figcaption></figure><figure><img loading="lazy" src="../../assets/thumbs/R12.webp" alt="宋岑"><figcaption>宋岑<small>R12</small></figcaption></figure><figure><img loading="lazy" src="../../assets/thumbs/R13.webp" alt="何景澈"><figcaption>何景澈<small>R13</small></figcaption></figure><figure><img loading="lazy" src="../../assets/thumbs/R14.webp" alt="孟舒言"><figcaption>孟舒言<small>R14</small></figcaption></figure><figure><img loading="lazy" src="../../assets/thumbs/R15.webp" alt="邵行舟"><figcaption>邵行舟<small>R15</small></figcaption></figure><figure><img loading="lazy" src="../../assets/thumbs/R16.webp" alt="陶知夏"><figcaption>陶知夏<small>R16</small></figcaption></figure><figure><img loading="lazy" src="../../assets/thumbs/G01.webp" alt="季怀宁"><figcaption>季怀宁<small>G01</small></figcaption></figure><figure><img loading="lazy" src="../../assets/thumbs/G02.webp" alt="陈屿川"><figcaption>陈屿川<small>G02</small></figcaption></figure><figure><img loading="lazy" src="../../assets/thumbs/G03.webp" alt="唐亦晴"><figcaption>唐亦晴<small>G03</small></figcaption></figure><figure><img loading="lazy" src="../../assets/thumbs/G04.webp" alt="温墨衡"><figcaption>温墨衡<small>G04</small></figcaption></figure><figure><img loading="lazy" src="../../assets/thumbs/G05.webp" alt="白若棠"><figcaption>白若棠<small>G05</small></figcaption></figure></div></section><section id="chapter-1" class="chapter"><h1>庞巴迪影视工作台：项目现状与完成边界</h1>
+<p>整理日期：2026-10-25。本文对应本次交付的源代码，不把历史设计图、测试夹具或已写好的提示词当作实际成片。</p>
+<h2>1. 当前交付是什么</h2>
+<p>这是本机运行的影视与游戏团队工作台：用户担任总策划，21 位有岗位指令的伙伴参与文字工作；影视项目可串联六阶段文稿协作，再进入人物资产、分镜和图片／视频创作画布。</p>
+<p>核心组成是 HTML/CSS/JavaScript 前端、Python 标准库本机服务、SQLite 与本地运行文件，以及现有 AppKit/WKWebView Mac 外壳源码。当前不是多用户云平台，也不是可以随意复制到其他电脑就独立运行的新 Mac 安装包。</p>
+<table>
+<thead>
+<tr>
+<th>交付位置／入口</th>
+<th>用途</th>
+<th>数据边界</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>原工作台 <code>http://127.0.0.1:8767/</code></td>
+<td>继续现有正式项目</td>
+<td>仍使用原项目的 <code>data/runtime/</code>；本次交付整理不重启、不迁移</td>
+</tr>
+<tr>
+<td>桌面交付的 <code>01_源码与资源</code></td>
+<td>源码、界面资源、岗位快照、说明及启动脚本；GitHub 同步对象</td>
+<td>不含正式密钥、真实运行库和私有输入</td>
+</tr>
+<tr>
+<td><code>scripts/start-portable.command</code></td>
+<td>启动交付副本，默认端口 8768</td>
+<td>使用 <code>data/portable-runtime/</code> 和 <code>prompts</code> 快照，与原 8767 分开</td>
+</tr>
+<tr>
+<td>桌面交付的 <code>02_本地私有数据备份</code></td>
+<td>原项目的私有恢复资料</td>
+<td>不进入 GitHub；按个人私有备份保管</td>
+</tr>
+<tr>
+<td>桌面 HTML 导航</td>
+<td>找到说明、源码和启动入口</td>
+<td>导航页本身不运行模型或替代后台</td>
+</tr>
+</tbody>
+</table>
+<p>交付副本不是自动接管正式项目；不要为了试运行而覆盖原数据库或把旧服务端口改成新副本。私有备份含项目内容及可能的连接凭据，需独立保管。</p>
+<h2>2. 已实现的能力</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>当前行为</th>
+<th>需要理解的边界</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>21 位伙伴</td>
+<td>影视 R01—R16、游戏 G01—G05；独立工位、项目对话、岗位原文、最多 4 人依次交接</td>
+<td>工位和项目上下文分开；角色名称不会赋予未接工具</td>
+</tr>
+<tr>
+<td>文字执行</td>
+<td>使用本机已登录 Codex CLI 产出剧本、分镜、提示词、方案、代码文本</td>
+<td>当前执行器禁用外部工具，不能自动联网调研、运行游戏或检查真实画质</td>
+</tr>
+<tr>
+<td>影视自动协作</td>
+<td>R11 → R03 → R05 → R04 → R06 → R11 固定六阶段；暂停、继续、审阅、定点返修、历史稿保留</td>
+<td>五个岗位承担六个阶段；不是 21 个员工同时自由调度</td>
+</tr>
+<tr>
+<td>审核模式</td>
+<td>新建项目和开始协作均可选择“团队连续完成”或“逐步审核”</td>
+<td>连续模式最终仍需总策划确认；不等于自动批准媒体费用</td>
+</tr>
+<tr>
+<td>人物资产</td>
+<td>从已批准美术稿提取人物，姓名介绍与提示词分开；生成定妆、单张／整组采用、版本与引用</td>
+<td>人物图先于含人物的镜头图；占位人物不能冒充原作已核实人物</td>
+</tr>
+<tr>
+<td>创作画布</td>
+<td>稳定镜号、每镜图片／视频节点、提示词自动导入；平移缩放、拖动、自由节点、批量操作</td>
+<td>镜头按文稿解析，不凭空补成已制作镜头；图片在上、视频在下</td>
+</tr>
+<tr>
+<td>图像与视频模型</td>
+<td>RunningHub 模型目录、动态参数、官方报价、提交与状态查询；个人工作流接口保留</td>
+<td>接入目录不等于全部模型逐一付费实测或当前账号都有权限</td>
+</tr>
+<tr>
+<td>结果管理</td>
+<td>结果归项目／镜号／文稿版本，图片预览、视频播放器、原片入口、任务状态</td>
+<td>远程结果不等于已下载归档，不自动剪成完整影片</td>
+</tr>
+<tr>
+<td>成果汇总</td>
+<td>项目导航末尾；主展示、生成结果、文稿、默认折叠完成记录；可指定主展示／最终成片</td>
+<td>“最终成片”是用户展示标记，不代替专业验收或发布审批</td>
+</tr>
+<tr>
+<td>删除恢复</td>
+<td>软删除、撤销、回收站恢复，单条／批量／清空的永久删除确认、依赖保护</td>
+<td>仅清理本工作台本地内容，不删除 RunningHub 云端文件、独立备份</td>
+</tr>
+<tr>
+<td>数据与客户端</td>
+<td>浏览器／现有 Mac 外壳共用本机后端；持久记录、冲突保护、导出</td>
+<td>未交付多人云协作或全新签名公证的分发客户端</td>
+</tr>
+</tbody>
+</table>
+<h2>3. 模型与配置现状</h2>
+<p>2026-10-25 对当前 <code>server/media_models.py</code> 的只读核对：登记 <strong>311 个接口，其中图像 99、视频 212</strong>；代码目录当前可选 <strong>305</strong>、禁用 <strong>6</strong>。其中包含生成、编辑和处理操作，不等于 311 个独立基础模型。本机运行时还可能根据已确认下架错误禁用具体接口，实际可选项以当前页面为准。</p>
+<p>模型直连使用 RunningHub 标为“企业级-共享”类型的 Key；个人账号也可持有这种 Key，不代表必须开通企业账户。消费级个人 Key 用于工作流通道，两类凭据分别保存。模型直连通常不需要工作流 ID；工作流方式必须有实际工作流和提示词字段映射。中国站已明确下架的 G2／Ultra 具体文生图接口已停用，不扩大到同系列所有接口，也不自动切换国际站。</p>
+<p>默认人物与纯场景图使用 Seedream 5 Pro 文生图；含人物镜头使用对应图生图接口和已采用定妆；镜头视频使用 Seedance 2.5 图生视频，引用本镜当前成功图片。模型必须实际可用且参数通过校验，默认值不代表已为所有题材验证质量。</p>
+<p>本次没有接入 RunningHub 国际站 Image 2，也没有把普通无限画布网址转换成模型 API。外部 RunningHub 画布中的任务暂不自动同步成本地项目记录。</p>
+<h2>4. 验证证据按范围阅读</h2>
+<table>
+<thead>
+<tr>
+<th>证据</th>
+<th>已证明</th>
+<th>未证明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>历史“六秒纸船”真实文字小样</td>
+<td>隔离数据库中六阶段真实 Codex 调用与上游交接均成功，最后等待审阅</td>
+<td>正式长片质量、图片／视频或全片交付</td>
+</tr>
+<tr>
+<td>历史个人工作流单图</td>
+<td>一次真实提交返回 512×512 PNG，浏览器实际加载；账单记录 27 秒、6 RH 币</td>
+<td>美术质量合格；用户曾指出效果不满意；不代表当前默认 Seedream 效果</td>
+</tr>
+<tr>
+<td>历史既有视频</td>
+<td>一条 4.064 秒、720×1280 视频曾播放到结束且无媒体错误；另一条 5.056 秒、1280×720 已加载元数据</td>
+<td>新人物定妆→含人物镜头→视频整条链路的质量验收</td>
+</tr>
+<tr>
+<td>历史目录联调</td>
+<td>多模型模拟契约验证、6 个代表接口真实报价与页面操作</td>
+<td>305 个当前可选接口逐一真实生成或同等质量比较</td>
+</tr>
+<tr>
+<td>8894 隔离交互</td>
+<td>人物大窗、保存／重开、切人物不串稿；回收站选择和取消；主展示视频 <code>readyState=4</code>、720×1280</td>
+<td>正式数据库永久删除；最终成片标记浏览器刷新回读；完整成片验收</td>
+</tr>
+<tr>
+<td>本次最后前端检查</td>
+<td>主执行者记录 JavaScript 277 项通过；smoke 85 视图、48 个资源通过</td>
+<td>全部浏览器视觉或真实付费生成检查</td>
+</tr>
+<tr>
+<td>本次最后后端检查</td>
+<td>主执行者记录完整 Python 348 项通过，含最终便携启动测试</td>
+<td>所有真实模型、外部平台与专业效果逐项验收</td>
+</tr>
+</tbody>
+</table>
+<p>历史来源包括 <code>automatic-collaboration-2026-10-25.md</code>、<code>2026-10-25-runninghub-live-test.md</code>、<code>2026-10-25-runninghub-full-models.md</code> 和 <code>2026-10-25-character-production.md</code>。这些原在 <code>docs/qa/</code> 中的历史记录本次复制到桌面 <code>02_本地私有数据备份/historical-qa/</code>，不进入 GitHub；完整后端新日志位于交付中的 <code>验证/后端回归结果.txt</code>。旧记录中的“当时未配置”“仅 4 模型”“307 可选”“无画布”等属于历史阶段，不能当作当前状态。根 README 已按当前状态重写。</p>
+<p>最近正式只读检查记录为首页、参考 CSS／PNG、<code>/api/health</code>、<code>/api/trash</code> HTTP 200；没有生成或删除 POST。最新首页视觉检查受 Work settings 限制未完成，尚无最终布局新截图。<code>open_in_codex</code> 返回 queued 只表示打开请求排队，不等于已实际打开。</p>
+<h2>5. 明确未完成的项目</h2>
+<table>
+<thead>
+<tr>
+<th>未完成项</th>
+<th>当前状态</th>
+<th>后续要补什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>首页两倍大的作品封面／自动视频海报</td>
+<td><code>lib/media-posters.js</code> helper 存在，但尚未接入首页资源加载与渲染；两倍大封面未完成</td>
+<td>接线、比例布局、真实视频取帧与失败回退、浏览器验收</td>
+</tr>
+<tr>
+<td>最新首页参考视觉验收</td>
+<td>三块参考图区与真实 HTML 控件已实现；最新视觉未浏览器复核</td>
+<td>宽屏／窄屏、滚动、真实素材和按钮检查</td>
+</tr>
+<tr>
+<td>国际站 Image 2</td>
+<td>未接入</td>
+<td>官方契约、站点和账号权限、报价、输出、失败处理分别验证</td>
+</tr>
+<tr>
+<td>新默认人物链真实验收</td>
+<td>人物／镜头引用与门禁已实现</td>
+<td>经用户授权的定妆、采用、含人物镜头、视频完整实测及画质检查</td>
+</tr>
+<tr>
+<td>自动合成成片</td>
+<td>未实现</td>
+<td>镜头剪辑、声画、字幕、音频、导出、完整播放与技术验收</td>
+</tr>
+<tr>
+<td>游戏自动制作</td>
+<td>游戏岗位、文字工位、模板和对话已具备；固定自动流程拒绝游戏项目</td>
+<td>可运行工程、构建工具、试玩与测试证据</td>
+</tr>
+<tr>
+<td>新 Mac 独立分发包</td>
+<td>沿用现有外壳源码，未新打包公证</td>
+<td>自包含依赖、迁移、签名、公证与安装验收</td>
+</tr>
+<tr>
+<td>聊天内嵌 build-preview</td>
+<td>本次构建因超过 1 MB 限制失败</td>
+<td>缩减／拆分资源；不影响本机服务网页使用</td>
+</tr>
+<tr>
+<td>多人云协作、云端发布</td>
+<td>未交付</td>
+<td>身份权限、多人冲突、云部署、存储与发布流程</td>
+</tr>
+</tbody>
+</table>
+<p>本次为代码与说明交付整理，不继续扩展功能、不运行付费生成、不删除正式内容。桌面备份和 GitHub 源码是两种不同用途的交付，不以源码仓库替代私有数据备份。</p><p class="source"><a href="01_项目现状与完成边界.md">查看 Markdown 源文档</a></p></section><section id="chapter-2" class="chapter"><h1>影视制作 SOP</h1>
+<p>适用：庞巴迪影视工作台本机版，短片、宣传片、漫剧和动画的文稿、人物与镜头素材制作。用户是总策划。标准顺序：</p>
+<p><strong>明确需求 → 自动协作文稿 → 人物定妆 → 核对分镜 → 镜头图片 → 镜头视频 → 外部剪辑／检查 → 成果与交付。</strong></p>
+<p>当前自动协作负责文字流程，画布负责生成素材；外部剪辑与最终专业验收仍需要另外完成。</p>
+<h2>1. 建立项目与制作基准</h2>
+<p>总策划填写项目名称和简报，选择“影视短片”或用于影视工作的“影视 × 游戏联动”，并保留至少一位制作与一位复核伙伴。创建项目只建立资料和待办，点击自动协作的开始按钮才调用文字模型。</p>
+<p>简报建议一次写齐：</p>
+<pre><code class="language-text">项目：
+目标与受众：
+作品类型、时长、画幅：
+故事主题与希望观众感受到什么：
+原始文稿／小说段落／必须保留内容：
+人物及关系：
+视觉风格与参考：
+对白、旁白、配乐要求：
+禁止改动、待核实信息、版权或平台限制：
+本轮交付：完整剧本、人物设定、逐镜稿和生成提示词。
+</code></pre>
+<p>只有链接而没有正文时，先自行整理可用文字资料。当前员工文字执行器不会自动联网阅读全文或核查版权；资料中的事实、创作建议和待核实项需要分开标识。</p>
+<p>完成条件：总策划能确认作品范围、素材依据及不允许改变的内容，而不只是一个模糊主题。</p>
+<h2>2. 选择文稿审核方式</h2>
+<table>
+<thead>
+<tr>
+<th>方式</th>
+<th>团队如何推进</th>
+<th>总策划何时操作</th>
+<th>适用情况</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>团队连续完成</td>
+<td>六阶段连续交接文字成果</td>
+<td>最终文稿统一审核，也可对已完成阶段定点返修</td>
+<td>简报充分、希望少打断的项目</td>
+</tr>
+<tr>
+<td>逐步审核</td>
+<td>剧本、美术设定、最终交付停靠</td>
+<td>每个停靠点查看全文后认可或交回修改</td>
+<td>新题材、人物要求高、首次制作</td>
+</tr>
+</tbody>
+</table>
+<p>新建项目的选择会带入自动协作，开始前仍可调整。两种方式最终都需要总策划确认；“连续完成”不代表自动扣费生图或取消人物采用步骤。运行期间不应把修改项目默认选项当成已改变当前这轮审核方式。</p>
+<h2>3. 六阶段文字协作</h2>
+<table>
+<thead>
+<tr>
+<th>顺序</th>
+<th>岗位</th>
+<th>正式输出</th>
+<th>本步检查重点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>陆观行 R11，影视统筹</td>
+<td>制作简报、范围与约束</td>
+<td>时长、受众、必保留点、待定事项清楚</td>
+</tr>
+<tr>
+<td>2</td>
+<td>林砚舟 R03，编剧</td>
+<td>完整故事、对白／旁白、动作正文</td>
+<td>有可阅读正文；人物目标、情节、结尾一致</td>
+</tr>
+<tr>
+<td>3</td>
+<td>周予白 R05，美术指导</td>
+<td>人物、场景、道具和视觉基准</td>
+<td>每个人物单独编号；介绍、外貌、服装、定妆提示词分开</td>
+</tr>
+<tr>
+<td>4</td>
+<td>沈知遥 R04，导演／分镜</td>
+<td>稳定镜号、时长、景别、动作、运镜、声画设计</td>
+<td>一镜一意图、镜号不混、时长合计与故事一致</td>
+</tr>
+<tr>
+<td>5</td>
+<td>姜云岫 R06，AI 影像</td>
+<td>每镜图片提示词、视频动作提示词与参考要求</td>
+<td>提示词归属准确；人物／场景引用、首帧意图完整</td>
+</tr>
+<tr>
+<td>6</td>
+<td>陆观行 R11，影视统筹</td>
+<td>文稿清单、冲突检查与制作交接</td>
+<td>版本统一，缺失项明确，不把文字自检称为媒体已完成</td>
+</tr>
+</tbody>
+</table>
+<p>在“自动协作”查看当前阶段、负责人、真实执行记录及成果全文。认可前先读稿件；不满意时在该阶段填写具体修改要求，保留应该不变的内容，再“交回修改”。上游返修会让受影响下游按新版重做，旧稿保留。</p>
+<p>需要停下时使用“暂停协作”；失败排除后用“从本步继续”。等待模型期间对话不会自动变成正式返修指令，正式修改应通过阶段审阅入口提交。</p>
+<p>完成条件：最新文稿经总策划确认，人物、场景、镜号和生成提示词相互对应。R11 的检查是模型自检，不等于独立专业审核。</p>
+<h2>4. 人物定妆先行</h2>
+<p>逐步模式下，R05 美术设定获总策划批准后即可进入人物资产；连续模式需等最终文稿总审。人物资产页在分镜前，员工头像与作品角色是两类资料。</p>
+<ol>
+<li>检查提取出的人物名称、介绍、身份和版本。占位稿应明确是占位，不作为原作已核实设定。</li>
+<li>通过“提示词编辑”调整外貌、发型、服装、视图与不可改变项；通过“美术优化”让 R05 给建议，查看并应用后才更新提示词。</li>
+<li>选取需要生成的人物，设置比例、画质与风格。先小批检查方向，再扩大制作量。</li>
+<li>获取本批报价，检查数量与费用后确认一次。图片返回后查看脸型、发型、服装、视图和彼此辨识度。</li>
+<li>满意时“采用这张定妆”，或检查一组候选后“整组采用定妆”。生成成功不会自动等于人物已采用。</li>
+<li>需要的人物均准备好后进入分镜。</li>
+</ol>
+<p>完成条件：本镜要引用的人物都有当前有效定妆。纯场景项目明确无需人物，可直接继续。后台文字分镜可以在美术批准后继续编写，当前没有“人物图确认后才允许写文字分镜”的硬闸；含人物镜头图生成则受定妆引用约束。</p>
+<p>改变人物设定会让原确认失效；新定妆采用后，要重新检查受影响镜头。旧图、旧视频保留，但不能把缺少当前人物版本证据的旧图直接当新镜头首帧。</p>
+<h2>5. 核对分镜并进入画布</h2>
+<ol>
+<li>在“分镜”核对镜头数量、完整镜号、人物关联、构图、时长与来源版本。</li>
+<li>已确认文稿会准备对应图片和视频节点。<code>S01-001</code>、<code>S01-002</code> 等分层镜号分别保留；不是每个场景都重新手建一个空表单。</li>
+<li>人物齐备后进入“创作画布”；每镜图片在上、视频在下，提示词、默认模型与参数已带入。</li>
+<li>如当前在编辑、切页或开着弹窗，后台同步不会强制抢走页面。之后从人物资产、分镜或画布入口继续即可。</li>
+</ol>
+<p>出现漏镜或空提示词时，先查 R04／R06 原文及版本，返修不符合结构的源稿，再同步；不要用无来源的节点补成“已交付”。</p>
+<h2>6. 先图后视频，按批确认</h2>
+<table>
+<thead>
+<tr>
+<th>制作步骤</th>
+<th>默认衔接</th>
+<th>总策划要检查什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>镜头图片</td>
+<td>含人物镜头自动引用已采用定妆；纯场景使用文生图</td>
+<td>人物一致性、场景、构图、遮挡、画幅</td>
+</tr>
+<tr>
+<td>镜头视频</td>
+<td>自动引用本镜当前成功图片作首帧</td>
+<td>动作、运镜、时长、稳定性、声音和可用剪辑区间</td>
+</tr>
+<tr>
+<td>返修</td>
+<td>修改该节点提示词／参数后重新报价生成</td>
+<td>保留项与改动明确，旧结果不要误认为新版本</td>
+</tr>
+</tbody>
+</table>
+<p>点击一个节点的生成按钮，或勾选多个节点后“生成所选”，先取得批次费用，再确认提交。不要期待尚未生成的首帧自动满足图生视频必需输入；先得到可用镜头图，再做视频。</p>
+<p>图片常用参数为画面比例和清晰度，像素及其他字段在高级设置。视频按当前模型显示分辨率、生成时长、声音等；原生与超分档位分开。31 种内置风格可选，也可保持原稿。提示词优化建议必须由用户应用才替换当前草稿。</p>
+<p>“应用画质到所选”只覆盖同模型、同类的兼容节点，保留目标比例，不覆盖提示词与参考；风格批量应用是单独操作。修改模型、参数、提示词或所选节点后旧报价失效，重新取价；单纯平移、缩放、切镜或拖动位置不主动使报价失效。</p>
+<p>预算只是提交前核对，实际扣费以 RunningHub 账单为准。停止批次仅停止尚未提交部分；已提交或结果未知时先查询平台，不重复点击新建任务。</p>
+<h2>7. 素材质检与外部合成</h2>
+<p>图片和视频返回到本镜、项目素材和任务记录。依次完成以下检查，再决定是否采用：</p>
+<ul>
+<li>图片：打开实际文件确认清晰度、人物一致性、手脸细节、文字、水印、构图及可用范围。</li>
+<li>视频：从头到尾播放，核对动作衔接、人物变化、画面闪烁、声音与黑帧；不能仅凭缩略图或加载成功判断质量。</li>
+<li>时长：分镜目标时长与模型素材时长分开。例如目标 2 秒而模型生成 5 秒，需要后续剪辑取用，不代表已自动剪好。</li>
+<li>版本：新旧提示词和定妆版本分清，避免把旧结果用于新文稿。</li>
+</ul>
+<p>当前工作台不自动完成剪辑、配乐、字幕、混音、母版导出。将合格素材交给外部剪辑工具处理，记录版本和成片文件；完成全片播放、技术检查、素材权利与发布平台核对后再交付。</p>
+<h2>8. 交付、归档与清理</h2>
+<p>项目末尾“成果汇总”提供主展示位。可将一张图或一段视频“设为主展示”；只有确认要代表该项目的视频才“设为最终成片”。这是展示选择，不会自动补齐播放、专业验收或发布证据。</p>
+<p>交付时至少保留：最新剧本、人物基准、逐镜表、实际生成提示词、采用素材、版本关系、最终文件与检查记录。远程链接可能失效，重要成片与素材应另行保存；项目 JSON 不包含所有后端运行文件和远程媒体。</p>
+<p>不用的内容先移入回收站。清空／彻底删除必须核对确认列表；仍有引用、在途任务或同步未完成时先解决阻塞。清理本地内容不会删除 RunningHub 云文件或独立备份。</p>
+<p>本 SOP 的闭环完成标准：文本已确认、人物与镜头素材已检查、全片已实际合成播放、专业问题已处理、总策划认可最终版本。当前软件不会因为六阶段文字完成而自动宣称这些条件全部满足。</p><p class="source"><a href="02_影视制作SOP.md">查看 Markdown 源文档</a></p></section><section id="chapter-3" class="chapter"><h1>庞巴迪影视工作台：用户操作手册</h1>
+<p>整理日期：2026-10-25。日常操作按“新建项目 → 自动协作 → 人物资产 → 分镜 → 创作画布 → 成果汇总”进行。</p>
+<h2>1. 打开哪个版本</h2>
+<table>
+<thead>
+<tr>
+<th>想做什么</th>
+<th>打开方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>继续原来的真实项目</td>
+<td>原 Mac 应用 <code>~/Applications/造梦工作室.app</code>，或 <code>http://127.0.0.1:8767/</code></td>
+</tr>
+<tr>
+<td>网页无法访问时启动原后台</td>
+<td>在原项目目录双击 <code>启动工作台.command</code>，再打开 8767</td>
+</tr>
+<tr>
+<td>试运行桌面交付的源码副本</td>
+<td>在 <code>01_源码与资源</code> 中双击 <code>scripts/start-portable.command</code>，按终端输出打开默认 <code>http://127.0.0.1:8768/</code></td>
+</tr>
+<tr>
+<td>查说明、源码和备份位置</td>
+<td>桌面交付 HTML 导航</td>
+</tr>
+</tbody>
+</table>
+<p>交付副本使用独立 <code>data/portable-runtime/</code> 和 <code>prompts</code> 岗位快照；原 8767 继续使用原数据。不要把双击 <code>index.html</code> 或聊天内嵌预览当作可执行后台。内嵌预览本次超过 1 MB 限制未构建成功，本机网页可独立使用。</p>
+<p>真实文字执行仍需要本机可用且已登录的 Codex CLI，媒体生成需要 RunningHub 凭据和网络。交付源码不附带可公开使用的真实账号密钥。</p>
+<h2>2. 页面怎么分工</h2>
+<table>
+<thead>
+<tr>
+<th>位置</th>
+<th>用来做什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>总策划台</td>
+<td>看示范案例、真实成果、当前项目和待处理；示范有标签，与真实作品分开</td>
+</tr>
+<tr>
+<td>项目协作</td>
+<td>当前项目、自动协作、人物、分镜、画布、素材、任务、版本和成果汇总</td>
+</tr>
+<tr>
+<td>任务看板</td>
+<td>管理责任人、复核人、依赖与拍板；登记或执行明确任务</td>
+</tr>
+<tr>
+<td>团队伙伴</td>
+<td>查看 21 位伙伴及岗位，打开个人工位</td>
+</tr>
+<tr>
+<td>共享成果</td>
+<td>查看已有文稿和素材入口，按来源与项目理解内容</td>
+</tr>
+<tr>
+<td>工具与连接</td>
+<td>检查文字执行器、配置 RunningHub、测试连接、打开外部平台</td>
+</tr>
+<tr>
+<td>回收站</td>
+<td>恢复、单条彻底删除、批量删除、清空</td>
+</tr>
+<tr>
+<td>数据备份</td>
+<td>导出／恢复项目 JSON；不是完整运行库备份</td>
+</tr>
+</tbody>
+</table>
+<p>首页大灯塔和两张方案图来自设计参考的图片区，周围文字、伙伴与按钮是实际页面。真实成果目前默认最近 4 份小卡；用户后来要求的“两倍大封面和自动海报”仍未完成。</p>
+<h2>3. 创建项目并选审核方式</h2>
+<ol>
+<li>点击“新建项目”。</li>
+<li>填写项目名、简报、类型，选择制作与复核伙伴。首次影视制作建议用“影视短片”。</li>
+<li>选择“团队连续完成”或“逐步审核”。连续模式只在最终文稿统一审阅；逐步模式在剧本、美术设定、最终交付停下。</li>
+<li>创建后进入“自动协作”。项目说明已自动带入，协作方式可直接选择；需要修改说明时展开“查看或调整项目说明”。</li>
+<li>点击“按现有说明开始”。页面进入执行阶段后，不需要再填一遍新建需求表。</li>
+</ol>
+<p>创建模板只是建立任务与决策，不会自行调用模型。游戏项目可用游戏工位、团队对话和任务模板，当前固定六阶段自动制作不支持游戏工程生成。</p>
+<h2>4. 阅读、审核与返修文稿</h2>
+<p>自动协作按 R11 制作规划、R03 剧本、R05 美术、R04 分镜、R06 提示词、R11 汇总推进。点击交付查看全文，也可下载 Markdown。</p>
+<ul>
+<li>满意：在审阅点点击“认可这版，继续”。美术稿批准后可进入人物资产；最终文稿按钮会引导人物准备。</li>
+<li>要改：写具体意见并“交回修改”。描述保留什么、改什么、期望输出；旧稿保留在历史版本。</li>
+<li>修改已完成阶段：展开该阶段的“修改这个阶段”。上游改动会使相关下游重新制作。</li>
+<li>想暂停：点击“暂停协作”；稍后“继续协作”。失败时排除错误后“从本步继续”。</li>
+<li>已结束，想做新一轮：展开“发起新一轮协作”，检查说明与模式后开始。</li>
+<li>出现“版本已更新”：先看最新稿，再确认使用当前版本，不直接提交旧审阅意见。</li>
+</ul>
+<p>当前文字执行器不会自己浏览网页、读取屏幕、做真实素材质检或发布。要它依据资料工作时，把必要正文放到项目说明或对话里；待核实信息明确标出。</p>
+<h2>5. 制作人物资产</h2>
+<p>逐步审核中，确认 R05 美术稿即可进入人物资产，后台文字分镜可以继续。连续模式则在最终总审后准备人物。</p>
+<p>人物表左侧是姓名和介绍，中间是定妆候选／已采用图，右侧是操作。员工头像不作作品角色参考。</p>
+<ol>
+<li>先核对角色是否齐全、介绍是否准确。缺角色可“＋ 新建人物”，分别填名字、介绍和定妆提示词。</li>
+<li>“提示词编辑”修改定妆要求；“美术优化”打开大窗口，左侧看图，右侧改提示词和填写优化要求。</li>
+<li>“放大编辑 ↗”扩大窗口，“还原窗口 ↙”恢复，“完成编辑”、关闭或 Escape 退出。查看保存状态后再离开。</li>
+<li>R05 返回建议后可先编辑，点击应用才更新提示词。仅查看建议不会生图；过时建议不会直接覆盖后来修改的草稿。</li>
+<li>点击“画质 / 风格”选参数，勾选需要生成的角色，再单张生成或批量生成。</li>
+<li>查看本批费用后确认。图片返回时检查，再点“采用这张定妆”；一组都满意可“整组采用定妆”。</li>
+<li>人物准备好后点击“进入分镜”。纯场景无需虚构人物。</li>
+</ol>
+<p>提示“设定已改 · 需更新”时，重新生成并采用当前版本。没有已采用定妆的含人物镜头会被阻止生成；采用新图后旧镜头结果仍保留，需核查是否需要重做。</p>
+<h2>6. 在画布生成图片与视频</h2>
+<h3>自动带入的内容</h3>
+<p>已确认文稿会带入镜号、图片提示词、视频提示词、来源和默认模型。每镜对应图片与视频两类节点；镜头图片完成后，图生视频自动使用本镜当前成功图片作首帧。分层镜号如 <code>S01-001</code> 会完整保留。</p>
+<p>默认图片用 Seedream 5 Pro；含人物镜头自动使用已采用人物参考。自动镜头视频默认 Seedance 2.5 图生视频。自由新增视频需按用途选择模型和必需输入，不一定能直接复用镜头自动配置。</p>
+<h3>操作步骤</h3>
+<ol>
+<li>核对分镜，点击创作画布；人物未完成时先回人物资产处理。</li>
+<li>点击卡片的“画质 / 风格 / 提示词”，检查或修改该镜内容。</li>
+<li>先勾选需要的图片，点击单卡生成或“生成所选”，检查预计费用与明细并确认本批。</li>
+<li>等图片成功，检查结果后再选择对应视频生成。没有首帧时不能凭空开始图生视频。</li>
+<li>不满意就改该节点提示词／参数，重新报价生成；旧结果在项目素材中保留。</li>
+</ol>
+<p>不必逐镜重新选择一次默认模型，也不必每张图先填一套接口表单。每批费用仍需确认一次；人物采用和文稿审阅是另外的创作决定。</p>
+<h3>画布移动和布局</h3>
+<ul>
+<li>拖动空白处平移，拖动卡片顶部调整位置。</li>
+<li>用缩放按钮，或 Control／Command 配合滚轮缩放；“全览”查看整体。</li>
+<li>顶部镜头导航定位某镜；图片在上、视频在下。</li>
+<li>“＋图片”“＋视频”新增自由创作节点。</li>
+<li>可收起右侧编辑器，切换“团队对话”和“提示词”。专注模式铺满工作区，退出专注或 Escape 返回。</li>
+<li>可拖动布局分隔线调整支持的页面栏宽；项目右侧协作可“收起协作”／“展开协作”，窗口偏好单独保存。</li>
+</ul>
+<p>自动同步期间若正在输入、切页或打开弹窗，工作台会保留当前操作；之后主动进入对应页即可，不需要重新建项目。</p>
+<h2>7. 参数、风格、提示词怎么改</h2>
+<table>
+<thead>
+<tr>
+<th>控件</th>
+<th>操作与限制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>画面比例</td>
+<td>图片常用 9:16、16:9、1:1、3:4 等，范围由当前模型决定；非标准值显示自定义</td>
+</tr>
+<tr>
+<td>清晰度</td>
+<td>Seedream 常用 1K／2K；改清晰度保留当前比例，像素值可在高级设置查看</td>
+</tr>
+<tr>
+<td>视频参数</td>
+<td>以模型实际能力显示分辨率、生成时长、声音、草稿等；区分原生和超分</td>
+</tr>
+<tr>
+<td>内置风格</td>
+<td>31 种风格，也可保持原稿；通过实际提交提示词查看叠加内容</td>
+</tr>
+<tr>
+<td>批量画质</td>
+<td>只对兼容的同模型、同类所选节点应用，保留目标自身比例；不覆盖提示词和参考</td>
+</tr>
+<tr>
+<td>批量风格</td>
+<td>与画质分别应用，不顺带改变尺寸</td>
+</tr>
+<tr>
+<td>更换模型</td>
+<td>展开高级设置；参数随接口改变，必需参考图需重新满足</td>
+</tr>
+<tr>
+<td>优化提示词</td>
+<td>人物交给 R05，镜头交给 R06；用户应用建议后才改变草稿</td>
+</tr>
+</tbody>
+</table>
+<p>“分镜目标时长”与“模型生成时长”不同；目标 2 秒、素材 5 秒时，后续剪辑取用，不会在工作台自动裁成 2 秒。</p>
+<p>改模型、提示词、参数、所选节点或预算后重新报价。浏览、平移、缩放和移动卡片不主动使报价失效，但官方报价自然过期后仍需刷新。降低画质或缩短时长是否便宜，以重新取得的实际报价为准。</p>
+<h2>8. RunningHub 怎么配置</h2>
+<p>进入“工具与连接”。日常只需把模型 Key 保存并测试一次，之后回项目选模型生成即可；下方工作流连接是可选项，不需要两种方式都配置。</p>
+<h3>模型 API 连接</h3>
+<ol>
+<li>在 RunningHub 个人账号获取符合模型 API 要求的“企业级-共享”类型 Key；该类型名称不等于需要企业账户。</li>
+<li>在“模型 API 密钥”密码框填写，点“保存模型连接”，再“测试模型连接”。已保存时留空表示保留，移除需勾选相应选项。</li>
+<li>回项目选择模型和参数，读取官方报价。测试连接不生成；保存成功也不等于所有模型都能使用。</li>
+</ol>
+<h3>个人工作流 API</h3>
+<ol>
+<li>展开“可选 · 个人工作流 API 连接”，填消费级个人 Key、默认工作流链接／ID和参考单价、币种。</li>
+<li>保存并“测试账户连接”。</li>
+<li>读取工作流参数，明确把提示词映射到实际接收它的字段，再在项目中生成。</li>
+</ol>
+<p>无限画布链接不是工作流 ID。AI 应用与工作流也不能随意互换；当前通用工作流接口按 ComfyUI 字段契约处理。素材输入依实际接口要求，常见是公开 HTTPS 链接；没有通用本地文件上传或任意 Base64 通道。</p>
+<p>模型通道调用官方 price-preview；工作流参考价来自配置，两者都不是服务商扣费硬上限。预算可选，仅在提交前核对。任务结果不明时先到平台核对任务编号，不要反复新建生成请求。</p>
+<p>“打开无限画布”只跳转 RunningHub 网页，外部画布任务目前不自动回填本地。国际站 Image 2 尚未接入。下架接口显示禁用时，请选当前可用模型，不要把旧失败任务当新模型已经失败。</p>
+<p>密钥只保存在本机服务端配置，不发到聊天、不贴截图、不提交 GitHub。连接权限、价格和模型是否可用可能变化，应以当前测试与平台结果为准。</p>
+<h2>9. 去哪里看进度和结果</h2>
+<ul>
+<li>画布：本节点的真实排队、执行、成功、失败或未知状态；活跃批次会查询进展，不显示编造的生成百分比。</li>
+<li>项目“任务”：查看执行编号、状态与错误；需要时查询服务商最新状态。</li>
+<li>项目“素材”：成功返回的图片、视频及文本结果；可预览和查看原文件。</li>
+<li>项目末尾“成果汇总”：顶部主展示，之后生成结果、文稿、默认收起的完成任务。</li>
+</ul>
+<p>在生成结果中“设为主展示”选择一张图或视频；视频可“设为最终成片”，显示“你已指定”。这个标签不表示自动剪辑完成、专业质检通过或已发布。远程播放器可用也不代表重要文件已保存到电脑。</p>
+<h2>10. 与伙伴单独沟通和手动任务</h2>
+<p>“团队伙伴”中打开工位，选择对话或产出。项目内可 <code>@姓名</code> 或 <code>@R03</code> 指定伙伴，或选择最多 4 人依次协作；后者读取前序保存交付。独立工位不自动带入当前项目。需要围绕项目工作时优先在项目内发起。</p>
+<p>本地便笺只记录内容，不调用模型。手动任务看板要求责任人与不同复核人，依赖及拍板未满足会阻塞；模型返回文字不会自动把任务改为完成。自动协作阶段完成、手动任务完成、专业复核和总策划认可分别记录。</p>
+<h2>11. 删除与恢复</h2>
+<p>普通卡片垃圾桶、画布“删除所选”会将内容移入回收站。项目删除会说明范围，恢复项目不会自动恢复之前单独删除的内容。删除节点不会同时删除它生成的所有媒体。</p>
+<p>回收站中：</p>
+<ul>
+<li>“恢复”找回对应内容。</li>
+<li>单条“彻底删除”、勾选后“删除所选”、或“清空回收站”，都会先弹出不可逆确认列表；取消不删除。</li>
+<li>最后确认仅处理这次确认范围。仍被引用、正在执行、排队、结果未知或同步未完成时先解决阻塞。</li>
+<li>永久清理不能从回收站恢复，但不会清除 RunningHub 云端文件、外部导出或独立备份，也不会取消云端任务。</li>
+</ul>
+<h2>12. 保存、备份与迁移</h2>
+<p>原项目后台数据在 <code>data/runtime/</code>，交付副本为 <code>data/portable-runtime/</code>。正式运行库、运行文件与连接配置需要一起备份；项目 JSON 主要包含项目、任务和人工记录，不含全部运行正文、岗位快照或远程媒体原文件。</p>
+<p>多个窗口并发编辑出现冲突时，先导出本页副本，再决定使用哪版；不要忽略提示反复覆盖。网页和 Mac 客户端连接相同后台时共享正式数据，窗口布局和未提交草稿可能分别保存。</p>
+<p>桌面 <code>02_本地私有数据备份</code> 不进 GitHub；<code>01_源码与资源</code> 可用于开发与版本管理。恢复私有备份前先备份目标、停止目标服务并确认数据目录，不把它直接混进正在运行的交付副本。重要媒体要另行下载保存，备份数据库只保留链接不等于备份远程文件。</p>
+<p>原 Mac 客户端关闭窗口或退出应用后，本机后台通常继续；电脑休眠、关机或服务退出仍会影响调用。当前客户端依赖原项目目录、Python 和 Codex 登录，交付没有承诺新的独立安装包。</p>
+<h2>13. 常见问题</h2>
+<table>
+<thead>
+<tr>
+<th>现象</th>
+<th>处理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>网页访问不了</td>
+<td>确认打开的是原 8767 还是副本 8768；启动对应脚本，不并行抢同一端口</td>
+</tr>
+<tr>
+<td>文字执行器未就绪</td>
+<td>查看工具与连接、CLI 登录、网络和额度；保存说明后再开始</td>
+</tr>
+<tr>
+<td>创建项目后团队没动</td>
+<td>创建只建待办，需在自动协作点击开始</td>
+</tr>
+<tr>
+<td>没自动进入画布</td>
+<td>确认最新文稿已审核、人物已采用；若正在编辑导致跳转保护，主动进入对应页</td>
+</tr>
+<tr>
+<td>画布缺镜头／提示词</td>
+<td>核对 R04／R06 原稿结构与版本；返修源稿后同步，勿重复建项目掩盖问题</td>
+</tr>
+<tr>
+<td>图片已出但视频按钮不可用</td>
+<td>检查当前镜头成功首帧、人物版本及模型必需字段；旧图未必满足当前版本</td>
+</tr>
+<tr>
+<td>看到“未知”或超时</td>
+<td>先查询原任务和平台记录，避免新建请求重复扣费</td>
+</tr>
+<tr>
+<td>改参数后报价消失</td>
+<td>正常失效保护，重新获取报价并确认当前批次</td>
+</tr>
+<tr>
+<td>想一键出完整影片</td>
+<td>当前生成镜头素材，剪辑、配音、字幕与最终导出需外部工具</td>
+</tr>
+<tr>
+<td>想让游戏团队直接做可运行游戏</td>
+<td>当前提供岗位文字协作和规划，尚未接入游戏自动构建与测试</td>
+</tr>
+<tr>
+<td>提示删除依赖冲突</td>
+<td>先解除引用，或将关联内容移入回收站后同批处理；不要绕过保护</td>
+</tr>
+</tbody>
+</table>
+<p>首次试用可做一个短小、少人物的镜头链，逐步审核文稿，先出定妆和一张镜头图，再生成视频。真实生成按平台计费，本手册与交付整理本身不会创建任务。</p><p class="source"><a href="03_用户操作手册.md">查看 Markdown 源文档</a></p></section><section id="chapter-4" class="chapter"><h1>技术架构与开发维护</h1>
+<p>盘点日期：2026-10-25。本文描述交接时磁盘上的代码，不代表所有外部模型均已实测。交付包逐文件数量和校验值以同目录 <code>清单/全部文件清单.csv</code>、<code>清单/全部文件清单.json</code> 为准。</p>
+<h2>1. 系统组成</h2>
+<p>本项目是本机单用户创作工作台：原生 HTML/CSS/JavaScript 页面连接 Python 回环 HTTP 服务；SQLite 保存项目与执行记录；文字任务通过本机已登录的 Codex CLI 执行；图片与视频通过 RunningHub API 提交。Mac 客户端是同一网页的 AppKit + WKWebView 外壳。</p>
+<pre><code class="language-mermaid">flowchart LR
+    U[总策划 / 浏览器或 Mac 客户端] --&gt; UI[HTML / CSS / JavaScript]
+    UI &lt;--&gt; S[Python 本机 HTTP 服务]
+    UI &lt;--&gt; L[浏览器 localStorage 与会话草稿]
+    S &lt;--&gt; DB[SQLite 项目快照与运行记录]
+    P[21 角色原文与共享指令] --&gt; R[RoleCatalog]
+    R --&gt; S
+    S --&gt; T[隔离的 Codex CLI 文字执行]
+    S --&gt; M[RunningHub 工作流 / 模型 API]
+    M --&gt; O[服务商托管的图像与视频 URL]
+    O --&gt; UI
+</code></pre>
+<p>这里的“团队”是角色化的软件协作，并非 21 个一直独立在线的真人或无限并行进程。角色能力说明、运行权限、实际工具连接与真实产出必须分开判断。</p>
+<h2>2. 前端模块</h2>
+<p>当前 <code>lib/</code> 有 13 个 JavaScript 模块，其中 12 个由主页面加载；<code>lib/media-posters.js</code> 尚未接线。</p>
+<table>
+<thead>
+<tr>
+<th>文件 / 目录</th>
+<th>主要职责</th>
+<th>维护注意事项</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>index.html</code>、<code>app.js</code></td>
+<td>页面壳、脚本装载、事件派发、表单、对话框、媒体和画布交接</td>
+<td><code>app.js</code> 是交互编排中心；不要另建第二份项目状态</td>
+</tr>
+<tr>
+<td><code>lib/views.js</code></td>
+<td>首页、项目、任务、成员、素材、连接与各种表单的 HTML</td>
+<td>动态内容统一转义；示例视觉与真实媒体成果分开</td>
+</tr>
+<tr>
+<td><code>lib/store.js</code></td>
+<td>v3 工作台状态、字段归一化、任务依赖、决策、项目创建与主展示选择</td>
+<td>新项目字段必须同时加入创建和 <code>normalize()</code>；只修改表单会在回读时丢失</td>
+</tr>
+<tr>
+<td><code>lib/workspace-sync.js</code></td>
+<td>浏览器状态与数据库快照同步、版本比较、冲突与备份</td>
+<td>写入采用预期版本；发生冲突不静默覆盖任一方</td>
+</tr>
+<tr>
+<td><code>lib/runtime.js</code></td>
+<td>本机服务、角色、会话、运行、媒体、回收站的客户端状态</td>
+<td>API 错误、离线和未验证状态应保持可见</td>
+</tr>
+<tr>
+<td><code>lib/production.js</code>、<code>lib/production-views.js</code></td>
+<td>自动协作请求、进度、阶段结果、审阅与返修视图</td>
+<td>草稿、项目默认方式和最近一轮方式有继承关系</td>
+</tr>
+<tr>
+<td><code>lib/canvas.js</code></td>
+<td>横向画布、节点编辑、人物资产、提示词弹窗、生成批次与结果</td>
+<td>保持项目、角色、镜头、来源版本与媒体任务绑定</td>
+</tr>
+<tr>
+<td><code>lib/canvas-controls.js</code></td>
+<td>风格预设、画幅比例、清晰度及模型参数转换</td>
+<td>只能输出目标模型接受的字段，不能把一种模型参数强塞给另一种</td>
+</tr>
+<tr>
+<td><code>lib/character-profile.js</code></td>
+<td>从资料中整理人物名称和介绍</td>
+<td>人物介绍与生图提示词分开，不拿技术提示词充当简介</td>
+</tr>
+<tr>
+<td><code>lib/layout.js</code></td>
+<td>分栏拖动和布局状态</td>
+<td>首页、项目、成员页使用不同布局约束</td>
+</tr>
+<tr>
+<td><code>lib/trash.js</code></td>
+<td>回收站列表、选择、恢复和永久删除确认</td>
+<td>与服务端墓碑联动，不能让旧缓存复活已删除内容</td>
+</tr>
+<tr>
+<td><code>lib/media-posters.js</code></td>
+<td>实验性视频抽帧评分和封面缓存</td>
+<td><strong>没有被 <code>index.html</code> 引入，也没有在 <code>app.js</code> 初始化；不属于已上线能力</strong></td>
+</tr>
+<tr>
+<td><code>styles.css</code>、<code>styles/</code></td>
+<td>基础样式及 8 份分层 CSS</td>
+<td>顺序由 <code>index.html</code> 决定；<code>home-reference.css</code> 最后加载，仅负责首页参考样式</td>
+</tr>
+<tr>
+<td><code>data/employees.js</code>、<code>data/project-templates.js</code></td>
+<td>21 位角色显示资料与项目模板</td>
+<td>模板建立待办，不代表员工已开工</td>
+</tr>
+</tbody>
+</table>
+<p>首页展示图由 <code>lib/views.js</code> 组装为可交互 HTML：大案例图使用本地灯塔图片，部分方案图和最近交付示范通过 SVG viewBox 截取参考截图中的图片区域。页面并非整张截图贴图。首页示例不应登记为用户真实项目的生成结果。</p>
+<h2>3. 后端模块</h2>
+<p><code>server/</code> 有 13 份 Python 源文件，包含包初始化文件。</p>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>责任</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>httpd.py</code></td>
+<td><code>ThreadingHTTPServer</code>、API 路由、静态文件白名单、请求来源及写入令牌检查、服务生命周期</td>
+</tr>
+<tr>
+<td><code>runtime.py</code></td>
+<td>SQLite 通用记录、执行线程与取消、输出附件、重启后中断状态处理；文字执行并发槽位当前为 2</td>
+</tr>
+<tr>
+<td><code>workspace.py</code></td>
+<td>工作台版本快照、CAS 冲突检测、快照数量/大小校验，以及清理墓碑后的旧内容</td>
+</tr>
+<tr>
+<td><code>roles.py</code></td>
+<td>从文件加载 21 个角色与两份共享指令，检查重复/缺失、保留正文和哈希，追加统一执行边界</td>
+</tr>
+<tr>
+<td><code>provider.py</code></td>
+<td>隔离的 Codex CLI 纯文字适配器，检查登录、流式读取事件、超时/取消和错误分类</td>
+</tr>
+<tr>
+<td><code>production.py</code></td>
+<td>固定影视六阶段协作、上下游完整文本交接、阶段审阅、返修与历史版本</td>
+</tr>
+<tr>
+<td><code>project_assets.py</code></td>
+<td>项目人物资产、名称/介绍/设定与来源版本的提取和关联</td>
+</tr>
+<tr>
+<td><code>storyboard.py</code></td>
+<td>分镜来源解析、镜头结构和媒体上下文校验</td>
+</tr>
+<tr>
+<td><code>canvas.py</code></td>
+<td>画布、人物资产准备、节点参数、报价与批次、结果同步和旧版本校验</td>
+</tr>
+<tr>
+<td><code>media.py</code></td>
+<td>平台连接、工作流读取、官方报价、提交、查询、返回结果归一化和已知下架信息</td>
+</tr>
+<tr>
+<td><code>media_models.py</code></td>
+<td>RunningHub 允许的 API 路径、模型 schema、参数验证、可用标记及默认模型</td>
+</tr>
+<tr>
+<td><code>trash.py</code></td>
+<td>软删除、恢复、永久删除、关联保护、墓碑与旧快照净化</td>
+</tr>
+</tbody>
+</table>
+<h2>4. 数据流与真实能力边界</h2>
+<h3>项目与草稿</h3>
+<p><code>lib/store.js</code> 的浏览器状态包含项目、任务、决策、文稿、便笺和界面选择；<code>workspace-sync.js</code> 将内容快照写入 SQLite 的 <code>workspace_snapshots</code>。数据库通用 <code>records</code> 保存运行、自动协作、媒体、画布和回收站等记录。页面草稿与正式执行记录各自保留，不能把界面便笺当作已提交请求。</p>
+<p>正常运行目录为 <code>data/runtime/</code>；便携交付入口使用 <code>data/portable-runtime/</code>。它们包含私有数据，不属于源码清单或公开素材。不要用静态服务器直接公开整个项目目录，也不要将这些目录上传代码仓库。</p>
+<h3>文字协作</h3>
+<p>固定流程为：R11 制作规划 → R03 剧本 → R05 美术设定 → R04 分镜 → R06 生成输入 → R11 交付整理。</p>
+<ul>
+<li><code>stepwise</code>：在剧本、美术设定、最终文稿交付三个节点等待用户审阅，并非每条内部消息都停一次。</li>
+<li><code>continuous</code>：连续完成上述文稿阶段，最终文稿交付仍等待用户确认。</li>
+<li>新建项目保存 <code>reviewMode</code>，自动协作继承；当前表单草稿优先，新一轮通常沿用上轮选择。</li>
+<li>文字执行器禁用 shell、浏览器、插件、图像生成和子 Agent 工具，只返回文字；不因角色描述而获得更多执行权限。</li>
+<li>游戏角色可进行工位对话和项目文本协作，当前固定自动流程不支持游戏项目。</li>
+</ul>
+<p>人物资产先于实际分镜图和镜头视频制作。文稿、美术设定与来源版本准备好后，先核对角色、生成并确认定妆图，再利用这些资产制作镜头。R04 的分镜文稿阶段不等于已生成镜头图像。</p>
+<h3>图像与视频</h3>
+<p><code>media.py</code> 接通 RunningHub 中国站工作流 API 和模型 API；<code>canvas.py</code> 将报价绑定到本次节点、输入参数、素材与预算。用户确认整批报价后按节点提交，不等于每张图都重复弹同一确认。参数或报价过期后需重新确认，未知结果不自动重试产生第二笔任务。</p>
+<p>当前代码目录含 311 个模型操作：图像 99、视频 212；代码层可用标记为 305，禁用 6。公开目录原有 4 个下架项，加上代码记录的 2 个中国站实际下线操作。这个数字表示操作目录，不是 311 个不同品牌，也不是 305 个模型均已运行验证。</p>
+<p>默认中国站生图使用 Seedream V5 Pro 文生图/图生图配对；每个模型的尺寸、比例、参考图和清晰度按其 schema 转换。个人账户可使用哪种 Key 取决于平台的接口要求；工作流 Key 与模型 API 共享 Key 分别保存。RunningHub 国际站 Image 2 的独立接入尚未完成，不能自动将中国站密钥转发到其他站点。</p>
+<p>媒体返回通常仅存服务商 HTTPS URL，前端直接显示 <code>&lt;img&gt;</code> / <code>&lt;video&gt;</code>。当前没有通用本地媒体代理、视频下载缓存、自动剪辑合成或稳定封面抽帧服务；URL 保存成功不代表文件已离线归档或通过播放验收。</p>
+<h2>5. 角色目录与启动参数</h2>
+<p>原默认目录仍是：</p>
+<pre><code class="language-text">~/自己学习/提示词/影视Agent团队提示词/
+~/自己学习/提示词/游戏Agent团队提示词/
+</code></pre>
+<p>交付包包含 25 份原文快照：影视 18 份，游戏 7 份，另有 <code>prompts/README.md</code>。其中 21 份是角色，2 份共享指令，2 份目录索引。没有回写或替换用户原库。</p>
+<p>当前 <code>server.httpd</code> 已支持 <code>--film-dir</code>、<code>--game-dir</code>、<code>--data-dir</code>、<code>--port</code>；不是 <code>--roles-dir</code>。<code>RoleCatalog</code> 在启动时加载快照，改原文后需重启对应服务或明确调用目录重载，不能假定页面刷新就加载了新提示词。</p>
+<p>在项目根目录使用包内快照的等价启动命令：</p>
+<pre><code class="language-sh">python3 -m server.httpd --port 8768 \
+  --data-dir ./data/portable-runtime \
+  --film-dir ./prompts/影视Agent团队提示词 \
+  --game-dir ./prompts/游戏Agent团队提示词
+</code></pre>
+<p>推荐直接执行 <code>bash scripts/start-portable.command</code>，它处理脚本所在目录、端口和角色目录校验。默认端口 8768，环境变量 <code>STUDIO_PORT</code>、<code>STUDIO_PYTHON</code> 可覆盖。原正式服务默认端口 8767，继续使用原提示词库与 <code>data/runtime/</code>。</p>
+<h2>6. 依赖与 Mac 外壳</h2>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>用途 / 现状</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>现代浏览器或 WKWebView</td>
+<td>原生 DOM、dialog、fetch、localStorage、图像和视频播放；没有 React/Vue/Vite 构建链</td>
+</tr>
+<tr>
+<td>Python 3 与标准库</td>
+<td>HTTP、SQLite、线程、子进程、JSON、SSL；当前服务使用 <code>fcntl</code>，不是已验证的跨 Windows 发行版</td>
+</tr>
+<tr>
+<td>本机 Codex CLI</td>
+<td>真实文字生成；需本机安装及登录。可用 <code>STUDIO_CODEX_BINARY</code>、<code>STUDIO_CODEX_MODEL</code> 指定</td>
+</tr>
+<tr>
+<td>RunningHub</td>
+<td>外部媒体服务；登录、余额、权限、模型在线状态和价格均依赖服务商</td>
+</tr>
+<tr>
+<td><code>truststore</code> / <code>certifi</code></td>
+<td><code>media.py</code> 可选 TLS 信任根支持；不应通过关闭证书验证处理连接错误</td>
+</tr>
+<tr>
+<td>Node.js</td>
+<td>运行 <code>.cjs</code> 测试和图片预处理脚本，不是网页线上运行必需</td>
+</tr>
+<tr>
+<td><code>sharp</code></td>
+<td><code>scripts/prepare-assets.cjs</code> 图片缩略图处理；脚本有本机绝对路径回退，移机需安装或修改依赖路径</td>
+</tr>
+<tr>
+<td>Pillow</td>
+<td>旧 <code>scripts/build-preview.py</code> 使用；该脚本现因内嵌内容超过 1 MB 而失败，不影响正常网页</td>
+</tr>
+<tr>
+<td>PyYAML、curl</td>
+<td>公开 RunningHub 文档采集器使用；不参与日常页面展示</td>
+</tr>
+<tr>
+<td>Swift / Apple Command Line Tools、AppKit、WebKit</td>
+<td>编译 <code>desktop/</code> 原生客户端；当前构建目标为 Apple Silicon、macOS 12+</td>
+</tr>
+</tbody>
+</table>
+<p>Mac 外壳的 <code>DesktopConfig.json</code> 在本机构建时记录项目绝对路径、Python 路径和端口；当前不是带完整依赖的通用安装包。网页已更名为“庞巴迪影视工作台”，已有 <code>.app</code> 名称、Bundle ID 与部分内部文案仍保留“造梦工作室”，本次没有重打包或更换客户端身份。</p>
+<h2>7. 开发与验证</h2>
+<p>在项目根目录运行：</p>
+<pre><code class="language-sh">node --test tests/*.test.cjs
+node tests/views.smoke.cjs
+python3 -m unittest discover -s tests -p 'test_*.py' -v
+</code></pre>
+<p>前端测试覆盖状态回读、审阅模式继承、项目与媒体归属、来源解析、画布交接、回收站和视图结构；后端使用临时目录及模拟提供者验证协议、阶段门禁、事务、恢复与错误处理。绑定本机端口需要执行环境允许；沙盒的端口绑定拒绝不能直接算作产品缺陷。</p>
+<p>本次协调记录已收到前端 277 项测试通过、smoke 85 个视图 / 48 个图片资源通过。后端结果、便携启动验证及最终发布状态统一见 <a href="#chapter-7">验证记录与待办</a>，不将正在重跑的测试写成已通过。当前没有新一轮真实浏览器视觉验收，也没有因此触发付费生成。</p>
+<p>维护时优先遵守：</p>
+<ol>
+<li>修改前明确实际运行目录和服务端口，不把设计预览目录当作正式源。</li>
+<li>改字段同步更新归一化、创建、恢复与边界测试；不要直接重置用户数据库。</li>
+<li>改自动协作保持 request ID 幂等、版本校验、旧版本留存和停止/失败状态。</li>
+<li>改人物、镜头或参数后使旧报价失效；不跨项目复用未经确认的角色图。</li>
+<li>改删除逻辑保持批量事务、关联保护和永久删除墓碑；前端隐藏不等于安全清理。</li>
+<li>后端重启前检查运行中任务，先做数据库一致性备份；操作流程见 <a href="#chapter-6">部署备份与恢复</a>。</li>
+</ol>
+<h2>8. 已知未完成项</h2>
+<ul>
+<li><code>lib/media-posters.js</code> 只存在实验代码：独立解码器抽样、亮度/对比度/清晰度评分、缓存与取消；没有入口接线、线上启用或本轮浏览器验证。它的评分也不能等同审美上的“最好看”。</li>
+<li>首页真实成果卡两倍尺寸和自动选择精彩帧的需求尚未完整交付；不能因文件名、CSS 版本参数或实验源文件存在而标记完成。</li>
+<li>端到端媒体自动剪辑、音频生成、游戏可运行构建、多用户云服务和自动发布未实现。</li>
+<li>已有 21 位员工并不代表 21 套外部专业工具都已连接。</li>
+<li>历史 <code>docs/qa/</code> 含用户项目/账户验证材料，不进入共享源码；归入桌面本地私有备份的 <code>historical-qa/</code>，不在本文复写其内容。</li>
+</ul>
+<p>未来实现上述能力时应在正式入口接线、补边界测试、验证页面和实际媒体结果后，更新本文件及验证记录。</p><p class="source"><a href="04_技术架构与开发维护.md">查看 Markdown 源文档</a></p></section><section id="chapter-5" class="chapter"><h1>全部元素与素材清单</h1>
+<p>盘点日期：2026-10-25。本页说明素材分类、用途、可编辑来源和使用边界；逐文件路径、字节数与 SHA-256 由 <code>清单/全部文件清单.csv</code>、<code>清单/全部文件清单.json</code> 提供。新增交接文档会改变总文件数，因此不在正文固定整个交付包的数量。</p>
+<h2>1. 内容分层</h2>
+<table>
+<thead>
+<tr>
+<th>层级</th>
+<th>代表位置</th>
+<th>是什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>正式代码</td>
+<td>根目录、<code>lib/</code>、<code>server/</code>、<code>styles/</code>、<code>data/*.js</code></td>
+<td>当前工作台的可编辑实现</td>
+</tr>
+<tr>
+<td>角色原文快照</td>
+<td><code>prompts/</code></td>
+<td>21 个岗位、共享约束和目录的交接副本</td>
+</tr>
+<tr>
+<td>正式视觉资源</td>
+<td><code>assets/employees/</code>、<code>assets/thumbs/</code>、<code>assets/projects/</code>、<code>assets/scenes/</code></td>
+<td>本地角色图与设计示范图</td>
+</tr>
+<tr>
+<td>美术来源线索</td>
+<td><code>docs/*generation*.json</code>、<code>portrait-prompts.json</code>、<code>character-bible.md</code> 等</td>
+<td>提示词、角色外观、生成记录、资源校验和修订对应关系</td>
+</tr>
+<tr>
+<td>设计与代码历史</td>
+<td><code>docs/design/</code>、<code>docs/archive/</code></td>
+<td>方案图、交互原型、旧实现与补丁参考，不是另一套正式运行入口</td>
+</tr>
+<tr>
+<td>接口公开资料</td>
+<td><code>docs/api/runninghub/</code></td>
+<td>RunningHub 模型目录与 schema 的本地快照</td>
+</tr>
+<tr>
+<td>测试材料</td>
+<td><code>tests/</code>、设计历史中的 fixtures</td>
+<td>模拟数据、契约和边界测试，不是用户成片</td>
+</tr>
+<tr>
+<td>私有运行资料</td>
+<td><code>data/runtime/</code>、<code>data/portable-runtime/</code> 及本地私有备份</td>
+<td>项目数据库、密钥、日志、实际运行附件，不在共享源码包中</td>
+</tr>
+</tbody>
+</table>
+<h2>2. 21 位员工与角色原文</h2>
+<p>显示姓名、岗位、外观与头像关联保存在 <code>data/employees.js</code>。这些人物是虚构的工作台身份，不代表真实人物履历。</p>
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>姓名</th>
+<th>岗位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R01</td>
+<td>顾闻溪</td>
+<td>经营负责人兼商务制片人</td>
+</tr>
+<tr>
+<td>R02</td>
+<td>许澄</td>
+<td>研究与 IP 开发制片人</td>
+</tr>
+<tr>
+<td>R03</td>
+<td>林砚舟</td>
+<td>编剧兼故事策划</td>
+</tr>
+<tr>
+<td>R04</td>
+<td>沈知遥</td>
+<td>导演兼分镜与预演设计</td>
+</tr>
+<tr>
+<td>R05</td>
+<td>周予白</td>
+<td>美术指导兼视觉资产设计</td>
+</tr>
+<tr>
+<td>R06</td>
+<td>姜云岫</td>
+<td>AI 影像艺术家兼技术美术</td>
+</tr>
+<tr>
+<td>R07</td>
+<td>程既明</td>
+<td>动画 CG 与视效制作负责人</td>
+</tr>
+<tr>
+<td>R08</td>
+<td>叶初禾</td>
+<td>剪辑师兼动态图形设计</td>
+</tr>
+<tr>
+<td>R09</td>
+<td>梁时远</td>
+<td>合成调色与母版负责人</td>
+</tr>
+<tr>
+<td>R10</td>
+<td>苏听澜</td>
+<td>声音设计兼配音与音乐统筹</td>
+</tr>
+<tr>
+<td>R11</td>
+<td>陆观行</td>
+<td>项目主控与质量交付统筹</td>
+</tr>
+<tr>
+<td>R12</td>
+<td>宋岑</td>
+<td>技术负责人兼工作流与资产管理</td>
+</tr>
+<tr>
+<td>R13</td>
+<td>何景澈</td>
+<td>版权法务与地区平台合规负责人</td>
+</tr>
+<tr>
+<td>R14</td>
+<td>孟舒言</td>
+<td>国际发行兼本地化与平台运营</td>
+</tr>
+<tr>
+<td>R15</td>
+<td>邵行舟</td>
+<td>营销增长与商业化负责人</td>
+</tr>
+<tr>
+<td>R16</td>
+<td>陶知夏</td>
+<td>财务人力与行政统筹</td>
+</tr>
+<tr>
+<td>G01</td>
+<td>季怀宁</td>
+<td>游戏制作人兼主策划</td>
+</tr>
+<tr>
+<td>G02</td>
+<td>陈屿川</td>
+<td>关卡与玩家体验设计师</td>
+</tr>
+<tr>
+<td>G03</td>
+<td>唐亦晴</td>
+<td>游戏程序兼技术美术</td>
+</tr>
+<tr>
+<td>G04</td>
+<td>温墨衡</td>
+<td>游戏美术兼动画与界面视觉</td>
+</tr>
+<tr>
+<td>G05</td>
+<td>白若棠</td>
+<td>游戏测试兼体验评估</td>
+</tr>
+</tbody>
+</table>
+<p>角色库共有 25 份 Markdown 原文：<code>prompts/影视Agent团队提示词/</code> 18 份，<code>prompts/游戏Agent团队提示词/</code> 7 份。另有 <code>prompts/README.md</code>，所以整个 <code>prompts/</code> 当前共 26 份 Markdown。</p>
+<p>来源为用户原目录 <code>~/自己学习/提示词/影视Agent团队提示词/</code> 和 <code>~/自己学习/提示词/游戏Agent团队提示词/</code>，此次为逐字节快照。每个岗位文件按 R/G 编号命名；运行目录依靠编号与共享指令文件定位，不应随意改名或同时放入两个同编号正本。角色完整能力来自原文，网页的 <code>summary/input/output/next/review</code> 仅用于界面展示。</p>
+<p>影视协调者为 R11，游戏协调者为 G01。固定影视自动协作只调度六阶段所需角色，其他岗位依然可按任务选择，不意味着所有 21 位必须每次全部执行。</p>
+<h2>3. 本地视觉资源盘点</h2>
+<p>本次 <code>assets/</code> 共 69 个文件：40 PNG、28 WebP、1 HTML；其中图像文件 68 个。以下数量不包含 <code>docs/design/</code> 内的历史副本。</p>
+<table>
+<thead>
+<tr>
+<th>分类</th>
+<th>数量与格式</th>
+<th>用途与编辑位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>assets/employees/</code></td>
+<td>21 PNG</td>
+<td>R01—R16、G01—G05 独立角色大图；成员档案及需要高分辨率头像的界面</td>
+</tr>
+<tr>
+<td><code>assets/thumbs/</code></td>
+<td>21 WebP</td>
+<td>与角色编号一一对应的缩略图；列表、协作和首页人物显示</td>
+</tr>
+<tr>
+<td><code>assets/revisions/differentiation-v1/</code></td>
+<td>5 PNG</td>
+<td>R08、R13、R15、R16、G01 的差异化修订来源</td>
+</tr>
+<tr>
+<td><code>assets/archive/before-portrait-differentiation/</code></td>
+<td>5 PNG</td>
+<td>上述五人的修订前版本，供对照与回退</td>
+</tr>
+<tr>
+<td><code>assets/scenes/</code></td>
+<td>3 PNG + 3 WebP</td>
+<td><code>studio-hero</code>、<code>film-world</code>、<code>game-world</code> 三组场景源图与展示格式</td>
+</tr>
+<tr>
+<td><code>assets/projects/</code></td>
+<td>6 PNG + 4 WebP</td>
+<td>灯塔案例及分镜、角色设定、游戏场景；另含首页两张参考截图</td>
+</tr>
+<tr>
+<td><code>assets/media-preview.html</code></td>
+<td>1 HTML</td>
+<td>成果放大播放页面，不是视频文件</td>
+</tr>
+</tbody>
+</table>
+<p><code>assets/projects/</code> 的四组示范素材分别是：</p>
+<ul>
+<li><code>lighthouse-cover</code>：灯塔海岸与红衣角色的案例主视觉。</li>
+<li><code>storyboard</code>：分镜示范。</li>
+<li><code>character-sheet</code>：角色设定示范。</li>
+<li><code>game-level</code>：游戏首关示范。</li>
+</ul>
+<p>每组均保留 PNG 与 WebP。另有 <code>home-visual-reference.png</code> 和 <code>home-deliveries-reference.png</code>，来自用户提供的首页视觉参考。正式首页会裁取其中部分图片区域，交互、文字和按钮由代码实现；修改排版应改 <code>lib/views.js</code> 与首页 CSS，不是在参考截图上叠不可编辑文字。</p>
+<p>PNG 是可继续编辑的位图，不能视为带图层的 PSD、Figma 或三维源工程。当前没有找到与这些角色图对应的 PSD、AI、Blend 或可编辑 Figma 文件交付。能完整复用的是位图、角色外观描述、提示词记录和网页源码。</p>
+<h2>4. 美术提示词、生成与校验材料</h2>
+<table>
+<thead>
+<tr>
+<th>材料</th>
+<th>内容 / 使用方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>docs/character-bible.md</code></td>
+<td>21 角色外观与统一风格约定；改角色时与员工显示资料一并对照</td>
+</tr>
+<tr>
+<td><code>docs/portrait-prompts.json</code></td>
+<td>共享角色美术风格与各角色生成提示词</td>
+</tr>
+<tr>
+<td><code>docs/portrait-generation-root.json</code>、<code>portrait-generation-r02-r08.json</code>、<code>portrait-generation-r09-r16.json</code>、<code>portrait-generation-g03-g05.json</code></td>
+<td>分批角色生成记录与来源线索</td>
+</tr>
+<tr>
+<td><code>docs/portrait-generation-differentiation-v1.json</code>、<code>portrait-revision-sources.json</code></td>
+<td>五位相似角色的差异化修改记录和采用文件映射</td>
+</tr>
+<tr>
+<td><code>docs/assets-manifest.json</code></td>
+<td>角色图数量、唯一性、尺寸、文件大小、SHA-256 与缩略图关联；记录声明使用内置 image_gen</td>
+</tr>
+<tr>
+<td><code>docs/home-art-generation.json</code></td>
+<td>工作室、影视、游戏场景的生成说明</td>
+</tr>
+<tr>
+<td><code>docs/project-visuals-generation.json</code></td>
+<td>灯塔案例视觉、参考关系与 WebP 转换信息</td>
+</tr>
+<tr>
+<td><code>docs/project-character-assets.md</code></td>
+<td>项目人物资产与定妆工作的历史说明</td>
+</tr>
+<tr>
+<td><code>scripts/prepare-assets.cjs</code></td>
+<td>从已选图生成 WebP 缩略图、更新角色资产清单；会改文件，归档查看时无需执行</td>
+</tr>
+</tbody>
+</table>
+<p>历史记录中可能含生成时的临时绝对路径。源路径仍存在、完整过程可复现、当时平台许可覆盖商业用途是三件不同的事。以包内实际文件及全量哈希清单确认“交付了什么”，不依赖临时目录作为唯一素材源。</p>
+<h2>5. 页面元素与可编辑来源</h2>
+<table>
+<thead>
+<tr>
+<th>元素</th>
+<th>正式编辑位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>品牌、导航、顶栏、搜索、新建项目入口</td>
+<td><code>index.html</code>，相关样式在 <code>styles.css</code>、<code>styles/studio.css</code></td>
+</tr>
+<tr>
+<td>总策划台案例、待拍板、最近交付示范、项目成果</td>
+<td><code>lib/views.js</code>、<code>styles/home-reference.css</code>、<code>styles/runtime.css</code></td>
+</tr>
+<tr>
+<td>21 伙伴卡、头像、介绍与岗位属性</td>
+<td><code>data/employees.js</code>、<code>lib/views.js</code>、员工图与缩略图</td>
+</tr>
+<tr>
+<td>新建项目的连续/逐步审阅选择</td>
+<td><code>lib/views.js</code>、<code>lib/store.js</code>、<code>lib/production-views.js</code>、<code>styles/production.css</code></td>
+</tr>
+<tr>
+<td>人物介绍、人物提示词、美术优化和放大弹窗</td>
+<td><code>lib/character-profile.js</code>、<code>lib/canvas.js</code>、<code>styles/canvas.css</code></td>
+</tr>
+<tr>
+<td>画布节点、连线、缩放、生成和媒体结果</td>
+<td><code>lib/canvas.js</code>、<code>lib/canvas-controls.js</code>、<code>styles/canvas.css</code></td>
+</tr>
+<tr>
+<td>风格、比例与清晰度</td>
+<td><code>lib/canvas-controls.js</code> 与 <code>server/media_models.py</code>；风格文本不代表新增模型</td>
+</tr>
+<tr>
+<td>图标</td>
+<td>页面与视图中的内联 SVG / CSS；没有独立商用图标字体包</td>
+</tr>
+<tr>
+<td>中文及西文字体</td>
+<td>系统字体栈；主页面未加载远程字体文件，无随包字体授权书</td>
+</tr>
+<tr>
+<td>分栏拖动与右侧讨论区隐藏</td>
+<td><code>lib/layout.js</code>、<code>styles/splitters.css</code>、<code>app.js</code></td>
+</tr>
+<tr>
+<td>回收站、批量选择和永久删除弹窗</td>
+<td><code>lib/trash.js</code>、<code>styles/trash.css</code>，实际规则由服务端执行</td>
+</tr>
+<tr>
+<td>Mac 图标与客户端窗口</td>
+<td><code>desktop/Sources/DrawIcon.swift</code>、<code>StudioApp.swift</code>、<code>Info.plist</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>lib/media-posters.js</code> 是未接线实验：文件内包含抽取 8 个时间位置、过滤暗场/过曝、按图像细节评分等逻辑，但主页面没有加载或初始化它。当前不应把它列为已生效的“智能视频封面”；相关需求与验收仍在待办。</p>
+<h2>6. 历史设计与原型</h2>
+<p><code>docs/design/media-workspace-review/</code> 当前保留 51 个文件：6 张界面设计 PNG，以及预览/实现中的素材、样例和源码；目录中 PNG 合计 7 张、MP4 2 个。六张主要设计图覆盖图片结果、视频结果、生成中、首次进入、提示词工作窗、个人 API 接口与结果窗。</p>
+<ul>
+<li><code>preview/</code>：可编辑 HTML/CSS/JS 交互原型，含提示词预设、提示词工作窗和示范媒体。</li>
+<li><code>implementation/</code>：当时的实施源、前后端 patch、manifest 与测试 fixtures。</li>
+<li><code>docs/archive/ui-v0.2-before-bot-upgrade/</code>：5 个早期页面/脚本文件。</li>
+<li><code>docs/archive/2026-10-24-before-approved-integration/</code>：7 个批准方案集成前文件。</li>
+</ul>
+<p>这些材料用于追溯取舍和恢复特定设计，不应直接覆盖正式源码。历史 <code>lighthouse-demo.mp4</code> 和 <code>sample.mp4</code> 是预览/测试材料，不能计入用户真实项目视频交付。</p>
+<h2>7. 模型目录、接口与外链</h2>
+<p><code>docs/api/runninghub/</code> 当前有 7 份公开资料文件，包括原始索引、3 份 JSON 目录/schema、采集器及说明。目录采集于 2026-10-24，可能随服务商更新而过时。</p>
+<ul>
+<li>311 个唯一模型操作路径，图像 99、视频 212，包含生成、编辑、参考图、工具和视频处理，并非只有文生图/文生视频。</li>
+<li>当前代码禁用 6 个操作；静态公开文档原标下架 4 个，另 2 个由代码记录的实际中国站下线状态补充。</li>
+<li>schema、显示名称、能力分类和默认参数可以本地查看；权限、价格、可用性和生成质量仍须外部服务响应与实际结果验证。</li>
+<li>已实现 RunningHub 工作流 API 与模型 API；无限画布仅有外部平台入口，平台画布任务不等于能自动回传本地。</li>
+<li>RunningHub 国际站 Image 2 的专门接入未完成。其他平台目录或成本登记入口不等于该平台 API 已接通。</li>
+</ul>
+<p>主要外部依赖与链接类别：</p>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>来源 / 边界</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RunningHub 中国站</td>
+<td><code>https://www.runninghub.cn/</code>，含模型/工作流 API、官方文档、平台画布与账单页面</td>
+</tr>
+<tr>
+<td>远程生成结果</td>
+<td>API 返回的服务商 HTTPS 链接，可能过期、限权或不支持外链；没有自动离线副本</td>
+</tr>
+<tr>
+<td>其他媒体工具平台</td>
+<td><code>server/media.py</code> 的 providers 目录；当前非 RunningHub 项均标记不支持 API，主要为链接/参考成本</td>
+</tr>
+<tr>
+<td>Codex</td>
+<td>本机 CLI 及其账户连接；没有将其可执行程序或账户凭据随源码再分发</td>
+</tr>
+<tr>
+<td>用户研究参考</td>
+<td>飞书岗位原文来源、网页设计与平台参考链接等保留在历史资料；不是当前网页必须联网加载的 UI 依赖</td>
+</tr>
+</tbody>
+</table>
+<p>界面本地图片和系统字体可随源码展示，但文字生成与外部媒体调用需要网络及用户自己的账号配置。</p>
+<h2>8. 许可、保密与交付核验</h2>
+<p>本包没有统一开源许可证，也没有为所有参考截图、角色提示词或历史示范图提供完整商业再分发授权证明。生成记录可说明来源和制作方式，不能替代平台使用条款或权利核验。外部发布时需分别确认用户提供资料、参考截图、平台返回结果及依赖软件的授权；不要把未知许可写成免费商用。</p>
+<p>私有运行目录、连接密钥、账号登录资料与实际项目附件不进入代码仓库。历史 <code>docs/qa/</code> 可能含真实用户项目和账户证据，本次移入桌面本地私有备份的 <code>historical-qa/</code>；其内容不在此重述，也不以素材目录名义公开。</p>
+<p>验收本清单时：</p>
+<ol>
+<li>用全量 CSV / JSON 清单确认文件存在、大小及 SHA-256，区分正式文件和历史副本。</li>
+<li>检查 R01—R16、G01—G05 的大图、缩略图、显示资料和角色原文一一对应。</li>
+<li>区分本地设计示范、远程真实生成结果和测试媒体，不能混算作品数量。</li>
+<li>需要离线保留的真实媒体另行下载并验证，记录其所属项目、任务、版本和来源；仅保存 URL 不算完成离线归档。</li>
+<li>UI 或角色图修改后更新相应清单、说明和测试，保留能够说明采用版本的来源映射。</li>
+</ol>
+<p>更多运行和数据恢复步骤见 <a href="#chapter-6">部署备份与恢复</a>。</p><p class="source"><a href="05_全部元素与素材清单.md">查看 Markdown 源文档</a></p></section><section id="chapter-6" class="chapter"><h1>06｜部署、备份与恢复</h1>
+<p>快照日期：2026-10-25。本文用于交接当前本机版本。它不是公网部署方案，也不是已签名、公证的通用 Mac 安装包。</p>
+<h2>一、交付结构</h2>
+<pre><code class="language-text">庞巴迪影视工作台_交付_2026-10-25/
+├── 00_从这里开始.html
+├── 01_源码与资源/                 ← 独立 Git 仓库，推至 GitHub
+│   ├── README.md
+│   ├── index.html / app.js / lib/ / styles/ / server/
+│   ├── assets/ / data/ / desktop/ / scripts/ / tests/
+│   ├── prompts/                  ← 21 岗位及共享指令快照
+│   └── docs/交接/                ← 当前说明、操作手册、SOP、清单
+└── 02_本地私有数据备份/           ← 不上传 GitHub
+    ├── runtime/                  ← SQLite 一致性备份、运行记录、连接配置
+    ├── portable-runtime/         ← 若存在便携实例数据，也单独备份
+    ├── historical-qa/            ← 历史真实项目/账户验证材料
+    ├── local-build/              ← 原 dist 本机构建产物（若存在）
+    └── 备份说明.json / 私有文件校验.json
+</code></pre>
+<p>项目原目录仍为 <code>~/Documents/ChatGPT/AI 影视/AI团队工作台_v0.2/</code>，继续使用原服务和现有数据。交付目录是本次快照，不会自动同步后续修改。后续开发应明确选择一个工作目录，避免两份代码各改各的。重新打包可执行 <code>python3 scripts/package-handover.py --destination /absolute/new/folder --include-private</code>，目标必须是未存在的新目录，且位于源码目录外。</p>
+<h2>二、首次在另一台 Mac 启动</h2>
+<ol>
+<li>安装 Python 3；本次在 Python 3.14 上验证。页面和后端不要求 npm install，也没有第三方 Python 服务依赖。</li>
+<li>从私有 GitHub 仓库克隆，或打开桌面交付中的 <code>01_源码与资源/</code>。</li>
+<li>双击 <code>scripts/start-portable.command</code>，或者在源码根目录执行 <code>bash scripts/start-portable.command</code>。</li>
+<li>浏览器打开 <code>http://127.0.0.1:8768/</code>。首次是独立数据环境，页面中的示例不代表原项目数据已恢复。</li>
+<li>需要文字生成时，安装并登录 Codex CLI。可在启动前设置 <code>STUDIO_CODEX_BINARY</code> 为实际可执行路径；先执行 <code>codex --version</code>、<code>codex login status</code> 检查环境。</li>
+<li>需要图像/视频时，进入工作台连接配置，填写 RunningHub 连接信息并测试。Key 不用写进代码或提示词。</li>
+<li>使用教程见 <code>03_用户操作手册.md</code>，先创建一个测试项目，再按 SOP 验证文稿→人物资产→画布。</li>
+</ol>
+<p>终端保持开启；Ctrl+C 停止此便携实例。另需端口时使用 <code>STUDIO_PORT=8769 bash scripts/start-portable.command</code>。改变端口会改变浏览器存储来源，旧端口的未同步缓存不会跟随迁移。</p>
+<p>便携模式固定读包内 <code>prompts/</code>，默认写 <code>data/portable-runtime/</code>。原 <code>启动工作台.command</code> 和 Mac 客户端仍读原岗位库、使用 <code>data/runtime/</code> 与端口 8767。</p>
+<p>手动运行等价方式：</p>
+<pre><code class="language-sh">python3 -m server.httpd --port 8768 \
+  --data-dir data/portable-runtime \
+  --film-dir prompts/影视Agent团队提示词 \
+  --game-dir prompts/游戏Agent团队提示词
+</code></pre>
+<h2>三、这次备份覆盖什么</h2>
+<table>
+<thead>
+<tr>
+<th>内容</th>
+<th>保存位置</th>
+<th>恢复后能获得什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>应用源码、界面资源、角色原文</td>
+<td>源码目录 / GitHub</td>
+<td>当前代码与设计、提示词能力描述</td>
+</tr>
+<tr>
+<td><code>studio.sqlite3</code></td>
+<td>私有备份 runtime</td>
+<td>项目、任务、协作运行、文稿索引、媒体任务、回收站等持久化记录</td>
+</tr>
+<tr>
+<td><code>runs/</code>、历史 runtime 备份</td>
+<td>私有备份 runtime</td>
+<td>已保存的模型输入、角色快照、文稿文件</td>
+</tr>
+<tr>
+<td><code>connections.json</code></td>
+<td>私有备份 runtime</td>
+<td>本机连接配置和密钥；保留 0600 权限</td>
+</tr>
+<tr>
+<td>历史 QA / 截图 / 实测记录</td>
+<td>私有备份 historical-qa</td>
+<td>过去的验证证据，不能当作本轮最新验收</td>
+</tr>
+<tr>
+<td><code>dist/</code> 本机产物</td>
+<td>私有备份 local-build</td>
+<td>历史 Mac 外壳；内部仍指向原路径，不能直接当便携安装包</td>
+</tr>
+<tr>
+<td>浏览器未同步数据与页面偏好</td>
+<td>本次未自动导出</td>
+<td>需要在原窗口使用“导出工作台 JSON”；不同浏览器缓存独立</td>
+</tr>
+<tr>
+<td>供应商远程图片和视频</td>
+<td>主要保存 URL 在数据库中</td>
+<td>不保证远程链接长期有效，也不等于媒体已经离线下载</td>
+</tr>
+</tbody>
+</table>
+<p>本次对 SQLite 使用 SQLite backup API，备份库执行 <code>PRAGMA integrity_check</code>。没有把运行中的主库文件和 WAL 随意拼接。运行文件目录按复制时间保存；若复制期间有正在写入的任务，数据库时间点和后写入文件可能不同。严格停机快照应先等待当前任务完成、停止后台，再重复备份。</p>
+<p>私有目录权限为 0700，普通文件为 0600，原可执行文件保留为 0700；其中含用户项目资料和密钥。它与 Git 仓库同级，不在仓库内。桌面是否由 iCloud 同步由用户的系统设置决定，这个本地备份本身不是加密保险库。</p>
+<h2>四、恢复数据（先恢复到隔离实例）</h2>
+<ol>
+<li>退出目标便携实例，关闭其网页标签；确保没有后台继续使用 <code>data/portable-runtime/</code>。</li>
+<li>如果目标数据目录已存在，将整个目录重命名留存，不要直接覆盖其中部分文件。</li>
+<li>恢复原正式数据时，把私有备份的 <code>runtime/</code> <strong>整个复制</strong>为源码目录中的 <code>data/portable-runtime/</code>。保持目录与文件限制权限。若要恢复后来产生的便携项目，则选择备份中的 <code>portable-runtime/</code>；不要把两份库混合。</li>
+<li>确认 <code>studio.sqlite3</code> 存在；若旧目标残留 <code>.sqlite3-wal</code>、<code>.sqlite3-shm</code> 或服务锁，说明没有正确使用全新目录，应返回上一步重新操作，不把它们混进快照。</li>
+<li>用便携启动入口运行，检查项目数、名称、文稿版本、人物资产、媒体结果和回收站是否符合预期。</li>
+<li>如果同一浏览器曾打开这个端口，使用新的浏览器配置或明确处理工作台同步冲突；不要让旧缓存覆盖恢复数据。</li>
+<li>核对未结束任务的恢复状态。提交结果不明的供应商任务先核对平台记录，不要重复点击生成导致重复扣费。</li>
+<li>远程结果分别打开核查；缺失的视频需要从仍有效的供应商入口另行保存。</li>
+</ol>
+<p>本次不执行上述恢复，不改变原项目数据。数据库可恢复不代表 Codex 账户登录、供应商余额或外部授权已经恢复。</p>
+<h2>五、Mac 客户端与部署边界</h2>
+<p>现有客户端源码在 <code>desktop/</code>，采用 Swift/AppKit + WKWebView，Bundle ID 为 <code>cn.dreamstudio.workbench</code>。网页已经改为庞巴迪影视工作台，原生应用仍叫造梦工作室。</p>
+<p>在有 Apple Command Line Tools 的 Apple Silicon Mac 上，可按 <code>desktop/README-native.md</code> 运行构建。构建配置包含本机项目路径和 Python 路径；本次没有重新构建、更名、安装、签名或公证。<code>dist/</code> 只在私有本地备份中保留，GitHub 提供可重建源码。</p>
+<p>服务只绑定回环地址，具备同源和写操作 token 校验。不要通过简单改为 <code>0.0.0.0</code> 或端口转发当作公网产品。公网服务仍需独立设计身份认证、权限、资源限额、存储、供应商密钥管理与部署安全。</p>
+<h2>六、后续更新 GitHub</h2>
+<p>当前 Git 仓库在交付目录的 <code>01_源码与资源/</code>。若继续在原项目目录开发，先将明确修改同步到这个交付仓库，排除所有运行数据，再审查差异和提交。不要在上级“AI 影视”目录运行全量 add。</p>
+<pre><code class="language-sh">git status --short
+git diff
+# 仅添加本次明确的代码、资源和文档文件
+git add &lt;明确的相对路径&gt;
+git diff --cached --stat
+git commit -m &quot;Describe the reviewed change&quot;
+git push
+</code></pre>
+<p>请保留私有属性。<code>.gitignore</code> 不能删除已经进入历史的秘密；一旦误提交密钥，须撤销密钥并清理历史，不能只补一条忽略规则。</p><p class="source"><a href="06_部署备份与恢复.md">查看 Markdown 源文档</a></p></section><section id="chapter-7" class="chapter"><h1>07｜验证记录与待办</h1>
+<p>记录日期：2026-10-25。本次任务是将项目现状整理为可交接快照、桌面备份和 GitHub 私有仓库；没有进行新的付费图像/视频生成。</p>
+<h2>一、本次检查</h2>
+<table>
+<thead>
+<tr>
+<th>检查</th>
+<th>范围与结果</th>
+<th>不代表什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>前端单元测试</td>
+<td><code>node --test tests/*.test.cjs</code>：277 项通过，0 失败</td>
+<td>不等于实际浏览器视觉验收</td>
+</tr>
+<tr>
+<td>视图 smoke</td>
+<td><code>node tests/views.smoke.cjs</code>：85 个渲染场景、48 个图片资源通过</td>
+<td>不等于远程图片视频逐个播放成功</td>
+</tr>
+<tr>
+<td>后端回归</td>
+<td>348 项通过，0 失败；完整结果见 <code>验证/后端回归结果.txt</code>；使用模拟供应商与临时数据库</td>
+<td>不等于 RunningHub 线上接口全部可用</td>
+</tr>
+<tr>
+<td>便携参数和启动脚本</td>
+<td>4 项测试通过，包含默认行为、Unicode目录、参数传递与跨目录定位</td>
+<td>不等于其他操作系统已验证</td>
+</tr>
+<tr>
+<td>隔离服务实启</td>
+<td>临时数据目录、临时回环端口启动成功；21 个角色全部可加载；品牌标题正确；私密文件静态访问被拒绝</td>
+<td>没有调用 Codex 文字生成或供应商付费生成</td>
+</tr>
+<tr>
+<td>发布扫描</td>
+<td>对待发布文件和 ZIP 内部检查已知本地 Key 精确值及常见凭据签名；打包发现匹配会停止</td>
+<td>静态检查不是完整安全审计，也不能识别图片中所有文字</td>
+</tr>
+<tr>
+<td>数据备份</td>
+<td>SQLite backup API；每个备份库执行 integrity_check；结果记录在桌面私有备份说明</td>
+<td>不包含浏览器未同步缓存，不保证远程媒体永久可用</td>
+</tr>
+<tr>
+<td>发布包完整性</td>
+<td>打包器隔离回归通过：拒绝额外私密文件、覆盖便携数据、保留可执行权限；每个代码/资源文件有相对路径、字节数和 SHA-256；清单自身、Git 元数据除外</td>
+<td>不证明外部素材版权或创作质量</td>
+</tr>
+</tbody>
+</table>
+<p>初次在受限沙盒运行后端测试时，10 个需要绑定回环端口的测试因 <code>Operation not permitted</code> 报错；允许本机端口后重跑通过。这个环境限制与业务断言失败分开记录。</p>
+<p>测试日志会出现少量测试库连接未显式关闭的 <code>ResourceWarning</code>；它们没有使本轮回归失败。发布打包器的 SQLite 备份连接已显式关闭，再生成文件哈希。</p>
+<h3>本次没有通过或没有执行</h3>
+<ul>
+<li><code>python3 scripts/build-preview.py</code>：<strong>失败</strong>，旧聊天内嵌预览超过 1 MB 限制。它与日常 HTTP 网页运行独立，当前交付阅读入口也不依赖它。</li>
+<li>真实浏览器交互/视觉检查：<strong>未执行</strong>，当前浏览器自动化设置不可用；未使用替代方式绕过该设置。</li>
+<li>RunningHub 图像/视频付费生成与全目录实测：<strong>未执行</strong>。</li>
+<li>原生 Mac 客户端重新编译、签名、公证、安装：<strong>未执行</strong>。</li>
+<li>原项目数据恢复、覆盖现有数据库或迁移浏览器缓存：<strong>未执行</strong>。</li>
+</ul>
+<h2>二、历史验证如何理解</h2>
+<p>原 <code>docs/qa/</code> 中保留了不同阶段的测试报告、真实调用记录和截图，随桌面备份位于 <code>02_本地私有数据备份/historical-qa/</code>，不上传 GitHub。这些记录含私人项目和账户信息，应按各自记录日期、版本和范围阅读。</p>
+<p>历史上曾有真实图片返回、视频结果打开播放、自动协作文字和人物/画布链路检查；这些事实不能推出所有项目已经完成、所有视频都合格或全部接口今天仍有效。旧文档中的模型目录数量、禁用数量及费用也不是当前承诺。</p>
+<h2>三、待办与验收标准</h2>
+<table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>待办</th>
+<th>当前状态</th>
+<th>下一步与验收标准</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P1</td>
+<td>RunningHub 国际站 Image 2</td>
+<td>未开始接入；用户给出的 <code>/ja</code> 站点是需求线索</td>
+<td>核对准确模型名称、官方 API 契约、个人账户权限、价格与参数；接入后验证一次受控小样，并在人物资产/画布真实展示</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>首页真实成果约两倍大</td>
+<td>需求已明确，当前仍为较小卡片排列</td>
+<td>按用户要求调整布局，实际浏览器确认不挤占上方案例示范和待拍板位置</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>视频精彩帧封面</td>
+<td><code>lib/media-posters.js</code> 为实验代码；没有引用到页面、没有完成行为测试</td>
+<td>补接线、CORS/超时/取消处理与封面回退；验证播放从正常位置开始，不抢占播放器；“自动挑选”不保证主观最佳</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>完整项目贯通验收</td>
+<td>有阶段验证，没有覆盖所有当前能力的最新实测</td>
+<td>使用新测试项目完成需求→文字审阅→人物资产→分镜→图/视频→实际播放→成果归档；记录成本、失败与结果</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>旧聊天内嵌预览构建</td>
+<td>体积超限</td>
+<td>精简预览或改为明确的独立网页预览；恢复构建前不宣称可内嵌发布</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>媒体长期归档</td>
+<td>结果主要为远程 URL；没有正式本地缓存/下载代理</td>
+<td>设计允许列表、安全下载、文件大小限制、存储生命周期、可恢复链接与离线验证</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>项目生成质量控制</td>
+<td>依赖人审、提示词和素材</td>
+<td>定义角色一致性、动作、镜头、文字、音画、画质的验收表；把生成成功和质量通过分开</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>Mac 品牌与分发</td>
+<td>原生外壳仍为旧名且配置本机路径</td>
+<td>在明确发布范围后更新名称和依赖安装方案，构建、签名、公证并实机测试</td>
+</tr>
+<tr>
+<td>P3</td>
+<td>自动剪辑与母版</td>
+<td>尚未实现</td>
+<td>引入时间线、音频/字幕/转场、导出与最终完整播放检查</td>
+</tr>
+<tr>
+<td>P3</td>
+<td>游戏自动生产</td>
+<td>5 岗位可做文字协作，未接可运行游戏流水线</td>
+<td>明确引擎/资产/构建/测试目标，独立实现与验收</td>
+</tr>
+<tr>
+<td>P3</td>
+<td>多人云端与发布</td>
+<td>尚未实现</td>
+<td>明确身份、权限、存储和部署，再实施；GitHub 上传不属于网站发布</td>
+</tr>
+</tbody>
+</table>
+<h2>四、此次交付验收方法</h2>
+<ol>
+<li>打开桌面 <code>00_从这里开始.html</code>，能进入完整阅读页并看到 21 位伙伴资源。</li>
+<li>查阅七份中文手册；SOP 覆盖输入、责任岗位、动作、交付、审核和返修。</li>
+<li>在代码目录运行 <code>python3 scripts/package-handover.py --verify .</code>，应返回 passed。</li>
+<li>查看 GitHub 仓库为 <strong>Private</strong>，包含代码、提示词和资源，不含运行数据库、连接密钥、个人项目/账户 QA。</li>
+<li>GitHub HEAD 与桌面源码目录的提交一致。</li>
+<li>私有备份数据库 integrity_check 为 ok；根据 <code>06_部署备份与恢复.md</code> 才能恢复，不能直接覆盖运行中的库。</li>
+</ol>
+<p>本次交付不把后续需求从待办中删除，也不把交付包当作已完成所有生产能力的正式商业版本。</p><p class="source"><a href="07_验证记录与待办.md">查看 Markdown 源文档</a></p></section><p class="foot">这是一份本地可浏览的交接文档，支持浏览器打印为 PDF。读取本文不会调用模型或启动付费生成。</p></main></body></html>

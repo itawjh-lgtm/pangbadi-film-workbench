@@ -1,0 +1,58 @@
+/* Resizable reading areas. Handles do not take up a grid track. */
+.app-shell, .layout-split { position: relative; }
+.app-shell.layout-sidebar-enabled {
+  grid-template-columns: var(--layout-sidebar-width, var(--sidebar-width)) minmax(0,1fr);
+}
+.layout-split-active { grid-template-columns: var(--layout-first) minmax(0,1fr); }
+.layout-stacked { grid-template-columns: minmax(0,1fr); }
+.layout-stacked > .team-profile-panel, .layout-stacked > .local-capability { position: static; }
+.layout-split > :not(.layout-separator) { min-width: 0; }
+.collaboration-layout.layout-split-active > .inspector { grid-template-columns: minmax(0,1fr); }
+.layout-separator {
+  position: absolute; z-index: 6; top: 0; bottom: 0; width: 14px;
+  transform: translateX(-50%); cursor: col-resize; touch-action: none;
+  user-select: none; outline: none; border-radius: 8px;
+}
+.layout-separator[hidden] { display: none; }
+.layout-separator::before {
+  content: ''; position: absolute; top: 0; bottom: 0; left: 6px; width: 2px;
+  background: rgba(110,135,132,.18); border-radius: 2px;
+  transition: background .15s, box-shadow .15s;
+}
+.layout-separator::after {
+  content: ''; position: absolute; top: min(32vh,220px); left: 3px;
+  width: 8px; height: 42px; border: 1px solid #b7c9c3; border-radius: 5px;
+  background: repeating-linear-gradient(to bottom, transparent 0 4px, #9bb3a7 4px 6px, transparent 6px 9px) center / 2px 24px no-repeat, #edf3f0;
+  box-shadow: 0 2px 8px #354c4812;
+}
+.layout-separator:hover::before, .layout-separator:focus-visible::before,
+.layout-separator.is-dragging::before { background: #658f7b; box-shadow: 0 0 0 3px #658f7b18; }
+.layout-separator:focus-visible::after { outline: 2px solid #47765e; outline-offset: 2px; }
+.layout-sidebar-separator { z-index: 35; }
+.layout-sidebar-separator::after { top: min(45vh,360px); }
+.app-shell.layout-is-resizing, .app-shell.layout-is-resizing * { cursor: col-resize !important; user-select: none !important; }
+
+/* Cards respond to their available width when their parent is resized. */
+.team-list-panel { container-type: inline-size; container-name: team-list; }
+.team-profile-panel > .member-profile-portrait, .inspector .member-profile-portrait { max-width: 310px; }
+.project-main { container-type: inline-size; container-name: project-main; }
+@container team-list (max-width: 580px) {
+  .team-list-panel .employee-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@container team-list (max-width: 350px) {
+  .team-list-panel .employee-grid { grid-template-columns: minmax(0,1fr); }
+}
+@container project-main (max-width: 440px) {
+  .shot-strip { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+.page-intro, .project-feature-heading, .decision-preview-footer, .section-head { flex-wrap: wrap; }
+.connection-row { flex-wrap: wrap; }
+.connection-copy { flex: 1 1 180px; min-width: 0; }
+@media (max-width: 980px) {
+  .layout-split-active { grid-template-columns: minmax(0,1fr); }
+  .layout-split > .layout-separator { display: none; }
+}
+@media (max-width: 760px) {
+  .app-shell.layout-sidebar-enabled { display: block; }
+  .layout-sidebar-separator { display: none; }
+}

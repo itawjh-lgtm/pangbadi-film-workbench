@@ -1,0 +1,11 @@
+{
+  "result": "passed",
+  "backendReady": true,
+  "roleCount": 21,
+  "allRolesAvailable": true,
+  "brandTitle": "passed",
+  "privateFileAccessDenied": true,
+  "generationSubmitted": false,
+  "database": "temporary isolated directory",
+  "browserVisualValidation": false
+}

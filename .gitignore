@@ -1,0 +1,19 @@
+# Private local execution data, generated drafts and connection credentials.
+data/runtime/
+data/portable-runtime/
+# Historical live-account screenshots and test records stay in the private backup.
+docs/qa/
+__pycache__/
+*.py[cod]
+.DS_Store
+dist/
+.env
+.env.*
+!.env.example
+connections.json
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm
+*.log
+*.pem
+*.key

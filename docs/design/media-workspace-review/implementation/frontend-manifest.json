@@ -1,0 +1,42 @@
+[
+  {
+    "path": "app.js",
+    "baselineSha256": "795fcd351497b059f467b882714e644458c14034fe34da11c013bf771a1f0f53",
+    "draftSha256": "7c07852e05fa0d996a5cc5b5e740ed9d9f3426dfdbf0e117cb4f4d9417a7b592"
+  },
+  {
+    "path": "lib/runtime.js",
+    "baselineSha256": "1402492a0bc3c8a35938ce0cff7774e15b4847da415a00503d06f73826f5072b",
+    "draftSha256": "63e434791997285643da8d346cee3fb7e9e367aa81f3eb37b4406ca9f17780f7"
+  },
+  {
+    "path": "lib/views.js",
+    "baselineSha256": "9a2d51d7ce749c6e87fb48316fc79aa37e1464248ba16f46d1fd2a6db8b040e0",
+    "draftSha256": "0b048d17490e420e378ab3991e632e82f088190a8b00e9f759815409735eef4f"
+  },
+  {
+    "path": "lib/store.js",
+    "baselineSha256": "dfaab45690ae6781ce7aa9aaa3ee70b234939c84db28c8dc2c0a071de9330e81",
+    "draftSha256": "e2466ba90f3e39804c477d1d6e48d9aa67fbf3c8b397802330ad9dcff4b75ab3"
+  },
+  {
+    "path": "lib/layout.js",
+    "baselineSha256": "c71d76bb3f252bf0f3a6f3ac40a5715e5b2b5c9ac3aab64005efb87b2a75290d",
+    "draftSha256": "ca94601b7c454d5f2ffcc423fd89b39450a0a844c2536f70c1b4f5fde8a26f85"
+  },
+  {
+    "path": "lib/production-views.js",
+    "baselineSha256": "69731d0609a93240ad0f773d100f6a557234c0e2aa8d8532c5ab69d3d3ec7577",
+    "draftSha256": "32daf9c4fb2adb733aaa0914b77208348202f652eb9e72d671292ac7c3ea8540"
+  },
+  {
+    "path": "index.html",
+    "baselineSha256": "00df07f45b880903c98773ee2a8261e6f674adb0340714b07a53f452276e4ffd",
+    "draftSha256": "971913bab5e39498cf63cb4c0bfef6ded674be964df5e6cec6e9dca60183fa9e"
+  },
+  {
+    "path": "tests/views.smoke.cjs",
+    "baselineSha256": "d626f32903a2d11ac519b5bdf23778fadc1f3a9ef0f2f48ba68f80ffbbd46092",
+    "draftSha256": "86b9759e85a4317d4dc651258edac91c96eb4b2054be4eda0e3a20d004dea8e1"
+  }
+]

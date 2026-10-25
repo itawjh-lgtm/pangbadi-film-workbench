@@ -1,0 +1,91 @@
+{
+  "schema_version": "1.0",
+  "description": "R02—R08最终选用7张实际生图输入及原图路径；早期R05未选版本保留在默认生成目录。",
+  "characters": [
+    {
+      "id": "R02",
+      "prompt": "可爱的高质量Q版3D动画成年职业角色，约3头身（2.5—3头身），大头小身，圆脸、短圆鼻、大而清澈的眼睛和温暖笑容；简化圆润五官，光滑黏土软胶3D材质，发束如数字雕塑，不画真人皮肤毛孔，不使用照片或正常真人比例。单人全身居中，人物占画面约70%高度，四周有足够留白，淡彩纯色背景，温暖柔光。一件岗位道具，无文字无水印无品牌。保留每人不同的脸型倾向、发型、服饰配色和身份标记，年龄差异柔和转译，不画写实皱纹。虚构员工“许澄”，职位为研究与IP开发制片人。人物设定：成年男性，约28岁年龄感；圆方脸、柔和短眉、深棕大眼、稍宽鼻翼，左颊小痣；蓬松黑色短卷发；灰蓝针织开衫配白圆领衫；带彩色签条的资料册。只画这一人。道具不遮脸，不出现姓名和编号。 方形1:1画面，务必是大头小身的可爱Q版，清晰可见鞋子；无任何文字或可识别字母。",
+      "referenced_image_paths": [],
+      "transparent_background": false,
+      "tool": "built-in image_gen.imagegen",
+      "path": "/Users/itawjh/.codex/generated_images/01a1636d-1de4-74a0-b4c9-728371807106/exec-27cd30ee-23f6-45c5-920a-d8746c661239.png",
+      "output_hint": "Generated images are saved to /Users/itawjh/.codex/generated_images/01a1636d-1de4-74a0-b4c9-728371807106 as /Users/itawjh/.codex/generated_images/01a1636d-1de4-74a0-b4c9-728371807106/exec-27cd30ee-23f6-45c5-920a-d8746c661239.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "visual_check": "已逐张查看：可爱Q版3D、单人完整全身、职业道具可见、无可见文字。",
+      "accepted_by_user": false
+    },
+    {
+      "id": "R03",
+      "prompt": "可爱的高质量Q版3D动画成年职业角色，约3头身（2.5—3头身），大头小身，圆脸、短圆鼻、大而清澈的眼睛和温暖笑容；简化圆润五官，光滑黏土软胶3D材质，发束如数字雕塑，不画真人皮肤毛孔，不使用照片或正常真人比例。单人全身居中，人物占画面约70%高度，四周有足够留白，淡彩纯色背景，温暖柔光。一件岗位道具，无文字无水印无品牌。保留每人不同的脸型倾向、发型、服饰配色和身份标记，年龄差异柔和转译，不画写实皱纹。虚构员工“林砚舟”，职位为编剧兼故事策划。人物设定：成年男性，约47岁年龄感；窄长脸、眉骨清晰、深棕大眼、圆鼻尖、浅笑纹；齐耳深棕微卷发夹少量灰色，无胡须；暗红针织衫配烟灰外套；装订剧本稿。只画这一人。道具不遮脸，不出现姓名和编号。 方形1:1画面，务必是大头小身的可爱Q版，清晰可见鞋子；无任何文字或可识别字母。",
+      "referenced_image_paths": [],
+      "transparent_background": false,
+      "tool": "built-in image_gen.imagegen",
+      "path": "/Users/itawjh/.codex/generated_images/01a1636d-1de4-74a0-b4c9-728371807106/exec-9f8344b8-920f-4206-8d77-0cb806c87c6b.png",
+      "output_hint": "Generated images are saved to /Users/itawjh/.codex/generated_images/01a1636d-1de4-74a0-b4c9-728371807106 as /Users/itawjh/.codex/generated_images/01a1636d-1de4-74a0-b4c9-728371807106/exec-9f8344b8-920f-4206-8d77-0cb806c87c6b.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "visual_check": "已逐张查看：可爱Q版3D、单人完整全身、职业道具可见、无可见文字。",
+      "accepted_by_user": false
+    },
+    {
+      "id": "R04",
+      "prompt": "可爱的高质量Q版3D动画成年职业角色，约3头身（2.5—3头身），大头小身，圆脸、短圆鼻、大而清澈的眼睛和温暖笑容；简化圆润五官，光滑黏土软胶3D材质，发束如数字雕塑，不画真人皮肤毛孔，不使用照片或正常真人比例。单人全身居中，人物占画面约70%高度，四周有足够留白，淡彩纯色背景，温暖柔光。一件岗位道具，无文字无水印无品牌。保留每人不同的脸型倾向、发型、服饰配色和身份标记，年龄差异柔和转译，不画写实皱纹。虚构员工“沈知遥”，职位为导演兼分镜与预演设计。人物设定：成年女性，约33岁年龄感；短方脸、浓弯眉、眼距较宽的黑色大眼，直鼻梁和稍厚下唇；黑色低马尾配短侧刘海；深靛工装夹克配浅灰衬衣；折叠导演取景器。只画这一人。道具不遮脸，不出现姓名和编号。 Input image is ONLY a reference for the cohesive cute 3D chibi style and studio render, never copy the reference person's face, hairstyle or clothing. Create the described new distinct individual. 方形1:1画面，完整全身含鞋子，头顶与脚底留白；无任何文字。",
+      "referenced_image_paths": [
+        "/Users/itawjh/.codex/generated_images/01a15f4a-f0c9-7f90-847d-bbe339786b18/exec-acf9dda4-dfec-428e-b2e2-099d4a45b9f5.png"
+      ],
+      "transparent_background": false,
+      "tool": "built-in image_gen.imagegen",
+      "path": "/Users/itawjh/.codex/generated_images/01a1636d-1de4-74a0-b4c9-728371807106/exec-fb6f3fe3-f22b-423d-998b-6d28b15638d4.png",
+      "output_hint": "Generated images are saved to /Users/itawjh/.codex/generated_images/01a1636d-1de4-74a0-b4c9-728371807106 as /Users/itawjh/.codex/generated_images/01a1636d-1de4-74a0-b4c9-728371807106/exec-fb6f3fe3-f22b-423d-998b-6d28b15638d4.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "visual_check": "已逐张查看：可爱Q版3D、单人完整全身、职业道具可见、无可见文字。",
+      "accepted_by_user": false
+    },
+    {
+      "id": "R05",
+      "prompt": "Use case: stylized-concept. One MALE adult art director, adorable high-quality 3D CHIBI collectible figurine, giant head and tiny compact body, about three heads tall. Clearly a MAN: masculine oval face with defined cheekbones, a broad rounded nose, straight small dark-brown eyes with NO eyelashes and NO makeup, distinct strong straight eyebrows and friendly small asymmetrical smile. Chestnut brown wavy medium-length hair swept BACK and tied in a compact low MAN BUN at the nape, no loose feminine face-framing bangs. Clean-shaven male. Beige loose shirt, deep brown men's waistcoat, charcoal men's trousers and brown round shoes. One folded color/material swatch book held naturally, no words. Stylized smooth clay and soft vinyl, rounded sculpted hair, warm soft light. Full body including shoes centered in square frame, ample head and foot space, pale cream seamless background with soft contact shadow. A unique man, not a woman, not a girl, no long eyelashes, no realistic skin, no photography, no text, labels, logos, watermark or frame.",
+      "referenced_image_paths": [],
+      "transparent_background": false,
+      "tool": "built-in image_gen.imagegen",
+      "path": "/Users/itawjh/.codex/generated_images/01a1636d-1de4-74a0-b4c9-728371807106/exec-20176ad3-f5f7-44ff-b4e7-be1eaf790fdf.png",
+      "output_hint": "Generated images are saved to /Users/itawjh/.codex/generated_images/01a1636d-1de4-74a0-b4c9-728371807106 as /Users/itawjh/.codex/generated_images/01a1636d-1de4-74a0-b4c9-728371807106/exec-20176ad3-f5f7-44ff-b4e7-be1eaf790fdf.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "visual_check": "已逐张查看：可爱Q版3D、单人完整全身、职业道具可见、无可见文字。",
+      "accepted_by_user": false
+    },
+    {
+      "id": "R06",
+      "prompt": "可爱的高质量Q版3D动画成年职业角色，约3头身（2.5—3头身），大头小身，圆脸、短圆鼻、大而清澈的眼睛和温暖笑容；简化圆润五官，光滑黏土软胶3D材质，发束如数字雕塑，不画真人皮肤毛孔，不使用照片或正常真人比例。单人全身居中，人物占画面约70%高度，四周有足够留白，淡彩纯色背景，温暖柔光。一件岗位道具，无文字无水印无品牌。保留每人不同的脸型倾向、发型、服饰配色和身份标记，年龄差异柔和转译，不画写实皱纹。虚构员工“姜云岫”，职位为AI影像艺术家兼技术美术。人物设定：成年女性，约44岁年龄感；菱形脸、清晰颧骨、弧眉、明亮大眼、微翘鼻尖，左嘴角浅痣；黑色超短发加前额一道银白发束；炭灰立领衬衫配钴蓝轻外套；数位板。只画这一人。道具不遮脸，不出现姓名和编号。 The supplied image is ONLY a 3D chibi STYLE reference. Create an entirely DIFFERENT woman with very short black PIXIE haircut and a clearly visible SILVER WHITE FORELOCK, a softly angular diamond face, arched brows, a small beauty mark at left lip corner, cobalt blue light jacket over charcoal standing-collar shirt, holding a drawing tablet. Do not copy the reference woman's bob haircut, face or outfit. No long hair. Square canvas, full body including shoes with margin. Pale blush seamless background.",
+      "referenced_image_paths": [
+        "/Users/itawjh/.codex/generated_images/01a15f4a-f0c9-7f90-847d-bbe339786b18/exec-acf9dda4-dfec-428e-b2e2-099d4a45b9f5.png"
+      ],
+      "transparent_background": false,
+      "tool": "built-in image_gen.imagegen",
+      "path": "/Users/itawjh/.codex/generated_images/01a1636d-1de4-74a0-b4c9-728371807106/exec-75ac98cf-f3d3-4012-9cb7-1e415d4cfbc3.png",
+      "output_hint": "Generated images are saved to /Users/itawjh/.codex/generated_images/01a1636d-1de4-74a0-b4c9-728371807106 as /Users/itawjh/.codex/generated_images/01a1636d-1de4-74a0-b4c9-728371807106/exec-75ac98cf-f3d3-4012-9cb7-1e415d4cfbc3.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "visual_check": "已逐张查看：可爱Q版3D、单人完整全身、职业道具可见、无可见文字。",
+      "accepted_by_user": false
+    },
+    {
+      "id": "R07",
+      "prompt": "可爱的高质量Q版3D动画成年职业角色，约3头身（2.5—3头身），大头小身，圆脸、短圆鼻、大而清澈的眼睛和温暖笑容；简化圆润五官，光滑黏土软胶3D材质，发束如数字雕塑，不画真人皮肤毛孔，不使用照片或正常真人比例。单人全身居中，人物占画面约70%高度，四周有足够留白，淡彩纯色背景，温暖柔光。一件岗位道具，无文字无水印无品牌。保留每人不同的脸型倾向、发型、服饰配色和身份标记，年龄差异柔和转译，不画写实皱纹。虚构员工“程既明”，职位为动画CG与视效制作负责人。人物设定：成年男性，约30岁年龄感；宽圆脸、平眉、圆眼、宽鼻梁、圆下巴；浓密黑发向两侧分开，整齐短络腮胡；柔紫针织衫配黑色轻薄背心；小型关节人偶。只画这一人。道具不遮脸，不出现姓名和编号。 A MALE adult CG artist: distinct wide rounded face, straight thick brows, large round dark eyes with no lashes, broad rounded nose, round chin, neat short dark FULL BEARD around jaw; thick black center-parted sculpted short hair, lavender knitted top and black lightweight sleeveless vest. Holds one small wooden articulated artist mannequin prop, featureless wooden object rather than a second person. Reference image ONLY supplies cute 3D chibi style; do NOT copy reference woman's face, hairstyle, makeup or body. Whole body and shoes, square frame, pale blue seamless background.",
+      "referenced_image_paths": [
+        "/Users/itawjh/.codex/generated_images/01a15f4a-f0c9-7f90-847d-bbe339786b18/exec-acf9dda4-dfec-428e-b2e2-099d4a45b9f5.png"
+      ],
+      "transparent_background": false,
+      "tool": "built-in image_gen.imagegen",
+      "path": "/Users/itawjh/.codex/generated_images/01a1636d-1de4-74a0-b4c9-728371807106/exec-e4558f6f-f2d6-42e8-9e9c-faabab067c38.png",
+      "output_hint": "Generated images are saved to /Users/itawjh/.codex/generated_images/01a1636d-1de4-74a0-b4c9-728371807106 as /Users/itawjh/.codex/generated_images/01a1636d-1de4-74a0-b4c9-728371807106/exec-e4558f6f-f2d6-42e8-9e9c-faabab067c38.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "visual_check": "已逐张查看：可爱Q版3D、单人完整全身、职业道具可见、无可见文字。",
+      "accepted_by_user": false
+    },
+    {
+      "id": "R08",
+      "prompt": "可爱的高质量Q版3D动画成年职业角色，约3头身（2.5—3头身），大头小身，圆脸、短圆鼻、大而清澈的眼睛和温暖笑容；简化圆润五官，光滑黏土软胶3D材质，发束如数字雕塑，不画真人皮肤毛孔，不使用照片或正常真人比例。单人全身居中，人物占画面约70%高度，四周有足够留白，淡彩纯色背景，温暖柔光。一件岗位道具，无文字无水印无品牌。保留每人不同的脸型倾向、发型、服饰配色和身份标记，年龄差异柔和转译，不画写实皱纹。虚构员工“叶初禾”，职位为剪辑师兼动态图形设计。人物设定：成年女性，约27岁年龄感；心形脸、细直眉、黑色大眼、短鼻梁和清晰唇角；栗色及肩直发内弯，眉上短刘海；苔绿衬衫配米色短外套；无文字时间线控制面板。只画这一人。道具不遮脸，不出现姓名和编号。 Input image is ONLY a STYLE reference for cute big-headed 3D figurine rendering. Create a different individual: heart-shaped face with fine straight brows, large black eyes, short rounded nose and defined lip corners, chestnut STRAIGHT shoulder-length bob curling inward at ends with distinct SHORT BLUNT BANGS ABOVE EYEBROWS, moss green shirt and cream cropped jacket. Holding one compact unlabeled timeline editing control panel with abstract colored strips and knobs only, no text or numbers. Do not copy the reference woman's side-parted wavy hairstyle or face. Full body and shoes centered in square frame, pale muted sage or cream seamless background, soft warm light.",
+      "referenced_image_paths": [
+        "/Users/itawjh/.codex/generated_images/01a15f4a-f0c9-7f90-847d-bbe339786b18/exec-acf9dda4-dfec-428e-b2e2-099d4a45b9f5.png"
+      ],
+      "transparent_background": false,
+      "tool": "built-in image_gen.imagegen",
+      "path": "/Users/itawjh/.codex/generated_images/01a1636d-1de4-74a0-b4c9-728371807106/exec-10bab4c7-047f-4351-bd3c-d8eb04e8a95b.png",
+      "output_hint": "Generated images are saved to /Users/itawjh/.codex/generated_images/01a1636d-1de4-74a0-b4c9-728371807106 as /Users/itawjh/.codex/generated_images/01a1636d-1de4-74a0-b4c9-728371807106/exec-10bab4c7-047f-4351-bd3c-d8eb04e8a95b.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "visual_check": "已逐张查看：可爱Q版3D、单人完整全身、职业道具可见、无可见文字。",
+      "accepted_by_user": false
+    }
+  ]
+}

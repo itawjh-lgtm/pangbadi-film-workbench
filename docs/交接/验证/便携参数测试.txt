@@ -1,0 +1,9 @@
+test_custom_role_paths_are_parsed_without_rewriting_spaces_or_unicode (test_portable_start.PortableStartTests.test_custom_role_paths_are_parsed_without_rewriting_spaces_or_unicode) ... ok
+test_default_arguments_preserve_existing_service_and_role_paths (test_portable_start.PortableStartTests.test_default_arguments_preserve_existing_service_and_role_paths) ... ok
+test_launcher_resolves_its_own_folder_and_passes_isolated_paths (test_portable_start.PortableStartTests.test_launcher_resolves_its_own_folder_and_passes_isolated_paths) ... ok
+test_main_passes_custom_paths_to_catalog_without_starting_generation (test_portable_start.PortableStartTests.test_main_passes_custom_paths_to_catalog_without_starting_generation) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.504s
+
+OK

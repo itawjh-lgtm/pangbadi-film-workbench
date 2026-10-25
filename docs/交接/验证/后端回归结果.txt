@@ -1,0 +1,498 @@
+test_adopted_legacy_image_can_supply_video_reference (test_canvas.CanvasTests.test_adopted_legacy_image_can_supply_video_reference) ... ok
+test_aggregate_budget_and_mixed_currency_fail_closed (test_canvas.CanvasTests.test_aggregate_budget_and_mixed_currency_fail_closed) ... ok
+test_ambiguous_submission_is_never_retried (test_canvas.CanvasTests.test_ambiguous_submission_is_never_retried) ... ok
+test_changed_prompt_invalidates_quote_but_position_does_not (test_canvas.CanvasTests.test_changed_prompt_invalidates_quote_but_position_does_not) ... ok
+test_confirmation_idempotency_and_project_scope (test_canvas.CanvasTests.test_confirmation_idempotency_and_project_scope) ... ok
+test_confirmed_sources_sync_once_and_preserve_edits (test_canvas.CanvasTests.test_confirmed_sources_sync_once_and_preserve_edits) ... ok
+test_conflicting_image_ratios_are_not_inherited (test_canvas.CanvasTests.test_conflicting_image_ratios_are_not_inherited) ... ok
+test_conflicting_video_ratios_are_not_replaced_by_image_ratio (test_canvas.CanvasTests.test_conflicting_video_ratios_are_not_replaced_by_image_ratio) ... ok
+test_crash_between_job_and_batch_save_is_reconciled_without_resubmit (test_canvas.CanvasTests.test_crash_between_job_and_batch_save_is_reconciled_without_resubmit) ... ok
+test_drafts_revision_and_cross_project_protection (test_canvas.CanvasTests.test_drafts_revision_and_cross_project_protection) ... ok
+test_expiry_stops_pending_without_silent_requote (test_canvas.CanvasTests.test_expiry_stops_pending_without_silent_requote) ... ok
+test_explicit_source_ratio_initializes_each_kind_without_global_portrait_default (test_canvas.CanvasTests.test_explicit_source_ratio_initializes_each_kind_without_global_portrait_default) ... ok
+test_http_routes_and_service_status_report_queued_batches (test_canvas.CanvasTests.test_http_routes_and_service_status_report_queued_batches) ... ok
+test_legacy_media_attaches_only_exact_project_kind_and_source_versions (test_canvas.CanvasTests.test_legacy_media_attaches_only_exact_project_kind_and_source_versions) ... ok
+test_main_backfills_saved_failures_before_canvas_without_network (test_canvas.CanvasTests.test_main_backfills_saved_failures_before_canvas_without_network) ... ok
+test_migration_does_not_revive_trashed_shots_and_restore_imports_once (test_canvas.CanvasTests.test_migration_does_not_revive_trashed_shots_and_restore_imports_once) ... ok
+test_migration_keeps_edited_and_generated_legacy_nodes (test_canvas.CanvasTests.test_migration_keeps_edited_and_generated_legacy_nodes) ... ok
+test_newer_unconfirmed_production_never_imports_old_completed_sources (test_canvas.CanvasTests.test_newer_unconfirmed_production_never_imports_old_completed_sources) ... ok
+test_omitted_budget_binds_exact_total_without_requote_or_implicit_generation (test_canvas.CanvasTests.test_omitted_budget_binds_exact_total_without_requote_or_implicit_generation) ... ok
+test_parser_migration_creates_twelve_ready_pairs_and_archives_only_empty_defaults (test_canvas.CanvasTests.test_parser_migration_creates_twelve_ready_pairs_and_archives_only_empty_defaults) ... ok
+test_quote_has_no_generation_and_one_confirmation_executes_batch (test_canvas.CanvasTests.test_quote_has_no_generation_and_one_confirmation_executes_batch) ... ok
+test_restart_requotes_pending_and_polls_known_tasks_only (test_canvas.CanvasTests.test_restart_requotes_pending_and_polls_known_tasks_only) ... ok
+test_rework_marks_old_nodes_stale_without_overwriting (test_canvas.CanvasTests.test_rework_marks_old_nodes_stale_without_overwriting) ... ok
+test_server_bind_failure_cannot_backfill_or_recover (test_canvas.CanvasTests.test_server_bind_failure_cannot_backfill_or_recover) ... ok
+test_server_constructor_backfills_retirements_after_bind_before_canvas (test_canvas.CanvasTests.test_server_constructor_backfills_retirements_after_bind_before_canvas) ... ok
+test_stop_prevents_unsubmitted_and_keeps_polling_submitted_task (test_canvas.CanvasTests.test_stop_prevents_unsubmitted_and_keeps_polling_submitted_task) ... ok
+test_unconfirmed_or_stale_review_never_auto_imports (test_canvas.CanvasTests.test_unconfirmed_or_stale_review_never_auto_imports) ... ok
+test_video_inherits_same_shot_first_frame_geometry (test_canvas.CanvasTests.test_video_inherits_same_shot_first_frame_geometry) ... ok
+test_video_ratio_uses_same_shot_first_frame_even_with_text_ratio (test_canvas.CanvasTests.test_video_ratio_uses_same_shot_first_frame_even_with_text_ratio) ... ok
+test_video_timecodes_do_not_block_inherited_frame_ratio (test_canvas.CanvasTests.test_video_timecodes_do_not_block_inherited_frame_ratio) ... ok
+test_card_without_table_and_underscore_id_preserves_multiline_prompt (test_character_asset_contract.CharacterContractTests.test_card_without_table_and_underscore_id_preserves_multiline_prompt) ... ok
+test_complete_table_and_card_read_twelve_fields_without_mutating_source (test_character_asset_contract.CharacterContractTests.test_complete_table_and_card_read_twelve_fields_without_mutating_source) ... ok
+test_duplicate_cards_or_current_artifacts_do_not_arbitrarily_select_one (test_character_asset_contract.CharacterContractTests.test_duplicate_cards_or_current_artifacts_do_not_arbitrarily_select_one) ... ok
+test_legacy_numbered_roles_retain_names_ids_and_placeholder_nature (test_character_asset_contract.CharacterContractTests.test_legacy_numbered_roles_retain_names_ids_and_placeholder_nature) ... ok
+test_nested_staff_and_other_asset_sections_cannot_become_project_characters (test_character_asset_contract.CharacterContractTests.test_nested_staff_and_other_asset_sections_cannot_become_project_characters) ... ok
+test_partial_card_is_retained_and_missing_fields_are_specific (test_character_asset_contract.CharacterContractTests.test_partial_card_is_retained_and_missing_fields_are_specific) ... ok
+test_pure_scene_declaration_is_explicit_and_does_not_invent_people (test_character_asset_contract.CharacterContractTests.test_pure_scene_declaration_is_explicit_and_does_not_invent_people) ... ok
+test_story_character_may_have_staff_job_when_explicitly_a_character (test_character_asset_contract.CharacterContractTests.test_story_character_may_have_staff_job_when_explicitly_a_character) ... ok
+test_two_column_legacy_fields_preserve_uncertainty_and_stay_in_own_card (test_character_asset_contract.CharacterContractTests.test_two_column_legacy_fields_preserve_uncertainty_and_stay_in_own_card) ... ok
+test_conflicting_current_sources_warn_without_deleting_existing_assets (test_character_asset_contract.CharacterDraftConflictTests.test_conflicting_current_sources_warn_without_deleting_existing_assets) ... ok
+test_deleted_artifact_is_excluded_from_current_report (test_character_asset_contract.ProductionCharacterReportTests.test_deleted_artifact_is_excluded_from_current_report) ... ok
+test_get_and_list_derive_report_without_rewriting_completed_plan_or_running_agents (test_character_asset_contract.ProductionCharacterReportTests.test_get_and_list_derive_report_without_rewriting_completed_plan_or_running_agents) ... ok
+test_r05_dispatch_gets_contract_and_missing_fields_do_not_block_approval (test_character_asset_contract.ProductionCharacterReportTests.test_r05_dispatch_gets_contract_and_missing_fields_do_not_block_approval) ... ok
+test_busy_port_is_not_touched (test_desktop_manager.DesktopManagerTests.test_busy_port_is_not_touched) ... ok
+test_missing_project_has_actionable_error (test_desktop_manager.DesktopManagerTests.test_missing_project_has_actionable_error) ... ok
+test_other_project_and_old_versions_are_not_replaced (test_desktop_manager.DesktopManagerTests.test_other_project_and_old_versions_are_not_replaced) ... ok
+test_reuses_same_project_without_launching (test_desktop_manager.DesktopManagerTests.test_reuses_same_project_without_launching) ... ok
+test_starts_detached_and_reports_verified_identity (test_desktop_manager.DesktopManagerTests.test_starts_detached_and_reports_verified_identity) ... ok
+test_all_active_models_quote_and_submit_the_exact_documented_paths_and_types (test_full_model_catalog.EveryModelOfflineFlowTests.test_all_active_models_quote_and_submit_the_exact_documented_paths_and_types) ... ok
+test_all_four_retired_endpoints_are_visible_but_rejected_before_any_transport (test_full_model_catalog.EveryModelOfflineFlowTests.test_all_four_retired_endpoints_are_visible_but_rejected_before_any_transport) ... ok
+test_catalog_returns_independent_contract_copies (test_full_model_catalog.FullCatalogTests.test_catalog_returns_independent_contract_copies) ... ok
+test_every_public_field_name_required_flag_and_json_type_survives_loading (test_full_model_catalog.FullCatalogTests.test_every_public_field_name_required_flag_and_json_type_survives_loading) ... ok
+test_runtime_and_refreshed_snapshots_never_default_to_example_text_or_media (test_full_model_catalog.FullCatalogTests.test_runtime_and_refreshed_snapshots_never_default_to_example_text_or_media) ... ok
+test_snapshot_and_runtime_cover_all_official_operations_without_brand_deduplication (test_full_model_catalog.FullCatalogTests.test_snapshot_and_runtime_cover_all_official_operations_without_brand_deduplication) ... ok
+test_cross_origin_host_and_missing_csrf_rejected (test_httpd.HttpTests.test_cross_origin_host_and_missing_csrf_rejected) ... 127.0.0.1 - - [25/Oct/2026 11:06:53] "GET /api/health HTTP/1.1" 403 -
+127.0.0.1 - - [25/Oct/2026 11:06:53] "GET /api/health HTTP/1.1" 403 -
+127.0.0.1 - - [25/Oct/2026 11:06:53] "GET /api/health HTTP/1.1" 403 -
+127.0.0.1 - - [25/Oct/2026 11:06:53] "POST /api/runs HTTP/1.1" 403 -
+ok
+test_health_and_static_page (test_httpd.HttpTests.test_health_and_static_page) ... 127.0.0.1 - - [25/Oct/2026 11:06:53] "GET /api/health HTTP/1.1" 200 -
+ok
+test_runtime_sources_secrets_and_traversal_never_served (test_httpd.HttpTests.test_runtime_sources_secrets_and_traversal_never_served) ... ok
+test_write_requires_json_and_scoped_query (test_httpd.HttpTests.test_write_requires_json_and_scoped_query) ... 127.0.0.1 - - [25/Oct/2026 11:06:53] "POST /api/runs HTTP/1.1" 415 -
+ok
+test_catalog_is_local_and_does_not_claim_verified_connection (test_media.MediaTests.test_catalog_is_local_and_does_not_claim_verified_connection) ... ok
+test_configuration_mode_redaction_preserve_and_clear (test_media.MediaTests.test_configuration_mode_redaction_preserve_and_clear) ... ok
+test_corrupt_configuration_is_not_overwritten (test_media.MediaTests.test_corrupt_configuration_is_not_overwritten) ... ok
+test_default_transport_rejects_non_object_json (test_media.MediaTests.test_default_transport_rejects_non_object_json) ... ok
+test_estimate_binding_detects_execution_and_cost_changes (test_media.MediaTests.test_estimate_binding_detects_execution_and_cost_changes) ... ok
+test_estimate_unknown_decimal_currency_and_no_hard_cap (test_media.MediaTests.test_estimate_unknown_decimal_currency_and_no_hard_cap) ... ok
+test_existing_permissions_are_tightened (test_media.MediaTests.test_existing_permissions_are_tightened) ... ok
+test_invalid_configuration_does_not_write (test_media.MediaTests.test_invalid_configuration_does_not_write) ... ok
+test_invalid_node_and_billing_parameters_are_rejected (test_media.MediaTests.test_invalid_node_and_billing_parameters_are_rejected) ... ok
+test_missing_key_confirmation_budget_and_price_never_submit (test_media.MediaTests.test_missing_key_confirmation_budget_and_price_never_submit) ... ok
+test_poll_errors_are_not_submission_uncertainty (test_media.MediaTests.test_poll_errors_are_not_submission_uncertainty) ... ok
+test_poll_ignores_unsafe_urls_and_redacts_errors_and_types (test_media.MediaTests.test_poll_ignores_unsafe_urls_and_redacts_errors_and_types) ... ok
+test_poll_mismatched_task_and_malformed_results_rejected (test_media.MediaTests.test_poll_mismatched_task_and_malformed_results_rejected) ... ok
+test_poll_status_and_empty_success_do_not_invent_assets (test_media.MediaTests.test_poll_status_and_empty_success_do_not_invent_assets) ... ok
+test_poll_uses_v2_bearer_and_preserves_external_output_evidence (test_media.MediaTests.test_poll_uses_v2_bearer_and_preserves_external_output_evidence) ... ok
+test_redirect_handler_never_forwards_credentials (test_media.MediaTests.test_redirect_handler_never_forwards_credentials) ... ok
+test_submit_matches_official_endpoint_and_returns_real_task_id (test_media.MediaTests.test_submit_matches_official_endpoint_and_returns_real_task_id) ... ok
+test_submit_missing_workflow_does_not_request (test_media.MediaTests.test_submit_missing_workflow_does_not_request) ... ok
+test_submit_rejection_redacts_and_does_not_retry (test_media.MediaTests.test_submit_rejection_redacts_and_does_not_retry) ... ok
+test_submit_timeout_and_http_uncertainty_do_not_retry (test_media.MediaTests.test_submit_timeout_and_http_uncertainty_do_not_retry) ... ok
+test_submit_unknown_responses_are_never_retried (test_media.MediaTests.test_submit_unknown_responses_are_never_retried) ... ok
+test_symlink_configuration_rejected_even_if_target_missing (test_media.MediaTests.test_symlink_configuration_rejected_even_if_target_missing) ... ok
+test_unsupported_provider_only_accepts_price_and_safe_platform_link (test_media.MediaTests.test_unsupported_provider_only_accepts_price_and_safe_platform_link) ... ok
+test_config_and_execution_share_workflow_normalization (test_media_discovery.DiscoveryTests.test_config_and_execution_share_workflow_normalization) ... ok
+test_credential_fields_and_values_never_reach_browser (test_media_discovery.DiscoveryTests.test_credential_fields_and_values_never_reach_browser) ... ok
+test_failed_reverification_clears_old_success_without_exposing_response (test_media_discovery.DiscoveryTests.test_failed_reverification_clears_old_success_without_exposing_response) ... ok
+test_integer_seed_precision_survives_javascript_boundary (test_media_discovery.DiscoveryTests.test_integer_seed_precision_survives_javascript_boundary) ... ok
+test_invalid_account_responses_never_verify (test_media_discovery.DiscoveryTests.test_invalid_account_responses_never_verify) ... ok
+test_missing_key_and_unsupported_provider_never_request (test_media_discovery.DiscoveryTests.test_missing_key_and_unsupported_provider_never_request) ... ok
+test_normalization_accepts_only_official_workflow_targets (test_media_discovery.DiscoveryTests.test_normalization_accepts_only_official_workflow_targets) ... ok
+test_old_success_cannot_restore_verification_after_key_changes (test_media_discovery.DiscoveryTests.test_old_success_cannot_restore_verification_after_key_changes) ... ok
+test_readonly_transport_errors_are_safe_and_never_create (test_media_discovery.DiscoveryTests.test_readonly_transport_errors_are_safe_and_never_create) ... ok
+test_superseded_verify_does_not_overwrite_newer_result (test_media_discovery.DiscoveryTests.test_superseded_verify_does_not_overwrite_newer_result) ... ok
+test_verification_is_process_local_and_key_bound (test_media_discovery.DiscoveryTests.test_verification_is_process_local_and_key_bound) ... ok
+test_verify_uses_account_only_and_exact_official_auth (test_media_discovery.DiscoveryTests.test_verify_uses_account_only_and_exact_official_auth) ... ok
+test_workflow_in_flight_key_change_rejected (test_media_discovery.DiscoveryTests.test_workflow_in_flight_key_change_rejected) ... ok
+test_workflow_limits_and_malformed_graphs_fail_safely (test_media_discovery.DiscoveryTests.test_workflow_limits_and_malformed_graphs_fail_safely) ... ok
+test_workflow_reads_scalars_only_with_exact_auth (test_media_discovery.DiscoveryTests.test_workflow_reads_scalars_only_with_exact_auth) ... ok
+test_workflow_rejection_does_not_leak_raw_code_or_message (test_media_discovery.DiscoveryTests.test_workflow_rejection_does_not_leak_raw_code_or_message) ... ok
+test_discovery_keeps_same_origin_and_csrf_protection (test_media_http.MediaDiscoveryHttpTests.test_discovery_keeps_same_origin_and_csrf_protection) ... 127.0.0.1 - - [25/Oct/2026 11:06:54] "POST /api/connections/runninghub/verify HTTP/1.1" 403 -
+127.0.0.1 - - [25/Oct/2026 11:06:54] "POST /api/connections/runninghub/verify HTTP/1.1" 403 -
+127.0.0.1 - - [25/Oct/2026 11:06:54] "POST /api/connections/runninghub/workflow HTTP/1.1" 403 -
+127.0.0.1 - - [25/Oct/2026 11:06:54] "POST /api/connections/runninghub/workflow HTTP/1.1" 403 -
+ok
+test_discovery_rejects_inline_keys_and_generation_options (test_media_http.MediaDiscoveryHttpTests.test_discovery_rejects_inline_keys_and_generation_options) ... 127.0.0.1 - - [25/Oct/2026 11:06:55] "POST /api/connections/runninghub/verify HTTP/1.1" 400 -
+127.0.0.1 - - [25/Oct/2026 11:06:55] "POST /api/connections/runninghub/workflow HTTP/1.1" 400 -
+ok
+test_read_only_discovery_routes_return_safe_results (test_media_http.MediaDiscoveryHttpTests.test_read_only_discovery_routes_return_safe_results) ... 127.0.0.1 - - [25/Oct/2026 11:06:55] "POST /api/connections/runninghub/verify HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2026 11:06:55] "POST /api/connections/runninghub/workflow HTTP/1.1" 200 -
+ok
+test_duplicate_submission_returns_saved_platform_task (test_media_http.MediaHttpTests.test_duplicate_submission_returns_saved_platform_task) ... ok
+test_invalid_project_rejected_before_submit (test_media_http.MediaHttpTests.test_invalid_project_rejected_before_submit) ... ok
+test_submission_preserves_project_association (test_media_http.MediaHttpTests.test_submission_preserves_project_association) ... ok
+test_uncertain_submission_is_preserved_and_never_retried (test_media_http.MediaHttpTests.test_uncertain_submission_is_preserved_and_never_retried) ... ok
+test_defaults_never_copy_sample_prompts_files_or_identifiers (test_media_model_schema.ModelSchemaTests.test_defaults_never_copy_sample_prompts_files_or_identifiers) ... ok
+test_enums_are_typed_and_arrays_validate_items (test_media_model_schema.ModelSchemaTests.test_enums_are_typed_and_arrays_validate_items) ... ok
+test_exclusive_bounds_and_string_length (test_media_model_schema.ModelSchemaTests.test_exclusive_bounds_and_string_length) ... ok
+test_missing_null_and_empty_are_distinct (test_media_model_schema.ModelSchemaTests.test_missing_null_and_empty_are_distinct) ... ok
+test_nested_media_links_are_https_only (test_media_model_schema.ModelSchemaTests.test_nested_media_links_are_https_only) ... ok
+test_nested_required_fields_and_unknown_fields (test_media_model_schema.ModelSchemaTests.test_nested_required_fields_and_unknown_fields) ... ok
+test_numeric_boundaries_keep_wire_types_and_reject_booleans (test_media_model_schema.ModelSchemaTests.test_numeric_boundaries_keep_wire_types_and_reject_booleans) ... ok
+test_oversized_or_overdeep_input_is_rejected (test_media_model_schema.ModelSchemaTests.test_oversized_or_overdeep_input_is_rejected) ... ok
+test_seedance_draft_constraint_and_duration_wire_string (test_media_model_schema.ModelSchemaTests.test_seedance_draft_constraint_and_duration_wire_string) ... ok
+test_unsupported_schema_contracts_fail_closed (test_media_model_schema.ModelSchemaTests.test_unsupported_schema_contracts_fail_closed) ... ok
+test_bad_quote_is_never_treated_as_free (test_media_models.ModelTests.test_bad_quote_is_never_treated_as_free) ... ok
+test_budget_and_confirmation_gates_do_not_submit (test_media_models.ModelTests.test_budget_and_confirmation_gates_do_not_submit) ... ok
+test_canvas_total_binding_rejects_changed_inputs_low_caps_and_expired_quotes (test_media_models.ModelTests.test_canvas_total_binding_rejects_changed_inputs_low_caps_and_expired_quotes) ... ok
+test_canvas_total_binding_uses_cached_price_and_retains_expiry (test_media_models.ModelTests.test_canvas_total_binding_uses_cached_price_and_retains_expiry) ... ok
+test_catalog_and_configuration_separate_keys_and_never_expose_them (test_media_models.ModelTests.test_catalog_and_configuration_separate_keys_and_never_expose_them) ... ok
+test_cn_retired_g2_is_visible_but_cannot_quote_or_submit_and_siblings_are_not_inferred (test_media_models.ModelTests.test_cn_retired_g2_is_visible_but_cannot_quote_or_submit_and_siblings_are_not_inferred) ... ok
+test_contract_or_endpoint_changes_invalidate_quote_without_submission (test_media_models.ModelTests.test_contract_or_endpoint_changes_invalidate_quote_without_submission) ... ok
+test_disabled_model_cannot_quote_or_submit (test_media_models.ModelTests.test_disabled_model_cannot_quote_or_submit) ... ok
+test_expired_quote_cannot_submit_or_silently_refresh (test_media_models.ModelTests.test_expired_quote_cannot_submit_or_silently_refresh) ... ok
+test_input_allowlist_rejects_invalid_or_injected_parameters_without_network (test_media_models.ModelTests.test_input_allowlist_rejects_invalid_or_injected_parameters_without_network) ... ok
+test_key_change_after_cache_read_cannot_reuse_old_quote (test_media_models.ModelTests.test_key_change_after_cache_read_cannot_reuse_old_quote) ... ok
+test_metadata_and_model_parameters_are_safe_copies (test_media_models.ModelTests.test_metadata_and_model_parameters_are_safe_copies) ... ok
+test_model_poll_uses_model_key_and_workflow_poll_keeps_personal_key (test_media_models.ModelTests.test_model_poll_uses_model_key_and_workflow_poll_keeps_personal_key) ... ok
+test_model_rejection_bounds_diagnostic_and_ignores_structured_payloads (test_media_models.ModelTests.test_model_rejection_bounds_diagnostic_and_ignores_structured_payloads) ... ok
+test_model_rejection_preserves_safe_provider_diagnostic_without_retry (test_media_models.ModelTests.test_model_rejection_preserves_safe_provider_diagnostic_without_retry) ... /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/copy.py:201: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109c2c7c0>
+  for key, value in x.items():
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/copy.py:201: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109c2c040>
+  for key, value in x.items():
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/copy.py:201: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109c2ef20>
+  for key, value in x.items():
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/copy.py:201: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109dc4d60>
+  for key, value in x.items():
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/copy.py:201: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109dc4b80>
+  for key, value in x.items():
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_model_verification_only_calls_price_preview_and_is_independent (test_media_models.ModelTests.test_model_verification_only_calls_price_preview_and_is_independent) ... /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/copy.py:110: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109dc49a0>
+  def deepcopy(x, memo=None, _nil=[]):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/copy.py:110: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109dc47c0>
+  def deepcopy(x, memo=None, _nil=[]):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_new_model_preserves_numeric_parameters_through_quote_and_submission (test_media_models.ModelTests.test_new_model_preserves_numeric_parameters_through_quote_and_submission) ... ok
+test_official_free_quote_can_bind_a_zero_total_but_still_requires_confirmation (test_media_models.ModelTests.test_official_free_quote_can_bind_a_zero_total_but_still_requires_confirmation) ... ok
+test_official_price_uses_model_bearer_and_default_parameters (test_media_models.ModelTests.test_official_price_uses_model_bearer_and_default_parameters) ... ok
+test_parameter_budget_model_or_key_changes_invalidate_quote (test_media_models.ModelTests.test_parameter_budget_model_or_key_changes_invalidate_quote) ... ok
+test_poll_keeps_inert_text_and_redacts_secrets_separately_from_media (test_media_models.ModelTests.test_poll_keeps_inert_text_and_redacts_secrets_separately_from_media) ... ok
+test_quality_first_defaults_use_seedream_pro_with_explicit_project_dimensions (test_media_models.ModelTests.test_quality_first_defaults_use_seedream_pro_with_explicit_project_dimensions) ... ok
+test_quote_is_claimed_once_even_if_reported_free (test_media_models.ModelTests.test_quote_is_claimed_once_even_if_reported_free) ... ok
+test_reference_images_and_video_specific_enums (test_media_models.ModelTests.test_reference_images_and_video_specific_enums) ... ok
+test_seedream_framing_parameters_and_reference_images_keep_explicit_values (test_media_models.ModelTests.test_seedream_framing_parameters_and_reference_images_keep_explicit_values) ... ok
+test_submit_reuses_quote_without_second_network_estimate (test_media_models.ModelTests.test_submit_reuses_quote_without_second_network_estimate) ... ok
+test_text_outputs_enforce_item_count_and_total_length_bounds (test_media_models.ModelTests.test_text_outputs_enforce_item_count_and_total_length_bounds) ... ok
+test_ultra_cn_retirement_does_not_infer_edit_operation_status (test_media_models.ModelTests.test_ultra_cn_retirement_does_not_infer_edit_operation_status) ... ok
+test_unknown_submission_has_no_retry (test_media_models.ModelTests.test_unknown_submission_has_no_retry) ... ok
+test_verification_race_does_not_verify_replaced_key (test_media_models.ModelTests.test_verification_race_does_not_verify_replaced_key) ... ok
+test_catalog_route_is_read_only (test_media_models_http.ModelHttpTests.test_catalog_route_is_read_only) ... ok
+test_refresh_uses_persisted_mode_and_legacy_jobs_default_to_workflow (test_media_models_http.ModelHttpTests.test_refresh_uses_persisted_mode_and_legacy_jobs_default_to_workflow) ... ok
+test_submit_persists_model_snapshot_and_deduplicates (test_media_models_http.ModelHttpTests.test_submit_persists_model_snapshot_and_deduplicates) ... ok
+test_text_tool_outputs_are_saved_on_submit_and_refresh (test_media_models_http.ModelHttpTests.test_text_tool_outputs_are_saved_on_submit_and_refresh) ... ok
+test_unknown_submission_is_persisted_and_not_retried (test_media_models_http.ModelHttpTests.test_unknown_submission_is_persisted_and_not_retried) ... ok
+test_verify_route_supports_model_mode_without_inline_credentials (test_media_models_http.ModelHttpTests.test_verify_route_supports_model_mode_without_inline_credentials) ... ok
+test_personal_image_workflow_full_http_round_trip_and_deduplication (test_media_personal_e2e.PersonalWorkflowE2ETests.test_personal_image_workflow_full_http_round_trip_and_deduplication) ... 127.0.0.1 - - [25/Oct/2026 11:06:56] "GET /api/health HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2026 11:06:56] "POST /api/connections/runninghub HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2026 11:06:56] "POST /api/connections/runninghub/verify HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2026 11:06:56] "POST /api/connections/runninghub/workflow HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2026 11:06:56] "POST /api/media/estimate HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2026 11:06:56] "POST /api/media/jobs HTTP/1.1" 202 -
+127.0.0.1 - - [25/Oct/2026 11:06:56] "POST /api/media/jobs HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2026 11:06:56] "POST /api/media/jobs HTTP/1.1" 409 -
+127.0.0.1 - - [25/Oct/2026 11:06:56] "POST /api/media/jobs/6e6dbfa369674420a05221fd3777ee1a/refresh HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2026 11:06:56] "POST /api/media/jobs/6e6dbfa369674420a05221fd3777ee1a/refresh HTTP/1.1" 200 -
+ok
+test_personal_video_workflow_full_http_round_trip_and_deduplication (test_media_personal_e2e.PersonalWorkflowE2ETests.test_personal_video_workflow_full_http_round_trip_and_deduplication) ... 127.0.0.1 - - [25/Oct/2026 11:06:57] "GET /api/health HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2026 11:06:57] "POST /api/connections/runninghub HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2026 11:06:57] "POST /api/connections/runninghub/verify HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2026 11:06:57] "POST /api/connections/runninghub/workflow HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2026 11:06:57] "POST /api/media/estimate HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2026 11:06:57] "POST /api/media/jobs HTTP/1.1" 202 -
+127.0.0.1 - - [25/Oct/2026 11:06:57] "POST /api/media/jobs HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2026 11:06:57] "POST /api/media/jobs HTTP/1.1" 409 -
+127.0.0.1 - - [25/Oct/2026 11:06:57] "POST /api/media/jobs/7619056e2bd041739b50a7cccb40437d/refresh HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2026 11:06:57] "POST /api/media/jobs/7619056e2bd041739b50a7cccb40437d/refresh HTTP/1.1" 200 -
+ok
+test_uncertain_personal_submission_keeps_record_without_resubmitting (test_media_personal_e2e.PersonalWorkflowE2ETests.test_uncertain_personal_submission_keeps_record_without_resubmitting) ... 127.0.0.1 - - [25/Oct/2026 11:06:57] "GET /api/health HTTP/1.1" 200 -
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/copy.py:110: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109c2e110>
+  def deepcopy(x, memo=None, _nil=[]):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+127.0.0.1 - - [25/Oct/2026 11:06:57] "POST /api/connections/runninghub HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2026 11:06:57] "POST /api/connections/runninghub/verify HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2026 11:06:58] "POST /api/connections/runninghub/workflow HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2026 11:06:58] "POST /api/media/estimate HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2026 11:06:58] "POST /api/media/jobs HTTP/1.1" 400 -
+127.0.0.1 - - [25/Oct/2026 11:06:58] "POST /api/media/jobs HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2026 11:06:58] "POST /api/media/jobs/ee8c8ac2b4b9487799709eccf7f53a94/refresh HTTP/1.1" 409 -
+ok
+test_auth_capacity_payment_and_transient_errors_do_not_retire_models (test_media_retirement.RetirementTests.test_auth_capacity_payment_and_transient_errors_do_not_retire_models) ... ok
+test_backfill_does_not_treat_user_text_or_other_failure_types_as_provider_retirement (test_media_retirement.RetirementTests.test_backfill_does_not_treat_user_text_or_other_failure_types_as_provider_retirement) ... /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/copy.py:110: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109c2fc40>
+  def deepcopy(x, memo=None, _nil=[]):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/copy.py:110: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109c2c220>
+  def deepcopy(x, memo=None, _nil=[]):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/copy.py:110: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109c2f6a0>
+  def deepcopy(x, memo=None, _nil=[]):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/copy.py:201: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109c2f5b0>
+  for key, value in x.items():
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/copy.py:201: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109c2ed40>
+  for key, value in x.items():
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/copy.py:201: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109dc4400>
+  for key, value in x.items():
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/copy.py:201: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109dc48b0>
+  for key, value in x.items():
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/copy.py:201: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109c2d030>
+  for key, value in x.items():
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_backfill_recovers_historical_40310_without_network_and_is_idempotent (test_media_retirement.RetirementTests.test_backfill_recovers_historical_40310_without_network_and_is_idempotent) ... ok
+test_explicit_retired_code_or_message_is_persisted (test_media_retirement.RetirementTests.test_explicit_retired_code_or_message_is_persisted) ... ok
+test_http_auth_rate_server_and_oversized_errors_do_not_retire (test_media_retirement.RetirementTests.test_http_auth_rate_server_and_oversized_errors_do_not_retire) ... ok
+test_http_error_with_explicit_retirement_is_bounded_and_redacted (test_media_retirement.RetirementTests.test_http_error_with_explicit_retirement_is_bounded_and_redacted) ... ok
+test_other_host_evidence_does_not_disable_cn_operation (test_media_retirement.RetirementTests.test_other_host_evidence_does_not_disable_cn_operation) ... ok
+test_query_retirement_is_attributed_to_persisted_model_and_history_remains_queryable (test_media_retirement.RetirementTests.test_query_retirement_is_attributed_to_persisted_model_and_history_remains_queryable) ... ok
+test_quote_retirement_survives_restart_and_key_changes_without_family_ban (test_media_retirement.RetirementTests.test_quote_retirement_survives_restart_and_key_changes_without_family_ban) ... ok
+test_recording_provider_failure_preserves_settings_changed_during_request (test_media_retirement.RetirementTests.test_recording_provider_failure_preserves_settings_changed_during_request) ... ok
+test_retired_default_cannot_be_reused_for_connection_verification (test_media_retirement.RetirementTests.test_retired_default_cannot_be_reused_for_connection_verification) ... ok
+test_submit_retirement_invalidates_previously_cached_quotes (test_media_retirement.RetirementTests.test_submit_retirement_invalidates_previously_cached_quotes) ... ok
+test_unknown_or_mismatched_query_does_not_retire_a_guessed_model (test_media_retirement.RetirementTests.test_unknown_or_mismatched_query_does_not_retire_a_guessed_model) ... ok
+test_context_failure_prevents_any_request (test_media_tls.MediaTLSTests.test_context_failure_prevents_any_request) ... ok
+test_empty_default_store_can_load_certifi (test_media_tls.MediaTLSTests.test_empty_default_store_can_load_certifi) ... ok
+test_explicit_roots_take_precedence_over_macos_store (test_media_tls.MediaTLSTests.test_explicit_roots_take_precedence_over_macos_store) ... ok
+test_invalid_explicit_certificate_fails_without_system_fallback (test_media_tls.MediaTLSTests.test_invalid_explicit_certificate_fails_without_system_fallback) ... ok
+test_invalid_explicit_paths_fail_without_fallback (test_media_tls.MediaTLSTests.test_invalid_explicit_paths_fail_without_fallback) ... ok
+test_macos_prefers_local_system_trust (test_media_tls.MediaTLSTests.test_macos_prefers_local_system_trust) ... ok
+test_missing_truststore_uses_default_verified_context (test_media_tls.MediaTLSTests.test_missing_truststore_uses_default_verified_context) ... ok
+test_populated_default_store_is_preserved (test_media_tls.MediaTLSTests.test_populated_default_store_is_preserved) ... ok
+test_transport_uses_verified_context_and_keeps_redirect_block (test_media_tls.MediaTLSTests.test_transport_uses_verified_context_and_keeps_redirect_block) ... ok
+test_unusable_fallback_bundle_fails_closed (test_media_tls.MediaTLSTests.test_unusable_fallback_bundle_fails_closed) ... ok
+test_custom_role_paths_are_parsed_without_rewriting_spaces_or_unicode (test_portable_start.PortableStartTests.test_custom_role_paths_are_parsed_without_rewriting_spaces_or_unicode) ... ok
+test_default_arguments_preserve_existing_service_and_role_paths (test_portable_start.PortableStartTests.test_default_arguments_preserve_existing_service_and_role_paths) ... ok
+test_launcher_resolves_its_own_folder_and_passes_isolated_paths (test_portable_start.PortableStartTests.test_launcher_resolves_its_own_folder_and_passes_isolated_paths) ... ok
+test_main_passes_custom_paths_to_catalog_without_starting_generation (test_portable_start.PortableStartTests.test_main_passes_custom_paths_to_catalog_without_starting_generation) ... ok
+test_busy_manual_run_is_waited_on_without_marking_plan_failed (test_production.ProductionTests.test_busy_manual_run_is_waited_on_without_marking_plan_failed) ... ok
+test_close_persists_pause_and_stops_inflight_run (test_production.ProductionTests.test_close_persists_pause_and_stops_inflight_run) ... ok
+test_concurrent_start_only_creates_one_plan (test_production.ProductionTests.test_concurrent_start_only_creates_one_plan) ... ok
+test_continuous_still_requires_final_review (test_production.ProductionTests.test_continuous_still_requires_final_review) ... ok
+test_cross_project_sources_are_not_passed_to_provider (test_production.ProductionTests.test_cross_project_sources_are_not_passed_to_provider) ... ok
+test_failed_revision_resume_keeps_original_full_draft (test_production.ProductionTests.test_failed_revision_resume_keeps_original_full_draft) ... ok
+test_failed_stage_resumes_without_repeating_completed_work (test_production.ProductionTests.test_failed_stage_resumes_without_repeating_completed_work) ... ok
+test_game_invalid_inputs_and_new_plan_cannot_reopen_old_lineage (test_production.ProductionTests.test_game_invalid_inputs_and_new_plan_cannot_reopen_old_lineage) ... ok
+test_health_failure_is_saved_and_retryable (test_production.ProductionTests.test_health_failure_is_saved_and_retryable) ... ok
+test_pause_after_success_recovers_output_before_scheduler_consumes_it (test_production.ProductionTests.test_pause_after_success_recovers_output_before_scheduler_consumes_it) ... ok
+test_pause_wins_over_late_success_and_resume_uses_new_attempt (test_production.ProductionTests.test_pause_wins_over_late_success_and_resume_uses_new_attempt) ... ok
+test_paused_revision_resume_keeps_original_full_draft (test_production.ProductionTests.test_paused_revision_resume_keeps_original_full_draft) ... ok
+test_pausing_review_does_not_bypass_approval_on_resume (test_production.ProductionTests.test_pausing_review_does_not_bypass_approval_on_resume) ... ok
+test_restart_consumes_success_and_recovers_orphan_by_request_id (test_production.ProductionTests.test_restart_consumes_success_and_recovers_orphan_by_request_id) ... ok
+test_restart_interrupted_run_waits_for_explicit_resume (test_production.ProductionTests.test_restart_interrupted_run_waits_for_explicit_resume) ... ok
+test_review_cas_prevents_duplicate_or_stale_action (test_production.ProductionTests.test_review_cas_prevents_duplicate_or_stale_action) ... ok
+test_revise_cancels_inflight_downstream_without_late_overwrite (test_production.ProductionTests.test_revise_cancels_inflight_downstream_without_late_overwrite) ... ok
+test_revise_preserves_old_full_versions_and_invalidates_downstream (test_production.ProductionTests.test_revise_preserves_old_full_versions_and_invalidates_downstream) ... ok
+test_start_is_persistent_idempotent_and_does_not_mutate_project (test_production.ProductionTests.test_start_is_persistent_idempotent_and_does_not_mutate_project) ... ok
+test_stepwise_gate_handoffs_full_text_and_final_acceptance (test_production.ProductionTests.test_stepwise_gate_handoffs_full_text_and_final_acceptance) ... ok
+test_csrf_scoping_and_creation_idempotence (test_production_http.ProductionHttpTests.test_csrf_scoping_and_creation_idempotence) ... 127.0.0.1 - - [25/Oct/2026 11:07:00] "POST /api/productions HTTP/1.1" 403 -
+127.0.0.1 - - [25/Oct/2026 11:07:00] "POST /api/productions HTTP/1.1" 403 -
+127.0.0.1 - - [25/Oct/2026 11:07:00] "POST /api/productions HTTP/1.1" 202 -
+127.0.0.1 - - [25/Oct/2026 11:07:00] "POST /api/productions HTTP/1.1" 202 -
+127.0.0.1 - - [25/Oct/2026 11:07:00] "GET /api/health HTTP/1.1" 200 -
+ok
+test_review_cas_and_untrusted_scheduler_metadata (test_production_http.ProductionHttpTests.test_review_cas_and_untrusted_scheduler_metadata) ... 127.0.0.1 - - [25/Oct/2026 11:07:00] "POST /api/productions HTTP/1.1" 202 -
+127.0.0.1 - - [25/Oct/2026 11:07:01] "POST /api/productions/cb2578a781a445da8b348ddf1e18f32e/review HTTP/1.1" 409 -
+127.0.0.1 - - [25/Oct/2026 11:07:01] "POST /api/productions/cb2578a781a445da8b348ddf1e18f32e/review HTTP/1.1" 403 -
+127.0.0.1 - - [25/Oct/2026 11:07:01] "POST /api/runs HTTP/1.1" 403 -
+127.0.0.1 - - [25/Oct/2026 11:07:01] "POST /api/productions/cb2578a781a445da8b348ddf1e18f32e/review HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2026 11:07:02] "POST /api/productions/cb2578a781a445da8b348ddf1e18f32e/review HTTP/1.1" 409 -
+ok
+test_invalid_or_expired_outputs_are_rejected_without_fetching (test_project_assets.ImageOutputTests.test_invalid_or_expired_outputs_are_rejected_without_fetching) ... ok
+test_asset_http_routes_return_new_canvas_and_never_submit_media (test_project_assets.ProjectAssetTests.test_asset_http_routes_return_new_canvas_and_never_submit_media) ... ok
+test_assets_batch_uses_explicit_character_ids_even_if_hidden_shots_selected (test_project_assets.ProjectAssetTests.test_assets_batch_uses_explicit_character_ids_even_if_hidden_shots_selected) ... ok
+test_assets_page_full_document_save_keeps_hidden_shots_and_outputs (test_project_assets.ProjectAssetTests.test_assets_page_full_document_save_keeps_hidden_shots_and_outputs) ... ok
+test_auto_prompt_template_does_not_overwrite_existing_personal_edits (test_project_assets.ProjectAssetTests.test_auto_prompt_template_does_not_overwrite_existing_personal_edits) ... ok
+test_character_change_after_image_quote_blocks_submission (test_project_assets.ProjectAssetTests.test_character_change_after_image_quote_blocks_submission) ... ok
+test_confirm_batch_is_atomic_and_repeating_identical_confirmation_is_idempotent (test_project_assets.ProjectAssetTests.test_confirm_batch_is_atomic_and_repeating_identical_confirmation_is_idempotent) ... ok
+test_confirmation_and_quote_remain_separate_and_generation_is_idempotent (test_project_assets.ProjectAssetTests.test_confirmation_and_quote_remain_separate_and_generation_is_idempotent) ... /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/copy.py:201: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1091f2a70>
+  for key, value in x.items():
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/copy.py:201: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109b48130>
+  for key, value in x.items():
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_confirmation_does_not_acknowledge_a_still_running_result (test_project_assets.ProjectAssetTests.test_confirmation_does_not_acknowledge_a_still_running_result) ... ok
+test_confirmed_references_are_recomputed_and_cannot_be_cleared_by_client (test_project_assets.ProjectAssetTests.test_confirmed_references_are_recomputed_and_cannot_be_cleared_by_client) ... ok
+test_confirmed_text_extracts_three_traceable_drafts_without_generation (test_project_assets.ProjectAssetTests.test_confirmed_text_extracts_three_traceable_drafts_without_generation) ... ok
+test_deleted_visual_cannot_be_bypassed_by_clearing_client_asset_list (test_project_assets.ProjectAssetTests.test_deleted_visual_cannot_be_bypassed_by_clearing_client_asset_list) ... ok
+test_editing_confirmed_character_invalidates_reference_but_keeps_history (test_project_assets.ProjectAssetTests.test_editing_confirmed_character_invalidates_reference_but_keeps_history) ... ok
+test_either_page_may_omit_hidden_nodes_without_deleting_them (test_project_assets.ProjectAssetTests.test_either_page_may_omit_hidden_nodes_without_deleting_them) ... ok
+test_explicitly_keeping_prior_reference_acknowledges_new_candidates_without_version_churn (test_project_assets.ProjectAssetTests.test_explicitly_keeping_prior_reference_acknowledges_new_candidates_without_version_churn) ... ok
+test_failed_old_default_and_unsubmitted_character_preserve_portrait_shape (test_project_assets.ProjectAssetTests.test_failed_old_default_and_unsubmitted_character_preserve_portrait_shape) ... ok
+test_generated_shot_persists_character_evidence_for_video (test_project_assets.ProjectAssetTests.test_generated_shot_persists_character_evidence_for_video) ... ok
+test_idle_old_default_pair_migrates_once_without_relayout_or_losing_drafts (test_project_assets.ProjectAssetTests.test_idle_old_default_pair_migrates_once_without_relayout_or_losing_drafts) ... ok
+test_malformed_asset_ids_fail_validation_instead_of_server_error (test_project_assets.ProjectAssetTests.test_malformed_asset_ids_fail_validation_instead_of_server_error) ... ok
+test_manual_asset_and_actual_image_confirmation_are_project_scoped (test_project_assets.ProjectAssetTests.test_manual_asset_and_actual_image_confirmation_are_project_scoped) ... ok
+test_manual_refresh_passes_persisted_job_model_for_retirement_evidence (test_project_assets.ProjectAssetTests.test_manual_refresh_passes_persisted_job_model_for_retirement_evidence) ... ok
+test_model_migration_keeps_success_active_unknown_and_user_selection (test_project_assets.ProjectAssetTests.test_model_migration_keeps_success_active_unknown_and_user_selection) ... ok
+test_model_migration_protects_batch_before_submission_and_missing_jobs (test_project_assets.ProjectAssetTests.test_model_migration_protects_batch_before_submission_and_missing_jobs) ... ok
+test_model_selection_origin_is_not_a_generation_input (test_project_assets.ProjectAssetTests.test_model_selection_origin_is_not_a_generation_input) ... ok
+test_new_visual_version_preserves_edited_old_assets_and_positions_new_nodes_without_overlap (test_project_assets.ProjectAssetTests.test_new_visual_version_preserves_edited_old_assets_and_positions_new_nodes_without_overlap) ... ok
+test_old_retired_model_on_character_is_preserved_but_cannot_quote (test_project_assets.ProjectAssetTests.test_old_retired_model_on_character_is_preserved_but_cannot_quote) ... ok
+test_only_current_compatible_success_is_exposed_as_review_candidate (test_project_assets.ProjectAssetTests.test_only_current_compatible_success_is_exposed_as_review_candidate) ... ok
+test_same_prompt_regeneration_is_a_new_review_candidate_without_erasing_approved_reference (test_project_assets.ProjectAssetTests.test_same_prompt_regeneration_is_a_new_review_candidate_without_erasing_approved_reference) ... ok
+test_selecting_one_output_does_not_make_other_outputs_from_same_job_pending_again (test_project_assets.ProjectAssetTests.test_selecting_one_output_does_not_make_other_outputs_from_same_job_pending_again) ... ok
+test_soft_deleted_project_source_node_or_media_blocks_reference_and_restore_does_not_generate (test_project_assets.ProjectAssetTests.test_soft_deleted_project_source_node_or_media_blocks_reference_and_restore_does_not_generate) ... ok
+test_video_rejects_missing_or_mismatched_character_input_evidence (test_project_assets.ProjectAssetTests.test_video_rejects_missing_or_mismatched_character_input_evidence) ... ok
+test_video_rejects_stale_character_and_old_frame_after_same_url_new_confirmation (test_project_assets.ProjectAssetTests.test_video_rejects_stale_character_and_old_frame_after_same_url_new_confirmation) ... ok
+test_video_requires_successful_current_same_shot_image (test_project_assets.ProjectAssetTests.test_video_requires_successful_current_same_shot_image) ... ok
+test_visual_review_can_import_before_final_storyboard_but_is_not_image_approval (test_project_assets.ProjectAssetTests.test_visual_review_can_import_before_final_storyboard_but_is_not_image_approval) ... ok
+test_changed_context_requires_new_quote (test_project_media.ProjectMediaHttpTests.test_changed_context_requires_new_quote) ... ok
+test_existing_job_remains_readable_after_source_changes (test_project_media.ProjectMediaHttpTests.test_existing_job_remains_readable_after_source_changes) ... ok
+test_stale_source_rejected_before_submission (test_project_media.ProjectMediaHttpTests.test_stale_source_rejected_before_submission) ... ok
+test_storyboard_route_and_estimate_validate_project_without_generation (test_project_media.ProjectMediaHttpTests.test_storyboard_route_and_estimate_validate_project_without_generation) ... ok
+test_submit_and_refresh_preserve_association_without_changing_workspace (test_project_media.ProjectMediaHttpTests.test_submit_and_refresh_preserve_association_without_changing_workspace) ... ok
+test_association_rejects_missing_foreign_and_stale_targets (test_project_media.ProjectMediaTests.test_association_rejects_missing_foreign_and_stale_targets) ... ok
+test_cross_project_artifact_in_production_is_not_adopted (test_project_media.ProjectMediaTests.test_cross_project_artifact_in_production_is_not_adopted) ... ok
+test_current_production_stages_take_priority_and_body_is_canonical (test_project_media.ProjectMediaTests.test_current_production_stages_take_priority_and_body_is_canonical) ... ok
+test_demo_and_missing_projects_do_not_read_real_artifacts (test_project_media.ProjectMediaTests.test_demo_and_missing_projects_do_not_read_real_artifacts) ... ok
+test_hierarchical_shots_pair_quoted_prompts_and_visual_prefix (test_project_media.ProjectMediaTests.test_hierarchical_shots_pair_quoted_prompts_and_visual_prefix) ... ok
+test_older_prompts_are_not_applied_to_new_storyboard (test_project_media.ProjectMediaTests.test_older_prompts_are_not_applied_to_new_storyboard) ... ok
+test_plain_prompt_paragraph_and_timecode_duration (test_project_media.ProjectMediaTests.test_plain_prompt_paragraph_and_timecode_duration) ... ok
+test_prompt_only_source_uses_explicit_section_ids (test_project_media.ProjectMediaTests.test_prompt_only_source_uses_explicit_section_ids) ... ok
+test_r11_summary_cannot_impersonate_storyboard_stage (test_project_media.ProjectMediaTests.test_r11_summary_cannot_impersonate_storyboard_stage) ... ok
+test_reads_only_project_r04_r06_and_keeps_exact_prompt_text (test_project_media.ProjectMediaTests.test_reads_only_project_r04_r06_and_keeps_exact_prompt_text) ... ok
+test_retired_production_stage_does_not_reappear_as_fallback (test_project_media.ProjectMediaTests.test_retired_production_stage_does_not_reappear_as_fallback) ... ok
+test_unscoped_generation_is_compatible_but_cannot_claim_links (test_project_media.ProjectMediaTests.test_unscoped_generation_is_compatible_but_cannot_claim_links) ... ok
+test_unsupported_format_retains_source_without_inventing_shots (test_project_media.ProjectMediaTests.test_unsupported_format_retains_source_without_inventing_shots) ... ok
+test_cancel_and_timeout_kill_launcher_and_child (test_provider.ProviderTests.test_cancel_and_timeout_kill_launcher_and_child) ... ok
+test_cancel_before_start_and_invalid_workdir (test_provider.ProviderTests.test_cancel_before_start_and_invalid_workdir) ... ok
+test_final_response_filters_reasoning_and_reports_usage (test_provider.ProviderTests.test_final_response_filters_reasoning_and_reports_usage) ... ok
+test_health_never_returns_raw_credentials (test_provider.ProviderTests.test_health_never_returns_raw_credentials) ... ok
+test_no_api_keys_or_thread_handles_are_inherited (test_provider.ProviderTests.test_no_api_keys_or_thread_handles_are_inherited) ... ok
+test_partial_output_or_failed_turn_never_counts_as_success (test_provider.ProviderTests.test_partial_output_or_failed_turn_never_counts_as_success) ... ok
+test_prompt_is_stdin_and_command_disables_tools (test_provider.ProviderTests.test_prompt_is_stdin_and_command_disables_tools) ... ok
+test_unexpected_tool_aborts_without_forwarding_contents (test_provider.ProviderTests.test_unexpected_tool_aborts_without_forwarding_contents) ... ok
+test_duplicate_or_unexpected_model_paths_are_rejected (test_public_catalog_refresh.PublicCatalogRefreshTests.test_duplicate_or_unexpected_model_paths_are_rejected) ... ok
+test_failed_fetch_or_empty_catalog_does_not_replace_previous_files (test_public_catalog_refresh.PublicCatalogRefreshTests.test_failed_fetch_or_empty_catalog_does_not_replace_previous_files) ... ok
+test_node_prompt_and_asset_defaults_are_removed (test_public_catalog_refresh.PublicCatalogRefreshTests.test_node_prompt_and_asset_defaults_are_removed) ... ok
+test_nonofficial_document_url_is_rejected_before_transport (test_public_catalog_refresh.PublicCatalogRefreshTests.test_nonofficial_document_url_is_rejected_before_transport) ... ok
+test_all_canonical_sources_are_loaded_in_full (test_roles.CanonicalRolesIntegrationTests.test_all_canonical_sources_are_loaded_in_full) ... ok
+test_duplicate_shared_blocks_instead_of_mixing_versions (test_roles.RoleCatalogTests.test_duplicate_shared_blocks_instead_of_mixing_versions) ... ok
+test_duplicate_versions_report_ambiguity_instead_of_guessing (test_roles.RoleCatalogTests.test_duplicate_versions_report_ambiguity_instead_of_guessing) ... ok
+test_full_prompt_instructions_and_provenance (test_roles.RoleCatalogTests.test_full_prompt_instructions_and_provenance) ... ok
+test_import_hash_mismatch_is_visible_but_current_text_is_used (test_roles.RoleCatalogTests.test_import_hash_mismatch_is_visible_but_current_text_is_used) ... ok
+test_list_is_metadata_only_and_cannot_mutate_catalog (test_roles.RoleCatalogTests.test_list_is_metadata_only_and_cannot_mutate_catalog) ... ok
+test_maps_21_identities_and_real_body_version (test_roles.RoleCatalogTests.test_maps_21_identities_and_real_body_version) ... ok
+test_mismatched_identity_or_broken_body_is_unavailable (test_roles.RoleCatalogTests.test_mismatched_identity_or_broken_body_is_unavailable) ... ok
+test_missing_role_visible_but_not_runnable (test_roles.RoleCatalogTests.test_missing_role_visible_but_not_runnable) ... ok
+test_missing_shared_only_blocks_its_team (test_roles.RoleCatalogTests.test_missing_shared_only_blocks_its_team) ... ok
+test_missing_source_directories_do_not_crash_catalog (test_roles.RoleCatalogTests.test_missing_source_directories_do_not_crash_catalog) ... ok
+test_plain_markdown_preserved_without_body_markers (test_roles.RoleCatalogTests.test_plain_markdown_preserved_without_body_markers) ... ok
+test_reload_updates_snapshot_without_editing_source (test_roles.RoleCatalogTests.test_reload_updates_snapshot_without_editing_source) ... ok
+test_source_commands_are_preserved_as_data_never_executed (test_roles.RoleCatalogTests.test_source_commands_are_preserved_as_data_never_executed) ... ok
+test_unknown_or_path_like_id_never_reads_arbitrary_path (test_roles.RoleCatalogTests.test_unknown_or_path_like_id_never_reads_arbitrary_path) ... ok
+test_cancel_retains_terminal_status (test_runtime.RuntimeTests.test_cancel_retains_terminal_status) ... ok
+test_dependency_and_decision_gate (test_runtime.RuntimeTests.test_dependency_and_decision_gate) ... ok
+test_dm_cannot_include_project_or_task_context (test_runtime.RuntimeTests.test_dm_cannot_include_project_or_task_context) ... ok
+test_failure_skips_following_roles (test_runtime.RuntimeTests.test_failure_skips_following_roles) ... ok
+test_full_text_persists_and_no_acceptance_is_forged (test_runtime.RuntimeTests.test_full_text_persists_and_no_acceptance_is_forged) ... ok
+test_idempotence_and_same_scope_busy (test_runtime.RuntimeTests.test_idempotence_and_same_scope_busy) ... ok
+test_restart_marks_unfinished_run_failed (test_runtime.RuntimeTests.test_restart_marks_unfinished_run_failed) ... ok
+test_service_close_cancels_active_work_and_waits_for_cleanup (test_runtime.RuntimeTests.test_service_close_cancels_active_work_and_waits_for_cleanup) ... ok
+test_team_order_and_real_handoff (test_runtime.RuntimeTests.test_team_order_and_real_handoff) ... ok
+test_cancel_wins_even_if_provider_returns_success_after_cancel (test_runtime_review.RuntimeReviewTests.test_cancel_wins_even_if_provider_returns_success_after_cancel) ... ok
+test_concurrent_same_request_executes_once_and_changed_request_is_rejected (test_runtime_review.RuntimeReviewTests.test_concurrent_same_request_executes_once_and_changed_request_is_rejected) ... ok
+test_dm_rejects_foreign_material_but_allows_explicit_unscoped_notes (test_runtime_review.RuntimeReviewTests.test_dm_rejects_foreign_material_but_allows_explicit_unscoped_notes) ... ok
+test_done_dependency_requires_current_evidence_and_review (test_runtime_review.RuntimeReviewTests.test_done_dependency_requires_current_evidence_and_review) ... ok
+test_explicit_foreign_scope_rejected_in_every_context_channel (test_runtime_review.RuntimeReviewTests.test_explicit_foreign_scope_rejected_in_every_context_channel) ... ok
+test_known_artifact_scope_cannot_be_hidden_by_omitting_metadata (test_runtime_review.RuntimeReviewTests.test_known_artifact_scope_cannot_be_hidden_by_omitting_metadata) ... ok
+test_known_artifact_uses_server_body_instead_of_browser_copy (test_runtime_review.RuntimeReviewTests.test_known_artifact_uses_server_body_instead_of_browser_copy) ... ok
+test_allowed_url_cannot_symlink_to_private_file_inside_project (test_runtime_review.StaticFileBoundaryTests.test_allowed_url_cannot_symlink_to_private_file_inside_project) ... ok
+test_active_run_blocks_project_run_and_artifact (test_trash.TrashTests.test_active_run_blocks_project_run_and_artifact) ... ok
+test_anonymous_old_history_cannot_revive_deleted_run_prompt (test_trash.TrashTests.test_anonymous_old_history_cannot_revive_deleted_run_prompt) ... ok
+test_batch_validation_is_atomic (test_trash.TrashTests.test_batch_validation_is_atomic) ... ok
+test_canvas_hidden_nodes_survive_save_and_stale_edits_then_restore (test_trash.TrashTests.test_canvas_hidden_nodes_survive_save_and_stale_edits_then_restore) ... ok
+test_canvas_hidden_reference_is_saved_but_cannot_generate (test_trash.TrashTests.test_canvas_hidden_reference_is_saved_but_cannot_generate) ... ok
+test_canvas_sync_does_not_recreate_deleted_node (test_trash.TrashTests.test_canvas_sync_does_not_recreate_deleted_node) ... ok
+test_context_filters_deleted_artifact_and_its_duplicate_history (test_trash.TrashTests.test_context_filters_deleted_artifact_and_its_duplicate_history) ... ok
+test_context_filters_run_notes_tasks_and_decisions (test_trash.TrashTests.test_context_filters_run_notes_tasks_and_decisions) ... /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/copy.py:110: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109c2ca90>
+  def deepcopy(x, memo=None, _nil=[]):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/copy.py:110: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109c2f790>
+  def deepcopy(x, memo=None, _nil=[]):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/copy.py:110: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109c2ee30>
+  def deepcopy(x, memo=None, _nil=[]):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/copy.py:110: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109c2c7c0>
+  def deepcopy(x, memo=None, _nil=[]):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/copy.py:110: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109c2f5b0>
+  def deepcopy(x, memo=None, _nil=[]):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/copy.py:110: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109c2f6a0>
+  def deepcopy(x, memo=None, _nil=[]):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/copy.py:110: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109c2c220>
+  def deepcopy(x, memo=None, _nil=[]):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/copy.py:110: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109c2c040>
+  def deepcopy(x, memo=None, _nil=[]):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/copy.py:110: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109c2e110>
+  def deepcopy(x, memo=None, _nil=[]):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/copy.py:110: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109c2f1f0>
+  def deepcopy(x, memo=None, _nil=[]):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/copy.py:110: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109c2f010>
+  def deepcopy(x, memo=None, _nil=[]):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_cross_project_ownership_rejected (test_trash.TrashTests.test_cross_project_ownership_rejected) ... ok
+test_delete_after_quote_prevents_paid_submission (test_trash.TrashTests.test_delete_after_quote_prevents_paid_submission) ... ok
+test_deleted_latest_storyboard_does_not_revert_to_old_draft (test_trash.TrashTests.test_deleted_latest_storyboard_does_not_revert_to_old_draft) ... ok
+test_deleted_project_frees_live_quota_without_losing_archive (test_trash.TrashTests.test_deleted_project_frees_live_quota_without_losing_archive) ... ok
+test_deleted_project_rejects_old_run_media_canvas_requests (test_trash.TrashTests.test_deleted_project_rejects_old_run_media_canvas_requests) ... ok
+test_deleted_source_draft_can_save_but_generation_is_blocked (test_trash.TrashTests.test_deleted_source_draft_can_save_but_generation_is_blocked) ... ok
+test_http_post_contract_without_network_or_side_effects (test_trash.TrashTests.test_http_post_contract_without_network_or_side_effects) ... ok
+test_legacy_job_without_canvas_id_blocks_node (test_trash.TrashTests.test_legacy_job_without_canvas_id_blocks_node) ... ok
+test_local_notes_enter_model_context_only_when_explicitly_referenced (test_trash.TrashTests.test_local_notes_enter_model_context_only_when_explicitly_referenced) ... ok
+test_production_deleted_project_start_resume_review_guard (test_trash.TrashTests.test_production_deleted_project_start_resume_review_guard) ... ok
+test_production_inheritance_includes_historical_runs_and_context (test_trash.TrashTests.test_production_inheritance_includes_historical_runs_and_context) ... ok
+test_project_restoration_does_not_restore_individual_child (test_trash.TrashTests.test_project_restoration_does_not_restore_individual_child) ... ok
+test_restore_then_old_visible_workspace_snapshot_keeps_recovered_project (test_trash.TrashTests.test_restore_then_old_visible_workspace_snapshot_keeps_recovered_project) ... ok
+test_restore_then_stale_canvas_save_cannot_erase_recovered_node (test_trash.TrashTests.test_restore_then_stale_canvas_save_cannot_erase_recovered_node) ... ok
+test_retry_of_completed_deletion_is_idempotent_even_when_project_starts_work (test_trash.TrashTests.test_retry_of_completed_deletion_is_idempotent_even_when_project_starts_work) ... ok
+test_task_dependency_blocks_single_delete_but_allows_atomic_chain (test_trash.TrashTests.test_task_dependency_blocks_single_delete_but_allows_atomic_chain) ... ok
+test_tombstone_persistent_idempotent_and_restore_keeps_original (test_trash.TrashTests.test_tombstone_persistent_idempotent_and_restore_keeps_original) ... ok
+test_unknown_media_and_pending_batch_block_deletion (test_trash.TrashTests.test_unknown_media_and_pending_batch_block_deletion) ... ok
+test_workspace_old_and_visible_only_snapshots_cannot_restore_or_erase (test_trash.TrashTests.test_workspace_old_and_visible_only_snapshots_cannot_restore_or_erase) ... ok
+test_artifact_cleanup_preserves_identical_but_unrelated_project_messages (test_trash_purge.PurgeTests.test_artifact_cleanup_preserves_identical_but_unrelated_project_messages) ... ok
+test_artifact_cleanup_scrubs_run_messages_plan_history_and_cannot_be_resaved (test_trash_purge.PurgeTests.test_artifact_cleanup_scrubs_run_messages_plan_history_and_cannot_be_resaved) ... ok
+test_busy_run_or_finishing_worker_blocks_all_cleanup (test_trash_purge.PurgeTests.test_busy_run_or_finishing_worker_blocks_all_cleanup) ... ok
+test_canvas_node_purge_cannot_reappear_through_stale_node_snapshot (test_trash_purge.PurgeTests.test_canvas_node_purge_cannot_reappear_through_stale_node_snapshot) ... ok
+test_corrupted_cross_project_plan_lineage_rejects_the_entire_purge (test_trash_purge.PurgeTests.test_corrupted_cross_project_plan_lineage_rejects_the_entire_purge) ... ok
+test_decision_gate_requires_its_dependent_task_in_the_same_purge (test_trash_purge.PurgeTests.test_decision_gate_requires_its_dependent_task_in_the_same_purge) ... ok
+test_http_purge_response_and_subsequent_restore_response_share_tombstone_contract (test_trash_purge.PurgeTests.test_http_purge_response_and_subsequent_restore_response_share_tombstone_contract) ... ok
+test_node_purge_removes_historical_request_payload_and_expires_quote (test_trash_purge.PurgeTests.test_node_purge_removes_historical_request_payload_and_expires_quote) ... ok
+test_project_cleanup_erases_all_workspace_versions_and_rejects_stale_snapshots (test_trash_purge.PurgeTests.test_project_cleanup_erases_all_workspace_versions_and_rejects_stale_snapshots) ... ok
+test_recoverable_plan_history_still_protects_its_runs (test_trash_purge.PurgeTests.test_recoverable_plan_history_still_protects_its_runs) ... ok
+test_referenced_image_requires_dependent_nodes_in_same_purge (test_trash_purge.PurgeTests.test_referenced_image_requires_dependent_nodes_in_same_purge) ... ok
+test_requires_confirmation_unique_valid_selection_and_recoverable_state (test_trash_purge.PurgeTests.test_requires_confirmation_unique_valid_selection_and_recoverable_state) ... ok
+test_restore_cannot_race_between_purge_validation_and_commit (test_trash_purge.PurgeTests.test_restore_cannot_race_between_purge_validation_and_commit) ... ok
+test_reverse_production_id_cannot_expand_into_a_different_project (test_trash_purge.PurgeTests.test_reverse_production_id_cannot_expand_into_a_different_project) ... ok
+test_run_purge_removes_owned_files_and_emits_content_free_child_tombstones (test_trash_purge.PurgeTests.test_run_purge_removes_owned_files_and_emits_content_free_child_tombstones) ... ok
+test_symlink_run_directory_refuses_to_delete_external_files (test_trash_purge.PurgeTests.test_symlink_run_directory_refuses_to_delete_external_files) ... ok
+test_transaction_failure_restores_staged_files_and_tombstones (test_trash_purge.PurgeTests.test_transaction_failure_restores_staged_files_and_tombstones) ... ok
+test_validation_of_a_batch_is_atomic (test_trash_purge.PurgeTests.test_validation_of_a_batch_is_atomic) ... ok
+test_append_only_and_cas_preserve_every_saved_snapshot (test_workspace.WorkspaceTests.test_append_only_and_cas_preserve_every_saved_snapshot) ... ok
+test_http_contract_guards_and_service_status (test_workspace.WorkspaceTests.test_http_contract_guards_and_service_status) ... 127.0.0.1 - - [25/Oct/2026 11:07:08] "GET /api/health HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2026 11:07:08] "POST /api/workspace HTTP/1.1" 403 -
+127.0.0.1 - - [25/Oct/2026 11:07:08] "POST /api/workspace HTTP/1.1" 403 -
+127.0.0.1 - - [25/Oct/2026 11:07:08] "POST /api/workspace HTTP/1.1" 200 -
+ok
+test_incomplete_and_oversized_snapshots_rejected (test_workspace.WorkspaceTests.test_incomplete_and_oversized_snapshots_rejected) ... ok
+test_parallel_writers_cannot_overwrite_each_other (test_workspace.WorkspaceTests.test_parallel_writers_cannot_overwrite_each_other) ... ok
+test_uncertain_write_retry_is_idempotent (test_workspace.WorkspaceTests.test_uncertain_write_retry_is_idempotent) ... ok
+
+----------------------------------------------------------------------
+Ran 348 tests in 16.692s
+
+OK
+<sys>:0: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1093fee30>

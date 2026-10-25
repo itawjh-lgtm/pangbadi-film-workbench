@@ -1,0 +1,171 @@
+/* Reading comfort for the approved compact silver-glass layout.
+   Load after studio.css. Keep title sizes, artwork and avatar dimensions intact. */
+:root {
+  --color-muted: #53656d;
+  --color-faint: #62737b;
+}
+
+body { font-size: 15px; line-height: 1.7; }
+
+/* Sidebar: names remain distinct from roles without enlarging portraits. */
+.nav-item { font-size: 15px; color: #43565f; }
+.sidebar-item-title, .sidebar-person-copy > strong { font-size: 14px; color: #34464d; }
+.sidebar-item-subtitle { font-size: 12px; color: #607179; line-height: 1.65; }
+.sidebar-section-label, .sidebar-section-label h2, .sidebar-section-link { font-size: 13px; color: #536870; }
+.sidebar-count, .brand-copy > span { font-size: 12px; color: #607179; }
+.planner-profile strong { font-size: 14px; }
+.planner-profile small, .sidebar-version, .sidebar-version button { font-size: 12px; color: #607179; }
+.sidebar-list:empty::after { font-size: 13px; color: #607179; }
+.sidebar-person-copy { min-width: 0; }
+.sidebar-person-copy > span { overflow-wrap: anywhere; }
+
+/* Navigation and controls keep the existing compact page headings. */
+.workspace-topbar h1, .workspace-topbar .eyebrow { font-size: 13px; }
+.workspace-topbar .eyebrow { color: #596b74; }
+.topbar-search { font-size: 14px; color: #5e7079; }
+.topbar-search kbd { font-size: 12px; color: #607179; }
+.button-primary, .button-secondary, .button-quiet,
+.section-head > .button-secondary, .section-head > .button-quiet,
+.form-actions > button, .document-row > .button-secondary { font-size: 14px; line-height: 1.6; }
+.filter-button, .tab-button, .profile-tabs > *, .profile-tabs > .button-quiet,
+.page-button, .open-workstation { font-size: 14px; }
+.tab-button, .filter-button { color: #526770; }
+.filter-button.is-active, .filter-button[aria-pressed="true"] { color: #fff; }
+.filter-button > span { font-size: 12px; color: #607179; }
+.profile-tabs > .is-active { color: #fff; }
+.text-link { font-size: 14px; }
+.pill, .topbar-status .pill, .executor-status { font-size: 12px; }
+.pill:not(.success):not(.warn):not(.danger) { color: #536871; }
+.pill.demo { color: #596c74; }
+
+/* Long-form content uses 15px; supporting labels stay at a readable 13px. */
+.page-intro p, .section-head p, .small, .context-note, .directory-meta,
+.directory-pagination, .directory-pagination > .small, .page-info, .page-ellipsis,
+.project-card-meta, .project-card-members, .conversation-header p,
+.participant-row, .project-phases, .stage-progress,
+.board-toolbar > .small, .composer-label, .composer-footer {
+  font-size: 13px;
+  line-height: 1.7;
+}
+.page-intro p, .section-head p, .directory-meta, .directory-pagination,
+.project-card-meta, .project-card-members, .conversation-header p,
+.project-phases, .stage-progress, .composer-label, .composer-footer {
+  color: #5a6d75;
+}
+.context-note, .project-note {
+  font-size: 14px;
+  color: #526b6c;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+.project-feature-content > p,
+.project-feature-heading > div:first-child > p:last-child,
+.project-card > p, .decision-card p, .stage-caption > p,
+.message-text, .artifact-preview, .detail-field p, .detail-field dd,
+.employee-detail-layout > div > .muted, .team-profile-panel > .profile-title,
+.artifact-card .artifact-body, .artifact-body > p,
+.connection-card > p, .connection-copy p, .review-history p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #4f646d;
+  overflow-wrap: anywhere;
+}
+.message.user .message-text { color: #3d5d4e; }
+.stage-caption { font-size: 15px; color: #536871; }
+.stage-caption h3 { color: #445b65; }
+.shot-button, .shot-strip p, .shot-strip small { font-size: 13px; color: #556b74; line-height: 1.65; }
+.shot-button > span { overflow-wrap: anywhere; }
+.message-meta { font-size: 13px; color: #5c7078; }
+.message-meta strong { font-size: 14px; color: #3f5861; }
+.message-meta time { font-size: 12px; color: #62737b; }
+.mention-chip { font-size: 13px; line-height: 1.65; color: #4c685a; }
+.dependency-list, .decision-options { font-size: 14px; line-height: 1.75; }
+.inspector-title, .inspector-title h2, .inspector-title h3 { font-size: 15px; }
+
+/* Task information and shared work: content takes priority over tiny metadata. */
+.task-title, .task-card-title, .task-mini strong { font-size: 15px; line-height: 1.7; }
+.task-card > p { font-size: 14px; line-height: 1.75; color: #536871; }
+.task-card-header { font-size: 12px; color: #62737b; }
+.task-mini, .task-mini small, .task-card-footer, .task-card-footer small,
+.task-meta, .task-mini .task-meta, .task-people small { font-size: 13px; line-height: 1.7; color: #586e77; }
+.task-person, .task-person strong { font-size: 14px; line-height: 1.65; color: #405b65; }
+.task-dependency { font-size: 13px !important; }
+.blocked-note { font-size: 13px !important; color: #88571f !important; line-height: 1.7; }
+.kanban-heading > span { font-size: 12px; color: #5b7078; }
+.column-empty { font-size: 14px; color: #60757e; }
+.artifact-mini { font-size: 14px; line-height: 1.7; }
+.artifact-mini small { font-size: 13px; color: #60737b; }
+.delivery-card h3, .delivery-card-title h3, .document-row h3 { font-size: 15px; line-height: 1.7; }
+.delivery-card p, .delivery-card-content > p, .document-row p,
+.delivery-card-footer .button-quiet { font-size: 13px; color: #596e77; line-height: 1.7; }
+.delivery-card-title > span { font-size: 12px; color: #62737b; }
+.document-excerpt { font-size: 13px; color: #5e737b; line-height: 1.7; }
+.visual-disclaimer, .task-card-art > span { font-size: 12px; color: #4b626c; }
+.decision-visual-option > strong { font-size: 14px; }
+.decision-visual-option p, .decision-visual-option > small,
+.decision-preview-footer p { font-size: 13px; line-height: 1.7; color: #5b7079; }
+.feature-member strong { font-size: 13px; }
+.activity-item p, .activity-item strong { font-size: 14px; line-height: 1.75; }
+.activity-item strong { color: #405963; }
+.activity-time { font-size: 12px; color: #62737b; }
+
+/* Employee cards and files retain their approved compact image proportions. */
+.employee-name { font-size: 15px; }
+.employee-role { font-size: 13px; line-height: 1.7; color: #4e6570; }
+.employee-summary { font-size: 13px; line-height: 1.75; color: #5b707a; }
+.employee-tags > span, .employee-tags > li { font-size: 12px; color: #536c75; }
+.employee-heading > .employee-code, .employee-id, .portrait-id { font-size: 12px; color: #62737b; }
+.team-profile-panel > p { font-size: 14px; line-height: 1.75; color: #536871; }
+.profile-task strong, .profile-partners strong, .flow-person strong { font-size: 14px; }
+.profile-task small, .profile-partners small, .flow-person small { font-size: 12px; color: #5e737b; line-height: 1.65; }
+.profile-partners > .button-quiet, .team-profile-panel .detail-actions > *,
+.employee-card .detail-actions .button-quiet { font-size: 13px; }
+.detail-field h3, .detail-field strong, .detail-field dt { font-size: 14px; color: #435e52; }
+.flow-person > strong, .flow-person > small { min-width: 0; overflow-wrap: anywhere; }
+
+/* Forms and review content must remain easy to read at every breakpoint. */
+.field-label, .board-toolbar .field-label, legend,
+.check-item, .project-member-grid .check-item { font-size: 14px; line-height: 1.7; }
+.field-label .muted, .check-item small, .project-member-grid .check-item small { font-size: 12px; color: #5d726a; }
+.field, .textarea, .select, .search-field input, .composer-input { font-size: 15px; line-height: 1.75; }
+.field::placeholder, .textarea::placeholder, .search-field input::placeholder,
+.composer-input::placeholder { color: #657881; opacity: 1; }
+.form-intro p, .new-project-dialog > p, #dialog-body > p, #inline-dialog > p,
+.review-summary p, .review-summary .participant-row,
+.form-sidebar p, .form-sidebar li { font-size: 14px; line-height: 1.75; color: #556e70; }
+.form-error, .save-notice, .toast, .noscript-message { font-size: 14px; line-height: 1.7; }
+.review-body, .review-history { font-size: 14px; line-height: 1.75; color: #506c65; }
+.review-history strong { font-size: 14px; }
+.review-history time { font-size: 12px; color: #62776c; }
+.connection-copy h3 { font-size: 15px; }
+.connection-copy details { font-size: 14px; color: #496b58; line-height: 1.75; }
+.capability-table, .capability-table td, .capability-table th { font-size: 14px; line-height: 1.75; }
+.capability-table > div > span { color: #526973; }
+.empty-state p, .artwork-placeholder > p { font-size: 14px; line-height: 1.75; }
+
+/* Let reading surfaces wrap instead of squeezing copy or imposing new widths. */
+.message-content, .task-mini > span, .artifact-mini > span,
+.employee-info, .profile-task > span, .check-item > span { min-width: 0; }
+.artifact-mini > span, .task-mini strong, .profile-task strong,
+.check-item > span, .capability-table > div, .connection-copy,
+.review-summary, .form-error, .save-notice { overflow-wrap: anywhere; }
+.topbar-status, .detail-actions, .form-actions, .feature-team { flex-wrap: wrap; }
+.sidebar-person .avatar, .sidebar-project-image { flex-shrink: 0; }
+
+@media (max-width: 520px) {
+  .workspace-topbar h1 { font-size: 13px; }
+  .field, .textarea, .select, .search-field input, .composer-input { font-size: 16px; }
+  .decision-visual-options { grid-template-columns: minmax(0,1fr); }
+  .decision-visual-option img { height: 130px; }
+  .task-people { grid-template-columns: minmax(0,1fr); }
+  .task-people > div + div { border-left: 0; padding-left: 0; }
+  .feature-member strong { white-space: normal; overflow-wrap: anywhere; }
+  .team-profile-panel .detail-actions > * { flex: 1 1 110px; }
+  .tab-button { padding-inline: 10px; }
+  .directory-meta { flex-wrap: wrap; }
+  .capability-table .pill { font-size: 12px; }
+}
+
+@media (max-width: 360px) {
+  .team-list-panel .employee-grid, .employee-grid { grid-template-columns: minmax(0,1fr); }
+}

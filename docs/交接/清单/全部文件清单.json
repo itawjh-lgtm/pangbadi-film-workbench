@@ -1,0 +1,1844 @@
+{
+  "createdAt": "2026-10-25T11:09:53.781204+08:00",
+  "fileCount": 306,
+  "totalBytes": 121039658,
+  "excludedFromHashing": "清单自身与 .git 元数据；避免自引用",
+  "files": [
+    {
+      "path": ".gitignore",
+      "category": "根目录",
+      "bytes": 344,
+      "sha256": "06b319ef2bf92c16b5ff942853edf7d3bbb35d6908013360b742c5838321e54b"
+    },
+    {
+      "path": "21位可爱员工人物图.zip",
+      "category": "根目录",
+      "bytes": 32914960,
+      "sha256": "aaaad09e51e7443ff05aa747b0b2b6bf385ef61b0c9fb69b6f6754510e8c0c64"
+    },
+    {
+      "path": "README.md",
+      "category": "根目录",
+      "bytes": 5026,
+      "sha256": "bb8116728db88761541805522d7265f5eb8caf9cd26c9c8aca492834916c430f"
+    },
+    {
+      "path": "app.js",
+      "category": "根目录",
+      "bytes": 87800,
+      "sha256": "954f9f642bd99ef3eea79b7c5d6d700177dee4d427f8065ccf6b9f3d4cbfae91"
+    },
+    {
+      "path": "assets/archive/before-portrait-differentiation/G01.png",
+      "category": "assets",
+      "bytes": 1869433,
+      "sha256": "50a1523189bdde969db67aeb4fe7d9360ab1c5c114692d0c06a3cd761ab573fb"
+    },
+    {
+      "path": "assets/archive/before-portrait-differentiation/R08.png",
+      "category": "assets",
+      "bytes": 1743661,
+      "sha256": "577c39091cbc80ecb195850776428b1a6621fafb403072d637d3c0542aaaffb5"
+    },
+    {
+      "path": "assets/archive/before-portrait-differentiation/R13.png",
+      "category": "assets",
+      "bytes": 1757662,
+      "sha256": "81d273fe7832339874d53e567df77e27c145ab87aae4b8030e227ff19af2f36d"
+    },
+    {
+      "path": "assets/archive/before-portrait-differentiation/R15.png",
+      "category": "assets",
+      "bytes": 1725477,
+      "sha256": "d40a34983663cb71d424b19672f004fdc67d4e3b78b37337196907066951762f"
+    },
+    {
+      "path": "assets/archive/before-portrait-differentiation/R16.png",
+      "category": "assets",
+      "bytes": 1762519,
+      "sha256": "59cb1735f53c0a7c2adaa2331598252d905a3a3143e883666400a76ec65a47dd"
+    },
+    {
+      "path": "assets/employees/G01.png",
+      "category": "assets",
+      "bytes": 1878626,
+      "sha256": "7e1c4af3693e46dd432f9172c386d3fcb23bdef9f6c5ded1c527910aab9363c2"
+    },
+    {
+      "path": "assets/employees/G02.png",
+      "category": "assets",
+      "bytes": 1756536,
+      "sha256": "7a2b2ddb756544d47582fdf9e6f8feb853e170a1f203c41414417e6aa26b4ee7"
+    },
+    {
+      "path": "assets/employees/G03.png",
+      "category": "assets",
+      "bytes": 1680818,
+      "sha256": "ee0b5256d748d5a7479bb17197683680ab0f450d9155338fdb7f809acd1ac31d"
+    },
+    {
+      "path": "assets/employees/G04.png",
+      "category": "assets",
+      "bytes": 1647876,
+      "sha256": "86e4a224e6c9829778c44e8d5dbd4c30ef50c052a9b9e93a2e9f349b2a2e1be8"
+    },
+    {
+      "path": "assets/employees/G05.png",
+      "category": "assets",
+      "bytes": 1309519,
+      "sha256": "ba6652dace55d989ee911cda4bcb22355fddbf3d1897035fa81004a1c3236cbb"
+    },
+    {
+      "path": "assets/employees/R01.png",
+      "category": "assets",
+      "bytes": 1750945,
+      "sha256": "f6715856c57cca4386ff1152746d6bba2e63317ac3c73a04ec928bea44bcf66a"
+    },
+    {
+      "path": "assets/employees/R02.png",
+      "category": "assets",
+      "bytes": 1825776,
+      "sha256": "6c86ddc7c1f9a544bf8c2494950d9fbad04371e505e36ccf66d35c416ffc5fb6"
+    },
+    {
+      "path": "assets/employees/R03.png",
+      "category": "assets",
+      "bytes": 1857117,
+      "sha256": "e44aef9adbacd37612989b44106d4dedba6205904067fd8dc5f13145ccbc94c0"
+    },
+    {
+      "path": "assets/employees/R04.png",
+      "category": "assets",
+      "bytes": 1776314,
+      "sha256": "86301a4de0a2bd932758fc866d1cb4642b9186f3adef68e5f930658c4b49c84c"
+    },
+    {
+      "path": "assets/employees/R05.png",
+      "category": "assets",
+      "bytes": 1893025,
+      "sha256": "bfacf27f4a714cf6c96a7b2469e2f4fa0de95598d658002a7d32f6e7369f228f"
+    },
+    {
+      "path": "assets/employees/R06.png",
+      "category": "assets",
+      "bytes": 1706765,
+      "sha256": "59be88c6fcdac4aa0019fc5bcbdd676a3ca1b0ba8a4a06021f40519da27d8420"
+    },
+    {
+      "path": "assets/employees/R07.png",
+      "category": "assets",
+      "bytes": 1852555,
+      "sha256": "7c958ac622753412b96fce8a9b695c6441f72018e80e86227cab9555b1342dcb"
+    },
+    {
+      "path": "assets/employees/R08.png",
+      "category": "assets",
+      "bytes": 1777451,
+      "sha256": "6f1aa669635079e4f90a26d8955e4808fc261f92c489db95840bc475a711958d"
+    },
+    {
+      "path": "assets/employees/R09.png",
+      "category": "assets",
+      "bytes": 1807897,
+      "sha256": "d0720ede706c0451c3b8d74cc2f46e3d87df5c209b1b57d5544eb50ad6229f94"
+    },
+    {
+      "path": "assets/employees/R10.png",
+      "category": "assets",
+      "bytes": 1775633,
+      "sha256": "864000048c7fa6628a213afe14154562be04902a9e511cd1f32152410ed8e1e0"
+    },
+    {
+      "path": "assets/employees/R11.png",
+      "category": "assets",
+      "bytes": 1651250,
+      "sha256": "e0748bcaa99b8051d45235f4bcba7331096d2b41920aae7832e5cde324193bfd"
+    },
+    {
+      "path": "assets/employees/R12.png",
+      "category": "assets",
+      "bytes": 1888131,
+      "sha256": "972f37ea441bcd95885b9f8097c83b51faf8107095d43dc32ab61da11cf4c705"
+    },
+    {
+      "path": "assets/employees/R13.png",
+      "category": "assets",
+      "bytes": 1727044,
+      "sha256": "f0373e7c781d776a6285ce0cf87561c6c52a1b1a73dd2b2daa90a6823728e08e"
+    },
+    {
+      "path": "assets/employees/R14.png",
+      "category": "assets",
+      "bytes": 1778193,
+      "sha256": "37c4776c9fd35a075b84d25ff9f7dfdbedcd88b24ac4ced238452aba62f7f0e5"
+    },
+    {
+      "path": "assets/employees/R15.png",
+      "category": "assets",
+      "bytes": 1657748,
+      "sha256": "244ab1dad0d0aae3d82d20862e5f8f81b3a08a8d76ad4af1a800d2320a2bad8b"
+    },
+    {
+      "path": "assets/employees/R16.png",
+      "category": "assets",
+      "bytes": 1740712,
+      "sha256": "722aa5540aeddb5f5d4c514df2d90fd1abb71b9c4418c39faa98d943a4dfc3b1"
+    },
+    {
+      "path": "assets/media-preview.html",
+      "category": "assets",
+      "bytes": 4337,
+      "sha256": "ae5b6d32420482aa218dab59804727511426719570af06bc403343b77570dd5b"
+    },
+    {
+      "path": "assets/projects/character-sheet.png",
+      "category": "assets",
+      "bytes": 2028670,
+      "sha256": "6dc16e8e1e2dd73c0464d1a14197108adb119e6ea49ce9ab25dff427b95c9f37"
+    },
+    {
+      "path": "assets/projects/character-sheet.webp",
+      "category": "assets",
+      "bytes": 103828,
+      "sha256": "83bb7c3d4aca47a21ea3e50b35ae3101609acdb338619502ea3eea924a2ceccd"
+    },
+    {
+      "path": "assets/projects/game-level.png",
+      "category": "assets",
+      "bytes": 3276771,
+      "sha256": "89310141a7f3c32a4c3a9a8946378fc0c16a565e1e59104405225ed69c41838b"
+    },
+    {
+      "path": "assets/projects/game-level.webp",
+      "category": "assets",
+      "bytes": 475626,
+      "sha256": "eb4b95193513d55b0d7fda8bd2d7fdcf144143a9bf00d8dba7aea17d76e820d1"
+    },
+    {
+      "path": "assets/projects/home-deliveries-reference.png",
+      "category": "assets",
+      "bytes": 548110,
+      "sha256": "2bc01ee920e4e20da933bd3adf7b867d397e754ca054f7c5436d40472b5ed514"
+    },
+    {
+      "path": "assets/projects/home-visual-reference.png",
+      "category": "assets",
+      "bytes": 2155979,
+      "sha256": "e4fe6eedbd1d295dec7ff911d3b412669ac145752ad067e0998ca572aceb8d2a"
+    },
+    {
+      "path": "assets/projects/lighthouse-cover.png",
+      "category": "assets",
+      "bytes": 2705245,
+      "sha256": "50ed930308a38098773a13d0b46aad072d7285fbaa90b1312c5d39b7cd66ccba"
+    },
+    {
+      "path": "assets/projects/lighthouse-cover.webp",
+      "category": "assets",
+      "bytes": 327746,
+      "sha256": "451c4695ccfa4c37d7cd52fc934682c0649659bf68829fddedf5628c14793fbf"
+    },
+    {
+      "path": "assets/projects/storyboard.png",
+      "category": "assets",
+      "bytes": 3126305,
+      "sha256": "497f24076790ee20d6011c546fc7fda63d2803fd1824070f2f01fe507c32e397"
+    },
+    {
+      "path": "assets/projects/storyboard.webp",
+      "category": "assets",
+      "bytes": 387582,
+      "sha256": "7545492e9f75ce6b42059d449453f9a5b65cdee17ec2f58988ee45672e870fe4"
+    },
+    {
+      "path": "assets/revisions/differentiation-v1/G01.png",
+      "category": "assets",
+      "bytes": 1878626,
+      "sha256": "7e1c4af3693e46dd432f9172c386d3fcb23bdef9f6c5ded1c527910aab9363c2"
+    },
+    {
+      "path": "assets/revisions/differentiation-v1/R08.png",
+      "category": "assets",
+      "bytes": 1777451,
+      "sha256": "6f1aa669635079e4f90a26d8955e4808fc261f92c489db95840bc475a711958d"
+    },
+    {
+      "path": "assets/revisions/differentiation-v1/R13.png",
+      "category": "assets",
+      "bytes": 1727044,
+      "sha256": "f0373e7c781d776a6285ce0cf87561c6c52a1b1a73dd2b2daa90a6823728e08e"
+    },
+    {
+      "path": "assets/revisions/differentiation-v1/R15.png",
+      "category": "assets",
+      "bytes": 1657748,
+      "sha256": "244ab1dad0d0aae3d82d20862e5f8f81b3a08a8d76ad4af1a800d2320a2bad8b"
+    },
+    {
+      "path": "assets/revisions/differentiation-v1/R16.png",
+      "category": "assets",
+      "bytes": 1740712,
+      "sha256": "722aa5540aeddb5f5d4c514df2d90fd1abb71b9c4418c39faa98d943a4dfc3b1"
+    },
+    {
+      "path": "assets/scenes/film-world.png",
+      "category": "assets",
+      "bytes": 2040411,
+      "sha256": "61682a85bf07579792bce95af6c929280f3e0704fe528efe1f779d116ee23b50"
+    },
+    {
+      "path": "assets/scenes/film-world.webp",
+      "category": "assets",
+      "bytes": 49084,
+      "sha256": "e8cd8b0f959d33ffc7feeb944b08fc80c5728b3a2e7e89796bbc342c03913ff5"
+    },
+    {
+      "path": "assets/scenes/game-world.png",
+      "category": "assets",
+      "bytes": 2186608,
+      "sha256": "20b90b91c66f810b7026383b3e1afbaf7d4458df9abc6e0178a73c3722909371"
+    },
+    {
+      "path": "assets/scenes/game-world.webp",
+      "category": "assets",
+      "bytes": 51328,
+      "sha256": "4cfb955bcd2e5766c2995434eac4d7117bdb7a24750724f7250bce313e992b1d"
+    },
+    {
+      "path": "assets/scenes/studio-hero.png",
+      "category": "assets",
+      "bytes": 2340799,
+      "sha256": "fd4d639d3c7b5271d55108b5b6398934afc0e3d15526d398756ddd633a4140d3"
+    },
+    {
+      "path": "assets/scenes/studio-hero.webp",
+      "category": "assets",
+      "bytes": 106160,
+      "sha256": "303da3decd6b8b654f0fcd5bd1a187821e1599975f14cc4b6540d5033c40bb17"
+    },
+    {
+      "path": "assets/thumbs/G01.webp",
+      "category": "assets",
+      "bytes": 6306,
+      "sha256": "2a757f6511df2756be52c12fc228722359cc71558333b68b59d6944c8d6e60fd"
+    },
+    {
+      "path": "assets/thumbs/G02.webp",
+      "category": "assets",
+      "bytes": 6298,
+      "sha256": "94d4adca64c4f2e80f013fb98695700fdb06ec1ecf07267d4f097013de6a87af"
+    },
+    {
+      "path": "assets/thumbs/G03.webp",
+      "category": "assets",
+      "bytes": 4796,
+      "sha256": "bdb5fba947954a1f36151d78404b4d9bb1cf0f2bcf49ee52b0a6266e84798497"
+    },
+    {
+      "path": "assets/thumbs/G04.webp",
+      "category": "assets",
+      "bytes": 4762,
+      "sha256": "c1ea9128a8c0333e535a1230bcf4b27bdfec3f9404911e7aaf850a32c9a8f1be"
+    },
+    {
+      "path": "assets/thumbs/G05.webp",
+      "category": "assets",
+      "bytes": 3620,
+      "sha256": "42a88a0aa6b6df3dbe0c2d9a6067bdf4eb992907e5e4fb5b7902ddf922d48bfe"
+    },
+    {
+      "path": "assets/thumbs/R01.webp",
+      "category": "assets",
+      "bytes": 4942,
+      "sha256": "6a0fd76b0118967798c609ad06f7a48379f655de9f0aa81f4dbb51ff95f4140b"
+    },
+    {
+      "path": "assets/thumbs/R02.webp",
+      "category": "assets",
+      "bytes": 5690,
+      "sha256": "f50235fcd75c346cd4e62e19479d074a9bd3c7a6d33c6f67c0e8a0d2b7fb0333"
+    },
+    {
+      "path": "assets/thumbs/R03.webp",
+      "category": "assets",
+      "bytes": 5236,
+      "sha256": "135c6d9e38ea410e0c8b8f35b508d0266ac5170ac1faa4b1d8da9cbbe0be7ce7"
+    },
+    {
+      "path": "assets/thumbs/R04.webp",
+      "category": "assets",
+      "bytes": 5584,
+      "sha256": "a69565a70b73da6bce7dab2fcb1c146a71703b305fcef0f0b18744cc9118c67c"
+    },
+    {
+      "path": "assets/thumbs/R05.webp",
+      "category": "assets",
+      "bytes": 5390,
+      "sha256": "3efbbe3f6c45bb3c80090cc6f6d62e83c69cee26badc118c942375bf8931336d"
+    },
+    {
+      "path": "assets/thumbs/R06.webp",
+      "category": "assets",
+      "bytes": 5202,
+      "sha256": "5958a70f5d0d592aca912e907356d735bd4542970c0d04463d516bd1397118aa"
+    },
+    {
+      "path": "assets/thumbs/R07.webp",
+      "category": "assets",
+      "bytes": 5884,
+      "sha256": "3975dafe1c9bfe65d51601785eee914d0710b001b20a5c690a1567d72c273fe5"
+    },
+    {
+      "path": "assets/thumbs/R08.webp",
+      "category": "assets",
+      "bytes": 4940,
+      "sha256": "1920c8bf6a1dd76470def882064fac247517b529b1048b5b30aa69c2f77d159d"
+    },
+    {
+      "path": "assets/thumbs/R09.webp",
+      "category": "assets",
+      "bytes": 5740,
+      "sha256": "b91a45b584ac4f79a57ed6742b04675d338af8bd92f3660b4aa2092e6bb7dc8a"
+    },
+    {
+      "path": "assets/thumbs/R10.webp",
+      "category": "assets",
+      "bytes": 6422,
+      "sha256": "80132c379958d8a64048fc3c0b9c95d51dcdfd7ecd6718d0e1c9821f69cd2b74"
+    },
+    {
+      "path": "assets/thumbs/R11.webp",
+      "category": "assets",
+      "bytes": 4642,
+      "sha256": "0105441cc12686469828f8c1c62e8895324c70350da22f4c0bd67d6281193725"
+    },
+    {
+      "path": "assets/thumbs/R12.webp",
+      "category": "assets",
+      "bytes": 6280,
+      "sha256": "1b21642d05d768b6a239797c69f5376a7b3143d92a1883db7e9652d190cdf017"
+    },
+    {
+      "path": "assets/thumbs/R13.webp",
+      "category": "assets",
+      "bytes": 4790,
+      "sha256": "bf145e2e4d752b3d51a3e142b934dcc48fef10d8e9dbe013c30cf5c08cfd6edf"
+    },
+    {
+      "path": "assets/thumbs/R14.webp",
+      "category": "assets",
+      "bytes": 4942,
+      "sha256": "0c6630d37a1c3aa552e122c45d9ddcccbe0ec0bd0fe3b23402fa95c4d77243b6"
+    },
+    {
+      "path": "assets/thumbs/R15.webp",
+      "category": "assets",
+      "bytes": 6152,
+      "sha256": "aad3ef7d4ad51fd20c1bace1cadac355d5bd02107d3fd4b14782e58fe41b97e0"
+    },
+    {
+      "path": "assets/thumbs/R16.webp",
+      "category": "assets",
+      "bytes": 4624,
+      "sha256": "b173446dbad2efde12eea9d55f25c9d22b5047657df683a0c56d10d710ba2df8"
+    },
+    {
+      "path": "data/employees.js",
+      "category": "data",
+      "bytes": 19502,
+      "sha256": "a026bd5f185ad605927bdb62097e8dea243d6c76c1cb2baad142097686aebbcd"
+    },
+    {
+      "path": "data/project-templates.js",
+      "category": "data",
+      "bytes": 5813,
+      "sha256": "89de9992c51d4ad118eb3e52d9e1e9db42e4b3210007c849979f272b4ae31e4c"
+    },
+    {
+      "path": "desktop/Info.plist",
+      "category": "desktop",
+      "bytes": 1189,
+      "sha256": "197efe2d6061776cc14bca9d18dd9025c2590d6ca480afe870f00df629ee570a"
+    },
+    {
+      "path": "desktop/README-native.md",
+      "category": "desktop",
+      "bytes": 4411,
+      "sha256": "543d28d7922ec4baff579de08fc354f0f3a7a5dcc8eff6e1da3607b055ee5f4c"
+    },
+    {
+      "path": "desktop/Sources/DrawIcon.swift",
+      "category": "desktop",
+      "bytes": 4718,
+      "sha256": "5ecfa005643ca329d9865eec9864e03054067512622e101927f8c40b1eaf3b64"
+    },
+    {
+      "path": "desktop/Sources/StudioApp.swift",
+      "category": "desktop",
+      "bytes": 28986,
+      "sha256": "6ffbc24f62843035253cb6c6ea7f1e916dfd6ef10fd8fe54ecaef24b3b2f2d0e"
+    },
+    {
+      "path": "desktop/build.py",
+      "category": "desktop",
+      "bytes": 7723,
+      "sha256": "932138edeb2dac806319a93073920a096d880d5ccfec2a89c3a73fe7eabcb2fa"
+    },
+    {
+      "path": "desktop/install.py",
+      "category": "desktop",
+      "bytes": 2348,
+      "sha256": "c0cecddf268e13181b36f5c257d67962c33086cb99162bf87ff90962ad72ddc1"
+    },
+    {
+      "path": "desktop/service_manager.py",
+      "category": "desktop",
+      "bytes": 5242,
+      "sha256": "a726ded091b98928c83dec00eaa7d9016c8770bdb2e236deafc660213e75107c"
+    },
+    {
+      "path": "docs/Mac客户端使用说明.md",
+      "category": "docs",
+      "bytes": 2699,
+      "sha256": "680b227c303c4da178fecb614d1a4929fb85fc45a0a474d4a5452d4c6464b4f6"
+    },
+    {
+      "path": "docs/RunningHub接入与试用.md",
+      "category": "docs",
+      "bytes": 5505,
+      "sha256": "075e1c6b20711d2d2ffa5d6f27c3e9f0d0f51e82c8377827d93a506361db2785"
+    },
+    {
+      "path": "docs/api/runninghub/README.md",
+      "category": "docs",
+      "bytes": 4754,
+      "sha256": "38fea5e750ea6a09b4c40f719e7d415b08362b884a84fabb12ebc0d62e18e6e4"
+    },
+    {
+      "path": "docs/api/runninghub/llms.txt",
+      "category": "docs",
+      "bytes": 216589,
+      "sha256": "d41ddd03f68790498a01b594e5e0f3b251ff4ad385bfa72dbf3fe5b32fecd623"
+    },
+    {
+      "path": "docs/api/runninghub/public-document-schemas.json",
+      "category": "docs",
+      "bytes": 2437212,
+      "sha256": "8341b90d9d3c77e4b58bba09a14a5dc6ae6cda838dc67523e1758e720edea152"
+    },
+    {
+      "path": "docs/api/runninghub/public-model-catalog.json",
+      "category": "docs",
+      "bytes": 2167914,
+      "sha256": "8a9b48b562cb65441c37b605f0d5778e0fcee6b214cf86595451c894584dacca"
+    },
+    {
+      "path": "docs/api/runninghub/refresh_public_catalog.py",
+      "category": "docs",
+      "bytes": 7251,
+      "sha256": "7c7cea87e63da1d79cc98db2f5bcc9dc2acf79540d466595ee660e8cd93abc4f"
+    },
+    {
+      "path": "docs/api/runninghub/runtime-model-catalog.json",
+      "category": "docs",
+      "bytes": 807407,
+      "sha256": "9f91110acb3fbb92999b0b66b8ca772a8b02e8cf87475d70d64e1d365d99d0d2"
+    },
+    {
+      "path": "docs/architecture-v0.3.md",
+      "category": "docs",
+      "bytes": 13206,
+      "sha256": "243bfb1f087bbde9f80a1d06aee02f636f6664908e44ff4efe9d651ea4370a10"
+    },
+    {
+      "path": "docs/architecture-v0.4.md",
+      "category": "docs",
+      "bytes": 4990,
+      "sha256": "aa6748faf41d4ba466909f0793c7336ec5eedd4d6d1802385e1d91cfe2ee9eb8"
+    },
+    {
+      "path": "docs/archive/2026-10-24-before-approved-integration/README.md",
+      "category": "docs",
+      "bytes": 3935,
+      "sha256": "04ccfe04e5127b4f496b59215e7abbf543600e296d2275fea96e8bfb7e71b977"
+    },
+    {
+      "path": "docs/archive/2026-10-24-before-approved-integration/app.js",
+      "category": "docs",
+      "bytes": 13068,
+      "sha256": "894f139ba4bd5a03fb69a33f2c5a4b6f4020f0458cf9bd2a26275538d49853c2"
+    },
+    {
+      "path": "docs/archive/2026-10-24-before-approved-integration/index.html",
+      "category": "docs",
+      "bytes": 6978,
+      "sha256": "1f2d1d12607549a6a0a1fc7d48d37e6d1449f55dd767bbe538abb54be807295c"
+    },
+    {
+      "path": "docs/archive/2026-10-24-before-approved-integration/lib/store.js",
+      "category": "docs",
+      "bytes": 34025,
+      "sha256": "2923eee9f406cd61cee0e89cb47f8034bd2c42f06f0a0b401a0ee71fe4d5948e"
+    },
+    {
+      "path": "docs/archive/2026-10-24-before-approved-integration/lib/views.js",
+      "category": "docs",
+      "bytes": 34115,
+      "sha256": "c548c5f4f94662a7cf2d30644ededb6e466084e03ca5a712187f81833f6397d6"
+    },
+    {
+      "path": "docs/archive/2026-10-24-before-approved-integration/scripts/build-preview.py",
+      "category": "docs",
+      "bytes": 15125,
+      "sha256": "612a266fd598865b791afe7fa350fef9494beedc38ffdfa7135f61de4004776c"
+    },
+    {
+      "path": "docs/archive/2026-10-24-before-approved-integration/styles.css",
+      "category": "docs",
+      "bytes": 52351,
+      "sha256": "d583ff713a2d552cfc74bd11670d6ddbe2e505a93fb7c3e20a9e22489f486e4d"
+    },
+    {
+      "path": "docs/archive/ui-v0.2-before-bot-upgrade/README.md",
+      "category": "docs",
+      "bytes": 2515,
+      "sha256": "510e05a9446d117283a0d0ed7e45b5ba586c52c66ca47b25fe1892bf68f5c97d"
+    },
+    {
+      "path": "docs/archive/ui-v0.2-before-bot-upgrade/app.js",
+      "category": "docs",
+      "bytes": 22639,
+      "sha256": "2b4921bb6d78fab5ec84f2bea567dc349894e53139c574181e7ec28a2f4ab747"
+    },
+    {
+      "path": "docs/archive/ui-v0.2-before-bot-upgrade/index.html",
+      "category": "docs",
+      "bytes": 7660,
+      "sha256": "ae656ed91c7042f516d93793acde833a739fd33d8086127add075de7cd7b4158"
+    },
+    {
+      "path": "docs/archive/ui-v0.2-before-bot-upgrade/scripts/build-preview.py",
+      "category": "docs",
+      "bytes": 4614,
+      "sha256": "4ed0d747b1733d72c3bffbd116bda5a4970bc9936aa06c1511e1777a586d0fb0"
+    },
+    {
+      "path": "docs/archive/ui-v0.2-before-bot-upgrade/styles.css",
+      "category": "docs",
+      "bytes": 34512,
+      "sha256": "6f678fb8683084b4dbe2044594bf2e45b8702f73acf49768b88b70717bb83bd8"
+    },
+    {
+      "path": "docs/assets-manifest.json",
+      "category": "docs",
+      "bytes": 10975,
+      "sha256": "aadf2c4543d09f184648e1bf73abf606360a2cddb8cd0c135e07aa02bba961de"
+    },
+    {
+      "path": "docs/character-bible.md",
+      "category": "docs",
+      "bytes": 12599,
+      "sha256": "4c1316ccb54b3ba38843e545c531e8e68ae5f788261e36e96df2404030b14a5a"
+    },
+    {
+      "path": "docs/design/media-workspace-review/01-图片结果.png",
+      "category": "docs",
+      "bytes": 221727,
+      "sha256": "fc5a90839ea1870b19886753f10f9193a5bb39d3ee28985728b51f45c7ad19f5"
+    },
+    {
+      "path": "docs/design/media-workspace-review/02-视频结果.png",
+      "category": "docs",
+      "bytes": 221071,
+      "sha256": "f7bec396077eab6d3563f87952b45902ebb45b0ba57a9aab7aea0dd9804f880d"
+    },
+    {
+      "path": "docs/design/media-workspace-review/03-生成中.png",
+      "category": "docs",
+      "bytes": 151611,
+      "sha256": "6e327b8961e544df715daf1dced75139a301fd1e824a9f1f58bae914ce1ebe65"
+    },
+    {
+      "path": "docs/design/media-workspace-review/04-首次进入.png",
+      "category": "docs",
+      "bytes": 142841,
+      "sha256": "5efa4053934937bbd521ea0b10f3eb20201e8d9a9f22e7f80990e9663bed1a55"
+    },
+    {
+      "path": "docs/design/media-workspace-review/05-提示词工作窗.png",
+      "category": "docs",
+      "bytes": 132274,
+      "sha256": "7c1a1e4885bf4673a4ed4d6987e45bb3e6703e0a8bdec41b49fb2d41aa104c77"
+    },
+    {
+      "path": "docs/design/media-workspace-review/06-个人API接口与结果窗.png",
+      "category": "docs",
+      "bytes": 126800,
+      "sha256": "7fde0503e4b3c327df56cb0656176e003a6941339d8f2dbadf605d6ff3dbc906"
+    },
+    {
+      "path": "docs/design/media-workspace-review/README.md",
+      "category": "docs",
+      "bytes": 3514,
+      "sha256": "9a0233d3e6f9249255dc4d920913e608f467e68c8df3a920d17ddf61b726ac2d"
+    },
+    {
+      "path": "docs/design/media-workspace-review/implementation/app.js",
+      "category": "docs",
+      "bytes": 49617,
+      "sha256": "7c07852e05fa0d996a5cc5b5e740ed9d9f3426dfdbf0e117cb4f4d9417a7b592"
+    },
+    {
+      "path": "docs/design/media-workspace-review/implementation/backend-changes.patch",
+      "category": "docs",
+      "bytes": 21235,
+      "sha256": "1da8e8dee3d9d4c6070592fc54f14f9be065a50769febeeddaa5ec2608689875"
+    },
+    {
+      "path": "docs/design/media-workspace-review/implementation/backend-manifest.json",
+      "category": "docs",
+      "bytes": 838,
+      "sha256": "3c071e9804770ced469f94e981f929f2c982874669cc90a040b600db29363f40"
+    },
+    {
+      "path": "docs/design/media-workspace-review/implementation/frontend-changes.patch",
+      "category": "docs",
+      "bytes": 43222,
+      "sha256": "f2ce7811e16c6e8a6bd59e2dbc8b7aeefa805a2198fd09c8badd1d5ae3842c60"
+    },
+    {
+      "path": "docs/design/media-workspace-review/implementation/frontend-manifest.json",
+      "category": "docs",
+      "bytes": 1721,
+      "sha256": "a5c4102c42db9ddf03f5ad061221eb963ba08d807c2c1c0454ed0ebcffaad231"
+    },
+    {
+      "path": "docs/design/media-workspace-review/implementation/index.html",
+      "category": "docs",
+      "bytes": 7843,
+      "sha256": "971913bab5e39498cf63cb4c0bfef6ded674be964df5e6cec6e9dca60183fa9e"
+    },
+    {
+      "path": "docs/design/media-workspace-review/implementation/lib/layout.js",
+      "category": "docs",
+      "bytes": 8459,
+      "sha256": "ca94601b7c454d5f2ffcc423fd89b39450a0a844c2536f70c1b4f5fde8a26f85"
+    },
+    {
+      "path": "docs/design/media-workspace-review/implementation/lib/media-views.js",
+      "category": "docs",
+      "bytes": 18355,
+      "sha256": "7a575f4acb21360b243cbf6d767263d764ec02d6960809be2a4318026b0bb35a"
+    },
+    {
+      "path": "docs/design/media-workspace-review/implementation/lib/production-views.js",
+      "category": "docs",
+      "bytes": 15060,
+      "sha256": "32daf9c4fb2adb733aaa0914b77208348202f652eb9e72d671292ac7c3ea8540"
+    },
+    {
+      "path": "docs/design/media-workspace-review/implementation/lib/runtime.js",
+      "category": "docs",
+      "bytes": 13783,
+      "sha256": "63e434791997285643da8d346cee3fb7e9e367aa81f3eb37b4406ca9f17780f7"
+    },
+    {
+      "path": "docs/design/media-workspace-review/implementation/lib/store.js",
+      "category": "docs",
+      "bytes": 40044,
+      "sha256": "e2466ba90f3e39804c477d1d6e48d9aa67fbf3c8b397802330ad9dcff4b75ab3"
+    },
+    {
+      "path": "docs/design/media-workspace-review/implementation/lib/views.js",
+      "category": "docs",
+      "bytes": 78345,
+      "sha256": "0b048d17490e420e378ab3991e632e82f088190a8b00e9f759815409735eef4f"
+    },
+    {
+      "path": "docs/design/media-workspace-review/implementation/scripts/verify-media-workspace.py",
+      "category": "docs",
+      "bytes": 9942,
+      "sha256": "0a2886d203710cdbe6ad09f0a602b5c6baf76294749a522174f70c2edf98f429"
+    },
+    {
+      "path": "docs/design/media-workspace-review/implementation/server/httpd.py",
+      "category": "docs",
+      "bytes": 20533,
+      "sha256": "d1a61f9ade2ab9d4f43af6943b4edfc0c2d4af192f525037f357dd6f334bdab9"
+    },
+    {
+      "path": "docs/design/media-workspace-review/implementation/server/media.py",
+      "category": "docs",
+      "bytes": 41062,
+      "sha256": "414714208febcd155ab827740b0d92b3081c68c193601c3475f714ec81ff7335"
+    },
+    {
+      "path": "docs/design/media-workspace-review/implementation/server/runtime.py",
+      "category": "docs",
+      "bytes": 20963,
+      "sha256": "7ed3f596a6f753d65d9898bfa082219d8352b89fbcbcdd9668f8a0ce55f75724"
+    },
+    {
+      "path": "docs/design/media-workspace-review/implementation/styles/media.css",
+      "category": "docs",
+      "bytes": 14188,
+      "sha256": "2ae528194bf65c50030c27a625be23c831969d04e987a2412c9449828dafbd54"
+    },
+    {
+      "path": "docs/design/media-workspace-review/implementation/tests/fixtures/media-workspace/sample.mp4",
+      "category": "docs",
+      "bytes": 7304,
+      "sha256": "483390a4b891a1ed93dbb515488ce613c6d9050e023ae6e9dda9657373dec5a3"
+    },
+    {
+      "path": "docs/design/media-workspace-review/implementation/tests/fixtures/media-workspace/sample.png",
+      "category": "docs",
+      "bytes": 6728,
+      "sha256": "7d93d8316eb9602fa8f5dff3a0df58bbb500568097dbeac3da16c70014f9ef04"
+    },
+    {
+      "path": "docs/design/media-workspace-review/implementation/tests/media-views.test.cjs",
+      "category": "docs",
+      "bytes": 5941,
+      "sha256": "5592597444634cae9c15157777e0dd995b667290787bbba372fba40d93a139aa"
+    },
+    {
+      "path": "docs/design/media-workspace-review/implementation/tests/test_media_http.py",
+      "category": "docs",
+      "bytes": 12999,
+      "sha256": "1515e8e4c7628eb3a9d258af04de654aadf71a616c31df5fca65b846880f227d"
+    },
+    {
+      "path": "docs/design/media-workspace-review/implementation/tests/views.smoke.cjs",
+      "category": "docs",
+      "bytes": 5582,
+      "sha256": "86b9759e85a4317d4dc651258edac91c96eb4b2054be4eda0e3a20d004dea8e1"
+    },
+    {
+      "path": "docs/design/media-workspace-review/preview/assets/R04.webp",
+      "category": "docs",
+      "bytes": 5584,
+      "sha256": "a69565a70b73da6bce7dab2fcb1c146a71703b305fcef0f0b18744cc9118c67c"
+    },
+    {
+      "path": "docs/design/media-workspace-review/preview/assets/R05.webp",
+      "category": "docs",
+      "bytes": 5390,
+      "sha256": "3efbbe3f6c45bb3c80090cc6f6d62e83c69cee26badc118c942375bf8931336d"
+    },
+    {
+      "path": "docs/design/media-workspace-review/preview/assets/R06.webp",
+      "category": "docs",
+      "bytes": 5202,
+      "sha256": "5958a70f5d0d592aca912e907356d735bd4542970c0d04463d516bd1397118aa"
+    },
+    {
+      "path": "docs/design/media-workspace-review/preview/assets/lighthouse-demo.mp4",
+      "category": "docs",
+      "bytes": 736457,
+      "sha256": "4c16dd5050f0c3593c16150fd12606017185981aaed9004ebcb5c2d491d25a1d"
+    },
+    {
+      "path": "docs/design/media-workspace-review/preview/assets/lighthouse.webp",
+      "category": "docs",
+      "bytes": 327746,
+      "sha256": "451c4695ccfa4c37d7cd52fc934682c0649659bf68829fddedf5628c14793fbf"
+    },
+    {
+      "path": "docs/design/media-workspace-review/preview/assets/storyboard.webp",
+      "category": "docs",
+      "bytes": 387582,
+      "sha256": "7545492e9f75ce6b42059d449453f9a5b65cdee17ec2f58988ee45672e870fe4"
+    },
+    {
+      "path": "docs/design/media-workspace-review/preview/index.html",
+      "category": "docs",
+      "bytes": 7381,
+      "sha256": "813a87fd527a29049e2c8c4f0a39a530be1d653429348cd735d73963661b605c"
+    },
+    {
+      "path": "docs/design/media-workspace-review/preview/index.specs.md",
+      "category": "docs",
+      "bytes": 1120,
+      "sha256": "f9d25f74be1b6a008139183e02abba4f842633cbc4c7c4d0562e00b59932dca9"
+    },
+    {
+      "path": "docs/design/media-workspace-review/preview/lib/media-views.js",
+      "category": "docs",
+      "bytes": 18355,
+      "sha256": "7a575f4acb21360b243cbf6d767263d764ec02d6960809be2a4318026b0bb35a"
+    },
+    {
+      "path": "docs/design/media-workspace-review/preview/lib/prompt-presets.js",
+      "category": "docs",
+      "bytes": 9912,
+      "sha256": "507523340710f573a97b99a133d18b717f0e51173cefd04531a4c6ae7f5cacd6"
+    },
+    {
+      "path": "docs/design/media-workspace-review/preview/lib/prompt-studio.js",
+      "category": "docs",
+      "bytes": 15995,
+      "sha256": "590300254f5b70f3e129bf25f6c23b281f6d228c23733e1713bd6ee773a113fc"
+    },
+    {
+      "path": "docs/design/media-workspace-review/preview/preview.js",
+      "category": "docs",
+      "bytes": 15335,
+      "sha256": "bb2e6e8a7b8845d9f01e14723cf7bf6890688ea859a0431f92091e30a46b92fb"
+    },
+    {
+      "path": "docs/design/media-workspace-review/preview/styles/base.css",
+      "category": "docs",
+      "bytes": 52351,
+      "sha256": "d583ff713a2d552cfc74bd11670d6ddbe2e505a93fb7c3e20a9e22489f486e4d"
+    },
+    {
+      "path": "docs/design/media-workspace-review/preview/styles/media.css",
+      "category": "docs",
+      "bytes": 14188,
+      "sha256": "2ae528194bf65c50030c27a625be23c831969d04e987a2412c9449828dafbd54"
+    },
+    {
+      "path": "docs/design/media-workspace-review/preview/styles/preview.css",
+      "category": "docs",
+      "bytes": 12379,
+      "sha256": "441e15804383d241322e081e9a0dd6213c6910754309495b3da830f8413a1c9b"
+    },
+    {
+      "path": "docs/design/media-workspace-review/preview/styles/production.css",
+      "category": "docs",
+      "bytes": 8020,
+      "sha256": "1f4fc3c011b016610967fa035239f7bb2e12701a0d51783bfa58ed0b9f2112a6"
+    },
+    {
+      "path": "docs/design/media-workspace-review/preview/styles/prompt-studio.css",
+      "category": "docs",
+      "bytes": 13862,
+      "sha256": "370b36303d74d9edf9a9fcf63d92b573baff0f3e0f5eb7a49837cb564b7a540f"
+    },
+    {
+      "path": "docs/design/media-workspace-review/preview/styles/readability.css",
+      "category": "docs",
+      "bytes": 9744,
+      "sha256": "b55cc85e466418b16be016de6793f640ea0d6b879406bed36550b3a6b7ad776d"
+    },
+    {
+      "path": "docs/design/media-workspace-review/preview/styles/runtime.css",
+      "category": "docs",
+      "bytes": 9366,
+      "sha256": "0feb198ae2d794d87639ce094aea3fe65338110bbd9ace74c128cf2cb86644f0"
+    },
+    {
+      "path": "docs/design/media-workspace-review/preview/styles/studio.css",
+      "category": "docs",
+      "bytes": 56582,
+      "sha256": "739a426a12485e9abc2e112cf978e71202985715748284a9de85a6e64af3884d"
+    },
+    {
+      "path": "docs/design/media-workspace-review/preview/tests/prompt-presets.test.cjs",
+      "category": "docs",
+      "bytes": 4754,
+      "sha256": "45cea987aa8aca4416578ead06a01be9ae55844f3cffd0b2a965f37bb5f134ba"
+    },
+    {
+      "path": "docs/design/media-workspace-review/preview/tests/prompt-studio.test.cjs",
+      "category": "docs",
+      "bytes": 5927,
+      "sha256": "900b4519e882adcac9ff1959b9fd954a58b71fb6e8ab64832028c3f57e388c06"
+    },
+    {
+      "path": "docs/home-art-generation.json",
+      "category": "docs",
+      "bytes": 4929,
+      "sha256": "aadf768fd0b62d5d756c3f9c9dd0193819575c6b13c4020a15b5c74f9428dd2f"
+    },
+    {
+      "path": "docs/plans/2026-10-23-bot-workbench-implementation.md",
+      "category": "docs",
+      "bytes": 3556,
+      "sha256": "14f6f59700a75c5f31060fa5c7847536cda5b283320553ca521633a4485d3c88"
+    },
+    {
+      "path": "docs/plans/2026-10-24-approved-visual-integration.md",
+      "category": "docs",
+      "bytes": 1700,
+      "sha256": "ea6bf8ec3d3c56a78a07152347f78c25d42a8b8369fe47f912e089004d6ef438"
+    },
+    {
+      "path": "docs/plans/2026-10-24-mac-client-design.md",
+      "category": "docs",
+      "bytes": 2419,
+      "sha256": "dd1de839ac35750f3a98a6174151bfba9085e659739249e6d12272f0a11478bd"
+    },
+    {
+      "path": "docs/plans/2026-10-25-auto-collaboration.md",
+      "category": "docs",
+      "bytes": 3499,
+      "sha256": "aaf6a23f4fbf9426bed8e4683c23b78325f394c94b766b926a8d87fcda5dc92c"
+    },
+    {
+      "path": "docs/plans/2026-10-25-project-creation-canvas.md",
+      "category": "docs",
+      "bytes": 7139,
+      "sha256": "ba8c9cbf5a67d953a7204092cf3472dd8dcced554b7923600f767b997b7c14fc"
+    },
+    {
+      "path": "docs/plans/2026-10-25-project-media-placement.md",
+      "category": "docs",
+      "bytes": 1634,
+      "sha256": "fa9b49587ea371cd70fcc12db4119ffee92337640e229e9a456825607358ef32"
+    },
+    {
+      "path": "docs/plans/2026-10-25-quality-and-style-controls.md",
+      "category": "docs",
+      "bytes": 1669,
+      "sha256": "5ad8dd644579aeb78e7b940e7929f3db842e4cb4118cdfbdc9a0ec70c92aa0d3"
+    },
+    {
+      "path": "docs/plans/2026-10-25-runninghub-full-models.md",
+      "category": "docs",
+      "bytes": 1558,
+      "sha256": "7abe5ac00538dfeea4a919839bf87e7ce0bc40ddf5ae1b8664cb356f7565d373"
+    },
+    {
+      "path": "docs/portrait-generation-differentiation-v1.json",
+      "category": "docs",
+      "bytes": 20482,
+      "sha256": "baf700e4a13ddbcdc821a7a49c120cc761614d7401c57e28a44d30564d584998"
+    },
+    {
+      "path": "docs/portrait-generation-g03-g05.json",
+      "category": "docs",
+      "bytes": 13620,
+      "sha256": "ddd5da5abd4d2473bbc7cd1dc49fe5207fa14e21467a198eba978576044de311"
+    },
+    {
+      "path": "docs/portrait-generation-r02-r08.json",
+      "category": "docs",
+      "bytes": 16765,
+      "sha256": "e243b332825ab396b74f135c58a941ed71150a5f7881753076ce4c331273ccea"
+    },
+    {
+      "path": "docs/portrait-generation-r09-r16.json",
+      "category": "docs",
+      "bytes": 13467,
+      "sha256": "e92ee2626b386507fa79b79ff6b3184725c0f874329dc321b3119c3065b8a4ed"
+    },
+    {
+      "path": "docs/portrait-generation-root.json",
+      "category": "docs",
+      "bytes": 3820,
+      "sha256": "5a0d1c82dcfa5e3fd486af9dc57a0370dd76435532c25e07df1e04b36b44eb47"
+    },
+    {
+      "path": "docs/portrait-prompts.json",
+      "category": "docs",
+      "bytes": 35205,
+      "sha256": "ee71ef66712ec930fca8460f8301a3c9167c647576e5b46b4af97984574da774"
+    },
+    {
+      "path": "docs/portrait-revision-sources.json",
+      "category": "docs",
+      "bytes": 283,
+      "sha256": "40128529699c508b89bc0281b64e312a9946665459ff1a9acc0cb73013004870"
+    },
+    {
+      "path": "docs/project-character-assets.md",
+      "category": "docs",
+      "bytes": 13295,
+      "sha256": "3af260b306f85da4803dbed000ec8b510c72c69868381064c025d32970c9f7fe"
+    },
+    {
+      "path": "docs/project-visuals-generation.json",
+      "category": "docs",
+      "bytes": 10439,
+      "sha256": "5d3b5cd5dcb1aabe133a0bb24301393fcf239e6bce6f4ad0d5b8e792c3b1afc8"
+    },
+    {
+      "path": "docs/research/components/team-hall.spec.md",
+      "category": "docs",
+      "bytes": 3360,
+      "sha256": "228dd99ff64a4a03215b21926b4b21607274391a8d5265260de5dd08e0e7a65c"
+    },
+    {
+      "path": "docs/交接/00_交付导航.html",
+      "category": "docs",
+      "bytes": 97732,
+      "sha256": "21f9c475a7eafe66bcf597c7bbc0d95b6ff7f7a365b7151289de9cd0d616a1f8"
+    },
+    {
+      "path": "docs/交接/01_项目现状与完成边界.md",
+      "category": "docs",
+      "bytes": 9522,
+      "sha256": "660406b5f891df47826f76524af6b8e8914f7c012ae99f4303fc7eda4aa14874"
+    },
+    {
+      "path": "docs/交接/02_影视制作SOP.md",
+      "category": "docs",
+      "bytes": 9675,
+      "sha256": "c9cd4792aef7a6003fb23dc8972f6fea137195d1687a53e3ada4f0265cdb59f2"
+    },
+    {
+      "path": "docs/交接/03_用户操作手册.md",
+      "category": "docs",
+      "bytes": 15692,
+      "sha256": "0ba1b5375a818f8cba74462fd7b34d160a164e5d040fddd597ad99e4bfedc49e"
+    },
+    {
+      "path": "docs/交接/04_技术架构与开发维护.md",
+      "category": "docs",
+      "bytes": 13977,
+      "sha256": "c035b97331ae0a2c22c0e99d4dc22fc20218c2b42daab22c6bf3ca0ec3e83293"
+    },
+    {
+      "path": "docs/交接/05_全部元素与素材清单.md",
+      "category": "docs",
+      "bytes": 13083,
+      "sha256": "6772e3662f003e8e41a38b973343caa8e6fb1227dd948af32adcecb7ce15d930"
+    },
+    {
+      "path": "docs/交接/06_部署备份与恢复.md",
+      "category": "docs",
+      "bytes": 7917,
+      "sha256": "291a7343a2e92f9c61fb5c967c747c986e167330cce0f73a45ff8c7a6b8219ad"
+    },
+    {
+      "path": "docs/交接/07_验证记录与待办.md",
+      "category": "docs",
+      "bytes": 6449,
+      "sha256": "2489ea9fbea812ec8d4e408ac6478b58930e206bb609c7a6d4b1a1ea193f9993"
+    },
+    {
+      "path": "docs/交接/验证/便携参数测试.txt",
+      "category": "docs",
+      "bytes": 824,
+      "sha256": "8416cb2da4ec5acddd55562cfbd44b7e806deb1cebd896a6905ff3e2d84bc7af"
+    },
+    {
+      "path": "docs/交接/验证/前端回归结果.txt",
+      "category": "docs",
+      "bytes": 28453,
+      "sha256": "0bef0e83506f0c128d63ab677be5994d8d90fb59cfd0e03a2f29f27cc9edf147"
+    },
+    {
+      "path": "docs/交接/验证/后端回归结果.txt",
+      "category": "docs",
+      "bytes": 68434,
+      "sha256": "ce8a1069f26ffca446eb3d6a792157d420ebec49c989ab05f9417ae30fbde7d4"
+    },
+    {
+      "path": "docs/交接/验证/打包回归验证.json",
+      "category": "docs",
+      "bytes": 295,
+      "sha256": "dedaea30ca1a284a8816df02f3a0f34ebfda034310e3878e604474fb5fef2fc6"
+    },
+    {
+      "path": "docs/交接/验证/视图检查结果.json",
+      "category": "docs",
+      "bytes": 1468,
+      "sha256": "27c745f257e2148bd22c3e8d95ae1809c6299ba44154814c45602553996dac03"
+    },
+    {
+      "path": "docs/交接/验证/隔离启动验证.json",
+      "category": "docs",
+      "bytes": 272,
+      "sha256": "661e2c25b7f12ff8a8b17ca9bdbb759ecb977dfdca7e2424cc6c98fcef33d5b6"
+    },
+    {
+      "path": "docs/使用工作台-v0.4.md",
+      "category": "docs",
+      "bytes": 3140,
+      "sha256": "e43b63cfc3b8652c270262dad9fde058e5d6cc1d3ae8af86428cdc57962cc5b4"
+    },
+    {
+      "path": "docs/创作画布使用说明.md",
+      "category": "docs",
+      "bytes": 12600,
+      "sha256": "7edb882360e0088a22aa7e207ba60dafab3a9ac519837400603db4e18e0c4ab3"
+    },
+    {
+      "path": "docs/删除与恢复使用说明.md",
+      "category": "docs",
+      "bytes": 2892,
+      "sha256": "485ec690d02fdfd288b13d061d66f51fac2f10fde72bb859ac6b3cb958246dd2"
+    },
+    {
+      "path": "docs/自动协作使用说明-v0.6.md",
+      "category": "docs",
+      "bytes": 3602,
+      "sha256": "cdc7428e6472aea19ec523a7c3061c4eab48ba9f492eade43b44aa96148d11f0"
+    },
+    {
+      "path": "index.html",
+      "category": "根目录",
+      "bytes": 8569,
+      "sha256": "38d8dbf74a07e20cdde5ef1aa292b846f959adc917f1cc9c50b84b834647ca69"
+    },
+    {
+      "path": "lib/canvas-controls.js",
+      "category": "lib",
+      "bytes": 23633,
+      "sha256": "260610d6401ba7c2c812a11cc2386477dd7ffc89e2fc23120e976fc3e04a895c"
+    },
+    {
+      "path": "lib/canvas.js",
+      "category": "lib",
+      "bytes": 103585,
+      "sha256": "deb3501f0df3e0e763b28ded250932bb96d206677a38e57cce6dd059338eec07"
+    },
+    {
+      "path": "lib/character-profile.js",
+      "category": "lib",
+      "bytes": 3998,
+      "sha256": "73d882d66dea5febba204eb3377a3c1c07aacb94a7baac15d610ddb950103daa"
+    },
+    {
+      "path": "lib/layout.js",
+      "category": "lib",
+      "bytes": 8679,
+      "sha256": "d830c3f45d209d17fdeaa616a543bde0ca23e05925b1bcd4273cf64802aef9f5"
+    },
+    {
+      "path": "lib/media-posters.js",
+      "category": "lib",
+      "bytes": 13270,
+      "sha256": "04a40d944c90bcf4af02067cd7e99ee4ba5e3ef6a67b9bd15f583a6fd238ca9a"
+    },
+    {
+      "path": "lib/production-views.js",
+      "category": "lib",
+      "bytes": 16287,
+      "sha256": "f93fafdfc295935b2aeac3063b48ee3eb410c5a1b40ada59631a8718366d104c"
+    },
+    {
+      "path": "lib/production.js",
+      "category": "lib",
+      "bytes": 10714,
+      "sha256": "a7a137bf74b79169c98c27cbd761f43d2df11e14386d9b7bdd5badd60fb90931"
+    },
+    {
+      "path": "lib/runtime.js",
+      "category": "lib",
+      "bytes": 24325,
+      "sha256": "233fee9a0c9177a16581c39ca86537c536da522bc361e3e3f880c9af2680ef2e"
+    },
+    {
+      "path": "lib/store.js",
+      "category": "lib",
+      "bytes": 42162,
+      "sha256": "f058dff97c9ca420a1ff3d497685fcecb0049c8c74f704c06055ec182cb31d2f"
+    },
+    {
+      "path": "lib/trash.js",
+      "category": "lib",
+      "bytes": 6717,
+      "sha256": "6a6f9db17ce31e6549c70adda2cce0d06c7f8c2c4ffb6c35cc2d8e0774a6ca46"
+    },
+    {
+      "path": "lib/views.js",
+      "category": "lib",
+      "bytes": 131857,
+      "sha256": "2fba1510eef491ac9833987d2c8f49dd1dfbcce2e3ddb6930c6e4a62eaf4f2c0"
+    },
+    {
+      "path": "lib/workspace-sync.js",
+      "category": "lib",
+      "bytes": 10450,
+      "sha256": "d4c47e301f66d71a9ef68905f7a9b8ef70899001548637cf0630bbdef637f036"
+    },
+    {
+      "path": "prompts/README.md",
+      "category": "prompts",
+      "bytes": 831,
+      "sha256": "85af4266b4959cb02254c3fd104db10cefcdd90b8940cab83ff2a1cfc5a71f1f"
+    },
+    {
+      "path": "prompts/影视Agent团队提示词/00_目录索引.md",
+      "category": "prompts",
+      "bytes": 3008,
+      "sha256": "e438ed054886a9d76287cc54d1f286f3aa280c408325be3a0dd41d816ca370f0"
+    },
+    {
+      "path": "prompts/影视Agent团队提示词/01_共享指令.md",
+      "category": "prompts",
+      "bytes": 19370,
+      "sha256": "3ca560cd50388b0d7664b8676fc4a0765250d4d646065e04dc87528d930559f4"
+    },
+    {
+      "path": "prompts/影视Agent团队提示词/R01_经营负责人兼商务制片人.md",
+      "category": "prompts",
+      "bytes": 10614,
+      "sha256": "7a917fc9c2c71118580c7a5549cb49a013a7a30fbaa4114d1f663612443a846a"
+    },
+    {
+      "path": "prompts/影视Agent团队提示词/R02_研究与IP开发制片人.md",
+      "category": "prompts",
+      "bytes": 9574,
+      "sha256": "d6d31322a84844136d4231ba3949e8cbf9b264885e695396ceecee5e20fa60ce"
+    },
+    {
+      "path": "prompts/影视Agent团队提示词/R03_编剧兼故事策划.md",
+      "category": "prompts",
+      "bytes": 10533,
+      "sha256": "5157f63ebb81ec4e62e67b299f5a7489ecea6967d8dfc7a96cf0bc0badae4bb8"
+    },
+    {
+      "path": "prompts/影视Agent团队提示词/R04_导演兼分镜与预演设计.md",
+      "category": "prompts",
+      "bytes": 13574,
+      "sha256": "cd44ed6288aacc1e2f6b66502b12d2473b6e3058b99056932b8c803c55e24576"
+    },
+    {
+      "path": "prompts/影视Agent团队提示词/R05_美术指导兼视觉资产设计.md",
+      "category": "prompts",
+      "bytes": 14974,
+      "sha256": "6bf56ee148e89f9067ec18d3d0154022db98fba29b0c8622f3367a8e92264330"
+    },
+    {
+      "path": "prompts/影视Agent团队提示词/R06_AI影像艺术家兼技术美术.md",
+      "category": "prompts",
+      "bytes": 16876,
+      "sha256": "a92ed9af1ba80a331e20ad255c3d934c5056a98d23ad18215dbdc431b0128eec"
+    },
+    {
+      "path": "prompts/影视Agent团队提示词/R07_动画CG与视效制作负责人.md",
+      "category": "prompts",
+      "bytes": 19154,
+      "sha256": "07b98f61a0012bb3ad719ce048fee02fa8c374d910d489c8ef773c24d2d7dc3c"
+    },
+    {
+      "path": "prompts/影视Agent团队提示词/R08_剪辑师兼动态图形设计.md",
+      "category": "prompts",
+      "bytes": 16571,
+      "sha256": "3ac940c037811eb85ede63d0b28f5539700282591ac6298f23230b207d83d69c"
+    },
+    {
+      "path": "prompts/影视Agent团队提示词/R09_合成调色与母版负责人.md",
+      "category": "prompts",
+      "bytes": 18006,
+      "sha256": "f112d3a71997f315579dd8f06fa9cea40fd35103bfe5e7b628bb0d77ee962aab"
+    },
+    {
+      "path": "prompts/影视Agent团队提示词/R10_声音设计兼配音与音乐统筹.md",
+      "category": "prompts",
+      "bytes": 17634,
+      "sha256": "29fb22e8efbd8684096df360fadf592e0c8e3c0cfa25b38ec95266772753cc48"
+    },
+    {
+      "path": "prompts/影视Agent团队提示词/R11_项目主控与质量交付统筹.md",
+      "category": "prompts",
+      "bytes": 15951,
+      "sha256": "a30248831c00767a336db2307d76a673db6e68f8134f81ad8cea15532179a2a4"
+    },
+    {
+      "path": "prompts/影视Agent团队提示词/R12_技术负责人兼工作流与资产管理.md",
+      "category": "prompts",
+      "bytes": 17109,
+      "sha256": "60e4908bab0791adc1d7febfaddf3aebdadc5a65dd50db2f4807e93f8f234d2d"
+    },
+    {
+      "path": "prompts/影视Agent团队提示词/R13_版权法务与地区平台合规负责人.md",
+      "category": "prompts",
+      "bytes": 15924,
+      "sha256": "8a71027d472eccd3dc756efa3597b8c26574872d496530d340c38cdf479a6057"
+    },
+    {
+      "path": "prompts/影视Agent团队提示词/R14_国际发行兼本地化与平台运营.md",
+      "category": "prompts",
+      "bytes": 15904,
+      "sha256": "2e465b4fb3837c387228ed4f097e5189614a39d24090788b5eb44cdcc360a87f"
+    },
+    {
+      "path": "prompts/影视Agent团队提示词/R15_营销增长与商业化负责人.md",
+      "category": "prompts",
+      "bytes": 17827,
+      "sha256": "d283efa463094dd3620cc3ff21a0c0fd1e041d3fcaffc77059010dce1691ac42"
+    },
+    {
+      "path": "prompts/影视Agent团队提示词/R16_财务人力与行政统筹.md",
+      "category": "prompts",
+      "bytes": 17303,
+      "sha256": "4d4636ec3dc2cc0914108c9b698cfdf5ed95dd9ba6f7c98e52368e10d0b85581"
+    },
+    {
+      "path": "prompts/游戏Agent团队提示词/00_游戏团队目录索引.md",
+      "category": "prompts",
+      "bytes": 2270,
+      "sha256": "818b107860ae37b2ba9c678462f6e8acf9d456364591dedb30ee00e889b5afa7"
+    },
+    {
+      "path": "prompts/游戏Agent团队提示词/01_游戏团队共享指令.md",
+      "category": "prompts",
+      "bytes": 9579,
+      "sha256": "2cf76f1eb1de6d0c8aedba16f413efb8b196967c29c6d37bf91f7c223619cafc"
+    },
+    {
+      "path": "prompts/游戏Agent团队提示词/G01_游戏制作人兼主策划.md",
+      "category": "prompts",
+      "bytes": 15067,
+      "sha256": "307529bc99ecbab5672c35d97d88961e71de69f794b9c484b8571136497f2ee9"
+    },
+    {
+      "path": "prompts/游戏Agent团队提示词/G02_关卡与玩家体验设计师.md",
+      "category": "prompts",
+      "bytes": 14297,
+      "sha256": "421e7d55aacb63d9cb2274d8674d12af88e284ef4dd9d7ef0f8768f1b2213d6a"
+    },
+    {
+      "path": "prompts/游戏Agent团队提示词/G03_游戏程序兼技术美术.md",
+      "category": "prompts",
+      "bytes": 16807,
+      "sha256": "1ff7efcd24f80bff287fd5c922289f9bb5a88757adab51778602a493f35a0ae8"
+    },
+    {
+      "path": "prompts/游戏Agent团队提示词/G04_游戏美术兼动画与界面视觉.md",
+      "category": "prompts",
+      "bytes": 16658,
+      "sha256": "87bfb63747fcbbf6ff945efe2e00a467fc6e136464fcc63a458f9c5e4319f679"
+    },
+    {
+      "path": "prompts/游戏Agent团队提示词/G05_游戏测试兼体验评估.md",
+      "category": "prompts",
+      "bytes": 16734,
+      "sha256": "1ef937847011d515d9f2c1e0f5eb185d783d13b3d8bf6dd64e09f1ee2de90cec"
+    },
+    {
+      "path": "scripts/build-handover.py",
+      "category": "scripts",
+      "bytes": 6658,
+      "sha256": "e8708720bf495b9a58a56962d6a4cb5f799bfd3dc2f9c9f930bb699ab12bcc18"
+    },
+    {
+      "path": "scripts/build-preview.py",
+      "category": "scripts",
+      "bytes": 14681,
+      "sha256": "917768b6f1ed6d2356723d20e8e8b7bcbb1fd27e831dc0875376f9fd7e251992"
+    },
+    {
+      "path": "scripts/package-handover.py",
+      "category": "scripts",
+      "bytes": 11967,
+      "sha256": "528fdda074163fc8fb823aa96ad70d0e28a42ed33e37267fc0e5d96d2c4320c8"
+    },
+    {
+      "path": "scripts/prepare-assets.cjs",
+      "category": "scripts",
+      "bytes": 3268,
+      "sha256": "444daa854a9f1b8249083a3d21df72959469458e82f9d7d4189727ef38eef72a"
+    },
+    {
+      "path": "scripts/start-portable.command",
+      "category": "scripts",
+      "bytes": 1326,
+      "sha256": "a80daccff90370709440eb02cd7d5e445d98f350d801ec322d832075f3d4e4dd"
+    },
+    {
+      "path": "scripts/verify-production.py",
+      "category": "scripts",
+      "bytes": 4949,
+      "sha256": "6eb6e3d7d7c2ff0b79433b55247d2c8e2edf742ef1ed9c5f4406ab951f47214a"
+    },
+    {
+      "path": "scripts/verify-runninghub.py",
+      "category": "scripts",
+      "bytes": 3003,
+      "sha256": "196307ca505fff4f522b1291ac159732a78a9ec5c7e5d7092ee348fbebfb7991"
+    },
+    {
+      "path": "server/__init__.py",
+      "category": "server",
+      "bytes": 41,
+      "sha256": "df9354c9b772e17df2ade5ea16c9303d2c6ec0f439cde58f579af4cc4da5d237"
+    },
+    {
+      "path": "server/canvas.py",
+      "category": "server",
+      "bytes": 76286,
+      "sha256": "4c04a4b754617552b9589687cf0d46e428b2e6322c48e6b6057ef98a033bfaf4"
+    },
+    {
+      "path": "server/httpd.py",
+      "category": "server",
+      "bytes": 21231,
+      "sha256": "5c685facbebb6255e2f922765025bbe0b3ec48b14aa851bda26248703bbf2f98"
+    },
+    {
+      "path": "server/media.py",
+      "category": "server",
+      "bytes": 65056,
+      "sha256": "e3742f9dbda75d42850ee17abf5291eff70c018bfaad5e8bf7e1d14b3325e6c5"
+    },
+    {
+      "path": "server/media_models.py",
+      "category": "server",
+      "bytes": 21697,
+      "sha256": "01a465fcfbcc1668810cdb363489c14accc0f1fc92522a489c191d332593ef86"
+    },
+    {
+      "path": "server/production.py",
+      "category": "server",
+      "bytes": 31901,
+      "sha256": "d13a4752963ccefcd4448a890d150f8924c38a59c9c8f16fd0c14c7975a17dfe"
+    },
+    {
+      "path": "server/project_assets.py",
+      "category": "server",
+      "bytes": 21445,
+      "sha256": "7d6c321bd7ed710d95fc6ef6b80fde09bc11501ec10f777e16277cb88758e6bc"
+    },
+    {
+      "path": "server/provider.py",
+      "category": "server",
+      "bytes": 18890,
+      "sha256": "d96be2879e6201e96f4fc95c827b9f4f032cbf9f2966593cf07f7da5ea9b4039"
+    },
+    {
+      "path": "server/roles.py",
+      "category": "server",
+      "bytes": 14833,
+      "sha256": "8fdfd187ad27f6435096e977138763bf6ab9e9ecfdbad6fa5b4b0d1e999e92c8"
+    },
+    {
+      "path": "server/runtime.py",
+      "category": "server",
+      "bytes": 24007,
+      "sha256": "1e390ad9b6e472c2820de4904a3b1a74b8def08df63047d6ba14f582c31ba639"
+    },
+    {
+      "path": "server/storyboard.py",
+      "category": "server",
+      "bytes": 18789,
+      "sha256": "74fade579a0656d4cd3ed689e934d845efdb307ab3f0a4180bd1e3f8bffa4471"
+    },
+    {
+      "path": "server/trash.py",
+      "category": "server",
+      "bytes": 32586,
+      "sha256": "9ab6c5a785d731c7901d6c26615e2eb3db3de988ae1a90f2c72d6d9ec699ebea"
+    },
+    {
+      "path": "server/workspace.py",
+      "category": "server",
+      "bytes": 5030,
+      "sha256": "07ccc71b0856a5936c74214de392ce24993fa922605fe540ed73a5a8c130626c"
+    },
+    {
+      "path": "styles/canvas.css",
+      "category": "styles",
+      "bytes": 40726,
+      "sha256": "b58d88d3e098146916f7092c445a7e8c82f66c13159fafcea17c6ceb91488da0"
+    },
+    {
+      "path": "styles/home-reference.css",
+      "category": "styles",
+      "bytes": 6708,
+      "sha256": "a34d6290aa90de351af0b662a83bc6691482aed15d891c4060e3b1747bb49752"
+    },
+    {
+      "path": "styles/production.css",
+      "category": "styles",
+      "bytes": 11076,
+      "sha256": "8e341dffb0e1af0cc98173d0c585c144f330c90abf5d0d8295ae053d733c4b77"
+    },
+    {
+      "path": "styles/readability.css",
+      "category": "styles",
+      "bytes": 9744,
+      "sha256": "b55cc85e466418b16be016de6793f640ea0d6b879406bed36550b3a6b7ad776d"
+    },
+    {
+      "path": "styles/runtime.css",
+      "category": "styles",
+      "bytes": 39712,
+      "sha256": "6451241d157498d8a038880cef4d40fc22023c49bc221c0487494b2f7c8004a6"
+    },
+    {
+      "path": "styles/splitters.css",
+      "category": "styles",
+      "bytes": 3127,
+      "sha256": "619d1a3b4a185dd1513703dad5f4455ac283faa7b110407e6dfde2b961233265"
+    },
+    {
+      "path": "styles/studio.css",
+      "category": "styles",
+      "bytes": 56582,
+      "sha256": "739a426a12485e9abc2e112cf978e71202985715748284a9de85a6e64af3884d"
+    },
+    {
+      "path": "styles/trash.css",
+      "category": "styles",
+      "bytes": 3203,
+      "sha256": "3e0cef32eb4d2f95278ca615f76bb9cb2d66fa2dc4605390f7f3a4ae1a0c1167"
+    },
+    {
+      "path": "styles.css",
+      "category": "根目录",
+      "bytes": 52351,
+      "sha256": "d583ff713a2d552cfc74bd11670d6ddbe2e505a93fb7c3e20a9e22489f486e4d"
+    },
+    {
+      "path": "tests/canvas-controls.test.cjs",
+      "category": "tests",
+      "bytes": 25989,
+      "sha256": "594adb5bab774d1f49ce3dd16bf318ee29477493eff3fb39f8a44e905d91d381"
+    },
+    {
+      "path": "tests/canvas.test.cjs",
+      "category": "tests",
+      "bytes": 16300,
+      "sha256": "2a11c0d46ff4137522d25815cfaa810c65eafde2475f5555e3c9602772b89026"
+    },
+    {
+      "path": "tests/character-editor.test.cjs",
+      "category": "tests",
+      "bytes": 5415,
+      "sha256": "89f489780f0200620e11fefae19763cb217c822508ce578a3abe0be0d6554ec0"
+    },
+    {
+      "path": "tests/character-profile.test.cjs",
+      "category": "tests",
+      "bytes": 2694,
+      "sha256": "f4bb6529f816e903860e06c7c5bd4210e877ad96b1de05c260d5ee6c578ef3ac"
+    },
+    {
+      "path": "tests/full-model-catalog.test.cjs",
+      "category": "tests",
+      "bytes": 11207,
+      "sha256": "bf32f5d54b0d112fd2923e9d973168b00bae457c2b2dc6514abfed73ef8eb275"
+    },
+    {
+      "path": "tests/home-results.test.cjs",
+      "category": "tests",
+      "bytes": 21452,
+      "sha256": "28125b251f1d4026e1e74919eb79096433b5f8d9e80fad00f538bc3451bbe538"
+    },
+    {
+      "path": "tests/layout.test.cjs",
+      "category": "tests",
+      "bytes": 4478,
+      "sha256": "1303461d5663fddf928e54fdc324ccf2cd2529325309ede2d3e3719d3a4b9802"
+    },
+    {
+      "path": "tests/media-models.test.cjs",
+      "category": "tests",
+      "bytes": 12575,
+      "sha256": "b318bcb5377a6e1fc65dbdf4fa94fdaaf0e9efa947ba57bfe2e741aa889606f7"
+    },
+    {
+      "path": "tests/production.test.cjs",
+      "category": "tests",
+      "bytes": 33416,
+      "sha256": "46596eb9c476b260fd3031e9c5b68e63fa031078280c9f32ea176ceeb59a6416"
+    },
+    {
+      "path": "tests/project-media.test.cjs",
+      "category": "tests",
+      "bytes": 28730,
+      "sha256": "5fdb5bd4dac590ab9cef0c65d1169eb374ef05c280f882c7c53cadbf72c83a14"
+    },
+    {
+      "path": "tests/project-results.test.cjs",
+      "category": "tests",
+      "bytes": 21388,
+      "sha256": "6c31a24ed822100ec01a1d47a78f6710f66ec9a878436ee6f7edfc78e0c104e8"
+    },
+    {
+      "path": "tests/runtime.test.cjs",
+      "category": "tests",
+      "bytes": 13694,
+      "sha256": "c0093f9977ed59b0f90a8852ca29868dcfe0293e1dd93bce8c75a35bbb1c4cde"
+    },
+    {
+      "path": "tests/store.test.cjs",
+      "category": "tests",
+      "bytes": 29039,
+      "sha256": "cedbc500ac42438d7deba64b22917ef32bc1b2fe9778f92ecd214bcfb73876a0"
+    },
+    {
+      "path": "tests/test_canvas.py",
+      "category": "tests",
+      "bytes": 28953,
+      "sha256": "89c490c9d3cf368bfa5b3b00329df9db839712eb3afa760a25802b162287e8c0"
+    },
+    {
+      "path": "tests/test_character_asset_contract.py",
+      "category": "tests",
+      "bytes": 14076,
+      "sha256": "415bc9164a5cb1074622485dba2c2bd3f0a7718cd92519bee0fe09902a1e14bf"
+    },
+    {
+      "path": "tests/test_desktop_manager.py",
+      "category": "tests",
+      "bytes": 2666,
+      "sha256": "bbb1d8ec4f6eb0ae1d5d60d69ecec6d4fba44976767f4745f0d2a09b13766934"
+    },
+    {
+      "path": "tests/test_full_model_catalog.py",
+      "category": "tests",
+      "bytes": 10679,
+      "sha256": "126f94226b468af400bc58e13262c4d2a96efd9c49fb76a0fc94157eabb1705b"
+    },
+    {
+      "path": "tests/test_httpd.py",
+      "category": "tests",
+      "bytes": 2708,
+      "sha256": "2b29d97997ce9c7a08c041c15c2df40c9378f916d652b5ab5a7cff2941f158ee"
+    },
+    {
+      "path": "tests/test_media.py",
+      "category": "tests",
+      "bytes": 15790,
+      "sha256": "9fc2ea34dbe086e81100022f4933bb7d1eab16790fb3c5aee63e62863298cbd3"
+    },
+    {
+      "path": "tests/test_media_discovery.py",
+      "category": "tests",
+      "bytes": 14881,
+      "sha256": "71f130038fa16b1fc33daf2538e28c15ae626d5769f4b3e4ce92c91c3c263666"
+    },
+    {
+      "path": "tests/test_media_http.py",
+      "category": "tests",
+      "bytes": 6987,
+      "sha256": "46ed30eac5cc85b7b79029e3112e179094452a3c11aeb15c5287bce282a66260"
+    },
+    {
+      "path": "tests/test_media_model_schema.py",
+      "category": "tests",
+      "bytes": 8084,
+      "sha256": "3d2ec2a27ed2dd9f5eb7db3cd67f72c01a2f9b7b1d7e9e5e1e2bc4a4a60456f2"
+    },
+    {
+      "path": "tests/test_media_models.py",
+      "category": "tests",
+      "bytes": 26470,
+      "sha256": "32dae32cfb4341f685052cd3b722cf5304edd6a4f1611f00346a1567d490622e"
+    },
+    {
+      "path": "tests/test_media_models_http.py",
+      "category": "tests",
+      "bytes": 6888,
+      "sha256": "968f4dd09905451924a48c6b5ed3481076d8d836d9efddcc513d16de9af4931c"
+    },
+    {
+      "path": "tests/test_media_personal_e2e.py",
+      "category": "tests",
+      "bytes": 11552,
+      "sha256": "c8870611e2faf9399ac7f4bc9364a44e6853797683492b0851b05e6e5f527fed"
+    },
+    {
+      "path": "tests/test_media_retirement.py",
+      "category": "tests",
+      "bytes": 12912,
+      "sha256": "9a879f5dd8f8422fb0b4ff38671197607fe100bcff43ed8626e9dda83cdba825"
+    },
+    {
+      "path": "tests/test_media_tls.py",
+      "category": "tests",
+      "bytes": 6968,
+      "sha256": "b32dedac22a72d7e95cdfafca4c2b100c646a26d3daef73ce928c055b2258d2a"
+    },
+    {
+      "path": "tests/test_portable_start.py",
+      "category": "tests",
+      "bytes": 3787,
+      "sha256": "c16bc7215096dee8a6cec2f90b04aa4278dcbc283752a5ac681dc2012fab51f7"
+    },
+    {
+      "path": "tests/test_production.py",
+      "category": "tests",
+      "bytes": 24350,
+      "sha256": "4a7cbad60df53c269be5b4052b2d18ea6338ce8f0dfae12f358f655da62808ec"
+    },
+    {
+      "path": "tests/test_production_http.py",
+      "category": "tests",
+      "bytes": 5265,
+      "sha256": "2b38dbb2bd2cda17d7057a7599a8e625e648e6d5186a6b56627db7f63830e363"
+    },
+    {
+      "path": "tests/test_project_assets.py",
+      "category": "tests",
+      "bytes": 45369,
+      "sha256": "3a137960696a4b7bdd216ea2fc57f4a14fb10a7dcb49caaec371a6a9d1a044f2"
+    },
+    {
+      "path": "tests/test_project_media.py",
+      "category": "tests",
+      "bytes": 16770,
+      "sha256": "c81786a60766e1719578d63b3e0d549ce4dcc19ec5f5e9cacf89b8b72d3f8465"
+    },
+    {
+      "path": "tests/test_provider.py",
+      "category": "tests",
+      "bytes": 8400,
+      "sha256": "72751b4de9be24c9dd35cf39a06cd0bca8e9e04eaa65a0f8b50b24ac733c8987"
+    },
+    {
+      "path": "tests/test_public_catalog_refresh.py",
+      "category": "tests",
+      "bytes": 2898,
+      "sha256": "d0345a64aae58bd386903b8b7d3a29788e7d241387ef76cf2dee9075619d5ddb"
+    },
+    {
+      "path": "tests/test_roles.py",
+      "category": "tests",
+      "bytes": 10155,
+      "sha256": "b480fba71e81bf2dcd6ad04137855c0f5b1db8ef7d1759bef1d1043ff66d14ab"
+    },
+    {
+      "path": "tests/test_runtime.py",
+      "category": "tests",
+      "bytes": 6586,
+      "sha256": "611589b3bce2fd9229955bf8cb8b11a2ab3bc74e946e9ab10433e98658de227c"
+    },
+    {
+      "path": "tests/test_runtime_review.py",
+      "category": "tests",
+      "bytes": 8900,
+      "sha256": "cd36f6590345b52ff0e14cf633e5c946fd74fcb9c9b93581c81386f5fd6aff0e"
+    },
+    {
+      "path": "tests/test_trash.py",
+      "category": "tests",
+      "bytes": 20294,
+      "sha256": "c84becd0d4a9abd548cf0eb3c48896beddb965d2e20f8950f668e3580ead1ed6"
+    },
+    {
+      "path": "tests/test_trash_purge.py",
+      "category": "tests",
+      "bytes": 16087,
+      "sha256": "692a8464ca972b4b715df08c0b9d0a5b9ce2f12129f9ab35fe969eceaa2f8101"
+    },
+    {
+      "path": "tests/test_workspace.py",
+      "category": "tests",
+      "bytes": 5662,
+      "sha256": "2adf80229221fea80d31dbe10bd79d2e7ac94cce29683a0d4f133c3aad3613dd"
+    },
+    {
+      "path": "tests/trash.test.cjs",
+      "category": "tests",
+      "bytes": 24085,
+      "sha256": "a7c345f3eb4418b1f39f35357cdfcbb5fd558840cbcb427db1c4768d2bb64ee5"
+    },
+    {
+      "path": "tests/views.smoke.cjs",
+      "category": "tests",
+      "bytes": 6134,
+      "sha256": "79d3364ed6c99bad45ced9888579bf9beb34d21b99c1fb874995faaddf0cedba"
+    },
+    {
+      "path": "tests/workspace-sync.test.cjs",
+      "category": "tests",
+      "bytes": 11870,
+      "sha256": "ee98fb1513fdc5dfb40c728da8784e43894b8724f65ee300887ea020e9ee990d"
+    },
+    {
+      "path": "启动工作台.command",
+      "category": "根目录",
+      "bytes": 292,
+      "sha256": "27c3e813f763f8c93fd5b925154a75aa2f21b2b64f24c129c23eae5223464209"
+    }
+  ]
+}

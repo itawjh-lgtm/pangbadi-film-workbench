@@ -1,0 +1,12 @@
+{
+  "result": "passed",
+  "checks": [
+    "source hash verification",
+    "reject unexpected private file",
+    "include portable database",
+    "credential mode 0600",
+    "preserve executable mode 0700",
+    "SQLite backup integrity and no sidecars"
+  ],
+  "usesOnlySyntheticFixtures": true
+}

@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "project": "灯塔来信",
+  "status": "虚构示例项目视觉素材；已生成并逐张视检。不是实际影视/游戏生产成果。",
+  "created_at": "2026-10-24",
+  "generation_mode": "built-in image_gen",
+  "tool": "image_gen.imagegen",
+  "transparent_background": false,
+  "approved_visual_references": [
+    "/Users/itawjh/.codex/generated_images/01a15f4a-f0c9-7f90-847d-bbe339786b18/exec-a59079a0-8366-4157-be53-51b6e635258f.png",
+    "/Users/itawjh/.codex/generated_images/01a15f4a-f0c9-7f90-847d-bbe339786b18/exec-8d71a392-4268-43cf-a35d-7683958ddfd0.png"
+  ],
+  "reference_usage": "生成前已查看批准首页与项目页效果图；据其海岸灯塔与红衣人物方向重新生成独立纯视觉资产，没有裁切页面 UI。",
+  "web_conversion": "cwebp -q 88（只转格式，无裁切无改绘；保留原始 PNG）",
+  "assets": [
+    {
+      "id": "lighthouse-cover",
+      "source_file": "/Users/itawjh/.codex/generated_images/01a16a15-1f9d-7ef2-872d-474634eaa2b7/exec-c83703ad-b537-4d2f-bdc1-0311754c8287.png",
+      "png": "assets/projects/lighthouse-cover.png",
+      "webp": "assets/projects/lighthouse-cover.webp",
+      "prompt": "Use case: stylized-concept.\nAsset type: cinematic cover art for a fictional example film-and-game project named Lighthouse Letter; pure image asset, NOT an interface or poster.\nPrimary request: a beautiful ultrawide-feeling 16:9 coastal lighthouse scene at dawn, high-end semi-realistic animated feature film production art.\nScene: weathered off-white stone lighthouse with dark lantern cap and a warm amber light at the left third, low keeper's cottage nestled at its base. Rugged dark coastal rocks and muted coastal grass in the foreground; a dramatic grey-blue ocean with large white foaming waves stretches to the right. Layered distant cliffs in salt mist. A break in silver clouds admits delicate warm morning rays above the horizon.\nSubject: a very small young adult woman with short black hair and a muted vermilion red knee-length raincoat stands on the path near the middle, back/three-quarter to camera, looking toward the ocean. The woman is tiny against the landscape, not a portrait. Brown boots, charcoal trousers. Wind catches the coat naturally.\nStyle: refined animated feature environmental concept painting with physically convincing weathered stone, waves and atmospheric perspective, painterly detail, restrained high quality film lighting; gently stylized, not photoreal photography, not toy-like.\nComposition: wide sweeping foreground promontory, lighthouse at left third, woman near center, vast sea on right. Render full bleed in 16:9 horizontal format with no border.\nColor palette: slate grey, steel blue, muted sage grass, warm amber glow, one subtle vermilion coat accent. Understated cinematic color grading.\nConstraints: no typography, no labels, no logos, no watermarks, no UI, no panels, no text. No purple neon, no plastic toys, no excessive saturation, no large face, no extra people.",
+      "visual_check": {
+        "viewed": true,
+        "text_or_ui": false,
+        "notes": "左侧灯塔，中间小红衣人物，右侧晨光海浪。"
+      },
+      "width": 1672,
+      "height": 941,
+      "png_bytes": 2705245,
+      "webp_bytes": 327746
+    },
+    {
+      "id": "storyboard",
+      "source_file": "/Users/itawjh/.codex/generated_images/01a16a15-1f9d-7ef2-872d-474634eaa2b7/exec-96da35c7-76aa-466d-b7e4-ccefdf446eec.png",
+      "png": "assets/projects/storyboard.png",
+      "webp": "assets/projects/storyboard.webp",
+      "prompt": "Use case: stylized-concept.\nAsset type: one clean six-panel storyboard illustration, a production design example for a fictional coastal animated film.\nPrimary request: exactly six cinematic black-and-white storyboard panels in an evenly spaced 3-column by 2-row grid. Pure hand-drawn storyboard artwork; NO titles, lettering, numbers, captions or UI.\nSame story in all six panels: young adult woman with short dark bobbed hair, knee-length raincoat, slim charcoal trousers, boots, explores a grey rocky island lighthouse at dawn.\nPanel top-left: very wide establishing view of weathered lighthouse on left coastal promontory with rough foaming sea and tiny woman on the path.\nPanel top-middle: wide rear view of woman crossing windblown cliff path toward lighthouse, sky with big cloud shapes.\nPanel top-right: woman small in frame inside lighthouse entrance, beams and curving wooden stair silhouetted above her, sea light through tall windows.\nPanel bottom-left: medium three-quarter rear view of woman with coat in wind, ocean beyond.\nPanel bottom-middle: wide interior lighthouse room, window grid, wooden table, woman near the window holding a plain folded letter.\nPanel bottom-right: close portrait of woman with short dark hair, thoughtful attentive expression, soft window light.\nStyle: sophisticated feature-animation storyboard pencil, charcoal and grey wash; highly readable staging, simple clean line work, careful light and dark design. Restrained grayscale, absolutely no color. Fine rectangular black panel borders and narrow ivory gutters. Panel artwork fills entire panel, all 6 panels same size, overall 16:9 horizontal composition. Professional production-board quality.\nConstraints: no text, no watermarks, no logos, no interface, no arrows, no speech bubbles; consistent character and lighthouse across frames; no duplicate panels.",
+      "visual_check": {
+        "viewed": true,
+        "text_or_ui": false,
+        "notes": "六格，三列两行，黑白电影分镜。"
+      },
+      "width": 1672,
+      "height": 941,
+      "png_bytes": 3126305,
+      "webp_bytes": 387582
+    },
+    {
+      "id": "character-sheet",
+      "source_file": "/Users/itawjh/.codex/generated_images/01a16a15-1f9d-7ef2-872d-474634eaa2b7/exec-904809cb-ef2b-446c-9909-1b48c9dd0f26.png",
+      "png": "assets/projects/character-sheet.png",
+      "webp": "assets/projects/character-sheet.webp",
+      "prompt": "Use case: stylized-concept.\nAsset type: complete character design sheet for a fictional lighthouse film/game example project.\nPrimary request: a refined semi-realistic animated feature film character turnaround on a clean warm ivory paper background; three full-body views of the SAME young adult female character arranged evenly side-by-side: front at left, strict side profile in middle, back at right. All three figures fully in frame from head to boot soles with breathing space, identical scale, relaxed neutral standing poses.\nCharacter identity: young adult East Asian woman, thoughtful dark eyes, short softly tousled black bob with wind-swept side fringe, subtle freckles and natural warm face; expressive but anatomically believable proportions, not chibi.\nWardrobe: muted vermilion/rust red knee-length weatherproof raincoat with hood resting down, simple dark buttons, restrained seam details and tie belt, dark charcoal trousers, brown practical ankle boots. Same clothes, hairstyle and proportions in every view. No prop needed. Full closed coat with visible underlayer at neck. Stylized cloth texture and careful folds.\nStyle: premium animated movie visual development, appealing soft 3D-like shading with hand-painted textures, elegant restrained design, fine illustrative edge treatment, professional concept sheet, gentle contact shadows. Color palette rust red, charcoal, umber, natural skin on warm ivory.\nComposition: horizontal 16:9 canvas, three full-body figures dominate the sheet; consistent soft studio lighting; no background scene.\nConstraints: no text, letters, numbers, labels, palettes, swatches, charts, logos, watermark, borders, UI; no extra headshots, no exaggerated giant head, no weapons, no plastic toys, no purple light.",
+      "visual_check": {
+        "viewed": true,
+        "text_or_ui": false,
+        "notes": "三个人物视角，头至靴底完整，红风衣短黑发。"
+      },
+      "width": 1672,
+      "height": 941,
+      "png_bytes": 2028670,
+      "webp_bytes": 103828
+    },
+    {
+      "id": "game-level",
+      "source_file": "/Users/itawjh/.codex/generated_images/01a16a15-1f9d-7ef2-872d-474634eaa2b7/exec-5e41bd4b-0d57-49f1-878f-0588f118b59b.png",
+      "png": "assets/projects/game-level.png",
+      "webp": "assets/projects/game-level.webp",
+      "prompt": "Use case: stylized-concept.\nAsset type: isometric adventure-game level concept, fictional sample project, pure illustration with no interface.\nPrimary request: a richly art-directed compact coastal island level centered on a weathered ivory lighthouse with a warm amber lantern. Three-quarter isometric view from above, showing winding stone paths, layered slate cliffs, low retaining walls and bridges, a small keeper's cottage, stairways leading up to lighthouse at highest point, and a tiny shoreline landing. Communicate a traversable continuous exploration route through the geography.\nScene: grey-blue sea with soft white surf wrapping the rocky island; muted sage grass, small windswept trees, moss and wild grasses. One very tiny red-raincoat young woman on the path for scale. Lighthouse architecture should be natural coastal stone, restrained dark metal cap, warm light.\nStyle: high-quality semi-realistic animated film environment design adapted to a premium exploration game. Painterly and sculptural but not plastic; nuanced real stone materials and coherent scale; soft cinematic atmospheric depth; beautiful crafted environmental storytelling without clutter. Keep textures and silhouettes legible at small web-thumbnail scale.\nComposition: full island in frame within a generous sea margin, 16:9 horizontal canvas, lighthouse in upper-right area and paths descend left to lower-left landing. Use a coherent raised island geometry, no floating toy platform.\nLighting: late afternoon warm soft sun across cool sea, amber lighthouse glow, restrained warm/cool contrast.\nConstraints: no typography, no map labels, no UI, no icons, no arrows, no route markings, no logos, no watermark; no neon purple, no candy colors, no chunky toy art, no massive character or flat blank ocean.",
+      "visual_check": {
+        "viewed": true,
+        "text_or_ui": false,
+        "notes": "温暖俯视海岛关卡概念，连贯步道，灯塔与小人物清楚。"
+      },
+      "width": 1672,
+      "height": 941,
+      "png_bytes": 3276771,
+      "webp_bytes": 475626
+    }
+  ]
+}

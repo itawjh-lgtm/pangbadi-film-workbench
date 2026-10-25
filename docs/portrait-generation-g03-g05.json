@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0",
+  "generation_mode": "built-in image_gen",
+  "source_prompt_file": "/tmp/team-portrait-prompts.json",
+  "visual_reference_inspected_only": "/Users/itawjh/.codex/generated_images/01a15f4a-f0c9-7f90-847d-bbe339786b18/exec-acf9dda4-dfec-428e-b2e2-099d4a45b9f5.png",
+  "visual_reference_note": "R01样张仅由view_image检查风格；未作为任何生成调用的附图。",
+  "characters": [
+    {
+      "id": "G03",
+      "base_generation": {
+        "prompt": "Use case: stylized-concept. Create one square 1:1 standalone employee character PNG for a friendly creative-team website. 极其可爱的原创Q版3D成年职业人物，2.5至3头身，巨大的圆润头部和短小身体，温暖友好的大眼睛、很短的圆鼻、微笑、柔软光滑黏土软胶材质，简化的圆润雕塑发束，柔和棚光和淡彩纯色无缝背景。绝不画照片、真人比例、毛孔或写实皱纹。构图必须是单人完整全身，头顶到鞋底只占正方形画面中央约70%高度，上下各留约15%空白，左右宽松，手脚都不裁切，以适应网站4:3中央裁切。只有一件指定岗位道具，不出现桌椅背景道具。无文字、数字、姓名、ID、logo、水印。保持角色成年职业气质但极度可爱。 角色：成年东亚女性，柔和转译约28岁气质；短菱形脸、微挑眉、圆杏眼、短圆直鼻、左眼下浅痣；黑色短卷发，侧边短、头顶蓬松，发束圆润如小卷雕塑。深青拉链外套、淡紫T恤、深灰短而圆润的长裤和小巧软胶运动鞋。一件无品牌掌上测试设备，双手在腰前自然托着，设备屏幕空白、无图文。浅淡薰衣草纯色背景。面部有独特稍俏皮聪明表情，独立人物，与任何别的员工不同。",
+        "referenced_image_paths": [],
+        "transparent_background": false,
+        "output_path": "/Users/itawjh/.codex/generated_images/01a15f4d-f262-7c83-a435-31a903287234/exec-6f938b94-baa3-4a1b-a732-2329afeadfd3.png"
+      },
+      "framing_revision": {
+        "prompt": "Use case: precise-object-edit. Change only framing of this exact image. Keep the existing single chibi 3D adult character's identity, exact face, hair, outfit, hands, job prop, pose, clay/vinyl style, lighting and pastel background color unchanged. ZOOM OUT by adding a broad seamless extension of the same plain pastel studio background around the exact existing character. The output remains a square 1:1 image. The full character including hair top and shoe soles must occupy only the CENTRAL 65–70% OF IMAGE HEIGHT, with 15–17% empty background space above the hair and below the shoes. The character must look distinctly smaller within the square image, NOT frame-filling. This is needed to keep full body inside a centered 4:3 crop. Do not crop any body part; do not change any person detail; no extra objects, no text, no logos, no watermark.",
+        "referenced_image_paths": [
+          "/Users/itawjh/.codex/generated_images/01a15f4d-f262-7c83-a435-31a903287234/exec-6f938b94-baa3-4a1b-a732-2329afeadfd3.png"
+        ],
+        "transparent_background": false,
+        "output_path": "/Users/itawjh/.codex/generated_images/01a15f4d-f262-7c83-a435-31a903287234/exec-42edfea1-1a82-4f4c-bcd0-a034dd1bc28d.png"
+      },
+      "final_actual_prompt": "Use case: stylized-concept. Create one square 1:1 standalone employee character PNG for a friendly creative-team website. 极其可爱的原创Q版3D成年职业人物，2.5至3头身，巨大的圆润头部和短小身体，温暖友好的大眼睛、很短的圆鼻、微笑、柔软光滑黏土软胶材质，简化的圆润雕塑发束，柔和棚光和淡彩纯色无缝背景。绝不画照片、真人比例、毛孔或写实皱纹。构图必须是单人完整全身，头顶到鞋底只占正方形画面中央约70%高度，上下各留约15%空白，左右宽松，手脚都不裁切，以适应网站4:3中央裁切。只有一件指定岗位道具，不出现桌椅背景道具。无文字、数字、姓名、ID、logo、水印。保持角色成年职业气质但极度可爱。 角色：成年东亚女性，柔和转译约28岁气质；短菱形脸、微挑眉、圆杏眼、短圆直鼻、左眼下浅痣；黑色短卷发，侧边短、头顶蓬松，发束圆润如小卷雕塑。深青拉链外套、淡紫T恤、深灰短而圆润的长裤和小巧软胶运动鞋。一件无品牌掌上测试设备，双手在腰前自然托着，设备屏幕空白、无图文。浅淡薰衣草纯色背景。面部有独特稍俏皮聪明表情，独立人物，与任何别的员工不同。",
+      "final_referenced_image_paths": [],
+      "selected_output": "/Users/itawjh/.codex/generated_images/01a15f4d-f262-7c83-a435-31a903287234/exec-6f938b94-baa3-4a1b-a732-2329afeadfd3.png",
+      "selection_note": "最终卡片采用1:1完整人物展示，选用占幅较大的初次生图；缩远版本仍保留。"
+    },
+    {
+      "id": "G04",
+      "base_generation": {
+        "prompt": "Use case: stylized-concept. Create one square 1:1 standalone employee character PNG for a friendly creative-team website. 极其可爱的原创Q版3D成年职业人物，2.5至3头身，巨大的圆润头部和短小身体，温暖友好的大眼睛、很短的圆鼻、微笑、柔软光滑黏土软胶材质，简化的圆润雕塑发束，柔和棚光和淡彩纯色无缝背景。绝不画照片、真人比例、毛孔或写实皱纹。构图必须是单人完整全身，头顶到鞋底只占正方形画面中央约70%高度，上下各留约15%空白，左右宽松，手脚都不裁切，以适应网站4:3中央裁切。只有一件指定岗位道具，不出现桌椅背景道具。无文字、数字、姓名、ID、logo、水印。保持角色成年职业气质但极度可爱。 角色：成年东亚男性，柔和转译约45岁成熟温柔气质；长圆脸、短浓眉、眼角稍垂的深棕大眼、偏宽但短圆的鼻子；黑色及肩直发夹少量银色发束，颈后低束，无胡须，不画皱纹。暖橙衬衫、深蓝针织背心、圆润米色长裤及小巧深蓝软胶鞋。仅一件岗位道具：一支较粗、明显可见的数位绘图笔，右手自然握在胸腰之间，不加数位板，不写字。淡彩奶油杏色纯色背景。放松温暖微笑，与其他员工不同的成熟男性脸型。",
+        "referenced_image_paths": [],
+        "transparent_background": false,
+        "output_path": "/Users/itawjh/.codex/generated_images/01a15f4d-f262-7c83-a435-31a903287234/exec-81928174-491f-4860-96e5-6ad8d58b865e.png"
+      },
+      "framing_revision": {
+        "prompt": "Use case: precise-object-edit. Change only framing of this exact image. Keep the existing single chibi 3D adult character's identity, exact face, hair, outfit, hands, job prop, pose, clay/vinyl style, lighting and pastel background color unchanged. ZOOM OUT by adding a broad seamless extension of the same plain pastel studio background around the exact existing character. The output remains a square 1:1 image. The full character including hair top and shoe soles must occupy only the CENTRAL 65–70% OF IMAGE HEIGHT, with 15–17% empty background space above the hair and below the shoes. The character must look distinctly smaller within the square image, NOT frame-filling. This is needed to keep full body inside a centered 4:3 crop. Do not crop any body part; do not change any person detail; no extra objects, no text, no logos, no watermark.",
+        "referenced_image_paths": [
+          "/Users/itawjh/.codex/generated_images/01a15f4d-f262-7c83-a435-31a903287234/exec-81928174-491f-4860-96e5-6ad8d58b865e.png"
+        ],
+        "transparent_background": false,
+        "output_path": "/Users/itawjh/.codex/generated_images/01a15f4d-f262-7c83-a435-31a903287234/exec-353bb88d-f14c-4ecc-81e2-5fc38bfd703d.png"
+      },
+      "final_actual_prompt": "Use case: stylized-concept. Create one square 1:1 standalone employee character PNG for a friendly creative-team website. 极其可爱的原创Q版3D成年职业人物，2.5至3头身，巨大的圆润头部和短小身体，温暖友好的大眼睛、很短的圆鼻、微笑、柔软光滑黏土软胶材质，简化的圆润雕塑发束，柔和棚光和淡彩纯色无缝背景。绝不画照片、真人比例、毛孔或写实皱纹。构图必须是单人完整全身，头顶到鞋底只占正方形画面中央约70%高度，上下各留约15%空白，左右宽松，手脚都不裁切，以适应网站4:3中央裁切。只有一件指定岗位道具，不出现桌椅背景道具。无文字、数字、姓名、ID、logo、水印。保持角色成年职业气质但极度可爱。 角色：成年东亚男性，柔和转译约45岁成熟温柔气质；长圆脸、短浓眉、眼角稍垂的深棕大眼、偏宽但短圆的鼻子；黑色及肩直发夹少量银色发束，颈后低束，无胡须，不画皱纹。暖橙衬衫、深蓝针织背心、圆润米色长裤及小巧深蓝软胶鞋。仅一件岗位道具：一支较粗、明显可见的数位绘图笔，右手自然握在胸腰之间，不加数位板，不写字。淡彩奶油杏色纯色背景。放松温暖微笑，与其他员工不同的成熟男性脸型。",
+      "final_referenced_image_paths": [],
+      "selected_output": "/Users/itawjh/.codex/generated_images/01a15f4d-f262-7c83-a435-31a903287234/exec-81928174-491f-4860-96e5-6ad8d58b865e.png",
+      "selection_note": "最终卡片采用1:1完整人物展示，选用占幅较大的初次生图；缩远版本仍保留。"
+    },
+    {
+      "id": "G05",
+      "base_generation": {
+        "prompt": "Use case: stylized-concept. Make a square 1:1 standalone illustration of ONE extremely cute original chibi 3D adult professional employee. This is a DISTANT FULL-BODY CHARACTER SHOT with broad negative space: the entire character, from the top of ponytail to bottom of shoes, must occupy ONLY THE MIDDLE 65–70% of canvas height. Leave a large blank pale-cyan margin above and below, at least 15% each; do not zoom in or fill frame. It must survive a centered 4:3 horizontal crop without cutting hair or shoes. A very cute roughly 2.5–3-head-tall adult East Asian woman, softly translated age about35, rounded-square face, slim elongated eyebrow tails, big glossy black monolid eyes, tiny round nose, a small dimple on the left side of a warm smile. Dark-brown high curly ponytail with two short curled forehead locks, chunky rounded sculpted hair strands. Wear a cyan-blue sporty shirt beneath a light sand-colored short jacket, warm-gray rounded trousers, tiny cream sneakers. Hold only ONE job prop: a compact test-record clipboard at waist height with a few empty square checkboxes and no writing; hands natural, board not blocking face. Cute large head and small body, smooth soft vinyl / clay sculpture material, rounded shapes, beautiful soft warm studio light, seamless very pale cyan solid-color background. Adult employee represented as adorable animation collectible; no realistic human proportions, no skin pores, no wrinkles, no photograph, no text, no numbers, no logos, no names, no IDs, no watermark, no other person or extra object. Unique ponytail silhouette and rounded-square face distinguish her from short-haired colleagues. Single complete full-body figure, centered with a lot of breathing room.",
+        "referenced_image_paths": [],
+        "transparent_background": false,
+        "output_path": "/Users/itawjh/.codex/generated_images/01a15f4d-f262-7c83-a435-31a903287234/exec-8ac66fe5-6fe8-4e8e-94cb-504a605a3526.png"
+      },
+      "framing_revision": null,
+      "final_actual_prompt": "Use case: stylized-concept. Make a square 1:1 standalone illustration of ONE extremely cute original chibi 3D adult professional employee. This is a DISTANT FULL-BODY CHARACTER SHOT with broad negative space: the entire character, from the top of ponytail to bottom of shoes, must occupy ONLY THE MIDDLE 65–70% of canvas height. Leave a large blank pale-cyan margin above and below, at least 15% each; do not zoom in or fill frame. It must survive a centered 4:3 horizontal crop without cutting hair or shoes. A very cute roughly 2.5–3-head-tall adult East Asian woman, softly translated age about35, rounded-square face, slim elongated eyebrow tails, big glossy black monolid eyes, tiny round nose, a small dimple on the left side of a warm smile. Dark-brown high curly ponytail with two short curled forehead locks, chunky rounded sculpted hair strands. Wear a cyan-blue sporty shirt beneath a light sand-colored short jacket, warm-gray rounded trousers, tiny cream sneakers. Hold only ONE job prop: a compact test-record clipboard at waist height with a few empty square checkboxes and no writing; hands natural, board not blocking face. Cute large head and small body, smooth soft vinyl / clay sculpture material, rounded shapes, beautiful soft warm studio light, seamless very pale cyan solid-color background. Adult employee represented as adorable animation collectible; no realistic human proportions, no skin pores, no wrinkles, no photograph, no text, no numbers, no logos, no names, no IDs, no watermark, no other person or extra object. Unique ponytail silhouette and rounded-square face distinguish her from short-haired colleagues. Single complete full-body figure, centered with a lot of breathing room.",
+      "final_referenced_image_paths": [],
+      "selected_output": "/Users/itawjh/.codex/generated_images/01a15f4d-f262-7c83-a435-31a903287234/exec-8ac66fe5-6fe8-4e8e-94cb-504a605a3526.png"
+    }
+  ]
+}

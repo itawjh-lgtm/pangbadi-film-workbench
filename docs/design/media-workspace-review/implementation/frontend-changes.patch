@@ -1,0 +1,357 @@
+--- a/app.js
++++ b/app.js
+@@ -7,7 +7,7 @@
+   if(!window.StudioStore||!window.StudioViews){root.querySelector('#view-content').textContent='工作台模块未能加载，请检查本地文件是否完整。';return;}
+   const store=window.StudioStore.create(employees);
+   const inline=root.dataset.inline==='true';
+-  const runtime=window.StudioRuntime?.create({disabled:inline||!/^https?:$/.test(location.protocol)});
++  const runtime=window.StudioRuntime?.create({disabled:inline||!/^https?:$/.test(location.protocol),isVisible:()=>!document.hidden});
+   const workspaceSync=window.StudioWorkspaceSync?.create(store,{disabled:inline||!/^https?:$/.test(location.protocol)});
+   const production=window.StudioProduction?.create({request:runtime?.request,ready:()=>Boolean(runtime?.ready()),isConnected:()=>runtime?.connection.state==='online',disabled:inline||!/^https?:$/.test(location.protocol)});
+   const productionRunSync=window.StudioProduction?.createRunSynchronizer(runtime);
+@@ -15,7 +15,9 @@
+   const productionDrafts=readSessionMap('creative-workbench-production-drafts-v1'),productionRequests=readSessionMap('creative-workbench-production-requests-v1');
+   function saveProductionSession(){try{sessionStorage.setItem('creative-workbench-production-drafts-v1',JSON.stringify([...productionDrafts].slice(-100)));sessionStorage.setItem('creative-workbench-production-requests-v1',JSON.stringify([...productionRequests].slice(-100)));}catch{}}
+   function productionDraft(key,patch){productionDrafts.set(key,{...(productionDrafts.get(key)||{}),...patch});saveProductionSession();}
+-  const V=window.StudioViews.create(employees,store,runtime,production,{getDraft:key=>productionDrafts.get(key)});
++  const mediaSelections=new Map(),mediaFormCache=new Map();
++  const mediaUI=id=>mediaSelections.get(id)||{kind:'image',outputIndex:0};
++  const V=window.StudioViews.create(employees,store,runtime,production,{getDraft:key=>productionDrafts.get(key),getMediaUI:mediaUI});
+   const layout=window.StudioLayout?.create(root);
+   const one=selector=>root.querySelector(selector);
+   const all=selector=>[...root.querySelectorAll(selector)];
+@@ -25,7 +27,7 @@
+   let mediaVerificationError='';
+   let lastProductionRevision=-1;
+   let lastRuntimeRevision=-1,mediaDraftsDirty=false,pendingEstimate=null,lastViewScope="";
+-  let lastRevision=-1,returnFocus=null,returnTarget=null,toastTimer=null;
++  let lastRevision=-1,returnFocus=null,returnTarget=null,toastTimer=null,lastMediaFormScope='';
+   const titles={overview:['工作室总览','总策划台'],project:['一起把作品做出来','项目协作'],tasks:['每一步，都有清楚的交接','任务看板'],team:['21 位创作伙伴','团队伙伴'],assets:['同一项目，共用一份成果','共享成果'],connections:['能力与工作记录','工具与连接']};
+   const draftKey=s=>s.activePeerId?'peer:'+s.activePeerId:'project:'+s.activeProjectId;
+   function icons(){window.lucide?.createIcons({attrs:{width:16,height:16}});}
+@@ -64,14 +66,18 @@
+     if(verify){verify.disabled=!online||!provider?.keyConfigured||mediaBusy.has('verify');verify.textContent=mediaBusy.has('verify')?'正在验证…':'测试账户连接';}
+     if(read){read.disabled=!online||!provider?.keyConfigured||mediaBusy.has('workflow');read.textContent=mediaBusy.has('workflow')?'正在读取…':'读取工作流参数';}
+     const submit=configForm?.querySelector('[type="submit"]');if(submit)submit.disabled=!online||mediaBusy.has('config');
+-    const estimate=estimateForm?.querySelector('[type="submit"]');if(estimate)estimate.disabled=!online||!provider?.configured||mediaBusy.has('estimate');
++    const estimate=estimateForm?.querySelector('[type="submit"]');if(estimate)estimate.disabled=!online||!provider?.keyConfigured||mediaBusy.has('estimate');
+     const currency=estimateForm?.querySelector('[data-media-currency]');if(currency)currency.textContent=provider?.config?.currency||'CNY';
+     const current=V.project(store.getState()),projectLabel=estimateForm?.querySelector('[data-media-project]');if(projectLabel)projectLabel.textContent=current&&!current.isDemo?'关联项目：'+current.title:'当前没有选中真实项目，本次任务将独立保存。';
+   }
+   function render(){
+-    saveNotice();const s=store.getState();production?.setProject(s.activePeerId?null:V.project(s)?.id);if(!s.activePeerId&&V.project(s))productionRunSync?.sync(V.project(s).id,production?.getProductions(V.project(s).id)||[]);if(s.revision===lastRevision&&lastRuntimeRevision===(runtime?.revision||0)&&lastProductionRevision===(production?.revision||0))return;
++    saveNotice();const s=store.getState();production?.setProject(s.activePeerId?null:V.project(s)?.id);runtime?.watchMedia(s.view==='connections'?null:s.activeProjectId,s.view==='connections'||s.view==='project'&&!s.activePeerId&&s.projectTab==='media');if(!s.activePeerId&&V.project(s))productionRunSync?.sync(V.project(s).id,production?.getProductions(V.project(s).id)||[]);if(s.revision===lastRevision&&lastRuntimeRevision===(runtime?.revision||0)&&lastProductionRevision===(production?.revision||0))return;
+     const viewScope=s.view+':'+draftKey(s),detailStates=viewScope===lastViewScope?new Map(all('[data-runtime-detail]').map(el=>[el.dataset.runtimeDetail,el.open])):new Map();lastViewScope=viewScope;
+-    const mediaForms=s.view==='connections'&&mediaDraftsDirty?all('form[data-form="runninghub-config"],form[data-form="media-estimate"]'):[];
++    // Keep live form and player nodes: progress updates must not discard inputs or restart a video.
++    for(const form of all('#view-content form[data-form="runninghub-config"],#view-content form[data-form="media-estimate"]'))mediaFormCache.set(lastMediaFormScope+':'+form.dataset.form,form);
++    const mediaFormScope=s.view+':'+draftKey(s)+':'+s.projectTab+':'+mediaUI(s.activeProjectId).kind;
++    const previews=new Map(all('#view-content [data-media-preview-key]').map(el=>[el.dataset.mediaPreviewKey,el]));
++    const mediaScroll=new Map(all('[data-media-scroll]').map(el=>[el.dataset.mediaScroll,{top:el.scrollTop,left:el.scrollLeft}]));
+     const previous=captureFocus(),streamPositions=all('.conversation-stream').map(el=>({top:el.scrollTop,atEnd:el.scrollHeight-el.clientHeight-el.scrollTop<48}));lastRevision=s.revision;lastRuntimeRevision=runtime?.revision||0;lastProductionRevision=production?.revision||0;
+     const sidebar=V.sidebar(s);one('#project-nav').innerHTML=sidebar.projects;one('#partner-nav').innerHTML=sidebar.partners;
+     const [eyebrow,title]=titles[s.view]||titles.overview;
+@@ -81,7 +87,10 @@
+     const renderers={overview:()=>V.overview(s),project:()=>V.collaboration(s,drafts.get(draftKey(s))||'',composerUI(s)),tasks:()=>V.board(s),team:()=>V.team(s),assets:()=>V.artifacts(s),connections:()=>V.connections(s)};
+     one('#view-content').innerHTML=(renderers[s.view]||renderers.overview)();
+     all('[data-runtime-detail]').forEach(el=>{if(detailStates.has(el.dataset.runtimeDetail))el.open=detailStates.get(el.dataset.runtimeDetail);});
+-    mediaForms.forEach(form=>{const replacement=one('form[data-form="'+form.dataset.form+'"]');replacement?.replaceWith(form);});
++    for(const replacement of all('#view-content form[data-form="runninghub-config"],#view-content form[data-form="media-estimate"]')){const saved=mediaFormCache.get(mediaFormScope+':'+replacement.dataset.form);if(saved)replacement.replaceWith(saved);}
++    lastMediaFormScope=mediaFormScope;
++    for(const replacement of all('#view-content [data-media-preview-key]')){const saved=previews.get(replacement.dataset.mediaPreviewKey);if(saved)replacement.replaceWith(saved);}
++    for(const el of all('[data-media-scroll]')){const position=mediaScroll.get(el.dataset.mediaScroll);if(position){el.scrollTop=position.top;el.scrollLeft=position.left;}}
+     syncMediaControls();
+     layout?.refresh();
+     const connection=runtime?.connection,status=one('.executor-status');
+@@ -159,7 +168,19 @@
+       showDialog('<h2>工作台数据</h2><p>'+V.esc(workspaceSync?.status.message||'当前使用本地浏览器存储。')+'</p><p class="context-note">项目、任务、便笺和手工成果共用本机数据库。真实执行记录和生成文件由后台单独保留。导出的 JSON 包含当前项目与冲突副本，不含 API Key。</p><div class="form-actions"><button type="button" class="button-primary" data-action="export-state">导出 JSON 备份</button></div><form class="form-stack" data-form="workspace-import"><label class="field-label">恢复 JSON 备份<input class="field" type="file" name="backup" accept="application/json,.json" required></label><p class="context-note">导入会替换当前项目快照；替换前自动保留本页副本。真实运行记录与 API 配置保持独立。</p><p class="form-error" role="alert" hidden></p><button type="submit" class="button-secondary">导入并恢复</button></form>',control);return;
+     }
+     if(action==='production-refresh'){await production?.refresh(id||p?.id);return;}
+-    if(action==='production-tools'){dispatch({type:'NAVIGATE',view:'connections'});return;}
++    if(action==='production-tools'){dispatch({type:'SET_UI',projectTab:'media'});runtime?.refreshMedia();return;}
++    if(action==='media-open-connections'){dispatch({type:'NAVIGATE',view:'connections'});return;}
++    if(action==='media-select-job'){mediaSelections.set(p.id,{...mediaUI(p.id),selectedJobId:id,outputIndex:0});rerender();return;}
++    if(action==='media-select-output'){mediaSelections.set(p.id,{...mediaUI(p.id),outputIndex:Number(control.dataset.index)||0});rerender();return;}
++    if(action==='media-kind'){mediaSelections.set(p.id,{...mediaUI(p.id),kind:id==='video'?'video':'image'});rerender();return;}
++    if(action==='media-open-import'){if(p?.isDemo){toast('请在真实项目中登记外部结果。');return;}showDialog(V.mediaImportForm(p),control);return;}
++    if(action==='media-preview-open'){const job=runtime.media.jobs.find(job=>job.id===id&&job.projectId===p?.id);if(job)showDialog(V.mediaPreview(job,Number(control.dataset.index)||0),control);return;}
++    if(action==='media-copy-source'){
++      const form=control.closest('form'),source=V.mediaSources(s).find(item=>item.id===form?.querySelector('[name="mediaSource"]')?.value);
++      if(!source){toast('请先选择一份输入文稿。');return;}
++      const target=form.querySelector('[data-media-source-text]');if(target){target.value=source.body;target.hidden=false;target.focus();target.select();}
++      toast('已展开文稿，请将对应提示词填写到工作流参数中。');return;
++    }
+     if(action==='production-artifact'){const artifact=production?.findArtifact(id);if(artifact)showDialog(V.productionArtifactDetails(artifact),control);else toast('这份成果暂未载入，请刷新协作记录。');return;}
+     if(action==='production-pause'||action==='production-resume'){
+       if(workspaceSync?.blocked()){toast('请先完成项目同步，再操作协作流程。');return;}
+@@ -223,7 +244,7 @@
+     if(action==='open-task'){openTask(id,control);return;}
+     if(action==='select-task'){dispatch({type:'SELECT_TASK',id});return;}
+     if(action==='team-select'){dispatch({type:'SET_UI',selectedEmployeeId:id});return;}
+-    if(action==='project-tab'){dispatch({type:'SET_UI',projectTab:id});return;}
++    if(action==='project-tab'){dispatch({type:'SET_UI',projectTab:id});if(id==='media')runtime?.refreshMedia();return;}
+     if(action==='select-shot'){dispatch({type:'SET_UI',selectedShot:id});return;}
+     if(action==='task-filter'){dispatch({type:'SET_UI',taskFilter:id});return;}
+     if(action==='navigate-artifacts'){dispatch({type:'NAVIGATE',view:'assets'});return;}
+@@ -303,7 +324,7 @@
+       const budget=Number(fields.budget);if(!Number.isFinite(budget)||budget<=0){formError(form,'请填写大于零的本次预算。');return;}
+       const config=runtime.media.providers.find(p=>p.id==='runninghub')?.config||{};
+       const linkedProject=V.project(s);
+-      const payload={provider:'runninghub',projectId:linkedProject&&!linkedProject.isDemo?linkedProject.id:null,workflowId:String(fields.workflowId||'').trim(),nodeInfoList,quantity:1,unitPrice:config.unitPrice,unit:config.unit||'次',currency:config.currency||'CNY',budget};
++      const payload={provider:'runninghub',projectId:linkedProject&&!linkedProject.isDemo?linkedProject.id:null,title:String(fields.title||'').trim(),mediaType:fields.mediaType==='video'?'video':'image',workflowId:String(fields.workflowId||'').trim(),nodeInfoList,quantity:1,unitPrice:config.unitPrice,unit:config.unit||'次',currency:config.currency||'CNY',budget};
+       const submit=form.querySelector('[type="submit"]');submit.disabled=true;
+       mediaDraftsDirty=true;mediaBusy.add('estimate');
+       try{const estimate=await runtime.estimateMedia(payload);pendingEstimate={payload,estimate,requestId:crypto.randomUUID()};showDialog(V.mediaEstimateDetails(payload,estimate),submit);}
+@@ -313,8 +334,16 @@
+       const pending=pendingEstimate;if(!pending||!data.has('confirmCost')){formError(form,'请重新预览费用并勾选本次调用确认。');return;}
+       if(!pending.estimate.known||pending.estimate.withinBudget!==true){formError(form,'费用未知或超过预算，不能提交。');return;}
+       const submit=form.querySelector('[type="submit"]');submit.disabled=true;submit.textContent='正在提交…';
+-      try{const job=await runtime.submitMedia({...pending.payload,confirmCost:true,estimateToken:pending.estimate.estimateToken,requestId:pending.requestId});if(!job?.id)throw new Error('提交结果尚未确认，请保留本次请求并查询任务记录。');pendingEstimate=null;closeDialog();toast(job.status==='unknown'?'服务商受理状态尚未确认。请先查询该任务，不要重复提交。':job.status==='failed'?'该次请求已失败，请查看媒体任务中的实际错误。':job.status==='succeeded'?'服务商已返回结果，可打开查看。':'已提交一次 RunningHub 任务，请查询真实状态。');}
++      try{const job=await runtime.submitMedia({...pending.payload,confirmCost:true,estimateToken:pending.estimate.estimateToken,requestId:pending.requestId});if(!job?.id)throw new Error('提交结果尚未确认，请保留本次请求并查询任务记录。');pendingEstimate=null;closeDialog();if(job.projectId){mediaSelections.set(job.projectId,{...mediaUI(job.projectId),selectedJobId:job.id,outputIndex:0});dispatch({type:'SELECT_PROJECT',id:job.projectId});dispatch({type:'SET_UI',projectTab:'media'});}toast(job.status==='unknown'?'服务商受理状态尚未确认。请先查询该任务，不要重复提交。':job.status==='failed'?'该次请求已失败，请查看媒体任务中的实际错误。':job.status==='succeeded'?'服务商已返回结果，可在影像制作中预览。':'已提交一次 RunningHub 任务，影像制作页将自动查询状态。');}
+       catch(error){formError(form,error.message);if(!form.isConnected)toast(error.message);}finally{if(submit.isConnected){submit.disabled=false;submit.textContent='确认费用并提交一次生成';}}return;
++    }
++    if(form.dataset.form==='media-import'){
++      const projectId=form.dataset.projectId;
++      if(!s.projects.some(project=>project.id===projectId&&!project.isDemo)){formError(form,'请在真实项目中登记结果。');return;}
++      const submit=form.querySelector('[type="submit"]');submit.disabled=true;
++      form._requestId ||= crypto.randomUUID();
++      try{const job=await runtime.importMedia({requestId:form._requestId,projectId,title:fields.title,mediaType:fields.mediaType,url:fields.url,sourceUrl:fields.sourceUrl,taskId:fields.taskId});if(!job?.id)throw new Error('登记结果尚未确认，请刷新任务后查看。');mediaSelections.set(projectId,{...mediaUI(projectId),selectedJobId:job.id,outputIndex:0});closeDialog();dispatch({type:'SELECT_PROJECT',id:projectId});dispatch({type:'SET_UI',projectTab:'media'});toast('外部结果已登记，可在项目中预览。');}
++      catch(error){formError(form,error.message);}finally{submit.disabled=false;}return;
+     }
+     if(form.dataset.form==='runtime-task'){
+       const task=s.tasks.find(t=>t.id===fields.taskId);if(!task){formError(form,'任务已不存在。');return;}
+@@ -354,6 +383,10 @@
+     if(input.id==='command-query'){const target=one('#command-results');if(target)target.innerHTML=V.searchResults(input.value,store.getState());return;}
+     if(input.closest('form')){const error=input.closest('form').querySelector('.form-error');if(error)error.hidden=true;}
+   });
++  root.addEventListener('error',event=>{
++    const target=event.target;if(!target.matches?.('img[data-media-preview-key],video[data-media-preview-key]'))return;
++    const host=target.closest('[data-media-preview]');if(host){const fallback=host.querySelector('[data-media-fallback]');if(fallback)fallback.hidden=false;}
++  },true);
+   root.addEventListener('change',event=>{
+     const input=event.target;
+     if(input.name==='reviewMode'&&input.closest('[data-form="production-start"]')){productionDraft(input.closest('form').dataset.draftKey,{reviewMode:input.value});return;}
+@@ -379,6 +412,7 @@
+     if(event.target.id==='message-text'&&(event.metaKey||event.ctrlKey)&&event.key==='Enter'){event.preventDefault();event.target.closest('form').requestSubmit();}
+   });
+   store.subscribe(render);runtime?.subscribe(render);production?.subscribe(render);workspaceSync?.subscribe(syncNotice);render();syncNotice();
++  document.addEventListener('visibilitychange',()=>{if(!document.hidden){const s=store.getState();if(s.view==='connections'||s.view==='project'&&s.projectTab==='media')runtime?.refreshMedia();}});
+   Promise.resolve(workspaceSync?.start()).then(()=>runtime?.connect()).then(async()=>{await runtime?.loadScope(runtimeScope(store.getState()),true);await runtime?.refreshMedia();await production?.refresh(V.project(store.getState())?.id);});
+   window.addEventListener('beforeunload',event=>{if(workspaceSync?.status.state==='saving'){event.preventDefault();event.returnValue='项目仍在保存，请稍候。';}});
+ })();
+--- a/lib/runtime.js
++++ b/lib/runtime.js
+@@ -4,6 +4,7 @@
+   const active = run => ['queued', 'running'].includes(run?.status);
+   const scopeKey = scope => scope?.peerId ? 'peer:' + scope.peerId : scope?.projectId ? 'project:' + scope.projectId : '';
+   const artifactURL = value => typeof value === 'string' && /^\/api\/artifacts\/[A-Za-z0-9_-]+$/.test(value) ? value : '';
++  const mediaActive = job => job?.source !== 'external' && Boolean(job?.task_id) && ['queued','running','unknown'].includes(job?.status);
+   function mergeWorkflowFields(workflow, selections, existing = []) {
+     if (!Array.isArray(existing) || existing.some(node => !node || typeof node !== 'object' || Array.isArray(node) || !String(node.nodeId || '').trim() || !String(node.fieldName || '').trim() || node.fieldValue === undefined)) throw new Error('节点输入必须是包含 nodeId、fieldName 和 fieldValue 的 JSON 数组。');
+     const merged = existing.map(node => ({...node}));
+@@ -30,6 +31,8 @@
+     const clearDelay = options.clearTimeout || global.clearTimeout?.bind(global);
+     const cache = new Map(), listeners = new Set(), loading = new Map(), errors = new Map();
+     let providers = [], mediaJobs = [], mediaError = '';
++    let mediaTimer = null, mediaPolling = false, mediaWatching = false, mediaProject = null;
++    const mediaRequests = new Map(), mediaRetries = new Map(), now = options.now || Date.now;
+     let health = null, roles = [], state = options.disabled ? 'offline' : 'checking', reason = options.disabled ? '对话内预览仅支持本地便笺；请打开独立工作台执行。' : '', revision = 0, timer = null, disposed = false, polling = false;
+     const notify = () => { revision++; listeners.forEach(fn => fn()); };
+     const ready = () => state === 'online' && health?.provider?.available === true && health?.provider?.authenticated === true && Boolean(health?.csrfToken);
+@@ -101,7 +104,26 @@
+       else mediaError=results[0].reason.message;
+       if(results[1].status==='fulfilled') mediaJobs=Array.isArray(results[1].value.jobs)?results[1].value.jobs:[];
+       else mediaError+=(mediaError?'；':'')+results[1].reason.message;
+-      notify();
++      notify(); scheduleMedia();
++    }
++    function watchMedia(projectId = null, enabled = true) {
++      mediaWatching = enabled; mediaProject = projectId;
++      if (!enabled) { clearDelay?.(mediaTimer); mediaTimer = null; }
++      else scheduleMedia();
++    }
++    function pendingMedia() { return mediaJobs.filter(job => mediaActive(job) && (!mediaProject || job.projectId === mediaProject)); }
++    function scheduleMedia() {
++      if (disposed || !mediaWatching || state !== 'online' || mediaTimer !== null || mediaPolling || !pendingMedia().length) return;
++      mediaTimer = delay?.(pollMedia, 10000) ?? null;
++    }
++    async function pollMedia() {
++      mediaTimer = null;
++      if (disposed || !mediaWatching) return;
++      if (options.isVisible && !options.isVisible()) { scheduleMedia(); return; }
++      mediaPolling = true;
++      const jobs = pendingMedia().filter(job => (mediaRetries.get(job.id)?.after || 0) <= now()).slice(0,4);
++      await Promise.all(jobs.map(async job => { try { await refreshMediaJob(job.id); } catch { /* The individual task retains the query error. Never resubmit. */ } }));
++      mediaPolling = false; scheduleMedia();
+     }
+     async function saveConnection(config) { const result=await request('/api/connections/runninghub',config); await refreshMedia(); return result; }
+     async function verifyRunningHub() { try { const result=await request('/api/connections/runninghub/verify',{}, {timeoutMs:55000}); return result.verification; } finally { await refreshMedia(); } }
+@@ -109,7 +131,26 @@
+     async function saveProvider(id,config) { const result=await request('/api/connections/'+encodeURIComponent(id),config); await refreshMedia(); return result; }
+     async function estimateMedia(payload) { const result=await request('/api/media/estimate',payload); return result.estimate; }
+     async function submitMedia(payload) { const result=await request('/api/media/jobs',payload,{timeoutMs:55000}); await refreshMedia(); return result.job; }
+-    async function refreshMediaJob(id) { const result=await request('/api/media/jobs/'+encodeURIComponent(id)+'/refresh',{}, {timeoutMs:55000}); const index=mediaJobs.findIndex(job=>job.id===result.job?.id); if(index>=0)mediaJobs[index]=result.job; else if(result.job)mediaJobs.push(result.job); notify(); return result.job; }
++    async function importMedia(payload) { const result = await request('/api/media/import',payload); await refreshMedia(); return result.job; }
++    async function refreshMediaJob(id) {
++      if (mediaRequests.has(id)) return mediaRequests.get(id);
++      const promise = (async () => {
++        try {
++          const result = await request('/api/media/jobs/'+encodeURIComponent(id)+'/refresh',{}, {timeoutMs:55000});
++          if (!result.job?.id) throw new Error('查询未返回有效任务，原状态保留。');
++          const index = mediaJobs.findIndex(job => job.id === result.job.id);
++          if (index >= 0) mediaJobs[index] = result.job; else mediaJobs.push(result.job);
++          mediaRetries.set(id,{failures:0,after:now()+10000}); notify(); return result.job;
++        } catch (error) {
++          const failures = (mediaRetries.get(id)?.failures || 0)+1;
++          mediaRetries.set(id,{failures,after:now()+Math.min(60000,10000*2**Math.min(failures,3))});
++          const job = mediaJobs.find(job => job.id === id);
++          if (job) job.lastRefreshError = error.message + ' 原任务状态保留，将稍后再查询。';
++          notify(); throw error;
++        } finally { mediaRequests.delete(id); scheduleMedia(); }
++      })();
++      mediaRequests.set(id,promise); return promise;
++    }
+     async function start(payload) {
+       if (!ready()) throw new Error(reason || '执行器尚未就绪，请先在工具与连接检查。');
+       if (!payload.prompt?.trim()) throw new Error('请填写工作要求。');
+@@ -121,7 +162,7 @@
+     const getRuns = scope => cache.get(scopeKey(scope)) || [];
+     const allRuns = () => [...cache.values()].flat();
+     return {
+-      connect, loadScope, start, cancel, ready, scopeKey, active, artifactURL, refreshMedia, saveConnection, verifyRunningHub, readRunningHubWorkflow, saveProvider, estimateMedia, submitMedia, refreshMediaJob, request,
++      connect, loadScope, start, cancel, ready, scopeKey, active, artifactURL, refreshMedia, saveConnection, verifyRunningHub, readRunningHubWorkflow, saveProvider, estimateMedia, submitMedia, refreshMediaJob, importMedia, watchMedia, request,
+       get media() { return {providers,jobs:mediaJobs,error:mediaError}; },
+       get revision() { return revision; },
+       get connection() { return {state, reason, health, ready:ready()}; },
+@@ -133,10 +174,10 @@
+       role: id => roles.find(role => role.id === id),
+       roleDetail: id => request('/api/roles/' + encodeURIComponent(id)),
+       subscribe(fn) { listeners.add(fn); return () => listeners.delete(fn); },
+-      dispose() { disposed = true; clearDelay?.(timer); listeners.clear(); }
++      dispose() { disposed = true; clearDelay?.(timer); clearDelay?.(mediaTimer); listeners.clear(); }
+     };
+   }
+-  const api = {create, active, scopeKey, artifactURL, mergeWorkflowFields};
++  const api = {create, active, mediaActive, scopeKey, artifactURL, mergeWorkflowFields};
+   if (typeof module !== 'undefined' && module.exports) module.exports = api;
+   else global.StudioRuntime = api;
+ })(typeof window !== 'undefined' ? window : globalThis);
+--- a/lib/views.js
++++ b/lib/views.js
+@@ -7,6 +7,9 @@
+   function create(employees, store, runtime = null, production = null, productionUI = {}) {
+     const byId = new Map(employees.map(e => [e.id,e]));
+     const productionViews=global.StudioProductionViews?.create(employees,production);
++    const mediaViews=global.StudioMediaViews?.create(runtime);
++    const mediaImportForm=project=>mediaViews?.importForm(project)||'';
++    const mediaPreview=(job,index)=>mediaViews?.preview(job,index)||'';
+     const productionArtifactDetails=artifact=>productionViews?.artifactDetails(artifact)||'';
+     const person = id => byId.get(id);
+     const name = id => person(id)?.name || id || '未分配';
+@@ -123,6 +126,12 @@
+       const url=runtime?.artifactURL(a.url)||'';
+       return '<p class="eyebrow">真实执行成果 · '+esc(name(a.authorId))+'</p><h2>'+esc(a.title||a.filename)+'</h2><p class="small muted">'+esc(a.filename)+' · '+esc(a.mime||'text/plain')+' · '+esc(dateLabel(a.createdAt))+'</p><p class="context-note">以下按文本安全预览。生成结果仍待你审阅；未自动执行生成的代码。</p><pre class="runtime-full-text">'+esc(a.body||a.preview||'此文件暂无文本预览，请下载查看。')+'</pre><div class="detail-actions">'+(url?'<a class="button-secondary" href="'+esc(url)+'" download="'+esc(a.filename||'成果.txt')+'">下载成果 ↓</a>':'')+button('继续修改这份成果','runtime-revise',a.id,'button-primary')+button('关闭','close-dialog')+'</div>';
+     }
++    function mediaSources(state) {
++      const p=project(state);if(!p)return [];
++      const plans=production?.getProductions(p.id)||[];
++      const candidates=[...plans.slice().reverse().flatMap(plan=>(plan.stages||[]).slice().reverse().flatMap(stage=>stage.artifacts||[])),...(runtime?.artifacts?.({projectId:p.id})||[]).slice().reverse(),...state.artifacts.filter(item=>item.projectId===p.id)];
++      const seen=new Set();return candidates.filter(item=>{if(!item.id||seen.has(item.id)||!(item.body||item.preview))return false;seen.add(item.id);return true;}).sort((a,b)=>Number(b.authorId==='R06')-Number(a.authorId==='R06')).slice(0,30).map(item=>({id:item.id,title:(item.authorId?name(item.authorId)+' · ':'')+(item.title||item.filename||'项目文稿'),body:item.body||item.preview||''}));
++    }
+     function collaboration(state,draft='',ui={}) {
+       const peer=person(state.activePeerId),p=project(state);
+       if(!peer&&!p)return empty('先发起一个项目','选择目标和伙伴，建立你的创作空间。',button('发起项目','new-project','','button-primary'));
+@@ -137,7 +146,8 @@
+       const list=tasks(state,p.id),t=list.find(t=>t.id===state.selectedTaskId)||list.find(t=>t.ownerId==='R04')||list[0],tab=p.kind==='game'&&state.projectTab==='production'?'overview':state.projectTab||'production';
+       const key=visuals[state.selectedShot]?state.selectedShot:'cover';
+       const assets=state.artifacts.filter(a=>a.projectId===p.id),liveAssets=runtime?.artifacts({projectId:p.id})||[];
+-      const tabs=[...(p.kind!=='game'?[['production','自动协作']]:[]),['overview','概览'],['storyboard','分镜'],['assets','素材'],['tasks','任务'],['versions','版本']];
++      const tabs=[...(p.kind!=='game'?[['production','自动协作']]:[]),['media','影像制作'],['overview','概览'],['storyboard','分镜'],['assets','素材'],['tasks','任务'],['versions','版本']];
++      if(tab==='media')return intro(p.title,'影像制作 · 生成进展与作品预览',selectProject(state))+'<nav class="project-tabs" aria-label="项目工作区">'+tabs.map(([id,label])=>'<button type="button" class="tab-button'+(id===tab?' is-active':'')+'" data-action="project-tab" data-id="'+id+'" aria-pressed="'+(id===tab)+'">'+label+'</button>').join('')+'</nav>'+(mediaViews?mediaViews.workspace(p,productionUI.getMediaUI?.(p.id)||{},mediaSources(state)):empty('影像制作模块未加载','请刷新工作台。'));
+       let content='';
+       if(tab==='production')content=productionViews?productionViews.workspace(p,productionUI):'<section class="project-stage"><h2>自动协作</h2><p>自动协作模块未加载，请刷新工作台。</p></section>';
+       else if(tab==='assets')content='<div class="assets-gallery">'+assets.map(a=>deliveryCard(a,state)).join('')+'</div>'+(assets.length?'':empty('还没有共享素材','把项目资料登记为成果，就能在这里找到。',button('登记成果','new-artifact',p.id)));
+@@ -255,7 +265,7 @@
+       const people=employees.filter(e=>matches([e.id,e.name,e.title,...e.tags])).slice(0,8);
+       return '<div class="search-results">'+(projects.length?'<h3>项目</h3>'+projects.map(p=>button('▧ '+esc(p.title),'search-project',p.id,'task-mini')).join(''):'')+(assets.length?'<h3>共享成果</h3>'+assets.map(a=>'<button type="button" class="artifact-mini cursor-interaction" data-action="review-asset" data-id="'+esc(a.id)+'"><span aria-hidden="true">▤</span><span><strong>'+esc(a.title)+'</strong><small>'+esc(a.version)+' · '+esc(state.projects.find(p=>p.id===a.projectId)?.title)+' · '+(a.source==='example'?'示例资料':'手动登记')+'</small></span><span aria-hidden="true">↗</span></button>').join(''):'')+(people.length?'<h3>伙伴</h3>'+people.map(e=>'<button type="button" class="sidebar-person cursor-interaction" data-action="search-person" data-id="'+e.id+'">'+avatar(e.id)+'<span class="sidebar-person-copy"><strong>'+esc(e.name)+'</strong><span class="small muted">'+esc(e.title)+'</span></span></button>').join(''):'')+(!projects.length&&!assets.length&&!people.length?empty('没有找到相关内容','试试项目名称、成果正文、姓名或岗位关键词。'):'')+'</div>';
+     }
+-    return {esc,person,name,avatar,project,tasks,status,statusBadge,sidebar,overview,collaboration,board,team,artifacts,connections,employeeDetails,projectForm,taskForm,taskDetails,decisionForm,artifactForm,artifactDetails,searchResults,runtimeArtifactDetails,runtimeTask,roleSource,runtimeRun,mediaEstimateDetails,runninghubWorkflowFields,providerPriceForm,productionArtifactDetails};
++    return {esc,person,name,avatar,project,tasks,status,statusBadge,sidebar,overview,collaboration,board,team,artifacts,connections,employeeDetails,projectForm,taskForm,taskDetails,decisionForm,artifactForm,artifactDetails,searchResults,runtimeArtifactDetails,runtimeTask,roleSource,runtimeRun,mediaEstimateDetails,runninghubWorkflowFields,providerPriceForm,productionArtifactDetails,mediaSources,mediaImportForm,mediaPreview};
+   }
+   global.StudioViews={create};
+ })(window);
+--- a/lib/store.js
++++ b/lib/store.js
+@@ -84,7 +84,7 @@
+     state.filter = choice(value.filter, FILTERS, 'all');
+     state.query = text(value.query, 100);
+     state.selectedEmployeeId = validEmployees.has(value.selectedEmployeeId) ? value.selectedEmployeeId : validEmployees.has('R04') ? 'R04' : null;
+-    state.projectTab = choice(value.projectTab, ['production','overview','storyboard','assets','tasks','versions'], 'production');
++    state.projectTab = choice(value.projectTab, ['production','media','overview','storyboard','assets','tasks','versions'], 'production');
+     state.selectedShot = choice(value.selectedShot, ['cover','storyboard','character','game'], 'cover');
+     state.taskFilter = choice(value.taskFilter, ['all','ready','blocked'], 'all');
+     state.presentationVersion = number(value.presentationVersion);
+@@ -327,7 +327,7 @@
+         switch (action.type) {
+           case 'SET_UI': {
+             if (own(fields, 'selectedEmployeeId')) {requireValue(validEmployees.has(fields.selectedEmployeeId), '员工不存在。'); target.selectedEmployeeId = fields.selectedEmployeeId;}
+-            if (own(fields, 'projectTab')) {requireValue(['production','overview','storyboard','assets','tasks','versions'].includes(fields.projectTab), '项目视图不存在。'); target.projectTab = fields.projectTab;}
++            if (own(fields, 'projectTab')) {requireValue(['production','media','overview','storyboard','assets','tasks','versions'].includes(fields.projectTab), '项目视图不存在。'); target.projectTab = fields.projectTab;}
+             if (own(fields, 'selectedShot')) {requireValue(['cover','storyboard','character','game'].includes(fields.selectedShot), '预览不存在。'); target.selectedShot = fields.selectedShot;}
+             if (own(fields, 'taskFilter')) {requireValue(['all','ready','blocked'].includes(fields.taskFilter), '筛选不存在。'); target.taskFilter = fields.taskFilter;}
+             break;
+--- a/lib/layout.js
++++ b/lib/layout.js
+@@ -3,6 +3,7 @@
+   'use strict';
+   const KEY='creative-workbench-layout-v1';
+   const definitions=[
++    {key:'media',selector:'.media-workspace-layout',label:'画面预览与生成设置宽度',min:400,right:280,maxRight:580},
+     {key:'review',selector:'.project-review-layout',label:'作品与讨论区宽度',min:340,right:310},
+     {key:'workstation',selector:'.collaboration-layout',label:'工作便笺与档案宽度',min:330,right:260,maxRight:440},
+     {key:'overview',selector:'.overview-work-grid',label:'项目与待拍板区宽度',min:340,right:290},
+--- a/lib/production-views.js
++++ b/lib/production-views.js
+@@ -54,7 +54,7 @@
+       const stages=Array.isArray(plan.stages)?plan.stages:[], busy=production?.isBusy(plan.id), count=stages.filter(stage=>stage.status==='completed').length;
+       const next=stages.find(stage=>stage.id===plan.currentStageId)||stages.find(stage=>['running','awaiting_review','failed','paused'].includes(stage.status));
+       const actions=historical?'':plan.status==='running'||plan.status==='awaiting_review'?button('暂停协作','production-pause',plan.id,busy,' data-revision="'+esc(plan.revision)+'"'):['paused','failed'].includes(plan.status)?button(plan.status==='failed'?'从本步继续':'继续协作','production-resume',plan.id,busy,' data-revision="'+esc(plan.revision)+'"','button-primary'):'';
+-      return '<section class="production-plan surface"><div class="production-section-heading"><div><p class="eyebrow">'+(historical?'历史协作':'本次自动协作')+' · '+esc(date(plan.createdAt))+'</p><h2>'+esc(statusLabels[plan.status]||'状态待确认')+'</h2></div><div class="production-toolbar">'+actions+button('刷新','production-refresh',plan.projectId,busy,'','button-quiet')+'</div></div><p class="production-brief">'+esc(plan.prompt)+'</p><div class="production-progress-summary"><span>'+count+' / '+stages.length+' 个阶段已交付</span><span>'+esc(plan.reviewMode==='continuous'?'连续协作 · 最终审阅':'逐步审阅')+'</span>'+(next?'<strong>当前 · '+esc(next.title||next.id)+'</strong>':'')+'</div><ol class="production-track" aria-label="真实制作进度">'+stages.map((stage,i)=>'<li class="is-'+esc(stage.status)+'"><span>'+String(i+1)+'</span><strong>'+esc(stage.title||stage.id)+'</strong><small>'+esc(stageLabels[stage.status]||'待确认')+'</small></li>').join('')+'</ol>'+(plan.status==='paused'?'<p class="context-note">协作已暂停。已产出的文件仍可查看，继续时会保留已有成果。</p>':'')+(plan.status==='failed'?'<p class="runtime-error" role="alert">'+esc(plan.error||'本阶段未完成。查看下方原因后，可从当前步骤继续。')+'</p>':'')+'<div class="production-stages">'+stages.map((stage,i)=>stageCard(stage,i,plan,ui,historical)).join('')+'</div><div class="production-media-note"><span aria-hidden="true">▧</span><div><strong>图片与视频制作</strong><p>'+esc(plan.mediaReadiness?.label||'本轮是文稿与生成准备；尚未自动生成图片或视频。')+'</p>'+button('查看生成工具','production-tools','',false,'','button-quiet')+'</div></div><details class="production-events" data-runtime-detail="production-events-'+esc(plan.id)+'"><summary>真实协作记录 · '+(plan.events||[]).length+' 条</summary><ol>'+(plan.events||[]).slice().reverse().map(event=>'<li><time>'+esc(date(event.at))+'</time><span>'+(event.agentId?esc(name(event.agentId))+' · ':'')+esc(event.text||event.type)+'</span></li>').join('')+'</ol></details></section>';
++      return '<section class="production-plan surface"><div class="production-section-heading"><div><p class="eyebrow">'+(historical?'历史协作':'本次自动协作')+' · '+esc(date(plan.createdAt))+'</p><h2>'+esc(statusLabels[plan.status]||'状态待确认')+'</h2></div><div class="production-toolbar">'+actions+button('刷新','production-refresh',plan.projectId,busy,'','button-quiet')+'</div></div><p class="production-brief">'+esc(plan.prompt)+'</p><div class="production-progress-summary"><span>'+count+' / '+stages.length+' 个阶段已交付</span><span>'+esc(plan.reviewMode==='continuous'?'连续协作 · 最终审阅':'逐步审阅')+'</span>'+(next?'<strong>当前 · '+esc(next.title||next.id)+'</strong>':'')+'</div><ol class="production-track" aria-label="真实制作进度">'+stages.map((stage,i)=>'<li class="is-'+esc(stage.status)+'"><span>'+String(i+1)+'</span><strong>'+esc(stage.title||stage.id)+'</strong><small>'+esc(stageLabels[stage.status]||'待确认')+'</small></li>').join('')+'</ol>'+(plan.status==='paused'?'<p class="context-note">协作已暂停。已产出的文件仍可查看，继续时会保留已有成果。</p>':'')+(plan.status==='failed'?'<p class="runtime-error" role="alert">'+esc(plan.error||'本阶段未完成。查看下方原因后，可从当前步骤继续。')+'</p>':'')+'<div class="production-stages">'+stages.map((stage,i)=>stageCard(stage,i,plan,ui,historical)).join('')+'</div><div class="production-media-note"><span aria-hidden="true">▧</span><div><strong>图片与视频制作</strong><p>'+esc(plan.mediaReadiness?.label||'本轮是文稿与生成准备；尚未自动生成图片或视频。')+'</p>'+button('进入影像制作 →','production-tools','',false,'','button-quiet')+'</div></div><details class="production-events" data-runtime-detail="production-events-'+esc(plan.id)+'"><summary>真实协作记录 · '+(plan.events||[]).length+' 条</summary><ol>'+(plan.events||[]).slice().reverse().map(event=>'<li><time>'+esc(date(event.at))+'</time><span>'+(event.agentId?esc(name(event.agentId))+' · ':'')+esc(event.text||event.type)+'</span></li>').join('')+'</ol></details></section>';
+     }
+     function workspace(project, ui={}) {
+       if(project.kind==='game')return '<section class="production-start surface"><h2>影视自动协作</h2><p>当前流程面向剧本、分镜和生成输入。游戏项目可继续使用右侧的团队对话。</p></section>';
+--- a/index.html
++++ b/index.html
+@@ -13,10 +13,12 @@
+   <link rel="stylesheet" href="styles/splitters.css?v=20261024">
+   <link rel="stylesheet" href="styles/runtime.css?v=20261024-live">
+   <link rel="stylesheet" href="styles/production.css?v=20261025-auto">
++  <link rel="stylesheet" href="styles/media.css?v=20261025-media">
+   <script src="data/employees.js" defer></script>
+   <script src="data/project-templates.js" defer></script>
+   <script src="lib/store.js" defer></script>
+   <script src="lib/production-views.js?v=20261025-auto" defer></script>
++  <script src="lib/media-views.js?v=20261025-media" defer></script>
+   <script src="lib/views.js?v=20261024-live" defer></script>
+   <script src="lib/layout.js?v=20261024" defer></script>
+   <script src="lib/runtime.js?v=20261024-live" defer></script>
+--- a/tests/views.smoke.cjs
++++ b/tests/views.smoke.cjs
+@@ -1,14 +1,14 @@
+ const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict'),path=require('node:path');
+ const root=path.resolve(__dirname,'..');
+ const win={}; const ctx=vm.createContext({window:win,console});
+-for(const file of ['data/employees.js','data/project-templates.js','lib/production-views.js','lib/views.js'])vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),ctx,{filename:file});
++for(const file of ['data/employees.js','data/project-templates.js','lib/production-views.js','lib/media-views.js','lib/views.js'])vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),ctx,{filename:file});
+ const Store=require(path.join(root,'lib/store.js'));
+ const storage={getItem(){return null},setItem(){}};
+ const store=Store.create(win.TEAM_EMPLOYEES,{storage,host:null}),V=win.StudioViews.create(win.TEAM_EMPLOYEES,store);
+ const state=store.getState(), outputs=[];
+ function check(label,fn){const html=fn();assert.equal(typeof html,'string',label);assert.ok(html.length>0,label);assert.ok(!html.includes('[object Object]'),label);outputs.push({label,html});}
+ for(const [name,func] of Object.entries({overview:V.overview,project:V.collaboration,tasks:V.board,team:V.team,assets:V.artifacts,connections:V.connections}))check(name,()=>func(state));
+-for(const projectTab of ['production','overview','storyboard','assets','tasks','versions'])check('project/'+projectTab,()=>V.collaboration({...state,projectTab}));
++for(const projectTab of ['production','media','overview','storyboard','assets','tasks','versions'])check('project/'+projectTab,()=>V.collaboration({...state,projectTab}));
+ for(const selectedShot of ['cover','storyboard','character','game'])check('shot/'+selectedShot,()=>V.collaboration({...state,projectTab:'storyboard',selectedShot}));
+ for(const filter of ['all','film','game','favorites'])check('team/'+filter,()=>V.team({...state,filter}));
+ check('team/no-results',()=>V.team({...state,query:'NOT-A-MEMBER'}));

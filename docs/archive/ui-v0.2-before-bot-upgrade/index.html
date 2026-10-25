@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light"><meta name="theme-color" content="#c9ff85">
+<meta name="description" content="影视与游戏创作伙伴的本地概念工作台：认识岗位，查看项目，追踪协作。">
+<title>创作团队工作台 · 团队大厅</title>
+<link rel="stylesheet" href="styles.css">
+<script src="data/employees.js" defer></script><script src="app.js" defer></script>
+</head>
+<body>
+<div id="creative-workbench-v2" class="app-shell">
+<a class="skip-link" href="#main-content">跳到主要内容</a>
+<header class="site-header"><div class="header-inner">
+<a class="brand" href="#team" data-nav="team" aria-label="创作团队工作台，返回团队大厅"><span class="brand-mark" aria-hidden="true"><i></i></span><span>创作团队工作台</span></a>
+<nav class="primary-nav" aria-label="主要导航"><button class="nav-button is-active" type="button" data-nav="team" aria-current="page">团队大厅</button><button class="nav-button" type="button" data-nav="project">项目工作台</button><button class="nav-button" type="button" data-nav="activity">协作记录</button></nav>
+<div class="planner-badge" aria-label="你的身份：项目总策划"><span class="planner-avatar" aria-hidden="true">你</span><span>总策划 · 你</span></div>
+</div></header>
+<main id="main-content" class="main-shell" tabindex="-1">
+<section id="page-team" class="page team-page" data-page="team" aria-labelledby="team-title">
+<header class="page-header team-header"><div class="hero-copy"><p class="eyebrow">影视 × 游戏 · 创作伙伴</p><h1 id="team-title" class="display-title">TEAM<span class="title-dot" aria-hidden="true"></span></h1><p class="hero-description">每一个想法，都有合适的伙伴。</p></div><div class="team-total" aria-label="21个角色岗位，影视16个，游戏5个"><span class="team-total-number">21<span class="team-total-unit">位</span></span><span class="team-total-caption">16 位影视伙伴 / 5 位游戏伙伴</span></div></header>
+<div class="demo-note" role="note"><span class="demo-badge">概念演示</span><span class="demo-message">执行器未接入<span class="demo-note-detail">，当前展示角色与本地协作流程。</span></span><span class="demo-note-arrow" aria-hidden="true">↗</span></div>
+<section class="team-directory" aria-label="团队成员">
+<div class="directory-toolbar"><div id="team-filters" class="filter-group" role="group" aria-label="按团队筛选">
+<button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">全部<span class="filter-count">21</span></button><button class="filter-button" type="button" data-filter="film" aria-pressed="false">影视<span class="filter-count">16</span></button><button class="filter-button" type="button" data-filter="game" aria-pressed="false">游戏<span class="filter-count">5</span></button><button class="filter-button" type="button" data-filter="favorites" aria-pressed="false"><svg class="filter-star" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.78 5.64 6.22.9-4.5 4.39 1.06 6.2L12 17.2l-5.56 2.93 1.06-6.2L3 9.54l6.22-.9L12 3Z"/></svg>收藏</button>
+</div><label class="search-field" for="search-input"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.7" cy="10.7" r="6.7"/><path d="m15.7 15.7 4.7 4.7"/></svg><span class="sr-only">搜索姓名、岗位或职责</span><input id="search-input" type="search" placeholder="搜索姓名、岗位、职责" autocomplete="off" spellcheck="false"></label></div>
+<div class="directory-meta"><p id="employee-count" class="result-count" aria-live="polite">全部成员 · 21 位</p><p class="directory-hint">找到伙伴，打开工位 ↗</p></div>
+<section id="employee-inline-panel" class="inline-employee-panel" aria-label="员工工位详情" hidden></section>
+<div id="employee-grid" class="employee-grid" aria-label="员工卡片"></div>
+<div id="team-empty" class="empty-state" hidden><span class="empty-state-mark" aria-hidden="true">⌕</span><h2>还没有找到这位伙伴</h2><p>试试其他姓名、岗位关键词，或切换团队筛选。</p></div>
+<nav id="employee-pagination" class="pagination" aria-label="员工列表分页"></nav>
+</section></section>
+<section id="page-project" class="page project-page" data-page="project" aria-labelledby="project-title" hidden>
+<header class="page-header interior-header"><div><p class="eyebrow">从方向到交付 · 项目工作台</p><h1 id="project-title" class="display-title interior-title">PROJECT<span class="title-dot" aria-hidden="true"></span></h1><p class="hero-description">让每一步协作，都有清楚的下一步。</p></div><span class="outline-label">本地概念演示</span></header><div id="project-content" class="project-content"></div>
+</section>
+<section id="page-activity" class="page activity-page" data-page="activity" aria-labelledby="activity-title" hidden>
+<header class="page-header interior-header"><div><p class="eyebrow">每一次推进 · 协作记录</p><h1 id="activity-title" class="display-title interior-title">ACTIVITY<span class="title-dot" aria-hidden="true"></span></h1><p class="hero-description">保留决定、交接，以及走过的每一步。</p></div><span class="outline-label">仅记录本地演示操作</span></header>
+<div class="activity-intro"><span class="demo-badge">演示记录</span><p>这里的操作不代表真实生成、制作或发布。</p></div><div id="activity-list" class="activity-list" role="list" aria-label="协作记录"></div>
+</section>
+<footer class="site-footer"><span class="footer-signature">好想法，和好伙伴一起。</span><p>姓名与人物形象均为虚构设定 · 角色数量不代表实际员工或执行任务</p></footer>
+</main>
+<dialog id="employee-dialog" class="employee-dialog" aria-labelledby="employee-dialog-title"><h2 id="employee-dialog-title" class="sr-only">员工工位</h2><form method="dialog" class="dialog-close-form"><button id="dialog-close" class="icon-button dialog-close" type="submit" aria-label="关闭员工工位"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></form><div id="employee-detail" class="employee-detail"></div></dialog>
+<template id="employee-card-template">
+<article class="employee-card" data-employee-id="">
+<div class="employee-portrait"><img data-card-image alt="" loading="lazy" decoding="async"><div class="portrait-badges"><span class="employee-id" data-card-id></span><span class="team-badge" data-card-team></span></div><button class="favorite-button" type="button" data-favorite data-id="" aria-label="收藏这位伙伴" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.78 5.64 6.22.9-4.5 4.39 1.06 6.2L12 17.2l-5.56 2.93 1.06-6.2L3 9.54l6.22-.9L12 3Z"/></svg></button></div>
+<div class="employee-info"><div class="employee-heading"><h2 class="employee-name" data-card-name></h2><span class="employee-virtual-label">虚构伙伴</span></div><p class="employee-role" data-card-role></p><p class="employee-summary" data-card-summary></p><ul class="employee-tags" data-card-tags aria-label="能力标签"></ul><button class="open-workstation" type="button" data-open-employee data-id=""><span>打开工位</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
+</article></template>
+<noscript><div class="noscript-message">请启用 JavaScript 以查看员工卡片和本地协作演示。</div></noscript>
+</div></body></html>
