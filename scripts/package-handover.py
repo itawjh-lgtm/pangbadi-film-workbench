@@ -31,7 +31,7 @@ def excluded(path):
         return '本地私有运行数据或历史实测证据'
     if 'dist' in parts:
         return '本机生成的安装产物'
-    if path.name == 'connections.json' or (path.name.startswith('.env') and path.name != '.env.example') or path.name.startswith('.dev.vars') or path.suffix in {'.pyc','.pyo','.log','.sqlite3','.sqlite','.db','.pem','.key','.tsbuildinfo'} or path.name.endswith(('-wal','-shm')):
+    if path.name in {'connections.json', 'next-env.d.ts'} or (path.name.startswith('.env') and path.name != '.env.example') or path.name.startswith('.dev.vars') or path.suffix in {'.pyc','.pyo','.log','.sqlite3','.sqlite','.db','.pem','.key','.tsbuildinfo'} or path.name.endswith(('-wal','-shm')):
         return '密钥、数据库或派生文件'
     return ''
 

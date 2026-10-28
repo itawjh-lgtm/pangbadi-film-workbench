@@ -1,7 +1,7 @@
 {
-  "createdAt": "2026-10-29T00:34:28.204663+08:00",
-  "fileCount": 544,
-  "totalBytes": 184858449,
+  "createdAt": "2026-10-29T00:36:29.666286+08:00",
+  "fileCount": 543,
+  "totalBytes": 184858184,
   "excludedFromHashing": "清单自身与 .git 元数据；避免自引用",
   "files": [
     {
@@ -1877,12 +1877,6 @@
       "sha256": "53f3d3d070f0a9082934da25b875f9499855c2b0693868dd28be8c23d8730f68"
     },
     {
-      "path": "online/next-env.d.ts",
-      "category": "online",
-      "bytes": 284,
-      "sha256": "217ce9348b523c3e6954fb50bb93364b58781d86742c995f3a5b03ba88b9ba72"
-    },
-    {
       "path": "online/next.config.ts",
       "category": "online",
       "bytes": 133,
@@ -2809,8 +2803,8 @@
     {
       "path": "scripts/package-handover.py",
       "category": "scripts",
-      "bytes": 12196,
-      "sha256": "484bb1e2e6ca49a8adac85af9dfd3e8a24c3217cee72829698e9088495a4b7df"
+      "bytes": 12215,
+      "sha256": "dac54cc6d68b4b0d5edf42253db6f28b2d55efbff673fb39f76c9b785c4e2734"
     },
     {
       "path": "scripts/prepare-assets.cjs",
