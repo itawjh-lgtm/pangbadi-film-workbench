@@ -439,15 +439,30 @@ class TrashManager:
                     if (runs_root / run["id"]).is_symlink():
                         raise InputError("本地执行目录路径异常，已停止彻底删除。", 409)
                     checked(runs_root / run["id"] / filename)
+        projects = {item["targetId"] for item in expanded.values() if item["kind"] == "project"}
+        nodes = {(item.get("projectId"), item["targetId"]) for item in expanded.values() if item["kind"] == "canvas_node"}
+        references_root = self.runtime.directory / "reference-images"
+        for record in self.runtime.all("reference_image"):
+            if record.get("projectId") not in projects and (record.get("projectId"), record.get("nodeId")) not in nodes:
+                continue
+            if references_root.is_symlink() or not identifier(record.get("id")) or record.get("suffix") not in (".png", ".jpg", ".webp"):
+                raise InputError("本地参考图路径异常，已停止彻底删除。", 409)
+            path = references_root / (record["id"] + record["suffix"])
+            if path.is_symlink() or not path.resolve().is_relative_to(references_root.resolve()):
+                raise InputError("本地参考图路径异常，已停止彻底删除。", 409)
+            if path.exists():
+                paths.append(path)
         return list(dict.fromkeys(paths))
 
     def _remove_purged_records(self, expanded):
         projects = {item["targetId"] for item in expanded.values() if item["kind"] == "project"}
         targets = {(item["kind"], item["targetId"]) for item in expanded.values()}
+        nodes = {(item.get("projectId"), item["targetId"]) for item in expanded.values() if item["kind"] == "canvas_node"}
         for row in self.runtime.db.execute("SELECT kind,id,body FROM records WHERE kind!='trash'").fetchall():
             kind, key, body = row
             record = json.loads(body)
-            if (kind, key) in targets or record.get("projectId") in projects:
+            if ((kind, key) in targets or record.get("projectId") in projects
+                    or kind == "reference_image" and (record.get("projectId"), record.get("nodeId")) in nodes):
                 self.runtime.db.execute("DELETE FROM records WHERE kind=? AND id=?", (kind, key))
                 continue
             clean = sanitize_purged_record(self.runtime, kind, record)

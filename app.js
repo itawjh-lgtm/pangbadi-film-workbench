@@ -231,6 +231,7 @@
     if(s.view==='project'&&!s.activePeerId&&s.projectTab==='canvas'&&p&&!p.isDemo)canvas?.mount(one('[data-canvas-root]'),p);
     all('.conversation-stream').forEach((el,i)=>{const position=streamPositions[i];if(position)el.scrollTop=position.atEnd?el.scrollHeight:position.top;});
     restoreFocus(previous);
+    window.StudioImageViewer?.restoreModal();
   }
   function dispatch(action,success){const result=store.dispatch(action);if(!result.ok)toast(result.error);else if(success)toast(success);return result;}
   function closeSidebar(){root.classList.remove('sidebar-open');one('[data-action="toggle-sidebar"]')?.setAttribute('aria-expanded','false');}
@@ -528,9 +529,9 @@
     if(action==='page'){dispatch({type:'PAGE',page:Number(id)});return;}
     if(action==='mention'){const input=one('#message-text');if(input){const prefix=input.value&&!input.value.endsWith(' ')?' ':'';input.value+=prefix+'@'+V.name(id)+' ';drafts.set(draftKey(s),input.value);input.focus();}return;}
     if(action==='export-state'){
-      const snapshot=JSON.stringify(workspaceSync?.exportData()||{exportedAt:new Date().toISOString(),application:'造梦工作室',state:store.getState()},null,2);
+      const snapshot=JSON.stringify(workspaceSync?.exportData()||{exportedAt:new Date().toISOString(),application:'夏夏工作台',state:store.getState()},null,2);
       if(inline){showDialog('<h2>工作台 JSON 备份</h2><p class="muted">可复制以下完整快照。独立工作台支持下载 JSON 文件。</p><textarea class="textarea" rows="15" readonly aria-label="JSON备份正文">'+V.esc(snapshot)+'</textarea>',control);return;}
-      const url=URL.createObjectURL(new Blob([snapshot],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='造梦工作室_备份_'+new Date().toISOString().slice(0,10)+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),3000);toast('已请求下载当前本地数据快照。');return;
+      const url=URL.createObjectURL(new Blob([snapshot],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='夏夏工作台_备份_'+new Date().toISOString().slice(0,10)+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),3000);toast('已请求下载当前本地数据快照。');return;
     }
   });
   root.addEventListener('submit',async event=>{

@@ -5,31 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
   <meta name="theme-color" content="#edf1f3">
-  <meta name="description" content="庞巴迪影视工作台：影视与游戏团队的本地创作协作工作台，汇集项目、伙伴、任务与共享成果。">
-  <title>庞巴迪影视工作台</title>
+  <meta name="description" content="夏夏工作台：影视与游戏团队的本地创作协作工作台，汇集项目、伙伴、任务与共享成果。">
+  <title>夏夏工作台</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="styles/studio.css">
   <link rel="stylesheet" href="styles/readability.css?v=20261024">
   <link rel="stylesheet" href="styles/splitters.css?v=20261024">
   <link rel="stylesheet" href="styles/runtime.css?v=20261025-reference-home">
   <link rel="stylesheet" href="styles/production.css?v=20261025-review-mode">
-  <link rel="stylesheet" href="styles/canvas.css?v=20261025-reference-home">
+  <link rel="stylesheet" href="styles/canvas.css?v=20261026-reference-images">
   <link rel="stylesheet" href="styles/trash.css?v=20261025-reference-home">
   <link rel="stylesheet" href="styles/home-reference.css?v=20261025-pangbadi-home">
+  <link rel="stylesheet" href="styles/image-viewer.css?v=20261026">
+  <script src="lib/image-viewer.js?v=20261026" defer></script>
   <script src="lib/trash.js?v=20261025-reference-home" defer></script>
   <script src="data/employees.js" defer></script>
   <script src="data/project-templates.js" defer></script>
   <script src="lib/store.js?v=20261025-review-mode" defer></script>
   <script src="lib/production-views.js?v=20261025-review-mode" defer></script>
-  <script src="lib/views.js?v=20261025-review-mode" defer></script>
+  <script src="lib/views.js?v=20261026-image-preview" defer></script>
   <script src="lib/layout.js?v=20261025-results-framing" defer></script>
-  <script src="lib/runtime.js?v=20261025-reference-home" defer></script>
+  <script src="lib/runtime.js?v=20261026-reference-images" defer></script>
   <script src="lib/production.js?v=20261025-auto" defer></script>
   <script src="lib/workspace-sync.js?v=20261024-desktop" defer></script>
   <script src="lib/canvas-controls.js?v=20261025-results-framing" defer></script>
   <script src="lib/character-profile.js?v=20261025-reference-home" defer></script>
-  <script src="lib/canvas.js?v=20261025-reference-home" defer></script>
-  <script src="app.js?v=20261025-review-mode" defer></script>
+  <script src="lib/canvas.js?v=20261026-reference-images" defer></script>
+  <script src="app.js?v=20261026-image-preview" defer></script>
 </head>
 <body>
 <div id="creative-workbench-v2" class="app-shell">
@@ -37,9 +39,9 @@
   <button class="sidebar-scrim" type="button" data-action="close-sidebar" aria-label="关闭导航菜单" tabindex="-1"></button>
   <aside id="studio-sidebar" class="studio-sidebar" aria-label="工作室导航">
     <div class="sidebar-top">
-      <button class="brand" type="button" data-nav="overview" aria-label="庞巴迪影视工作台，返回总策划台">
+      <button class="brand" type="button" data-nav="overview" aria-label="夏夏工作台，返回总策划台">
         <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="m7 23 7-14M14 23l7-14M21 23l5-10"/></svg></span>
-        <span class="brand-copy"><strong>庞巴迪影视工作台</strong><span>影视 × 游戏</span></span>
+        <span class="brand-copy"><strong>夏夏工作台</strong><span>影视 × 游戏</span></span>
       </button>
       <button class="icon-button sidebar-close" type="button" data-action="close-sidebar" aria-label="关闭导航菜单"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
     </div>
@@ -67,7 +69,7 @@
   </aside>
   <div class="workspace-main">
     <header class="workspace-topbar">
-      <div class="topbar-context"><button class="icon-button mobile-menu" type="button" data-action="toggle-sidebar" aria-label="打开导航菜单" aria-controls="studio-sidebar" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button><div><p id="view-eyebrow" class="eyebrow">庞巴迪影视工作台</p><h1 id="view-title">总策划台</h1></div></div>
+      <div class="topbar-context"><button class="icon-button mobile-menu" type="button" data-action="toggle-sidebar" aria-label="打开导航菜单" aria-controls="studio-sidebar" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button><div><p id="view-eyebrow" class="eyebrow">夏夏工作台</p><h1 id="view-title">总策划台</h1></div></div>
       <div class="topbar-status"><span id="context-info" class="context-info">影视与游戏，共同创作</span><button class="topbar-search" type="button" data-action="open-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.7" cy="10.7" r="6.5"/><path d="m15.6 15.6 4.4 4.4"/></svg><span>搜索项目、成果或伙伴…</span><kbd>⌘ K</kbd></button><button class="button-primary topbar-new" type="button" data-action="new-project"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>新建项目</span></button><button class="pill demo executor-status" type="button" data-nav="connections" aria-label="查看执行器连接状态"><span class="status-dot" aria-hidden="true"></span>执行器未接入</button></div>
     </header>
     <div id="save-notice" class="save-notice" role="status" hidden></div>

@@ -17,3 +17,16 @@ connections.json
 *.log
 *.pem
 *.key
+# Downloaded dependencies, build caches and deployment-local configuration.
+node_modules/
+.wrangler/
+.sites-runtime/
+.openai/
+.next/
+.vinext/
+outputs/
+coverage/
+.dev.vars*
+*.tsbuildinfo
+*.sqlite
+*.db

@@ -253,8 +253,8 @@ def _tls_context() -> ssl.SSLContext:
     return context
 
 
-def _default_transport(url: str, payload: dict, headers: dict, timeout: float) -> dict:
-    request = Request(url, data=json.dumps(payload, ensure_ascii=False, allow_nan=False).encode("utf-8"),
+def _default_transport(url: str, payload: dict | bytes, headers: dict, timeout: float) -> dict:
+    request = Request(url, data=payload if isinstance(payload, bytes) else json.dumps(payload, ensure_ascii=False, allow_nan=False).encode("utf-8"),
                       headers=headers, method="POST")
     with build_opener(_NoRedirect(), HTTPSHandler(context=_tls_context())).open(request, timeout=timeout) as response:
         raw = response.read(MAX_RESPONSE_BYTES + 1)
@@ -280,6 +280,32 @@ class MediaRegistry:
         self._credential_versions: dict[str, int] = {}
         self._verification_requests: dict[str, int] = {}
         self._model_quotes: dict[str, dict] = {}
+
+    def upload_reference_image(self, content: bytes, mime_type: str, filename: str) -> str:
+        """Official binary upload only; this endpoint does not create a model task."""
+        if (not isinstance(content, bytes) or not 0 < len(content) <= 10 * 1024 * 1024
+                or mime_type not in {"image/png", "image/jpeg", "image/webp"}
+                or not re.fullmatch(r"[A-Za-z0-9_-]+\.(png|jpg|webp)", filename)):
+            raise MediaValidationError("参考图片格式或大小无效")
+        key, _ = self._credentials("runninghub", "model_api")
+        boundary = "StudioReference" + secrets.token_hex(20)
+        body = (f'--{boundary}\r\nContent-Disposition: form-data; name="file"; filename="{filename}"\r\n'
+                f'Content-Type: {mime_type}\r\n\r\n').encode() + content + f"\r\n--{boundary}--\r\n".encode()
+        try:
+            result = self._transport(RUNNINGHUB_BASE_URL + "/openapi/v2/media/upload/binary", body,
+                {"Content-Type": "multipart/form-data; boundary=" + boundary,
+                 "Authorization": "Bearer " + key, "Accept": "application/json"}, max(self.timeout, 60))
+            data = result.get("data") if isinstance(result, dict) else None
+            url = _safe_url(data.get("download_url")) if isinstance(data, dict) else None
+            if result.get("code") != 0 or not url or key in url:
+                raise ValueError("invalid upload response")
+            return url
+        except HTTPError as error:
+            if error.code in (401, 403):
+                raise MediaRequestError("参考图上传被拒绝，请检查 RunningHub 模型 API Key 的权限。", "UPLOAD_AUTH") from None
+            raise MediaRequestError("RunningHub 暂时无法接收参考图，请稍后重新核对生成费用。", "UPLOAD_FAILED") from None
+        except Exception:
+            raise MediaRequestError("参考图上传未完成，请检查连接后重试；本机原图仍保留。", "UPLOAD_FAILED") from None
 
     def _provider(self, provider: str) -> dict:
         if not isinstance(provider, str) or provider not in self._providers:

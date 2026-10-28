@@ -167,7 +167,7 @@ test('media previews allow real HTTPS video controls, reject unsafe URLs and esc
   assert.match(html,/<video\b(?=[^>]*\bcontrols\b)(?=[^>]*src="https:\/\/cdn\.example\.invalid\/a\.mp4")/);
   assert.ok(!html.includes('autoplay'));
   assert.ok(html.includes('<a href="/assets/media-preview.html?job=job-a" target="_blank" rel="noopener noreferrer">放大播放 ↗</a>'));
-  assert.ok(html.includes('下载 / 打开原文件 ↗'));
+  assert.ok(html.includes('下载视频 ↓'));
   assert.ok(html.includes('data-media-fallback'));
   assert.ok(html.includes('&lt;/textarea&gt;'));
   assert.ok(!html.includes(injection));
@@ -182,6 +182,17 @@ test('expanded video playback encodes the task ID and does not appear on image c
   assert.ok(!html.includes(' onmouseover="alert(1)'));
   const imageOnly=harness({jobs:[makeJob('a')]});
   assert.ok(!imageOnly.views.collaboration({...imageOnly.state,projectTab:'assets'}).includes('/assets/media-preview.html?job='));
+});
+
+test('images open an accessible in-page preview with download kept as a separate action',()=>{
+  const {views,state}=harness({jobs:[makeJob('a',{name:'角色 "A" <定妆>'})]});
+  const html=views.collaboration({...state,projectTab:'assets'});
+  assert.match(html,/<img\b(?=[^>]*role="button")(?=[^>]*tabindex="0")(?=[^>]*data-image-preview="https:\/\/cdn\.example\.invalid\/a\.png")/);
+  assert.match(html,/<button type="button"[^>]*data-image-preview="[^"]+"[^>]*>查看大图<\/button>/);
+  assert.match(html,/<a [^>]*download>下载原图 ↓<\/a>/);
+  assert.ok(html.includes('data-image-title="角色 &quot;A&quot; &lt;定妆&gt; · 1"'));
+  assert.ok(!html.includes('下载 / 打开原文件'));
+  assert.ok(!/<a[^>]*>\s*<img/.test(html),'clicking the thumbnail cannot navigate to an attachment URL');
 });
 
 test('storyboard sources only create links to local artifact endpoints', () => {

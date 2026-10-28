@@ -1,14 +1,14 @@
 {
-  "createdAt": "2026-10-25T12:37:24.587806+08:00",
-  "fileCount": 534,
-  "totalBytes": 184781022,
+  "createdAt": "2026-10-29T00:34:28.204663+08:00",
+  "fileCount": 544,
+  "totalBytes": 184858449,
   "excludedFromHashing": "清单自身与 .git 元数据；避免自引用",
   "files": [
     {
       "path": ".gitignore",
       "category": "根目录",
-      "bytes": 344,
-      "sha256": "06b319ef2bf92c16b5ff942853edf7d3bbb35d6908013360b742c5838321e54b"
+      "bytes": 544,
+      "sha256": "84ad4dcdd0f7366255b4ee46c361ebd05913cd715d2fd825e8db152f78d68b37"
     },
     {
       "path": "21位可爱员工人物图.zip",
@@ -19,14 +19,14 @@
     {
       "path": "README.md",
       "category": "根目录",
-      "bytes": 5667,
-      "sha256": "f71d5ae94d9b8f2e73d9d28770613cb6513681a0ce97880f4e64c7e21d749743"
+      "bytes": 6072,
+      "sha256": "1a44c221d3a48f6e7df3fb2d323feaeadd129304691c2e799da9e7d1cdd40cb6"
     },
     {
       "path": "app.js",
       "category": "根目录",
-      "bytes": 87800,
-      "sha256": "954f9f642bd99ef3eea79b7c5d6d700177dee4d427f8065ccf6b9f3d4cbfae91"
+      "bytes": 87846,
+      "sha256": "1df6767d81356c935b007345cc6cbd991fe59cc25f7bd040c4d5aa55d27ad45d"
     },
     {
       "path": "assets/archive/before-portrait-differentiation/G01.png",
@@ -457,8 +457,8 @@
     {
       "path": "desktop/Info.plist",
       "category": "desktop",
-      "bytes": 1216,
-      "sha256": "1024fb50de0ff618561b477d5088f0b208a9980efec12399c6c284271400682e"
+      "bytes": 1189,
+      "sha256": "1897cdccb4ad2af801165612b5f8622d9ce30e6b3a9231a7a944c5e68b69f5cb"
     },
     {
       "path": "desktop/README-native.md",
@@ -475,8 +475,8 @@
     {
       "path": "desktop/Sources/StudioApp.swift",
       "category": "desktop",
-      "bytes": 29464,
-      "sha256": "f6035098b1ff0536fc5bcdc462fb385aea3520ddf599ea4fe68344410d918083"
+      "bytes": 29392,
+      "sha256": "b7ef57a6619abc41253399669182674100c15f2383e7a7bda686a821cf2b9f2c"
     },
     {
       "path": "desktop/build.py",
@@ -1001,6 +1001,12 @@
       "sha256": "7abe5ac00538dfeea4a919839bf87e7ce0bc40ddf5ae1b8664cb356f7565d373"
     },
     {
+      "path": "docs/plans/2026-10-26-reference-images.md",
+      "category": "docs",
+      "bytes": 4092,
+      "sha256": "c049fca4d6c354eef3df6a6603d7d404de1b571919d27a417c18c3b782d2f55a"
+    },
+    {
       "path": "docs/portrait-generation-differentiation-v1.json",
       "category": "docs",
       "bytes": 20482,
@@ -1063,14 +1069,14 @@
     {
       "path": "docs/交接/00_交付导航.html",
       "category": "docs",
-      "bytes": 108665,
-      "sha256": "06a53dbd2e1af10006a334e9b713d5baa3cc67bb293a05d535d6a70749b63bef"
+      "bytes": 100986,
+      "sha256": "bd6b6d2e0bb88971888a08ef03c070b4ae2d05259d0c8c3b03a826b513881b33"
     },
     {
       "path": "docs/交接/01_项目现状与完成边界.md",
       "category": "docs",
-      "bytes": 11431,
-      "sha256": "66a612f2f861c45317df36616f376ac19d580d5520248581a6b4e5a6bbe230f6"
+      "bytes": 6527,
+      "sha256": "1e0b88417352db75b607b17c5c950f6e72d19948494d38239be1caa57472f0d8"
     },
     {
       "path": "docs/交接/02_影视制作SOP.md",
@@ -1081,20 +1087,20 @@
     {
       "path": "docs/交接/03_用户操作手册.md",
       "category": "docs",
-      "bytes": 18552,
-      "sha256": "6e0381b8a489a0c1ecb6135a0fbf8f7f47a96a3a1ec963c3f3177891f1ceb23b"
+      "bytes": 12217,
+      "sha256": "0b40703bfc5fd57bf618a4018d81551d285a95c1466058c15b78eca96f770eb2"
     },
     {
       "path": "docs/交接/04_技术架构与开发维护.md",
       "category": "docs",
-      "bytes": 15012,
-      "sha256": "99ab39540e7e7bd08771d07090db9024e127338fcc0cbcf99c987c708481b95a"
+      "bytes": 17639,
+      "sha256": "a2525f59e079f39492edb832935b7800d4174ac1f4e4fdfc1a6ef3c580789762"
     },
     {
       "path": "docs/交接/05_全部元素与素材清单.md",
       "category": "docs",
-      "bytes": 13083,
-      "sha256": "6772e3662f003e8e41a38b973343caa8e6fb1227dd948af32adcecb7ce15d930"
+      "bytes": 13880,
+      "sha256": "2bdb6b64877f42ab661bd13bc1b9cf5ef0940eb1fa136d67c6c972bfc5adc788"
     },
     {
       "path": "docs/交接/06_部署备份与恢复.md",
@@ -1105,8 +1111,20 @@
     {
       "path": "docs/交接/07_验证记录与待办.md",
       "category": "docs",
-      "bytes": 8527,
-      "sha256": "e82bcefb487b4ee8e72b2ee9f2bbbc3d8cd947903f7be7f8aaec7e366f1291dc"
+      "bytes": 5397,
+      "sha256": "ac5fb0fa4d4301a2de459f6b65bd139ae6f78c8e3da2893704779042ec0eb3f3"
+    },
+    {
+      "path": "docs/交接/08_本次整理与下载导航.md",
+      "category": "docs",
+      "bytes": 3510,
+      "sha256": "37f433a6f6e0a9d7eb9aa59f5bbd02dd38ecf1867fc02fc2253bb509cff28a4f"
+    },
+    {
+      "path": "docs/交接/验证/2026-10-29_发布检查.json",
+      "category": "docs",
+      "bytes": 1086,
+      "sha256": "299d6eaf9cb9b9d9f7bb1074df31aff4e27d82fc1266ad4319de43fe530802fb"
     },
     {
       "path": "docs/交接/验证/云端回归结果.txt",
@@ -1177,8 +1195,8 @@
     {
       "path": "index.html",
       "category": "根目录",
-      "bytes": 8569,
-      "sha256": "38d8dbf74a07e20cdde5ef1aa292b846f959adc917f1cc9c50b84b834647ca69"
+      "bytes": 8665,
+      "sha256": "a48690840787987a2176cadbd4b754c51d205f873594f375367f376b54eb16d3"
     },
     {
       "path": "lib/canvas-controls.js",
@@ -1189,14 +1207,20 @@
     {
       "path": "lib/canvas.js",
       "category": "lib",
-      "bytes": 103585,
-      "sha256": "deb3501f0df3e0e763b28ded250932bb96d206677a38e57cce6dd059338eec07"
+      "bytes": 117863,
+      "sha256": "e1ee17b9bf82c3036cfa6a856470859dd060a9095cde090d59d40ecf51320dbc"
     },
     {
       "path": "lib/character-profile.js",
       "category": "lib",
       "bytes": 3998,
       "sha256": "73d882d66dea5febba204eb3377a3c1c07aacb94a7baac15d610ddb950103daa"
+    },
+    {
+      "path": "lib/image-viewer.js",
+      "category": "lib",
+      "bytes": 8461,
+      "sha256": "5f2843c5b22926a0196cb59c2d44b2359f998a5f71e18b507affb8e6ab356b21"
     },
     {
       "path": "lib/layout.js",
@@ -1225,8 +1249,8 @@
     {
       "path": "lib/runtime.js",
       "category": "lib",
-      "bytes": 24325,
-      "sha256": "233fee9a0c9177a16581c39ca86537c536da522bc361e3e3f880c9af2680ef2e"
+      "bytes": 26144,
+      "sha256": "d26d6a9d222ec52c65f938d832a46ee23d54303149ed30ba506688e89ace663a"
     },
     {
       "path": "lib/store.js",
@@ -1243,14 +1267,14 @@
     {
       "path": "lib/views.js",
       "category": "lib",
-      "bytes": 131857,
-      "sha256": "2fba1510eef491ac9833987d2c8f49dd1dfbcce2e3ddb6930c6e4a62eaf4f2c0"
+      "bytes": 132211,
+      "sha256": "a10b2b8ecbbe1cce0d23b3c55f8368eeccc6452dbbc00d8bebbf07692cf1c226"
     },
     {
       "path": "lib/workspace-sync.js",
       "category": "lib",
       "bytes": 10450,
-      "sha256": "d4c47e301f66d71a9ef68905f7a9b8ef70899001548637cf0630bbdef637f036"
+      "sha256": "8755dbccb78a833fa9eaebd402d414fac954d648e335700ae7458576803a49c3"
     },
     {
       "path": "online/.env.example",
@@ -1271,12 +1295,6 @@
       "sha256": "a3909ac0447c469fda12c57374993be70f47ce73e49fd3124678c7c047f2214d"
     },
     {
-      "path": "online/.openai/hosting.json",
-      "category": "online",
-      "bytes": 91,
-      "sha256": "68b5cef5a59311bf1740f8eb80f05c2f1599f4fc192109eb828f9d0690e93a9e"
-    },
-    {
       "path": "online/DEPLOYMENT.md",
       "category": "online",
       "bytes": 3467,
@@ -1285,8 +1303,8 @@
     {
       "path": "online/README.md",
       "category": "online",
-      "bytes": 3771,
-      "sha256": "ca2228bcee10b294d9538e4f4e2006bc41d644f47db6ec6c2b53d83a21283111"
+      "bytes": 4211,
+      "sha256": "f99f57f8efdf4c865f0b417aa5596c672f332d06927c2c6968dd582f0d3d077a"
     },
     {
       "path": "online/app/api/[...path]/route.ts",
@@ -1857,6 +1875,12 @@
       "category": "online",
       "bytes": 177,
       "sha256": "53f3d3d070f0a9082934da25b875f9499855c2b0693868dd28be8c23d8730f68"
+    },
+    {
+      "path": "online/next-env.d.ts",
+      "category": "online",
+      "bytes": 284,
+      "sha256": "217ce9348b523c3e6954fb50bb93364b58781d86742c995f3a5b03ba88b9ba72"
     },
     {
       "path": "online/next.config.ts",
@@ -2773,8 +2797,8 @@
     {
       "path": "scripts/build-handover.py",
       "category": "scripts",
-      "bytes": 7039,
-      "sha256": "17729605bbfc443b36bc99fe39034c7db34cbb373364e44f059f5d18e830a3b0"
+      "bytes": 7076,
+      "sha256": "7e3090d695afd581b4e2aeef374d30e1838938aad3ba6af5120c4ba9be4bf139"
     },
     {
       "path": "scripts/build-preview.py",
@@ -2785,8 +2809,8 @@
     {
       "path": "scripts/package-handover.py",
       "category": "scripts",
-      "bytes": 12129,
-      "sha256": "8d53a7d5c21db8567a237d5a095267fc29d1baacedf4c5e4fb0b3bfadb2df1a8"
+      "bytes": 12196,
+      "sha256": "484bb1e2e6ca49a8adac85af9dfd3e8a24c3217cee72829698e9088495a4b7df"
     },
     {
       "path": "scripts/prepare-assets.cjs",
@@ -2797,8 +2821,8 @@
     {
       "path": "scripts/start-portable.command",
       "category": "scripts",
-      "bytes": 1326,
-      "sha256": "a80daccff90370709440eb02cd7d5e445d98f350d801ec322d832075f3d4e4dd"
+      "bytes": 1317,
+      "sha256": "43af5468fb45c35fcb2c6974e1aa940c0a19b71472e233f3021d56ec98d9d4e3"
     },
     {
       "path": "scripts/verify-production.py",
@@ -2821,20 +2845,20 @@
     {
       "path": "server/canvas.py",
       "category": "server",
-      "bytes": 76286,
-      "sha256": "4c04a4b754617552b9589687cf0d46e428b2e6322c48e6b6057ef98a033bfaf4"
+      "bytes": 84044,
+      "sha256": "3117e93feef63c4c6ce79022093c097dcfd0af9aed272d3447f1c42ba8387b9b"
     },
     {
       "path": "server/httpd.py",
       "category": "server",
-      "bytes": 21231,
-      "sha256": "5c685facbebb6255e2f922765025bbe0b3ec48b14aa851bda26248703bbf2f98"
+      "bytes": 22050,
+      "sha256": "3a33966b66bb83c1addc5ee493d5031a63cff07557de788e29b39f01125216b3"
     },
     {
       "path": "server/media.py",
       "category": "server",
-      "bytes": 65056,
-      "sha256": "e3742f9dbda75d42850ee17abf5291eff70c018bfaad5e8bf7e1d14b3325e6c5"
+      "bytes": 67095,
+      "sha256": "64165cddd2c3553a27d5aff061e6bbb912a62b682dd15252879cc923877fa62d"
     },
     {
       "path": "server/media_models.py",
@@ -2861,6 +2885,12 @@
       "sha256": "d96be2879e6201e96f4fc95c827b9f4f032cbf9f2966593cf07f7da5ea9b4039"
     },
     {
+      "path": "server/reference_images.py",
+      "category": "server",
+      "bytes": 9505,
+      "sha256": "ea5e8a71977a4c770ea2bc63240381d3c96e68d63b7c8f560f0f5a7f156aea31"
+    },
+    {
       "path": "server/roles.py",
       "category": "server",
       "bytes": 14833,
@@ -2881,8 +2911,8 @@
     {
       "path": "server/trash.py",
       "category": "server",
-      "bytes": 32586,
-      "sha256": "9ab6c5a785d731c7901d6c26615e2eb3db3de988ae1a90f2c72d6d9ec699ebea"
+      "bytes": 33880,
+      "sha256": "c29107315c8f3f99809d9ac47d96f5df6d37627b5dc51c95f9cc964e7ebb7b93"
     },
     {
       "path": "server/workspace.py",
@@ -2893,14 +2923,20 @@
     {
       "path": "styles/canvas.css",
       "category": "styles",
-      "bytes": 40726,
-      "sha256": "b58d88d3e098146916f7092c445a7e8c82f66c13159fafcea17c6ceb91488da0"
+      "bytes": 44382,
+      "sha256": "a2881ae952cc1aec0901c0197e292029ffa78631056db2eb439c3efdf3c2751a"
     },
     {
       "path": "styles/home-reference.css",
       "category": "styles",
       "bytes": 6708,
       "sha256": "a34d6290aa90de351af0b662a83bc6691482aed15d891c4060e3b1747bb49752"
+    },
+    {
+      "path": "styles/image-viewer.css",
+      "category": "styles",
+      "bytes": 3485,
+      "sha256": "306ee3a45276cb76b744897e96a8b61e2e7095824658abe7fb1c97bc6e59679f"
     },
     {
       "path": "styles/production.css",
@@ -2981,6 +3017,12 @@
       "sha256": "28125b251f1d4026e1e74919eb79096433b5f8d9e80fad00f538bc3451bbe538"
     },
     {
+      "path": "tests/image-viewer.test.cjs",
+      "category": "tests",
+      "bytes": 1216,
+      "sha256": "7b644ea7aaf055d1854cd720dd71904bd0b63885584cc41893b7018fd8a84c18"
+    },
+    {
       "path": "tests/layout.test.cjs",
       "category": "tests",
       "bytes": 4478,
@@ -3001,14 +3043,20 @@
     {
       "path": "tests/project-media.test.cjs",
       "category": "tests",
-      "bytes": 28730,
-      "sha256": "5fdb5bd4dac590ab9cef0c65d1169eb374ef05c280f882c7c53cadbf72c83a14"
+      "bytes": 29532,
+      "sha256": "4b0811ac23562e6bff2ec5e2412e45eb46cb1ddfa1740a1ba10fe625602e36b6"
     },
     {
       "path": "tests/project-results.test.cjs",
       "category": "tests",
       "bytes": 21388,
       "sha256": "6c31a24ed822100ec01a1d47a78f6710f66ec9a878436ee6f7edfc78e0c104e8"
+    },
+    {
+      "path": "tests/reference-images-ui.test.cjs",
+      "category": "tests",
+      "bytes": 9260,
+      "sha256": "7a36f8acb8225acc1f7a87cc47897017840e6c520fd6e71d2da28e9befcd9758"
     },
     {
       "path": "tests/runtime.test.cjs",
@@ -3027,6 +3075,12 @@
       "category": "tests",
       "bytes": 28953,
       "sha256": "89c490c9d3cf368bfa5b3b00329df9db839712eb3afa760a25802b162287e8c0"
+    },
+    {
+      "path": "tests/test_canvas_references.py",
+      "category": "tests",
+      "bytes": 13147,
+      "sha256": "a68834187f82ba4ffb4521246a9270051b2ca8b4ebfaed05e51ece202bfb7b4b"
     },
     {
       "path": "tests/test_character_asset_contract.py",
@@ -3147,6 +3201,12 @@
       "category": "tests",
       "bytes": 2898,
       "sha256": "d0345a64aae58bd386903b8b7d3a29788e7d241387ef76cf2dee9075619d5ddb"
+    },
+    {
+      "path": "tests/test_reference_images.py",
+      "category": "tests",
+      "bytes": 8094,
+      "sha256": "dd3d0385c4298cecd1a2def48262f11169a714d8ff357fa4834249d3c3301156"
     },
     {
       "path": "tests/test_roles.py",

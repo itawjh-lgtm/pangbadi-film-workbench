@@ -22,6 +22,7 @@ from .workspace import Workspace, MAX_BYTES
 from .production import ProductionManager
 from .storyboard import media_project_metadata, project_storyboard
 from .canvas import CanvasManager
+from .reference_images import MAX_UPLOAD_JSON
 from .trash import TrashManager, require_visible
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -120,7 +121,8 @@ class Handler(BaseHTTPRequestHandler):
             path, runtime = unquote(parsed.path), self.server.runtime
             parts = path.strip("/").split("/")
             if write:
-                self.post(path, parts, self.read_json(MAX_BYTES if path == "/api/workspace" or (len(parts) == 4 and parts[3] == "canvas") else 1_000_000))
+                reference_upload = len(parts) == 4 and parts[:2] == ["api", "projects"] and parts[3] == "reference-images"
+                self.post(path, parts, self.read_json(MAX_UPLOAD_JSON if reference_upload else MAX_BYTES if path == "/api/workspace" or (len(parts) == 4 and parts[3] == "canvas") else 1_000_000))
             elif path == "/api/health":
                 provider = runtime.provider.health()
                 self.send(200, {"ok": True, "service": "dream-studio-runtime", "version": "0.6", "projectId": hashlib.sha256(str(ROOT.resolve()).encode()).hexdigest()[:24], "pid": os.getpid(), "workspaceSync": True, "csrfToken": self.server.csrf, "provider": provider, "capabilities": {"text": provider.get("available", False) and provider.get("authenticated", False), "files": True, "images": False, "video": False, "mediaConfiguration": self.server.media is not None, "workspaceSync": True, "automaticCollaboration": True}})
@@ -166,6 +168,9 @@ class Handler(BaseHTTPRequestHandler):
                 self.send(200, self.server.media.catalog() if self.server.media else {"providers": []})
             elif path == "/api/media/models":
                 self.send(200, self.server.media.models() if self.server.media else {"models": []})
+            elif len(parts) == 5 and parts[:2] == ["api", "projects"] and parts[3] == "reference-images" and getattr(self.server, "canvas", None):
+                content, mime = self.server.canvas.references.read(parts[2], parts[4])
+                self.send(200, content, mime, {"Content-Disposition": "inline", "Content-Security-Policy": "default-src 'none'; sandbox"})
             elif len(parts) == 4 and parts[:2] == ["api", "projects"] and parts[3] == "storyboard":
                 self.send(200, project_storyboard(runtime, self.server.workspace, parts[2]))
             elif len(parts) >= 4 and parts[:2] == ["api", "projects"] and parts[3] == "canvas" and getattr(self.server, "canvas", None):
@@ -234,6 +239,8 @@ class Handler(BaseHTTPRequestHandler):
             self.send(200, {"estimate": media.estimate(data.get("provider"), data)})
         elif path == "/api/media/jobs" and media:
             self.submit_media(data)
+        elif len(parts) == 4 and parts[:2] == ["api", "projects"] and parts[3] == "reference-images" and getattr(self.server, "canvas", None):
+            self.send(201, {"reference": self.server.canvas.references.add(parts[2], data)})
         elif len(parts) >= 4 and parts[:2] == ["api", "projects"] and parts[3] == "canvas" and getattr(self.server, "canvas", None):
             canvas = self.server.canvas
             if len(parts) == 4:
@@ -359,7 +366,7 @@ def main(argv=None):
         server.server_close()
         lockfile.close()
         raise
-    print(f"造梦工作室执行服务 http://127.0.0.1:{args.port}", flush=True)
+    print(f"夏夏工作台执行服务 http://127.0.0.1:{args.port}", flush=True)
     def stop_service(signum, frame):
         raise KeyboardInterrupt
     signal.signal(signal.SIGTERM, stop_service)

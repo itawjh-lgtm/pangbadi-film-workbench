@@ -97,9 +97,9 @@ final class StudioDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate, W
         let bar = NSMenu()
         let appItem = NSMenuItem(); bar.addItem(appItem)
         let app = NSMenu(); appItem.submenu = app
-        app.addItem(item("关于庞巴迪影视工作台", #selector(showAbout), ""))
+        app.addItem(item("关于夏夏工作台", #selector(showAbout), ""))
         app.addItem(.separator())
-        app.addItem(item("隐藏庞巴迪影视工作台", #selector(NSApplication.hide(_:)), "h", target: NSApp))
+        app.addItem(item("隐藏夏夏工作台", #selector(NSApplication.hide(_:)), "h", target: NSApp))
         app.addItem(item("隐藏其他", #selector(NSApplication.hideOtherApplications(_:)), "h", modifiers: [.command, .option], target: NSApp))
         app.addItem(item("全部显示", #selector(NSApplication.unhideAllApplications(_:)), "", target: NSApp))
         app.addItem(.separator())
@@ -149,7 +149,7 @@ final class StudioDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate, W
 
     private func makeWindow() {
         window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 1440, height: 940), styleMask: [.titled, .closable, .miniaturizable, .resizable], backing: .buffered, defer: false)
-        window.title = "庞巴迪影视工作台"
+        window.title = "夏夏工作台"
         window.subtitle = "影视 · 游戏 · 你的创作团队"
         window.minSize = NSSize(width: 1040, height: 700)
         window.setFrameAutosaveName("DreamStudioMainWindow")
@@ -179,7 +179,7 @@ final class StudioDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate, W
             overlay.leadingAnchor.constraint(equalTo: content.leadingAnchor), overlay.trailingAnchor.constraint(equalTo: content.trailingAnchor),
             overlay.topAnchor.constraint(equalTo: content.topAnchor), overlay.bottomAnchor.constraint(equalTo: content.bottomAnchor)
         ])
-        let brand = NSTextField(labelWithString: "庞巴迪影视工作台")
+        let brand = NSTextField(labelWithString: "夏夏工作台")
         brand.font = .systemFont(ofSize: 18, weight: .medium)
         brand.textColor = .secondaryLabelColor
         headline = NSTextField(labelWithString: "正在打开你的创作团队")
@@ -289,14 +289,14 @@ final class StudioDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate, W
     }
     @objc private func showAbout() {
         NSApp.orderFrontStandardAboutPanel(options: [
-            .applicationName: "庞巴迪影视工作台", .applicationVersion: "0.6", .version: "Mac 本地客户端",
+            .applicationName: "夏夏工作台", .applicationVersion: "0.6", .version: "Mac 本地客户端",
             .credits: NSAttributedString(string: "21 位创作伙伴 · 本机保存项目\n退出客户端后，本机后台中的任务继续执行。\nAI 创作与 RunningHub 生成需要联网。")
         ])
     }
     @objc private func showLogs() {
         if logWindow == nil {
             let logs = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 880, height: 560), styleMask: [.titled, .closable, .miniaturizable, .resizable], backing: .buffered, defer: false)
-            logs.title = "庞巴迪影视工作台 · 启动与运行日志"; logs.isReleasedWhenClosed = false
+            logs.title = "夏夏工作台 · 启动与运行日志"; logs.isReleasedWhenClosed = false
             let scroll = NSScrollView(frame: logs.contentView!.bounds); scroll.autoresizingMask = [.width, .height]; scroll.hasVerticalScroller = true
             let text = NSTextView(frame: scroll.bounds)
             text.isEditable = false; text.isSelectable = true; text.font = .monospacedSystemFont(ofSize: 12, weight: .regular)
@@ -305,7 +305,7 @@ final class StudioDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate, W
             scroll.documentView = text; logs.contentView?.addSubview(scroll)
             logWindow = logs; logText = text; logs.center()
         }
-        var text = "庞巴迪影视工作台 · 本机诊断\n\n"
+        var text = "夏夏工作台 · 本机诊断\n\n"
         if !lastStartupError.isEmpty { text += "最近启动错误：\n\(lastStartupError)\n\n" }
         if let config = configuration {
             text += "项目：\(config.projectRoot)\n地址：\(config.homeURL.absoluteString)\n数据：\(config.dataURL.path)\n日志：\(config.logURL.path)\n\n"
@@ -369,7 +369,7 @@ final class StudioDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate, W
 
     func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
         guard configuration?.isLocal(frame.request.url ?? URL(string: "about:blank")!) == true else { completionHandler(); return }
-        let alert = NSAlert(); alert.messageText = "庞巴迪影视工作台"; alert.informativeText = message
+        let alert = NSAlert(); alert.messageText = "夏夏工作台"; alert.informativeText = message
         alert.beginSheetModal(for: window) { _ in completionHandler() }
     }
     func webView(_ webView: WKWebView, runJavaScriptConfirmPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (Bool) -> Void) {

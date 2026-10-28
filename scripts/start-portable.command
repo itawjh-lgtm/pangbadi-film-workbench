@@ -23,7 +23,7 @@ for PORTABLE_PROMPT_DIR in "$PORTABLE_FILM_DIR" "$PORTABLE_GAME_DIR"; do
 done
 
 cd "$PORTABLE_ROOT"
-printf '正在启动庞巴迪影视工作台…\n启动成功后打开：http://127.0.0.1:%s/\n运行数据保存在：%s/data/portable-runtime\n按 Control+C 停止服务。\n\n' "$PORTABLE_PORT" "$PORTABLE_ROOT"
+printf '正在启动夏夏工作台…\n启动成功后打开：http://127.0.0.1:%s/\n运行数据保存在：%s/data/portable-runtime\n按 Control+C 停止服务。\n\n' "$PORTABLE_PORT" "$PORTABLE_ROOT"
 exec "$PORTABLE_PYTHON" -m server.httpd \
   --port "$PORTABLE_PORT" \
   --data-dir "$PORTABLE_ROOT/data/portable-runtime" \

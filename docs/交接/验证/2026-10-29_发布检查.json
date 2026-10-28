@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-29",
+  "timezone": "Asia/Shanghai",
+  "scope": "源码整理与GitHub发布前检查",
+  "node": {
+    "command": "node --test tests/*.test.cjs",
+    "passed": 293,
+    "failed": 0
+  },
+  "python": {
+    "command": "python3 -m unittest discover -s tests -p 'test_*.py' -q",
+    "passed": 367,
+    "failed": 0,
+    "note": "存在SQLite连接ResourceWarning；测试全部通过"
+  },
+  "views": {
+    "command": "node tests/views.smoke.cjs",
+    "result": "passed",
+    "imagePaths": 48,
+    "browserValidation": "not performed"
+  },
+  "online": {
+    "command": "node scripts/test-cloud.mjs",
+    "passed": 73,
+    "failed": 0
+  },
+  "providerCalls": "mocked; no paid generation",
+  "deployment": "not performed; GitHub source update only",
+  "privateData": "Excluded runtime databases, uploaded references, credentials, logs and live-account QA",
+  "isolatedStartup": {
+    "result": "passed",
+    "usedBundledPrompts": true,
+    "entry": "passed",
+    "assetRead": "passed",
+    "activeJobs": 0,
+    "productionDataAccessed": false,
+    "paidCalls": false
+  }
+}

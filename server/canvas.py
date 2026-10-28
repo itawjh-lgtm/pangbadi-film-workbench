@@ -21,6 +21,7 @@ from .storyboard import IMPORT_VERSION, LINK_FIELDS, _project, media_project_met
 from .media_models import model_spec, DEFAULT_CN_IMAGE_MODEL, DEFAULT_CN_IMAGE_EDIT_MODEL, DEFAULT_CN_IMAGE_PARAMETERS, IMAGE_RATIOS
 from .trash import is_deleted, require_visible
 from .project_assets import character_drafts, required_character_ids, image_output
+from .reference_images import ReferenceImageStore
 
 
 MAX_BATCH = 24
@@ -43,7 +44,10 @@ FORMER_DEFAULT_IMAGE_MODELS = {
 EDITABLE = {"id", "mediaKind", "title", "shotId", "sourceArtifactId", "promptArtifactId", "taskId",
             "prompt", "modelId", "parameters", "parameterDraft", "position", "selected",
             "stylePreset", "referenceNodeId", "sourceVersion", "promptField", "optimization",
-            "nodeKind", "assetId", "characterAssetIds", "modelSelectionOrigin"}
+            "nodeKind", "assetId", "characterAssetIds", "modelSelectionOrigin", "referenceImages"}
+REFERENCE_PURPOSES = {"appearance": "人物长相", "clothing": "服装造型", "composition": "构图",
+                      "style": "画面风格", "general": "综合参考"}
+MAX_REFERENCE_IMAGES = 10
 
 
 def _hash(value):
@@ -76,6 +80,7 @@ def _expired(value):
 class CanvasManager:
     def __init__(self, runtime, workspace, media, *, poll_interval=5, start_worker=True):
         self.runtime, self.workspace, self.media = runtime, workspace, media
+        self.references = ReferenceImageStore(runtime, workspace, media)
         self.poll_interval = max(.01, float(poll_interval))
         self._stop, self._wake = threading.Event(), threading.Event()
         self._step_lock = threading.Lock()
@@ -387,7 +392,7 @@ class CanvasManager:
                          and node.get("title") == expected_title
                          and untouched_position
                          and node.get("selected") is (kind == "image")
-                         and not any(node.get(field) for field in ("parameterDraft", "stylePreset", "referenceNodeId", "optimization", "taskId")))
+                         and not any(node.get(field) for field in ("parameterDraft", "stylePreset", "referenceNodeId", "referenceImages", "optimization", "taskId")))
             if untouched:
                 canvas.setdefault("importArchive", []).append({"node": deepcopy(node), "archivedAt": now(),
                     "reason": "分层镜号解析修复：已保留原空节点快照", "importVersion": IMPORT_VERSION})
@@ -655,6 +660,8 @@ class CanvasManager:
                 ids.add(node["id"])
                 if node.get("mediaKind") not in DEFAULT_MODELS:
                     raise InputError("节点类型只支持图片或视频。")
+                if "referenceImages" in node:
+                    node["referenceImages"] = self._reference_images(project_id, node)
                 prior = old.get(node["id"], {})
                 node["nodeKind"] = prior.get("nodeKind") or ("shot" if prior.get("shotId") else "free")
                 if node["nodeKind"] in {"shot", "character"}:
@@ -762,6 +769,54 @@ class CanvasManager:
                 ("version", "sourceVersion", "referenceJobId", "referenceOutputIndex", "referenceUrl", "confirmedNodeHash")}})
         return list(dict.fromkeys(references)), snapshots
 
+    def _reference_images(self, project_id, node):
+        """Keep node-owned upload IDs; never accept client-supplied remote URLs."""
+        entries = node.get("referenceImages", [])
+        if not isinstance(entries, list) or len(entries) > MAX_REFERENCE_IMAGES:
+            raise InputError("每个图片节点最多添加 10 张参考图。")
+        if entries and node.get("mediaKind") != "image":
+            raise InputError("参考图窗口用于图片或人物资产；视频请使用已生成图片作为首帧。")
+        result, seen = [], set()
+        for entry in entries:
+            if not isinstance(entry, dict) or not identifier(entry.get("id")) or entry["id"] in seen:
+                raise InputError("参考图片编号无效或重复。")
+            purpose, note = entry.get("purpose", "general"), entry.get("note", "")
+            if not isinstance(purpose, str) or purpose not in REFERENCE_PURPOSES:
+                raise InputError("请选择有效的参考用途。")
+            if not isinstance(note, str) or len(note) > 1000:
+                raise InputError("每张参考图的说明最多 1000 字。")
+            metadata = self.references.validate(project_id, node["id"], entry["id"])
+            result.append({"id": metadata["id"], "name": metadata["name"], "purpose": purpose, "note": note})
+            seen.add(entry["id"])
+        return result
+
+    @staticmethod
+    def _reference_limit(spec):
+        field = next((field for field in spec["fields"] if field["name"] == "imageUrls"), None)
+        if field is None:
+            raise InputError("当前模型不支持多图参考，请选择支持参考图的图生图模型。", 409)
+        schema = spec.get("schema", {}).get("properties", {}).get("imageUrls", {})
+        return schema.get("maxItems", field.get("maxItems", MAX_REFERENCE_IMAGES))
+
+    @staticmethod
+    def _check_reference_count(spec, count):
+        maximum = CanvasManager._reference_limit(spec)
+        if count > maximum:
+            raise InputError(f"当前模型最多支持 {maximum} 张参考图（包含已确认人物）；请减少参考图或更换模型。", 409)
+
+    @staticmethod
+    def _reference_instructions(entries, image_urls, urls):
+        if not entries:
+            return ""
+        lines = ["【参考图片使用说明】", "按输入图片的顺序使用以下参考，只借鉴所标注的要素，其他内容以本次画面提示词为准。"]
+        for entry, url in zip(entries, urls):
+            number = image_urls.index(url) + 1
+            line = f"参考图 {number}：{REFERENCE_PURPOSES[entry['purpose']]}。"
+            if entry["note"].strip():
+                line += "用户说明：" + entry["note"].strip()
+            lines.append(line)
+        return "\n\n" + "\n".join(lines)
+
     def _request(self, project_id, node, budget, currency=None):
         require_visible(self.runtime, "canvas_node", node["id"], project_id)
         request = {"provider": "runninghub", "mode": "model_api", "projectId": project_id,
@@ -793,12 +848,18 @@ class CanvasManager:
             request["parameters"]["prompt"] = node.get("prompt", "")
         canvas = self._stored(project_id)
         references, reference_snapshot = self._character_reference_inputs(project_id, canvas, node)
+        user_references = self._reference_images(project_id, node)
+        user_urls = []
         if reference_snapshot:
             request["characterReferenceSnapshot"] = reference_snapshot
             if node["mediaKind"] == "image":
                 if "imageUrls" not in fields:
                     raise InputError("此镜头需要复用已确认人物，请选择支持参考图的图生图模型。", 409)
                 request["parameters"]["imageUrls"] = references
+        if user_references:
+            self._check_reference_count(spec, len(references) + len(user_references))
+            user_urls = self.references.urls(project_id, node["id"], [entry["id"] for entry in user_references])
+            request["parameters"]["imageUrls"] = list(dict.fromkeys([*references, *user_urls]))
         reference_id = node.get("referenceNodeId")
         if node.get("nodeKind") == "shot" and node.get("mediaKind") == "video":
             if "firstFrameUrl" not in fields and "imageUrl" not in fields:
@@ -829,9 +890,15 @@ class CanvasManager:
                         continue
                     if job.get("canvasNodeHash") and job["canvasNodeHash"] != _hash(self._execution_node(reference)):
                         continue
+                    if reference.get("referenceImages") and job.get("canvasNodeHash") != _hash(self._execution_node(reference)):
+                        continue
+                    generated_urls = job.get("parameters", {}).get("imageUrls", [])
+                    character_inputs_match = (isinstance(generated_urls, list) and
+                        (generated_urls[:len(required_urls)] == required_urls if reference.get("referenceImages")
+                         else generated_urls == required_urls))
                     if required_snapshot and (job.get("canvasNodeHash") != _hash(self._execution_node(reference)) or
                             job.get("characterReferenceSnapshot") != required_snapshot or
-                            job.get("parameters", {}).get("imageUrls") != required_urls):
+                            not character_inputs_match):
                         continue
                     for index in range(len(job.get("outputs", []))):
                         try:
@@ -843,7 +910,17 @@ class CanvasManager:
                         break
                 if not image:
                     raise InputError("本镜头尚无当前版本的成功图片，请先生成分镜图片，再生成视频。", 409)
-                request["parameters"][missing] = [image] if missing == "imageUrls" else image
+                request["parameters"][missing] = (list(dict.fromkeys([*request["parameters"].get("imageUrls", []), image]))
+                                                    if missing == "imageUrls" else image)
+        if node["mediaKind"] == "image" and request["parameters"].get("imageUrls"):
+            self._check_reference_count(spec, len(request["parameters"]["imageUrls"]))
+        if user_references:
+            if "prompt" not in fields:
+                raise InputError("当前模型不支持参考用途说明，请选择支持提示词的图生图模型。", 409)
+            if not isinstance(request["parameters"].get("prompt", ""), str):
+                raise InputError("画面提示词须为文字。")
+            request["parameters"]["prompt"] = request["parameters"].get("prompt", "") + self._reference_instructions(
+                user_references, request["parameters"]["imageUrls"], user_urls)
         return request
 
     @staticmethod
@@ -851,6 +928,13 @@ class CanvasManager:
         result = {key: value for key, value in node.items() if key in EDITABLE - {"position", "selected", "modelSelectionOrigin"}}
         result.setdefault("characterAssetIds", [])
         result.setdefault("nodeKind", "shot" if node.get("shotId") else "free")
+        # Empty upload lists and display names do not invalidate pre-existing
+        # generation/character confirmations. IDs, order, purposes and notes do.
+        if result.get("referenceImages"):
+            result["referenceImages"] = [{key: value for key, value in entry.items() if key != "name"}
+                                         for entry in result["referenceImages"]]
+        else:
+            result.pop("referenceImages", None)
         return result
 
     @staticmethod
@@ -871,6 +955,38 @@ class CanvasManager:
             if any(node_id not in nodes for node_id in ids):
                 raise InputError("部分节点不属于当前项目画布。")
             selected = [deepcopy(nodes[node_id]) for node_id in ids]
+            preparations, character_snapshots = [], {}
+            for node in selected:
+                uploads = self._reference_images(project_id, node)
+                characters, snapshot = self._character_reference_inputs(project_id, canvas, node)
+                character_snapshots[node["id"]] = snapshot
+                if uploads:
+                    try:
+                        spec = model_spec(node["modelId"])
+                    except ValueError as error:
+                        raise InputError(str(error)) from None
+                    if spec["mediaKind"] != node["mediaKind"]:
+                        raise InputError("模型与节点的图片/视频类型不一致。")
+                    if not any(field["name"] == "prompt" for field in spec["fields"]):
+                        raise InputError("当前模型不支持参考用途说明，请选择支持提示词的图生图模型。", 409)
+                    self._check_reference_count(spec, len(characters) + len(uploads) + bool(node.get("referenceNodeId")))
+                    preparations.append((node["id"], [entry["id"] for entry in uploads]))
+        # Uploads can take seconds. Never hold the workspace's shared lock over
+        # provider I/O (the store also acquires its own lock before runtime).
+        for node_id, reference_ids in preparations:
+            self.references.prepare(project_id, node_id, reference_ids)
+        with self.runtime.lock:
+            self._check(project_id)
+            current_canvas = self._stored(project_id)
+            current = {node["id"]: node for node in current_canvas["nodes"]}
+            for node in selected:
+                require_visible(self.runtime, "canvas_node", node["id"], project_id)
+                latest = current.get(node["id"])
+                if latest is None or _hash(self._execution_node(latest)) != _hash(self._execution_node(node)):
+                    raise InputError("参考图上传期间节点内容已变化，请保存最新内容后重新估价。", 409)
+                _, snapshot = self._character_reference_inputs(project_id, current_canvas, latest)
+                if snapshot != character_snapshots[node["id"]]:
+                    raise InputError("参考图上传期间人物资产已变化，请重新估价。", 409)
             requests = [self._request(project_id, node, budget, data.get("currency")) for node in selected]
         items, total, currency, expiry = [], Decimal(0), None, None
         for node, request in zip(selected, requests):
